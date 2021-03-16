@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-searchbar inputmode="search" enterkeyhint="search" showCancelButton #searchBar (ionCancel)="closeModal()"
+      (ionChange)="search($event)" (ionClear)="resetResults()">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-template [ngIf]="results.length > 0">
+    <div *ngFor="let result of results">
+      <app-item [item]="result" (click)="openContent(result)"></app-item>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="results.length <= 0">
+     <p text-center> {{warningMsg}} </p>
+  </ng-template>
+</ion-content>
