@@ -13,5 +13,24 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-item *ngIf="currentData">
+    {{currentData.title}}
+  </ion-item>
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button slot="icon-only" [disabled]="currentPage <= 1" (click)="previousPage()">
+       test
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{currentPage}} / {{lastPage}} </ion-title>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="nextPage()" [disabled]="currentPage >= lastPage">
+       next
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
