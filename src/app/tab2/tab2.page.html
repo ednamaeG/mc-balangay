@@ -6,16 +6,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-item *ngIf="currentData">
-    {{currentData.title}}
-  </ion-item>
+  <div *ngIf="currentData">
+     <p> {{currentData.title}} </p>
+     <div *ngFor="let test  of currentData.data; let i= index">
+       <ion-button expand="full" [disabled]="currentData.isOpen && !test.selected" [color]="test.selected ? 'danger' :'primary'" (click)="select(i)"> {{test.title}} </ion-button>
+     </div>
+  </div>
   <app-explore-container name="Tab 2 page"></app-explore-container>
 
 </ion-content>

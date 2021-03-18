@@ -11,22 +11,96 @@ export class Tab2Page {
     {
       id:1,
       title:"test1",
-      isOpen:false
+      isOpen:false,
+      data:[
+        {
+          title:"sample1",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        },
+        {
+          title:"sample3",
+          selected:false
+        }
+      ]
     },
     {
       id:2,
       title:"test2",
-      isOpen:false
+      isOpen:false,
+      data:[
+        {
+          title:"sample1",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        }
+      ]
     },
     {
       id:3,
       title:"test3",
-      isOpen:false
+      isOpen:false,
+      data:[
+        {
+          title:"sample1",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        }
+      ]
     },
     {
       id:4,
       title:"test4",
-      isOpen:false
+      isOpen:false,
+      data:[
+        {
+          title:"sample1",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        }
+      ]
+    }, {
+      id:5,
+      title:"test5",
+      isOpen:false,
+      data:[
+        {
+          title:"sample1",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        },
+        {
+          title:"sample2",
+          selected:false
+        }
+      ]
     }
   ];
   currentPage = 1;
@@ -52,4 +126,8 @@ export class Tab2Page {
     this.setCurrentData()
   }
 
+  select(i){
+    this.currentData.isOpen=true;
+    this.currentData.data[i].selected=true;
+  }
 }
