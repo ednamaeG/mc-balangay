@@ -12,6 +12,38 @@ import { Router } from '@angular/router';
 export class Tab1Page {
   data = [];
   searchResults = [];
+  barangays =  [
+    "Atlu-Bola",
+    "San Francisco",
+    "Sta. Ines",
+    "Dau",
+    "Bical",
+    "San Joaquin",
+    "Dapdap",
+    "Bical",
+    "Cacutud",
+    "Dolores",
+    "Camachiles",
+    "Bundagul",
+    "test1",
+    "test 2",
+    "Cacutud",
+    "Dolores",
+    "Camachiles",
+    "Bundagul",
+    "test1",
+    "test 2",
+    "Camachiles",
+    "Bundagul",
+    "test1",
+    "test 2",
+    "Cacutud",
+    "Dolores",
+    "Camachiles",
+    "Bundagul",
+    "test1",
+    "test 2"
+  ]
   constructor(
     private http: HTTP,
     private plt: Platform,
@@ -24,6 +56,7 @@ export class Tab1Page {
     console.log('get');
     this.plt.ready().then(async () => {
       this.data = await this.getRandomPics();
+      
       console.log('data:::', this.data);
     });
   }

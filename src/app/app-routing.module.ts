@@ -13,7 +13,15 @@ const routes: Routes = [
   {
     path: 'content',
     loadChildren: () => import('./content/content.module').then( m => m.ContentPageModule)
+  },  {
+    path: 'barangay-content',
+    loadChildren: () => import('./barangay-content/barangay-content.module').then( m => m.BarangayContentPageModule)
+  },
+  {
+    path: 'quiz-view',
+    loadChildren: () => import('./quiz-view/quiz-view.module').then( m => m.QuizViewPageModule)
   }
+
 ];
 @NgModule({
   imports: [

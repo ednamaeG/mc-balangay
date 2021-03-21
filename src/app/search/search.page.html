@@ -9,10 +9,19 @@
 <ion-content>
   <ng-template [ngIf]="results.length > 0">
     <div *ngFor="let result of results">
-      <app-item [item]="result" (click)="openContent(result)"></app-item>
+      <!-- <app-item [item]="result" (click)="openContent(result)"></app-item> -->
+      <ion-item (click)="openContent(result)">
+        <ion-thumbnail slot="start">
+          <img [src]="result.download_url">
+        </ion-thumbnail>
+        <ion-label>
+          <h4>Atlu Bola</h4>
+          <p>Lorem ipsum ... some info here</p>
+        </ion-label>
+      </ion-item>
     </div>
   </ng-template>
   <ng-template [ngIf]="results.length <= 0">
-     <p text-center> {{warningMsg}} </p>
+    <p text-center> {{warningMsg}} </p>
   </ng-template>
 </ion-content>

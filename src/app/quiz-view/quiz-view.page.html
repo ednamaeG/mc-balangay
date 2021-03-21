@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title *ngIf="!showResults">
+      <h3>Question # {{currentPage + 1}} / {{lastPage}} </h3>
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-row *ngIf="!showResults">
+    <ion-col size="12" style="text-align: center;">
+      <ion-label style=" font-family: 'Nunito-Regular'; font-size: 18px; font-weight: bold;">
+        Time Left
+      </ion-label>
+      <div style="margin-top: 2%; ">
+        <countdown #timer class="timer" [config]="config" (event)="handleTimer($event)"></countdown>
+      </div>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="currentQuestion">
+
+    <p class="ion-padding" style="font-size: 16px;"> {{currentQuestion.question}} </p>
+    <div class="choices">
+      <div *ngFor="let choice  of currentQuestion.choices; let i= index">
+        <!-- <ion-button expand="block" size="large" fill="outline" [disabled]="currentData.isOpen && !choice.selected"
+          [color]="choice.selected ? 'primary' :'dark'" (click)="select(i)">  <ion-text class="ion-text-wrap">
+            
+          </ion-text></ion-button> -->
+        <ion-card [color]="choice.selected ? 'primary' :'light'" (click)="select(i)">
+          <ion-card-header>
+            {{choice.title}}
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="ion-text-center ion-padding" *ngIf="showResults">
+    <h1>Results</h1>
+    <p> Number of Correct Anwers: {{totalCorrectAnswers}} out of {{ lastPage }} Questions</p>
+    <ion-card color="success">
+      <ion-card-content>
+        <ion-card-header>
+          <h1>Your Final Score: </h1>
+        </ion-card-header>
+        <ion-card-content class="score-details">
+          <ion-card
+            style=" background-image: linear-gradient(to top, #faab2c, #facd2b); width: 10em; height: 10em; border-radius: 5em;">
+
+            <ion-card-content style=" top: 14%; justify-content: center;">
+              <h1 style=" font-family: 'Nunito-ExtraBold'; font-size: 60px; color: white; ">{{totalScore}}</h1>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+    <ion-button>
+      <ion-icon name="reload"></ion-icon>
+      <ion-label>
+        <ion-text slot="end"> Try Again</ion-text>
+      </ion-label>
+    </ion-button>
+  </div>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button slot="icon-only" [disabled]="currentPage <= 1" (click)="previousPage()">
+        Previous
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="nextPage()" [disabled]="currentPage >= lastPage">
+        Next
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->

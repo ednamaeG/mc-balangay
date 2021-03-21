@@ -1,0 +1,103 @@
+[
+    {
+        "level": "1",
+        "title": "Barangay Quiz",
+        "questions": [
+            {
+                "id": 1,
+                "question": "Who was elected President of the United States in 2017?",
+                "points": 20,
+                "choices": [
+                    {
+                        "title": "Donald Trump",
+                        "correct": true
+                    },
+                    {
+                        "title": "Barack Obama",
+                        "correct": false
+                    },
+                    {
+                        "title": "George Bush",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "question": "What is the approximate number of islands that comprise the Philippines?",
+                "points": 20,
+                "choices": [
+                    {
+                        "title": "6500",
+                        "correct": false
+                    },
+                    {
+                        "title": "7500",
+                        "correct": true
+                    },
+                    {
+                        "title": "8500",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "points": 20,
+                "question": "Which country occupied the Philppies during World War II",
+                "choices": [
+                    {
+                        "title": "Germany",
+                        "correct": false
+                    },
+                    {
+                        "title": "Japan",
+                        "correct": true
+                    },
+                    {
+                        "title": "China",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "points": 20,
+                "question": "What is the term of the President of the Philippines?",
+                "choices": [
+                    {
+                        "title": "Four years",
+                        "correct": false
+                    },
+                    {
+                        "title": "Five years",
+                        "correct": false
+                    },
+                    {
+                        "title": "Six Years",
+                        "correct": true
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "points": 20,
+                "question": "Which country had the Philippines as its colony for more than 300 years?",
+                "choices": [
+                    {
+                        "title": "Italy",
+                        "correct": false
+                    },
+                    {
+                        "title": "Spain",
+                        "correct": true
+                    },
+                    {
+                        "title": "England",
+                        "correct": false
+                    }
+                ]
+            }
+        ]
+    }
+]
