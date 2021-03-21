@@ -3,6 +3,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 import { Component } from '@angular/core';
 import { MenuController, ModalController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -43,21 +44,23 @@ export class Tab1Page {
     "Bundagul",
     "test1",
     "test 2"
-  ]
+  ];
+  barangayList:any = [];
   constructor(
     private http: HTTP,
     private plt: Platform,
     private menu: MenuController,
     private modalCtrl: ModalController,
-    private router:Router
+    private router:Router,
+    private httpClient:HttpClient
   ) {}
 
   ngOnInit() {
     console.log('get');
     this.plt.ready().then(async () => {
-      this.data = await this.getRandomPics();
+      this.barangayList = await this.getData();
       
-      console.log('data:::', this.data);
+      console.log('data:::', this.barangayList);
     });
   }
 
@@ -70,6 +73,9 @@ export class Tab1Page {
     }
   }
 
+  async getData(){
+    return await this.httpClient.get('./assets/mocks/barangays-mock.json').toPromise();
+  }
   getResults(ev) {
     console.log(ev.detail.value);
     const query = ev.detail.value;
@@ -83,7 +89,7 @@ export class Tab1Page {
     const modal = await this.modalCtrl.create({
       component: SearchPage,
       componentProps: {
-        data: this.data,
+        data: this.barangayList,
       },
     });
     return await modal.present();

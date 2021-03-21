@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>barangay-content</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>{{details.type}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -8,5 +8,5 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  Content here...
+   {{details.content}}
 </ion-content>

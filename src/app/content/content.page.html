@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Barangay Name</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>{{data.name}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -9,44 +9,12 @@
 
 <ion-content>
   <img [src]="data.download_url">
-
-  <!-- <ion-list>
-    <ion-item>
-      <ion-label>
-        <h2> History </h2>
-      </ion-label>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h2> First Family Residence </h2>
-      </ion-label>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h2> Culture</h2>
-      </ion-label>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h2> Fiesta </h2>
-      </ion-label>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <h2> Branding </h2>
-      </ion-label>
-      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
-    </ion-item>
-  </ion-list> -->
+ 
   <ion-list>
-    <div *ngFor="let item of items; let i=index" [routerLink]="['/barangay-content']">
-      <ion-item lines="full">
+    <div *ngFor="let detail of data.details; let i=index"   >
+      <ion-item lines="full" (click)="viewDetails(detail)">
         <ion-label>
-          <h2> {{item.type}} </h2>
+          <h2> {{detail.type}} </h2>
         </ion-label>
         <ion-icon name="chevron-forward-circle-outline"></ion-icon>
       </ion-item>

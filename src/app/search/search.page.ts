@@ -32,7 +32,7 @@ export class SearchPage implements OnInit {
     let query = ev.detail.value;
     if(query){
       this.results = this.data.filter(
-        (data) => data.author.toLowerCase().indexOf(query.toLowerCase()) !== -1
+        (data) => data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
       );
       this.warningMsg = this.results.length == 0 ? "No Results Found." :"";
       console.log('results', this.results);

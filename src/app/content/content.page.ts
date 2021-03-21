@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -33,7 +33,7 @@ export class ContentPage implements OnInit {
       }
     ];
  
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private router:Router) { }
 
   ngOnInit() {
     const params = this.route.snapshot.params;
@@ -43,5 +43,10 @@ export class ContentPage implements OnInit {
 
   openContent(i){
     this.items[i].isOpen = !this.items[i].isOpen
+  }
+
+  viewDetails(detail){
+    const data = JSON.stringify(detail);
+    this.router.navigate(['/barangay-content',{data:data}])
   }
 }
