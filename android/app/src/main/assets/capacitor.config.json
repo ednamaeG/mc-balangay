@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "testIonic5",
+  "appName": "MCC E-Learning",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
@@ -9,9 +9,5 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {},
-  "server": {
-    "url": "http://192.168.100.204:8100",
-    "cleartext": true
-  }
+  "cordova": {}
 }

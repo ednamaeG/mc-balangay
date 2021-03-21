@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-searchbar inputmode="search" enterkeyhint="search" showCancelButton #searchBar (ionCancel)="closeModal()"
+  
+    <ion-searchbar inputmode="search" animated enterkeyhint="search" showCancelButton #searchBar (ionCancel)="closeModal()"
       (ionChange)="search($event)" (ionClear)="resetResults()">
     </ion-searchbar>
-  </ion-toolbar>
+   
 </ion-header>
 
 <ion-content class="ion-padding">
