@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
+import { IQuestion, IQuiz } from '../interfaces/quiz';
 
 @Component({
   selector: 'app-quiz-view',
@@ -15,124 +16,22 @@ export class QuizViewPage implements OnInit {
   showResults = false;
   config: CountdownConfig;
   totalCorrectAnswers = 0;
-  questions = [];
-  testItems = [
-    {
-      id: 1,
-      question: "Who was elected President of the United States in 2017?",
-      isOpen: false,
-      points: 20,
-      choices: [
-        {
-          title: "Donald Trump",
-          correct: true,
-
-        },
-        {
-          title: "Barack Obama",
-          correct: false,
-
-
-        },
-        {
-          title: "George Bush",
-          correct: false,
-        }
-      ]
-    },
-    {
-      id: 2,
-      question: "What is the approximate number of islands that comprise the Philippines?",
-      isOpen: false,
-      points: 20,
-      choices: [
-        {
-          title: "6500",
-          correct: false
-        },
-        {
-          title: "7500",
-          correct: true
-        },
-        {
-          title: "8500",
-          correct: false
-        }
-      ]
-    },
-    {
-      id: 3,
-      points: 20,
-      question: "Which country occupied the Philppies during World War II",
-      isOpen: false,
-      choices: [
-        {
-          title: "Germany",
-          correct: false
-        },
-        {
-          title: "Japan",
-          correct: true
-        },
-        {
-          title: "China",
-          correct: false
-        }
-      ]
-    },
-    {
-      id: 4,
-      points: 20,
-      question: "What is the term of the President of the Philippines?",
-      isOpen: false,
-      choices: [
-        {
-          title: "Four years",
-          correct: false
-        },
-        {
-          title: "Five years",
-          correct: false
-        },
-        {
-          title: "Six Years",
-          correct: true
-        }
-      ]
-    }, {
-      id: 5,
-      points: 20,
-      question: "Which country had the Philippines as its colony for more than 300 years?",
-      isOpen: false,
-      choices: [
-        {
-          title: "Italy",
-          correct: false
-        },
-        {
-          title: "Spain",
-          correct: true
-        },
-        {
-          title: "England",
-          correct: false
-        }
-      ]
-    }
-  ];
+  questions:IQuestion[] = [];
   currentPage = 0;
   lastPage = 0;
-  quizContent: any;
+  quizContent: IQuiz;
   currentQuestion: any;
+  time = 30;
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) {
     this.quizContent = JSON.parse(this.route.snapshot.params.data);
-    console.log('route params', this.quizContent)
-    this.lastPage = this.testItems.length;
+    console.log('route params', this.quizContent);
+
+    this.lastPage = this.quizContent.questions.length;
     console.log(this.lastPage)
 
-    this.currentData = this.testItems[0];
+
     this.currentQuestion = this.quizContent.questions[0];
-    this.config = { leftTime: 5, format: 'mm:ss' };
+    this.config = { leftTime: this.time, format: 'mm:ss' };
   }
 
 
@@ -144,8 +43,9 @@ export class QuizViewPage implements OnInit {
 
   setCurrentData() {
     const idx = this.currentPage;
-    this.currentData = this.testItems[idx];
+
     this.currentQuestion = this.quizContent.questions[idx];
+    this.resetTimer()
   }
 
   nextPage() {
@@ -158,8 +58,6 @@ export class QuizViewPage implements OnInit {
     } else {
       this.setCurrentData()
     }
-
-
   }
 
   previousPage() {
@@ -175,21 +73,18 @@ export class QuizViewPage implements OnInit {
 
     if (this.currentQuestion.choices[i].correct) {
       this.totalScore += this.currentQuestion.points;
-      this.totalCorrectAnswers +=1;
+      this.totalCorrectAnswers += 1;
       console.log(this.totalCorrectAnswers)
     }
     setTimeout(() => {
       this.currentData = '';
       this.nextPage();
-      this.resetTimer()
+      
     }, 300)
 
     // }
   }
 
-  checkScore() {
-
-  }
 
   handleTimer(e: CountdownEvent) {
     if (e.action == "start") {
@@ -206,7 +101,7 @@ export class QuizViewPage implements OnInit {
   }
 
   start_timer() {
-    this.config = { leftTime: 5, format: 'mm:ss', demand: false };
+    this.config = { leftTime: this.time, format: 'mm:ss', demand: false };
     this.countdown.begin();
   }
 
@@ -218,6 +113,19 @@ export class QuizViewPage implements OnInit {
     return await this.httpClient.get('./assets/mocks/quizzes-mock.json').toPromise();
   }
 
+  resetQuiz(){
+    this.totalCorrectAnswers = 0;
+    this.totalScore = 0;
+    this.currentPage = 0;
+    this.currentQuestion = this.quizContent.questions[0];
+    this.lastPage = this.quizContent.questions.length;
+    this.showResults = false;
+    this.quizContent.questions.map((question) =>{
+      question.choices.forEach((choice) =>{
+        choice.selected = false;
+      })
+    })
+  }
 }
 
 

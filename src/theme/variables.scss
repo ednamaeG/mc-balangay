@@ -3,6 +3,9 @@
 
 /** Ionic CSS Variables **/
 :root {
+  // Main Font
+  --ion-font-family:'Custom Font'; 
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -238,3 +241,33 @@
 ion-item {
   --transition: none;
 }
+
+// Fonts
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/noto-sans/NotoSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Custom Font';
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/noto-sans/NotoSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-weight: normal;
+  src: url('../assets/fonts/noto-sans/NotoSans-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Custom Font';
+  font-style: italic;
+  font-weight: bold;
+  src: url('../assets/fonts/noto-sans/NotoSans-BoldItalic.ttf');
+}
+

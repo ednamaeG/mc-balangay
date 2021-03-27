@@ -13,16 +13,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
- 
-    <div *ngFor="let quiz of quizzes">
-      <ion-card (click)="openQuiz(quiz)">
-        <ion-card-header>
-         <h3> {{quiz.title}} </h3>
-        </ion-card-header>
-      </ion-card>
-    </div>
-    
-  
- 
+<ion-content>
+  <div *ngFor="let quiz of quizzes">
+    <ion-card (click)="openQuiz(quiz)">
+      <ion-card-header>
+        <h3 style="float: left;"> {{ quiz.title }} </h3>
+        <div class="quiz-details">
+          High Score <br/>
+          {{quiz.total_score}} <br/>
+          100%
+        </div>
+      </ion-card-header>
+     
+      <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+    </ion-card>
+
+  </div>
+
+
+
 </ion-content>
