@@ -1,20 +1,23 @@
 export interface IQuiz {
+    id: number;
     title: string;
     questions: IQuestion[];
-    total_score:number;
+    total_score: number;
+    percentage: number;
     points: string;
-    answer_count:number;
+    answer_count: number;
+    progress:number;
 }
 
 export interface IQuestion {
     id: number;
     question: string;
-    percentage:number;
+    points: number;
     choices: IChoice[];
 }
 
 export interface IChoice {
     title: string,
     correct: boolean;
-    selected?:boolean;
+    selected?: boolean;
 }

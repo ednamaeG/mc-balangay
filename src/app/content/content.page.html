@@ -8,9 +8,9 @@
 </ion-header>
 
 <ion-content>
-  <img [src]="data.download_url">
- 
-  <ion-list>
+  <!-- <img [src]="data.download_url"> -->
+
+  <!-- <ion-list>
     <div *ngFor="let detail of data.details; let i=index"   >
       <ion-item lines="full" (click)="viewDetails(detail)">
         <ion-label>
@@ -21,5 +21,32 @@
      
     </div>
 
+  </ion-list> -->
+  <ion-list>
+    <ion-card *ngFor="let detail of data.details; let i=index">
+      <img src="https://picsum.photos/id/10/2500/1667">
+      <ion-card-header>
+        
+        <h3>
+          {{detail.type}}
+        </h3>
+
+      </ion-card-header>
+      <ion-card-content>
+      
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. </p>
+        <div class="read-btn" style="float: right; text-align: right; padding: 2px;">
+          <ion-button class="ion-text-capitalize" (click)="viewDetails(detail)">
+            <ion-label>
+              Start Reading &nbsp;
+            </ion-label>
+            <ion-icon name="arrow-forward-outline"  ></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

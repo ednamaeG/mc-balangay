@@ -68,4 +68,12 @@ export class Tab2Page {
     const quizContent = JSON.stringify(quiz)
     this.router.navigate(['/quiz-view', {data:quizContent}])
   }
+
+  getPercentage(progress){
+    let percentage = progress * 100;
+     
+    return Number(percentage.toFixed(1)) ;
+     
+  }
+  
 }

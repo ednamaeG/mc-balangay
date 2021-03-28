@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'quiz-view',
     loadChildren: () => import('./quiz-view/quiz-view.module').then( m => m.QuizViewPageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   }
 
 ];

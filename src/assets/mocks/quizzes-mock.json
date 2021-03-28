@@ -1,7 +1,10 @@
 [
     {
-        
+        "id":1,
         "title": "Barangay Quiz",
+        "total_score": 0,
+        "percentage" : 0,
+        "progress": 0,
         "questions": [
             {
                 "id": 1,
@@ -26,6 +29,7 @@
                 "id": 2,
                 "question": "What is the approximate number of islands that comprise the Philippines?",
                 "points": 20,
+               
                 "choices": [
                     {
                         "title": "6500",
@@ -101,8 +105,11 @@
         ]
     },
     {
-    
-        "title": "Barangay Quizv 2",
+        "id":2,
+        "title": "Barangay Quiz 2",
+        "total_score": 0,
+        "percentage":0,
+        "progress": 0,
         "questions": [
             {
                 "id": 1,

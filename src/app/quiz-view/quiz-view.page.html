@@ -1,15 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    <ion-buttons slot="start"  *ngIf="!showResults">
+      <ion-button slot="icon-only" (click)="quitQuiz()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <!-- <ion-back-button defaultHref="/tabs/tab2"></ion-back-button> -->
     </ion-buttons>
-    <ion-buttons slot="end" *ngIf="currentPage < lastPage">
+    <ion-buttons slot="end" *ngIf="currentPage < lastPage" class="ion-text-capitalize">
       <ion-button (click)="nextPage()">Skip</ion-button>
     </ion-buttons>
+    <ion-title class="ion-text-center" *ngIf="showResults">
+      Quiz Results
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+  
   <ion-row *ngIf="!showResults">
     <ion-col size="4" style="text-align:center;">
      <h3> {{currentPage + 1}} / {{lastPage}} </h3>   
@@ -26,6 +33,7 @@
     </ion-col>
   </ion-row>
   <div class="spacer"></div>
+   
   <div *ngIf="currentQuestion">
     <ion-card>
       <p class="ion-padding" style="font-size: 16px;"> {{currentQuestion.question}} </p>
@@ -38,19 +46,26 @@
           [color]="choice.selected ? 'primary' :'dark'" (click)="select(i)">  <ion-text class="ion-text-wrap">
             
           </ion-text></ion-button> -->
-        <ion-card [color]="choice.selected ? 'primary' :'light'" (click)="select(i)">
+        <ion-card [color]="choice.selected ? (choice.correct? 'success' : 'danger' ) : 'light'" (click)="select(i)">
           <ion-card-header>
-            {{choice.title}}
+           <ion-badge class="choice-letter"> {{letters[i]}} </ion-badge> <span> {{choice.title}}</span>
+           <div class="answer-details">
+             
+              <ion-icon [name]="choice.correct? 'checkmark-circle' : 'close'" style="font-size: 24px;"  color="light" *ngIf="choice.selected"></ion-icon>
+            
+          </div>
           </ion-card-header>
+
+         
         </ion-card>
 
       </div>
     </div>
   </div>
 
-  <div class="ion-text-center ion-padding" *ngIf="showResults">
-    <h1>Results</h1>
+  <div class="ion-text-center ion-padding"  *ngIf="showResults">
     <p> Number of Correct Anwers: {{totalCorrectAnswers}} out of {{ lastPage }} Questions</p>
+    <div class="spacer"></div>
     <ion-card color="success">
       <ion-card-content>
         <ion-card-header>
@@ -58,7 +73,7 @@
         </ion-card-header>
         <ion-card-content class="score-details">
           <ion-card
-            style=" background-image: linear-gradient(to top, #faab2c, #facd2b); width: 10em; height: 10em; border-radius: 5em;">
+            style=" background-image: linear-gradient(to top, #2ccafa, #5d8f9e); width: 10em; height: 10em; border-radius: 5em;">
 
             <ion-card-content style=" top: 14%; justify-content: center;">
               <h1 style=" font-family: 'Nunito-ExtraBold'; font-size: 60px; color: white; ">{{totalScore}}</h1>
@@ -69,12 +84,7 @@
 
       </ion-card-content>
     </ion-card>
-    <ion-button (click)="resetQuiz()">
-      <ion-icon name="reload" ></ion-icon>
-      <ion-label>
-        <ion-text slot="end"> Try Again</ion-text>
-      </ion-label>
-    </ion-button>
+    
   </div>
 </ion-content>
 <!-- <ion-footer>
@@ -92,3 +102,17 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-footer> -->
+
+<ion-footer *ngIf="showResults" class="ion-no-border ion-padding">
+  <ion-button (click)="resetQuiz()" expand="block"> 
+    <ion-icon name="reload" ></ion-icon>
+    <ion-label>
+      <ion-text slot="end"> Try Again</ion-text>
+    </ion-label>
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="exitQuiz()">
+    <ion-label>
+      <ion-text slot="end" > Finish </ion-text>
+    </ion-label>
+  </ion-button>
+</ion-footer>
