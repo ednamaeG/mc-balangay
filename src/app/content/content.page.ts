@@ -47,6 +47,7 @@ export class ContentPage implements OnInit {
 
   viewDetails(detail){
     const data = JSON.stringify(detail);
-    this.router.navigate(['/barangay-content',{data:data}])
+    
+    this.router.navigate(['/barangay-content',{data:data,name:this.data.name}])
   }
 }

@@ -5,8 +5,15 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Barangay {{barangayName}}
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-   {{details.content}}
+  <div [innerHTML]="details.content"> 
+
+  </div>
 </ion-content>

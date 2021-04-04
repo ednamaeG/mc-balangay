@@ -8,11 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BarangayContentPage implements OnInit {
   details:any;
+  barangayName:string;
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.details =  JSON.parse(this.route.snapshot.params.data);
-    console.log('details',this.details)
+    this.barangayName = this.route.snapshot.params.name;
+    console.log('details',this.details,this.barangayName)
   }
 
 }
