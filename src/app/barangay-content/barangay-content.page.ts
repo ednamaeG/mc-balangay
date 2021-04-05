@@ -9,6 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 export class BarangayContentPage implements OnInit {
   details:any;
   barangayName:string;
+  slidesOptions = {
+    initialSlide: 0,
+    // freeMode: true,
+    // loop: true,
+    autoplay:true
+  };
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {

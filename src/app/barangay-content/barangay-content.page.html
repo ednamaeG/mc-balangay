@@ -1,19 +1,37 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>{{details.type}}</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="teal">
+    <ion-title> Barangay {{barangayName}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title class="ion-text-center">
-      Barangay {{barangayName}}
+    <ion-title class="ion-text-center" color="taupe">
+      {{details.type}}
     </ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div [innerHTML]="details.content"> 
+<ion-content >
+  <ion-slides [options]="slidesOptions" pager="true">
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-1.jpg" style="
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-2.jpg" style="
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-3.jpg" style=" 
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+  </ion-slides>
+  <div [innerHTML]="details.content" class="details ion-padding">
 
   </div>
 </ion-content>

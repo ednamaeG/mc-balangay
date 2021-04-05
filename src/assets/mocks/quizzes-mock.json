@@ -1,7 +1,7 @@
 [
     {
         "id":1,
-        "title": "Barangay Quiz",
+        "title": "Barangay Quiz Sample 1",
         "total_score": 0,
         "percentage" : 0,
         "progress": 0,
@@ -106,7 +106,7 @@
     },
     {
         "id":2,
-        "title": "Barangay Quiz 2",
+        "title": "Barangay Quiz Sample 2",
         "total_score": 0,
         "percentage":0,
         "progress": 0,

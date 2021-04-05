@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="teal">
     <ion-buttons slot="start">
       <ion-menu-toggle auto-hide>
         <ion-button>
@@ -26,13 +26,13 @@
       <ion-card (click)="openContent(barangay)">
       <div class="test-card">
         <div class="logo" style="height:116px">
-          <img [src]="barangay.download_url" style=" height: 120px;
+          <img [src]="barangay.logo_url" style=" height: 120px;
           width: 100%;
           object-fit: contain;" />
         </div>
         <!-- <img [src]="barangay.download_url" /> -->
         <div class="text" style="text-align: center;">
-          <ion-text style="font-size: 11px; font-weight: bold; ">{{ barangay.name }} </ion-text>
+          <ion-text style="font-size: 11px; font-weight: bold; " color="taupe">{{ barangay.name }} </ion-text>
         </div>
       </div>
       </ion-card>

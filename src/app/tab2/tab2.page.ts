@@ -25,7 +25,7 @@ export class Tab2Page {
   }
 
   async ngOnInit(){
-    
+    // add comparison for updated/newly inserted quizzes /
     const data = await this.quizSvc.getQuizzes();
     if(!data){
       const quizzes = await this.getQuizzes();

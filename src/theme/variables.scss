@@ -77,7 +77,78 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+  
+  // teal
+  --ion-color-teal: #0292B7;
+  --ion-color-teal-rgb: 2,146,183;
+  --ion-color-teal-contrast: #ffffff;
+  --ion-color-teal-contrast-rgb: 255,255,255;
+  --ion-color-teal-shade: #0280a1;
+  --ion-color-teal-tint: #1b9dbe;
+
+  // turquoise
+  --ion-color-turquoise: #1AC8DB;
+  --ion-color-turquoise-rgb: 26,200,219;
+  --ion-color-turquoise-contrast: #000000;
+  --ion-color-turquoise-contrast-rgb: 0,0,0;
+  --ion-color-turquoise-shade: #17b0c1;
+  --ion-color-turquoise-tint: #31cedf;
+
+  --ion-color-taupe: #8C756A;
+  --ion-color-taupe-rgb: 140,117,106;
+  --ion-color-taupe-contrast: #ffffff;
+  --ion-color-taupe-contrast-rgb: 255,255,255;
+  --ion-color-taupe-shade: #7b675d;
+  --ion-color-taupe-tint: #988379;
+
+  --ion-color-misty: #DEE2EC;
+  --ion-color-misty-rgb: 222,226,236;
+  --ion-color-misty-contrast: #000000;
+  --ion-color-misty-contrast-rgb: 0,0,0;
+  --ion-color-misty-shade: #c3c7d0;
+  --ion-color-misty-tint: #e1e5ee;
 }
+
+/**
+  Custom Colors
+*/
+
+.ion-color-teal{
+  --ion-color-base: #0292B7;
+  --ion-color-rgb: 2,146,183;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255,255,255;
+  --ion-color-shade: #0280a1;
+  --ion-color-tint: #1b9dbe;
+}
+
+.ion-color-turquoise{
+  --ion-color-base: #1AC8DB;
+  --ion-color-rgb: 26,200,219;
+  --ion-color-contrast: #000000;
+  --ion-color-contrast-rgb: 0,0,0;
+  --ion-color-shade: #17b0c1;
+  --ion-color-tint: #31cedf;
+}
+
+.ion-color-taupe{
+  --ion-color-base: #8C756A;
+  --ion-color-rgb: 140,117,106;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255,255,255;
+  --ion-color-shade: #7b675d;
+  --ion-color-tint: #988379;
+}
+
+.ion-color-misty{
+  --ion-color-base: #DEE2EC;
+  --ion-color-rgb: 222,226,236;
+  --ion-color-contrast: #000000;
+  --ion-color-contrast-rgb: 0,0,0;
+  --ion-color-shade: #c3c7d0;
+  --ion-color-tint: #e1e5ee;
+}
+
 
 // @media (prefers-color-scheme: dark) {
   /*

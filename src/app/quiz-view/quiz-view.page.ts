@@ -83,9 +83,10 @@ export class QuizViewPage implements OnInit {
   }
 
   select(i) {
-    // if (!this.currentData.isOpen) {
+    
+    if (!this.currentQuestion.hasAnswer) {
 
-    // this.currentData.isOpen = true;
+    this.currentQuestion.hasAnswer = true;
     this.currentQuestion.choices[i].selected = true;
     this.totalAnswered++;
     if (this.currentQuestion.choices[i].correct) {
@@ -98,7 +99,7 @@ export class QuizViewPage implements OnInit {
       this.nextPage();
     }, 300)
 
-    // }
+    }
   }
 
 
@@ -168,7 +169,7 @@ export class QuizViewPage implements OnInit {
     const percentage = this.totalScore / this.totalPoints;
     quiz.percentage = Number(percentage.toFixed(2));
     const progress = this.totalAnswered / this.lastPage;
-    quiz.progress = Number(progress.toFixed(2))
+    quiz.progress = quiz.progress == 1 ? quiz.progress : Number(progress.toFixed(2))
     console.log('percentage', quiz.percentage,quiz.progress)
     this.quizSvc.storeQuizzes(quizzes);
   }

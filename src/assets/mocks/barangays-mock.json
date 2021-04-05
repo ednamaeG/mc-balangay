@@ -4,13 +4,14 @@
         "name": "Atlu-Bola",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://balacat.weebly.com/uploads/1/3/8/3/13839291/355743910_orig.png",
+         
+        "logo_url": "assets/barangay-logos/atlubola-logo.jpg",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
             {
                 "type": "History",
-                "content": "<p><span>Barangay Atlu Bola was formerly named as Barangay San Isidro, It was named after our patron Saint San Isidro Labrador. Through the effort of the past generations the former Barangay Officials, looked adept in some significant and essential history of our place and there, they discovered that our place was one of the vast of sugarcane plantation. It is also a place where many sugarcane owners delivered their products.</span></p><p><span>According to the olds citizens of Barangay Atlu Bola there were three hug balls that were made of stones and have been used for crushing sugarcane to manufacture sugar. Then, they came up to the idea to replace the name San Isidro to Atlu Bola as reminder of the three hug stones, to give highlight to our valued history wiith due respect to San Isidro. The old citizens of our barangay decided to adopt its festival date which we annually celebrating every May 15.</span> </p>"
+                "content": "<p><span>Barangay Atlu Bola was formerly named as Barangay San Isidro, It was named after our patron Saint San Isidro Labrador. Through the effort of the past generations the former Barangay Officials, looked adept in some significant and essential history of our place and there, they discovered that our place was one of the vast of sugarcane plantation. It is also a place where many sugarcane owners delivered their products.</span></p><p><span>According to the olds citizens of Barangay Atlu Bola there were three huge balls that were made of stones and have been used for crushing sugarcane to manufacture sugar. Then, they came up to the idea to replace the name San Isidro to Atlu Bola as reminder of the three hug stones, to give highlight to our valued history with due respect to San Isidro. The old citizens of our barangay decided to adopt its festival date which we annually celebrating every May 15.</span> </p>"
             },
             {
                 "type": "First Family Residence",
@@ -23,6 +24,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -31,7 +36,8 @@
         "name": "Bical",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/1000/5626/3635",
+         
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -50,6 +56,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -58,7 +68,7 @@
         "name": "Bundagul",
         "width": 2500,
         "height": 1667,
-        "download_url": "https://picsum.photos/id/10/2500/1667",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -77,6 +87,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -85,7 +99,7 @@
         "name": "Cacutud",
         "width": 2500,
         "height": 1656,
-        "download_url": "https://picsum.photos/id/100/2500/1656",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -104,6 +118,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -112,7 +130,7 @@
         "name": "Calumpang",
         "width": 5626,
         "height": 3635,
-        "download_url": "https://zamboanga.com/z/images/thumb/4/42/Camachiles_mabalacat_seal_logo.png/150px-Camachiles_mabalacat_seal_logo.png",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -131,6 +149,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -139,7 +161,7 @@
         "name": "Camachiles",
         "width": 5626,
         "height": 3635,
-        "download_url": "http://mabalacatcity.org/wp-content/uploads/2017/09/Camachiles-250x247.png",
+        "logo_url": "assets/barangay-logos/camachiles-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -158,6 +180,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -166,7 +192,7 @@
         "name": "Dapdap",
         "width": 5616,
         "height": 3744,
-        "download_url": "http://mabalacatcity.org/wp-content/uploads/2017/09/logo0012-250x248.jpg",
+        "logo_url": "assets/barangay-logos/dapdap-logo.jpg",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -185,6 +211,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -193,7 +223,7 @@
         "name": "Dau",
         "width": 4312,
         "height": 2868,
-        "download_url": "https://picsum.photos/id/1002/4312/2868",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -212,6 +242,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -220,7 +254,7 @@
         "name": "Dolores",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -239,6 +273,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -247,7 +285,7 @@
         "name": "Duquit",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -266,6 +304,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -274,7 +316,7 @@
         "name": "Lakandula",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -293,6 +335,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -301,7 +347,7 @@
         "name": "Mabiga",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -320,6 +366,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -328,7 +378,7 @@
         "name": "Macapagal Village",
         "width": 5616,
         "height": 3744,
-        "download_url": "http://mabalacatcity.org/wp-content/uploads/2017/09/logo0001-250x248.jpg",
+        "logo_url": "assets/barangay-logos/macapagal-logo.jpg",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -347,6 +397,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -355,7 +409,7 @@
         "name": "Mamatitang",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -374,6 +428,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -382,7 +440,7 @@
         "name": "Mangalit",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -401,6 +459,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -409,7 +471,7 @@
         "name": "Marcos Village",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -428,6 +490,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -436,7 +502,7 @@
         "name": "Mawaque",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -455,6 +521,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -463,7 +533,7 @@
         "name": "Paralayunan",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -482,6 +552,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -490,7 +564,7 @@
         "name": "Poblacion",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -509,32 +583,9 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
-            }
-        ]
-    },
-    {
-        "id": "115",
-        "name": "San Francisco",
-        "width": 5616,
-        "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
-        "facebookLink": "",
-        "websiteLink": "",
-        "details": [
-            {
-                "type": "History",
-                "content": ""
             },
             {
-                "type": "First Family Residence",
-                "content": "Sample Content"
-            },
-            {
-                "type": "Fiesta",
-                "content": "Sample Content"
-            },
-            {
-                "type": "Branding",
+                "type": "Politicians",
                 "content": "Sample Content"
             }
         ]
@@ -544,7 +595,7 @@
         "name": "San Francisco",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -563,6 +614,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -571,7 +626,7 @@
         "name": "San Joaquin",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -590,6 +645,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -598,7 +657,7 @@
         "name": "Santa Ines",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -617,6 +676,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -625,7 +688,7 @@
         "name": "Santa Maria",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -644,6 +707,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -652,7 +719,7 @@
         "name": "Santo Rosario",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -671,6 +738,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -679,7 +750,7 @@
         "name": "Sapang Balen",
         "width": 5616,
         "height": 3744,
-        "download_url": "https://picsum.photos/id/0/5616/3744",
+        "logo_url": "assets/barangay-logos/mabalacat-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -698,6 +769,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -706,7 +781,7 @@
         "name": "Sapang Biabas",
         "width": 5616,
         "height": 3744,
-        "download_url": "http://mabalacatcity.org/wp-content/uploads/2017/09/logo0005-250x217.jpg",
+        "logo_url": "assets/barangay-logos/sapangbiabas-logo.jpg",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -725,6 +800,10 @@
             {
                 "type": "Branding",
                 "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content"
             }
         ]
     },
@@ -733,7 +812,7 @@
         "name": "Tabun",
         "width": 5616,
         "height": 3744,
-        "download_url": "http://mabalacatcity.org/wp-content/uploads/2017/09/tabun-250x247.png",
+        "logo_url": "assets/barangay-logos/tabun-logo.png",
         "facebookLink": "",
         "websiteLink": "",
         "details": [
@@ -751,6 +830,10 @@
             },
             {
                 "type": "Branding",
+                "content": "Sample Content"
+            },
+            {
+                "type": "Politicians",
                 "content": "Sample Content"
             }
         ]

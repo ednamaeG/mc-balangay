@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'politicians',
+    loadChildren: () => import('./politicians/politicians.module').then( m => m.PoliticiansPageModule)
   }
 
 ];

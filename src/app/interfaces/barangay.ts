@@ -7,6 +7,7 @@ export interface IBarangay {
     facebookLink: string;
     websiteLink: string;
     details: IBarangayDetail[];
+    logo_url:string;
 }
 
 export interface IBarangayDetail {

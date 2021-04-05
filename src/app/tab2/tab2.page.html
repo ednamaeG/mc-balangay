@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="teal">
     <ion-title>
       MCC 101 E-learning
     </ion-title>
@@ -16,19 +16,25 @@
 <ion-content>
 
   <div *ngFor="let quiz of quizzes">
-    <ion-card (click)="openQuiz(quiz)">
+    <ion-card (click)="openQuiz(quiz)" color="light">
       <ion-card-header>
         <div style="float: left;">
+         <ion-text color="taupe">
           <h3> {{ quiz.title }} </h3>
-          <p>High Score : {{ quiz.total_score }} </p>
+          <p>High Score :  
+              {{ quiz.total_score }}
+           
+          </p>
+         </ion-text>
           <!-- <p *ngIf="quiz.progress == 1">Completed</p> -->
         </div>
         <div class="quiz-details">
 
           <!-- {{getPercentage(quiz.progress )}} -->
           <circle-progress [percent]="getPercentage(quiz.progress )" [radius]="34" [outerStrokeWidth]="8"
-            [innerStrokeWidth]="8" [space]="-10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'"
-            [animation]="true" [subtitle]="quiz.progress == 1 ? 'completed' : 'progress'" [titleFontSize]="14" [animationDuration]="300"></circle-progress>
+            [innerStrokeWidth]="8" [space]="-10" [outerStrokeColor]="'#1AC8DB'" [innerStrokeColor]="'#e7e8ea'"
+            [animation]="true" [subtitle]="quiz.progress == 1 ? 'completed' : 'progress'" [titleFontSize]="14"
+            [animationDuration]="300"></circle-progress>
         </div>
       </ion-card-header>
 

@@ -1,14 +1,15 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>{{data.name}}</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="teal">
+    <ion-title color="light">{{data.name}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
+  <!-- <img [src]="data.download_url"> -->
 </ion-header>
 
 <ion-content>
-  <!-- <img [src]="data.download_url"> -->
+
 
   <!-- <ion-list>
     <div *ngFor="let detail of data.details; let i=index"   >
@@ -22,7 +23,7 @@
     </div>
 
   </ion-list> -->
-  <ion-list>
+  <!-- <ion-list>
     <ion-card *ngFor="let detail of data.details; let i=index">
       <img src="https://picsum.photos/id/10/2500/1667">
       <ion-card-header>
@@ -37,16 +38,16 @@
           <p [innerHTML]="detail.content" class="initial-content"> </p>
         </div>
 
-        <!-- <div class="read-btn" style="float: right; text-align: right; padding: 2px;" > -->
+        
         <div style="position: absolute;
           top: -118px;
           right: 8px;">
-          <!-- <ion-button class="ion-text-capitalize" (click)="viewDetails(detail)">
+          <ion-button class="ion-text-capitalize" (click)="viewDetails(detail)">
             <ion-label>
               Start Reading &nbsp;
             </ion-label>
             <ion-icon name="arrow-forward-outline"  ></ion-icon>
-          </ion-button> -->
+          </ion-button>
 
           <ion-fab-button (click)="viewDetails(detail)">
             <ion-icon name="arrow-forward-outline" ></ion-icon>
@@ -55,5 +56,18 @@
         </div>
       </ion-card-content>
     </ion-card>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-card *ngFor="let detail of data.details; let i=index" size="6" (click)="viewDetails(detail)" color="misty">
+    <ion-card-content>
+      <div class="detail-container">
+        <ion-icon  style="font-size: 60px;" [src]="getIconName(detail.type).source" [color]="'taupe'"></ion-icon>
+       <ion-text color="taupe">
+        <h2 style="font-weight: 600;">{{detail.type}}</h2>
+       </ion-text>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
