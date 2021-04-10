@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
 
-  <ion-toolbar color="primary">
+  <ion-toolbar color="teal">
     <ion-searchbar inputmode="search" animated enterkeyhint="search" showCancelButton #searchBar
       (ionCancel)="closeModal()" (ionChange)="search($event)" (ionClear)="resetResults()">
     </ion-searchbar>
@@ -12,13 +12,16 @@
   <ng-template [ngIf]="results.length > 0">
     <div *ngFor="let result of results">
       <!-- <app-item [item]="result" (click)="openContent(result)"></app-item> -->
-      <ion-item (click)="openContent(result)">
+      <ion-item (click)="openContent(result)"  >
         <ion-thumbnail slot="start">
           <img [src]="result.logo_url">
         </ion-thumbnail>
-        <ion-label>
-          <h4>{{result.name}}</h4>
-          
+        <ion-label class="ion-text-wrap">
+          <h3><strong>{{result.name}}</strong></h3>
+          <!-- <div [innerHTML]="result.foundInfo.content" *ngIf="result.foundInfo" class="initial-content"> </div> -->
+          <div *ngIf="result.foundInfo">
+            <p [innerHTML]="result.foundInfo.content" class="initial-content"> </p>
+          </div>
         </ion-label>
       </ion-item>
     </div>

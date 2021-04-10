@@ -83,10 +83,6 @@ export class QuizViewPage implements OnInit {
   }
 
   select(i) {
-    
-    if (!this.currentQuestion.hasAnswer) {
-
-    this.currentQuestion.hasAnswer = true;
     this.currentQuestion.choices[i].selected = true;
     this.totalAnswered++;
     if (this.currentQuestion.choices[i].correct) {
@@ -99,7 +95,7 @@ export class QuizViewPage implements OnInit {
       this.nextPage();
     }, 300)
 
-    }
+
   }
 
 
@@ -170,7 +166,7 @@ export class QuizViewPage implements OnInit {
     quiz.percentage = Number(percentage.toFixed(2));
     const progress = this.totalAnswered / this.lastPage;
     quiz.progress = quiz.progress == 1 ? quiz.progress : Number(progress.toFixed(2))
-    console.log('percentage', quiz.percentage,quiz.progress)
+    console.log('percentage', quiz.percentage, quiz.progress)
     this.quizSvc.storeQuizzes(quizzes);
   }
 
@@ -183,7 +179,7 @@ export class QuizViewPage implements OnInit {
   }
 
   async confirmQuitAlert() {
-    const self= this;
+    const self = this;
     const alert = await this.alertCtrl.create({
       header: 'MCC 101 E-Learning',
       message: 'Are you sure you want to leave this quiz?',
@@ -193,7 +189,7 @@ export class QuizViewPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-           
+
           }
         }, {
           text: 'Yes',

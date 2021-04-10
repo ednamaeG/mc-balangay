@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-
+  slidesOptions = {
+    initialSlide: 0,
+    // freeMode: true,
+    // loop: true,
+    autoplay: true
+  };
   constructor() {}
 
 }

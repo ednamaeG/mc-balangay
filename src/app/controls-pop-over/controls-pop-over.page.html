@@ -1,0 +1,15 @@
+<div class="ion-padding">
+  <h4>Font Settings</h4>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="full" (click)="decreaseFont()" [disabled]="fontSize < 16" color="turquoise"> 
+        <ion-text color="light">Aa-</ion-text>
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="full" (click)="increaseFont()"  [disabled]="fontSize >= 30" color="turquoise">
+        <ion-text color="light">Aa+</ion-text>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</div>

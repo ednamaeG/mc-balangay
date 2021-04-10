@@ -28,6 +28,14 @@ const routes: Routes = [
   {
     path: 'politicians',
     loadChildren: () => import('./politicians/politicians.module').then( m => m.PoliticiansPageModule)
+  },
+  {
+    path: 'controls-pop-over',
+    loadChildren: () => import('./controls-pop-over/controls-pop-over.module').then( m => m.ControlsPopOverPageModule)
+  },
+  {
+    path: 'mabalacat-history',
+    loadChildren: () => import('./mabalacat-history/mabalacat-history.module').then( m => m.MabalacatHistoryPageModule)
   }
 
 ];

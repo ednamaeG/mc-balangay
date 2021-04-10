@@ -33,14 +33,7 @@ export class Tab1Page {
     });
   }
 
-  async getRandomPics() {
-    try {
-      const res = await this.http.get('https://picsum.photos/v2/list', {}, {});
-      return JSON.parse(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
+ 
 
   async getData(): Promise<IBarangay[]> {
     return await this.httpClient.get<IBarangay[]>('./assets/mocks/barangays-mock.json').toPromise();

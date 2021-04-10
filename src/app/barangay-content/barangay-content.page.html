@@ -4,6 +4,11 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="showControls($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>
     <ion-title class="ion-text-center" color="taupe">
@@ -31,7 +36,7 @@
     object-fit: cover;">
     </ion-slide>
   </ion-slides>
-  <div [innerHTML]="details.content" class="details ion-padding">
+  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}">
 
   </div>
 </ion-content>

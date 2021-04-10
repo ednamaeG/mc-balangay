@@ -16,26 +16,58 @@
       MCC 101 E-learning
     </ion-title>
   </ion-toolbar>
-
+  <ion-toolbar>
+    <ion-item lines="none" [routerLink]="['/mabalacat-history']">
+      <ion-thumbnail slot="start">
+        <img src="assets/barangay-logos/mabalacat-logo.png">
+      </ion-thumbnail>
+      <ion-title color="taupe">Mabalacat City</ion-title>
+    </ion-item>
+  </ion-toolbar>
+  <!-- <ion-toolbar>
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src="assets/barangay-logos/mabalacat-logo.png">
+      </ion-thumbnail>
+      <ion-title color="taupe">Mabalacat City</ion-title>
+    </ion-item>
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" style="text-align: center;">
   <ion-row>
-    <ion-col *ngFor="let barangay of barangayList; let i=index;" size="4">
-      <!-- <app-item [item]="item"  (click)="openContent(item)"></app-item> -->
+    <!-- <ion-col *ngFor="let barangay of barangayList; let i=index;" size="4">
+     
       <ion-card (click)="openContent(barangay)">
-      <div class="test-card">
-        <div class="logo" style="height:116px">
-          <img [src]="barangay.logo_url" style=" height: 120px;
+        <div class="test-card">
+          <div class="logo" style="height:116px">
+            <img [src]="barangay.logo_url" style=" height: 120px;
           width: 100%;
           object-fit: contain;" />
+          </div>
+       
+          <div class="text" style="text-align: center;">
+            <ion-text style="font-size: 11px; font-weight: bold; " color="taupe">{{ barangay.name }} </ion-text>
+          </div>
         </div>
-        <!-- <img [src]="barangay.download_url" /> -->
+      </ion-card>
+    </ion-col> -->
+    <ion-col *ngFor="let barangay of barangayList; let i=index;" size="4" class="ion-align-self-center">
+      <div (click)="openContent(barangay)">
+
+        <div class="logo">
+          <img [src]="barangay.logo_url" style=" height: 80px;
+          width: 80px;
+          object-fit: contain;" />
+        </div>
+
         <div class="text" style="text-align: center;">
           <ion-text style="font-size: 11px; font-weight: bold; " color="taupe">{{ barangay.name }} </ion-text>
         </div>
       </div>
-      </ion-card>
+
     </ion-col>
+
+
   </ion-row>
 </ion-content>
