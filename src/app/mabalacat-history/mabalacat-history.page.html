@@ -1,9 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>mabalacat-history</ion-title>
+  <ion-toolbar color="sky">
+    <ion-title>Mabalacat City</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+   
+  <ion-toolbar  >
+    <ion-title class="ion-text-center" color="olive">History</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true"class="ion-padding">
+  <div *ngIf="content">
+    <p [innerHTML]="content.history"></p>
+  </div>
 </ion-content>

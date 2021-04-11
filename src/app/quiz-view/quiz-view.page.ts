@@ -6,7 +6,7 @@ import { IQuestion, IQuiz } from '../interfaces/quiz';
 import { QuizService } from '../services/quiz.service';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { AudioService } from '../services/audio.service';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, IonSlides, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-quiz-view',
@@ -15,6 +15,13 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class QuizViewPage implements OnInit {
   @ViewChild('timer', { static: false }) private countdown: CountdownComponent;
+  @ViewChild('slider') slider: IonSlides;
+  slidesOptions = {
+    
+    // freeMode: true,
+    // loop: true,
+    allowTouchMove: false
+  };
   totalScore = 0;
   showResults = false;
   config: CountdownConfig;
@@ -42,12 +49,12 @@ export class QuizViewPage implements OnInit {
     this.currentQuestion = this.quizContent.questions[0];
     this.config = { leftTime: this.time, format: 'mm:ss' };
     this.quizContent.questions.forEach(question => this.totalPoints += question.points)
-    console.log('total points', this.totalPoints)
+    console.log('total points', this.totalPoints, this.quizContent)
   }
 
 
   async ngOnInit() {
-
+    
     const quiz: any = await this.getQuizzes()
     this.questions = quiz[0].questions;
     console.log(this.questions, quiz)
@@ -66,6 +73,7 @@ export class QuizViewPage implements OnInit {
 
   nextPage() {
     this.currentPage++;
+    this.slider.slideTo(this.currentPage)
     if (this.currentPage >= this.lastPage) {
       console.log(this.currentPage, this.lastPage)
 
@@ -82,22 +90,45 @@ export class QuizViewPage implements OnInit {
     this.setCurrentData()
   }
 
-  select(i) {
-    this.currentQuestion.choices[i].selected = true;
-    this.totalAnswered++;
-    if (this.currentQuestion.choices[i].correct) {
-      this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
-      this.totalScore += this.currentQuestion.points;
-      this.totalCorrectAnswers += 1;
-      console.log(this.totalCorrectAnswers)
+  _select(i) {
+    console.log('currentQuestion', this.quizContent.questions[this.currentPage])
+    if (!this.quizContent.questions[this.currentPage].hasAnswer) {
+      this.currentQuestion.choices[i].selected = true;
+      this.quizContent.questions[this.currentPage].hasAnswer = true;
+      this.totalAnswered++;
+      if (this.currentQuestion.choices[i].correct) {
+        this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
+        this.totalScore += this.currentQuestion.points;
+        this.totalCorrectAnswers += 1;
+        console.log(this.totalCorrectAnswers)
+      }
+      setTimeout(() => {
+        this.nextPage();
+      }, 300)
     }
-    setTimeout(() => {
-      this.nextPage();
-    }, 300)
+
 
 
   }
 
+
+  select(i) {
+    console.log('currentQuestion', this.quizContent.questions[this.currentPage])
+    if (!this.quizContent.questions[this.currentPage].hasAnswer) {
+      this.currentQuestion.choices[i].selected = true;
+      this.quizContent.questions[this.currentPage].hasAnswer = true;
+      this.totalAnswered++;
+      if (this.currentQuestion.choices[i].correct) {
+        this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
+        this.totalScore += this.currentQuestion.points;
+        this.totalCorrectAnswers += 1;
+        console.log(this.totalCorrectAnswers)
+      }
+      setTimeout(() => {
+        this.nextPage();
+      }, 300)
+    }
+  }
 
   handleTimer(e: CountdownEvent) {
     if (e.action == "start") {
@@ -136,6 +167,7 @@ export class QuizViewPage implements OnInit {
     this.showResults = false;
     this.shuffleQuestions()
     this.quizContent.questions.map((question) => {
+      question.hasAnswer = false;
       question.choices.forEach((choice) => {
         choice.selected = false;
       })

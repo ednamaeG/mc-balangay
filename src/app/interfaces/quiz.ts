@@ -14,6 +14,7 @@ export interface IQuestion {
     question: string;
     points: number;
     choices: IChoice[];
+    hasAnswer?:boolean;
 }
 
 export interface IChoice {

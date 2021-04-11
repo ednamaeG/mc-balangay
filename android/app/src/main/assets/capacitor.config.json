@@ -6,12 +6,11 @@
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 1000
     }
   },
   "cordova": {},
   "server": {
-    "url": "http://192.168.100.204:8101",
     "cleartext": true
   }
 }

@@ -1,0 +1,7 @@
+generate splash 
+https://stackoverflow.com/questions/60549868/ionic-5-how-to-replace-default-icon-and-splash-screen-image-and-generate-resou
+foreground
+background icon 432x432
+icon - 1024x1024
+splash 2732x2732
+cordova-res android --skip-config --copy

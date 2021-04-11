@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { BarangayContentPageRoutingModule } from './barangay-content-routing.module';
 
 import { BarangayContentPage } from './barangay-content.page';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BarangayContentPageRoutingModule
+    BarangayContentPageRoutingModule,
+    NgxIonicImageViewerModule
   ],
   declarations: [BarangayContentPage]
 })

@@ -1,5 +1,5 @@
 <ion-header [translucent]="true" class="ion-no-border">
-  <ion-toolbar color="teal">
+  <ion-toolbar color="sky">
     <ion-buttons slot="start" *ngIf="!showResults">
       <ion-button slot="icon-only" (click)="quitQuiz()">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -17,61 +17,64 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <ion-row *ngIf="!showResults">
-    <ion-col size="4" style="text-align:center;">
-      <ion-text color="taupe">
-        <h3> {{currentPage + 1}} / {{lastPage}} </h3>
-        Questions
-      </ion-text>
-    </ion-col>
-    <ion-col size="4" style="text-align: center;">
-      <div style="margin-top: 2%;position: relative; top: 22px; ">
-        <countdown #timer class="timer" [config]="config" (event)="handleTimer($event)"></countdown>
-      </div>
-    </ion-col>
-    <ion-col size="4" style="text-align:center;">
-      <ion-text color="taupe">
-        <h3> {{ totalScore }} </h3>
-        Points
-      </ion-text>
-    </ion-col>
-  </ion-row>
-  <div class="spacer"></div>
-
-  <div *ngIf="currentQuestion">
-    <ion-card>
-      <ion-text color="taupe">
-        <p class="ion-padding" style="font-size: 16px;"> {{currentQuestion.question}} </p>
-      </ion-text>
-    </ion-card>
-
-    <div class="spacer"></div>
-    <div class="choices">
-      <div *ngFor="let choice  of currentQuestion.choices; let i= index">
-        <!-- <ion-button expand="block" size="large" fill="outline" [disabled]="currentData.isOpen && !choice.selected"
-          [color]="choice.selected ? 'primary' :'dark'" (click)="select(i)">  <ion-text class="ion-text-wrap">
-            
-          </ion-text></ion-button> -->
-        <ion-card [color]="choice.selected ? (choice.correct? 'success' : 'danger' ) : 'light'" (click)="select(i)">
-          <ion-card-header>
-            <ion-badge color="turquoise" class="choice-letter">
-              <ion-text color="light"> {{letters[i]}}</ion-text>
-            </ion-badge>
-            <ion-text color="taupe"><span> {{choice.title}}</span></ion-text>
-            <div class="answer-details">
-
-              <ion-icon [name]="choice.correct? 'checkmark-circle' : 'close'" style="font-size: 24px;" color="light"
-                *ngIf="choice.selected"></ion-icon>
-
+  <ion-slides #slider [options]="slidesOptions" *ngIf="!showResults">
+    <ion-slide *ngFor="let item of quizContent.questions">
+      <div style="width: 100%;">
+        <ion-row>
+          <ion-col size="4" style="text-align:center;">
+            <ion-text color="taupe">
+              <h3> {{currentPage + 1}} / {{lastPage}} </h3>
+              Questions
+            </ion-text>
+          </ion-col>
+          <ion-col size="4" style="text-align: center;">
+            <div style="margin-top: 2%;position: relative; top: 22px; ">
+              <countdown #timer class="timer" [config]="config" (event)="handleTimer($event)"></countdown>
             </div>
-          </ion-card-header>
+          </ion-col>
+          <ion-col size="4" style="text-align:center;">
+            <ion-text color="taupe">
+              <h3> {{ totalScore }} </h3>
+              Points
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <div class="spacer"></div>
 
+        <div *ngIf="item">
+          <ion-card>
+            <ion-text color="taupe">
+              <p class="ion-padding" style="font-size: 16px;"> {{item.question}} </p>
+            </ion-text>
+          </ion-card>
 
-        </ion-card>
-
+          <div class="spacer"></div>
+          <div class="choices">
+            <div *ngFor="let choice  of item.choices; let i= index">
+              <!-- <ion-button expand="block" size="large" fill="outline" [disabled]="currentData.isOpen && !choice.selected"
+              [color]="choice.selected ? 'primary' :'dark'" (click)="select(i)">  <ion-text class="ion-text-wrap">
+                
+              </ion-text></ion-button> -->
+              <ion-card [color]="choice.selected ? (choice.correct? 'success' : 'danger' ) : 'light'"
+                (click)="select(i)" class="ion-text-left">
+                <ion-card-header>
+                  <ion-badge color="turquoise" class="choice-letter">
+                    <ion-text color="light"> {{letters[i]}}</ion-text>
+                  </ion-badge>
+                  <ion-text color="taupe"><span> {{choice.title}}</span></ion-text>
+                  <div class="answer-details">
+                    <ion-icon [name]="choice.correct? 'checkmark-circle' : 'close'" style="font-size: 24px;"
+                      color="light" *ngIf="choice.selected"></ion-icon>
+                  </div>
+                </ion-card-header>
+              </ion-card>
+ 
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </ion-slide>
+  </ion-slides>
 
   <div class="ion-text-center ion-padding" *ngIf="showResults">
     <ion-text color="taupe">

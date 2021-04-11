@@ -4,6 +4,7 @@ import { PopoverController } from '@ionic/angular';
 import { ControlsComponent } from '../components/controls/controls.component';
 import { ControlsPopOverPage } from '../controls-pop-over/controls-pop-over.page';
 import { ControlsService } from '../services/controls.service';
+import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 @Component({
   selector: 'app-barangay-content',
@@ -20,7 +21,7 @@ export class BarangayContentPage implements OnInit {
     autoplay: true
   };
   fontSize:any;
-  constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController,private controlSvc:ControlsService) { }
+  constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController,private controlSvc:ControlsService,private photoViewer:PhotoViewer) { }
 
   ngOnInit() {
     this.details = JSON.parse(this.route.snapshot.params.data);
@@ -46,6 +47,12 @@ export class BarangayContentPage implements OnInit {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     console.log('ondestroyed')
+  }
+
+  viewPhoto(photoUrl){
+    console.log('url',photoUrl)
+    this.photoViewer.show(photoUrl, 'My image title', {share: false});
+
   }
 
 }

@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="teal">
-    <ion-title color="light">{{data.name}}</ion-title>
+  <ion-toolbar color="sky">
+    <ion-title  >{{data.name}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
@@ -58,11 +58,11 @@
     </ion-card>
   </ion-list> -->
 
-  <ion-card *ngFor="let detail of data.details; let i=index" size="6" (click)="viewDetails(detail)" color="misty">
+  <ion-card *ngFor="let detail of data.details; let i=index" size="6" (click)="viewDetails(detail)"  >
     <ion-card-content>
       <div class="detail-container">
-        <ion-icon  style="font-size: 60px;" [src]="getIconName(detail.type).source" [color]="'taupe'"></ion-icon>
-       <ion-text color="taupe">
+        <ion-icon  style="font-size: 60px;" [src]="getIconName(detail.type).source" [color]="'olive'"></ion-icon>
+       <ion-text color="olive">
         <h2 style="font-weight: 600;">{{detail.type}}</h2>
        </ion-text>
       </div>

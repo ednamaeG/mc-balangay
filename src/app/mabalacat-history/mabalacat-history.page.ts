@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mabalacat-history.page.scss'],
 })
 export class MabalacatHistoryPage implements OnInit {
+  content:any;
+  constructor(private httpClient:HttpClient) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.content = await  this.getData()
+    console.log('content',this.content)
   }
 
+  async getData(): Promise<any> {
+    return await this.httpClient.get<any>('./assets/mocks/mabalacat-details.json').toPromise();
+  }
 }

@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="teal">
+  <ion-toolbar color="sky">
     <ion-title> Barangay {{barangayName}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -11,32 +11,44 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title class="ion-text-center" color="taupe">
+    <ion-title class="ion-text-center" color="olive">
       {{details.type}}
     </ion-title>
   </ion-toolbar>
-  
+
 </ion-header>
 
-<ion-content >
-  <ion-slides [options]="slidesOptions" pager="true">
+<ion-content>
+
+
+  <ion-slides [options]="slidesOptions" pager="true" *ngIf="details.images.length < 1">
     <ion-slide style="height: 274px;">
-      <img src="assets/mock-imgs/header-1.jpg" style="
+      <!-- <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
-    object-fit: cover;">
+    object-fit: cover;" imageViewer > -->
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-1.jpg"></ion-img-viewer>
     </ion-slide>
     <ion-slide style="height: 274px;">
-      <img src="assets/mock-imgs/header-2.jpg" style="
+      <!-- <img src="assets/mock-imgs/header-2.jpg" style="
     width: 100%;
-    object-fit: cover;">
+    object-fit: cover;" (click)="viewPhoto('assets/mock-imgs/header-2.jpg')"> -->
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-2.jpg"></ion-img-viewer>
     </ion-slide>
     <ion-slide style="height: 274px;">
-      <img src="assets/mock-imgs/header-3.jpg" style=" 
+      <!-- <img src="assets/mock-imgs/header-3.jpg" style=" 
     width: 100%;
-    object-fit: cover;">
+    
+    object-fit: cover;" (click)="viewPhoto('assets/mock-imgs/header-3.jpg')"> -->
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-3.jpg"></ion-img-viewer>
     </ion-slide>
+  </ion-slides>
+  <ion-slides [options]="slidesOptions" pager="true" *ngIf="details.images">
+    <ion-slide style="height: 274px;" *ngFor="let img of details.images">
+      <ion-img-viewer scheme="dark" style="height: 274px;" [src]="img"></ion-img-viewer>
+    </ion-slide>
+    
+
   </ion-slides>
   <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}">
 
   </div>
-</ion-content>
