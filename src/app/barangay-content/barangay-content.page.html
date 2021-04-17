@@ -21,7 +21,8 @@
 <ion-content>
 
 
-  <ion-slides [options]="slidesOptions" pager="true" *ngIf="details.images.length < 1">
+  <ion-slides [options]="slidesOptions" [pager]="details.images.length > 1 ? true : false"
+    *ngIf="details.images.length < 1">
     <ion-slide style="height: 274px;">
       <!-- <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
@@ -46,9 +47,7 @@
     <ion-slide style="height: 274px;" *ngFor="let img of details.images">
       <ion-img-viewer scheme="dark" style="height: 274px;" [src]="img"></ion-img-viewer>
     </ion-slide>
-    
+
 
   </ion-slides>
-  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}">
-
-  </div>
+  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>

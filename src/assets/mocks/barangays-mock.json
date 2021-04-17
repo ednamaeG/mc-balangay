@@ -185,15 +185,45 @@
             },
             {
                 "type": "Branding",
-                "content": "<p><strong>Vision</strong></p><p>We envision Barangay Camachiles as a peaceful community, where love, goodwill and fair justice consistently prevail. We seek to build a God-fearing and humane community where everyone is caring, disciplined and gearing towards progress.</p><p><strong>Mission</strong></p><p>To become an effective and conscientious administration. To appropriately and effectively serve and deliver proper services to the barangay and encourage every constituents to maintain orderliness and cleanliness of the community towards further progress.</p>",
+                "content": "<p><strong>6 HUMAN</strong> - Symbolized the 6 Purok of Camachiles.</p><p><strong>JUSTICE SALE LOGO</strong> -Symobolized the fair justice and treatment to all.</p><p><strong>UNITY CHAIN&nbsp;</strong>- Symbolized the <strong>UNITY,SOLIDARITY and TEAMWORK</strong>.</p><p><strong>CAMACHILE TREE</strong> - Symbolized the history of CAMACHILES.</p><p><strong>Vision</strong></p><p>We envision Barangay Camachiles as a peaceful community, where love, goodwill and fair justice consistently prevail. We seek to build a God-fearing and humane community where everyone is caring, disciplined and gearing towards progress.</p><p><strong>Mission</strong></p><p>To become an effective and conscientious administration. To appropriately and effectively serve and deliver proper services to the barangay and encourage every constituents to maintain orderliness and cleanliness of the community towards further progress.</p>",
                 "images": [
                     "assets/barangay-logos/camachiles.png"
                 ]
             },
             {
                 "type": "Politicians",
-                "content": "Sample Content",
-                "images": []
+                "content": "<ul><li>Hon. Manuel M. Dizon &ndash; 1960 - 1967</li><li>Hon. Marcelino P. Tique &ndash; 1967 - 1972</li><li>Hon. Dionisio P. Magsino &ndash; 1973 - 1982</li><li>Hon. Pacifico F. Gonzales &ndash; 1983 - 1985</li><li>Hon. Labislao S. Miranda &ndash; 1985 - 1993</li><li>Hon. Abelarbo L. Magsino &ndash; 1994 - 2007</li><li>Hon. Jessie L. Duran &ndash; 2007 &ndash; up to present</li></ul>",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Manuel M. Dizon",
+                        "year": "1960 - 1967"
+                    },
+                    {
+                        "name": "Hon. Marcelino P. Tique",
+                        "year": "1967 - 1972"
+                    },
+                    {
+                        "name": "Hon. Dionisio P. Magsino",
+                        "year": "1973 - 1982"
+                    },
+                    {
+                        "name": "Hon. Pacifico F. Gonzales ",
+                        "year": "1983 - 1985"
+                    },
+                    {
+                        "name": "Hon. Labislao S. Miranda ",
+                        "year": "1985 - 1993"
+                    },
+                    {
+                        "name": "Hon. Abelarbo L. Magsino ",
+                        "year": "1994 - 2007"
+                    },
+                    {
+                        "name": "Hon. Jessie L. Duran ",
+                        "year": "2007 – up to present"
+                    }
+                ]
             }
         ]
     },
@@ -259,7 +289,37 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Lope R. Presco",
+                        "year": "1967- 1979"
+                    },
+                    {
+                        "name": "Hon. Francisco Salunga",
+                        "year": "1979 – 1989"
+                    },
+                    {
+                        "name": "Hon. Benjamin M. Manlapaz",
+                        "year": "1989 – 2002"
+                    },
+                    {
+                        "name": "Hon. Louie P. Cunanan",
+                        "year": "2002 – 2007"
+                    },
+                    {
+                        "name": "Hon. Marino G. Morales Jr.",
+                        "year": "2007 – 2013"
+                    },
+                    {
+                        "name": "Hon. Dr. Oscar P. Aurelio",
+                        "year": "2013 – 2019"
+                    },
+                    {
+                        "name": "Hon. Glenn Derrick A. Llanos Dee ",
+                        "year": "2019 up to present"
+                    }
+                ]
             }
         ]
     },
@@ -325,7 +385,41 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Eugenio Pare",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Juanito Annunciacion",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Eulogio Nuguid",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. AKA Cabyong",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Sotero Pare",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Daniel Bulaon",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Antonio P. Viray",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Marjorie Grace M. Sambo",
+                        "year": "Present"
+                    }
+                ]
             }
         ]
     },
@@ -391,7 +485,37 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Isabelo Gozun",
+                        "year": "1967 – 1971"
+                    },
+                    {
+                        "name": "Hon. Tomas Garcia",
+                        "year": "1972 – 1986"
+                    },
+                    {
+                        "name": "Hon. Joselito L. Alegre",
+                        "year": "1986 – 1997"
+                    },
+                    {
+                        "name": "Hon. Jesus M. Rivera",
+                        "year": "1997-2005"
+                    },
+                    {
+                        "name": "Hon. Jesus M. Rivera",
+                        "year": "2007-2010"
+                    },
+                    {
+                        "name": "Hon. Emilio S. David, Jr.",
+                        "year": "2010-2013"
+                    },
+                    {
+                        "name": "Hon. Elmer R. Calaguas",
+                        "year": "2018 - Present"
+                    }
+                ]
             }
         ]
     },
@@ -424,7 +548,17 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Marcos Y. Caligagan",
+                        "year": "1997 - 2010"
+                    },
+                    {
+                        "name": "Hon. Nicolas De Guzman, Jr",
+                        "year": "2010 -2013"
+                    }
+                ]
             }
         ]
     },
@@ -556,7 +690,13 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Jose Noel A. Dimarucut",
+                        "year": "2010 - Present"
+                    }
+                ]
             }
         ]
     },
@@ -853,7 +993,25 @@
             {
                 "type": "Politicians",
                 "content": "Sample Content",
-                "images": []
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Esteban C. Liwanag",
+                        "year": "1994 – 1997"
+                    },
+                    {
+                        "name": "Hon. Esteban C. Liwanag",
+                        "year": "2002 - 2005"
+                    },
+                    {
+                        "name": "Hon. Rizaldo S. Garcia",
+                        "year": "2007 - 2016"
+                    },
+                    {
+                        "name": "Hon. Soraida O. Cabuang",
+                        "year": "2018 – up to present"
+                    }
+                ]
             }
         ]
     },

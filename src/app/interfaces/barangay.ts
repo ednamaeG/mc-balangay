@@ -8,9 +8,16 @@ export interface IBarangay {
     websiteLink: string;
     details: IBarangayDetail[];
     logo_url:string;
+     
 }
 
 export interface IBarangayDetail {
     type: string;
     content: string;
+    politicians?:IPolitician[]
+}
+
+export interface IPolitician{
+    name:string;
+    year:string;
 }

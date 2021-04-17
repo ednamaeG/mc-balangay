@@ -27,15 +27,22 @@ export class Tab2Page {
   async ngOnInit(){
     // add comparison for updated/newly inserted quizzes /
     const data = await this.quizSvc.getQuizzes();
-    if(!data){
-      const quizzes = await this.getQuizzes();
-      const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
-      this.quizzes = quizzes;
-      this.quizSvc.quizzes$.next(quizzes);
-    }else{
-      this.quizSvc.quizzes$.next(data);
-      this.quizzes = this.quizSvc.quizzes$.getValue()
-    }
+    // if(!data){
+    //   const quizzes = await this.getQuizzes();
+    //   const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
+    //   this.quizzes = quizzes;
+    //   this.quizSvc.quizzes$.next(quizzes);
+    // }else{
+    //   this.quizSvc.quizzes$.next(data);
+    //   this.quizzes = this.quizSvc.quizzes$.getValue()
+    // }
+
+    // for testing
+    const quizzes = await this.getQuizzes();
+    const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
+    this.quizzes = quizzes;
+    this.quizSvc.quizzes$.next(quizzes);
+
     console.log('Data',data)
     console.log(this.quizzes)
   }

@@ -47,8 +47,9 @@ export class ContentPage implements OnInit {
 
   viewDetails(detail) {
     const data = JSON.stringify(detail);
-
-    this.router.navigate(['/barangay-content', { data: data, name: this.data.name }])
+    console.log(detail)
+    const routeName = detail.type == 'Politicians' ? '/politicians' : '/barangay-content'
+    this.router.navigate([routeName, { data: data, name: this.data.name }])
   }
 
   getIconName(type) {

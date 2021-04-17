@@ -16,6 +16,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+  <div *ngIf="quizContent.questions.length <= 0" style="text-align: center;">
+    <ion-text>
+      <ion-icon name="warning" style="font-size: 160px;" color="warning"></ion-icon>
+      <h3> No Questions Available Yet</h3>
+    </ion-text>
+  </div>
 
   <ion-slides #slider [options]="slidesOptions" *ngIf="!showResults">
     <ion-slide *ngFor="let item of quizContent.questions">
@@ -68,7 +74,7 @@
                   </div>
                 </ion-card-header>
               </ion-card>
- 
+
             </div>
           </div>
         </div>
@@ -103,6 +109,8 @@
     </ion-card>
 
   </div>
+
+
 </ion-content>
 <!-- <ion-footer>
   <ion-toolbar>
