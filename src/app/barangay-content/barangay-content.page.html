@@ -19,31 +19,32 @@
 </ion-header>
 
 <ion-content>
-
-
   <ion-slides [options]="slidesOptions" [pager]="details.images.length > 1 ? true : false"
     *ngIf="details.images.length < 1">
-    <ion-slide style="height: 274px;">
+    <ion-slide>
       <!-- <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
     object-fit: cover;" imageViewer > -->
-      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-1.jpg"></ion-img-viewer>
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-1.jpg" class="image-viewer"
+       ></ion-img-viewer>
     </ion-slide>
-    <ion-slide style="height: 274px;">
+    <ion-slide>
       <!-- <img src="assets/mock-imgs/header-2.jpg" style="
     width: 100%;
     object-fit: cover;" (click)="viewPhoto('assets/mock-imgs/header-2.jpg')"> -->
-      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-2.jpg"></ion-img-viewer>
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-2.jpg"
+       ></ion-img-viewer>
     </ion-slide>
-    <ion-slide style="height: 274px;">
+    <ion-slide>
       <!-- <img src="assets/mock-imgs/header-3.jpg" style=" 
     width: 100%;
     
     object-fit: cover;" (click)="viewPhoto('assets/mock-imgs/header-3.jpg')"> -->
-      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-3.jpg"></ion-img-viewer>
+      <ion-img-viewer scheme="dark" src="assets/mock-imgs/header-3.jpg" class="image-viewer"
+       ></ion-img-viewer>
     </ion-slide>
   </ion-slides>
-  <ion-slides [options]="slidesOptions" pager="true" *ngIf="details.images">
+  <ion-slides [options]="slidesOptions" [pager]="details.images.length > 1 ? true : false" *ngIf="details.images">
     <ion-slide style="height: 274px;" *ngFor="let img of details.images">
       <ion-img-viewer scheme="dark" style="height: 274px;" [src]="img"></ion-img-viewer>
     </ion-slide>

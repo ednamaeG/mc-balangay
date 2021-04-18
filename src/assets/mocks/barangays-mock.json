@@ -172,6 +172,16 @@
         "logo_url": "assets/barangay-logos/camachiles.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/camachiles/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/camachiles/elementary.jpg",
+                "title": "Elementary School"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -268,6 +278,20 @@
         "logo_url": "assets/barangay-logos/dau.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/dau/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/dau/kumamoto-seinan-hall.jpg",
+                "title": "Kumamoto Seinan Hall"
+            },
+            {
+                "url": "assets/barangay-photos/dau/rotary.jpg",
+                "title": "Rotary Club"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -364,6 +388,20 @@
         "logo_url": "assets/barangay-logos/duquit.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/duquit/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/duquit/child-dev-center.jpg",
+                "title": "Child Development Center"
+            },
+            {
+                "url": "assets/barangay-photos/duquit/programs-assistance.jpg",
+                "title": "Programs Assistance and Implementing Office"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -431,6 +469,16 @@
         "logo_url": "assets/barangay-logos/lakandula.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/lakandula/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/lakandula/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -464,6 +512,12 @@
         "logo_url": "assets/barangay-logos/mabiga.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mabiga/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -527,6 +581,24 @@
         "logo_url": "assets/barangay-logos/macapagal.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/macapagal-village/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/health-center.jpg",
+                "title": "Health Center"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/church.jpg",
+                "title": "Barangay Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -669,6 +741,16 @@
         "logo_url": "assets/barangay-logos/mawaque.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mawaque/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/mawaque/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
         "details": [
             {
                 "type": "History",
@@ -972,6 +1054,24 @@
         "logo_url": "assets/barangay-logos/sapangbiabas.png",
         "facebookLink": "",
         "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/sapang-biabas/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/chapel.jpg",
+                "title": "Barangay Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/hemodialysis-center.jpg",
+                "title": "Hemodialysis Center"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/entrance.jpg",
+                "title": "Barangay Entrance"
+            }
+        ],
         "details": [
             {
                 "type": "History",

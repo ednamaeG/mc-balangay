@@ -16,9 +16,10 @@ export class BarangayContentPage implements OnInit {
   barangayName: string;
   slidesOptions = {
     initialSlide: 0,
+    autoHeight:true,
     // freeMode: true,
-    // loop: true,
-    autoplay: true
+    autoplay: true,
+    loop:false
   };
   fontSize:any;
   constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController,private controlSvc:ControlsService,private photoViewer:PhotoViewer) { }

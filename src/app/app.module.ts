@@ -15,6 +15,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 // import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+ 
+
 
 @NgModule({
   declarations: [AppComponent],

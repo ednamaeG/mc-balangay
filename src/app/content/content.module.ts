@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ContentPageRoutingModule } from './content-routing.module';
 
 import { ContentPage } from './content.page';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ContentPageRoutingModule
+    ContentPageRoutingModule,
+    NgxIonicImageViewerModule
   ],
   declarations: [ContentPage]
 })

@@ -17,36 +17,40 @@ export class Tab2Page {
   totalScore = 0;
   showResults = false;
   config: CountdownConfig;
-  quizzes:IQuiz[] = [];
- 
+  quizzes: IQuiz[] = [];
+
   currentPage = 0;
   lastPage = 0;
-  constructor(private httpClient: HttpClient,private router:Router,private quizSvc:QuizService) {
+  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService) {
   }
 
-  async ngOnInit(){
+  async ngOnInit() {
     // add comparison for updated/newly inserted quizzes /
     const data = await this.quizSvc.getQuizzes();
-    // if(!data){
-    //   const quizzes = await this.getQuizzes();
-    //   const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
-    //   this.quizzes = quizzes;
-    //   this.quizSvc.quizzes$.next(quizzes);
-    // }else{
-    //   this.quizSvc.quizzes$.next(data);
-    //   this.quizzes = this.quizSvc.quizzes$.getValue()
-    // }
+    if (!data) {
+      // const quizzes = await this.getQuizzes();
+      let quizzes = await this.getQuizzes();
+      quizzes = quizzes.filter(quiz => quiz.questions.length > 0);
+      const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
+      this.quizzes = quizzes;
+      this.quizSvc.quizzes$.next(quizzes);
+    } else {
+      this.quizSvc.quizzes$.next(data);
+      this.quizzes = this.quizSvc.quizzes$.getValue()
+    }
 
     // for testing
-    const quizzes = await this.getQuizzes();
-    const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
-    this.quizzes = quizzes;
-    this.quizSvc.quizzes$.next(quizzes);
+    // let quizzes = await this.getQuizzes();
+    // quizzes = quizzes.filter(quiz => quiz.questions.length > 0);
+    // const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
+    // this.quizzes = quizzes;
+    // this.quizSvc.quizzes$.next(quizzes);
 
-    console.log('Data',data)
+
+    console.log('Data', data)
     console.log(this.quizzes)
   }
-  
+
   // nextPage() {
   //   this.currentPage++;
 
@@ -66,21 +70,21 @@ export class Tab2Page {
   //   this.currentPage--;
   //   this.setCurrentData()
   // }
- 
+
   async getQuizzes() {
     return await this.httpClient.get<IQuiz[]>('./assets/mocks/quizzes-mock.json').toPromise();
   }
 
-  openQuiz(quiz){
+  openQuiz(quiz) {
     const quizContent = JSON.stringify(quiz)
-    this.router.navigate(['/quiz-view', {data:quizContent}])
+    this.router.navigate(['/quiz-view', { data: quizContent }])
   }
 
-  getPercentage(progress){
+  getPercentage(progress) {
     let percentage = progress * 100;
-     
-    return Number(percentage.toFixed(1)) ;
-     
+
+    return Number(percentage.toFixed(1));
+
   }
-  
+
 }

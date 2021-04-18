@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IBarangay } from '../interfaces/barangay';
+import {slideOpts} from '../animations/slideAnimations'
+import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-content',
@@ -7,43 +11,20 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./content.page.scss'],
 })
 export class ContentPage implements OnInit {
-  data: any;
-  items =
-    [
-      {
-        type: "History",
-        content: "Sample Content",
-        isOpen: false,
-        // thumbnail:"https://blog.udemy.com/wp-content/uploads/2014/05/bigstock-History-56161577.jpg"
-      },
-      {
-        type: "First Family Residence",
-        content: "Sample Content",
-        isOpen: false
+  data: IBarangay;
 
-      },
-      {
-        type: "Fiesta",
-        content: "Sample Content",
-        isOpen: false,
-      }, {
-        type: "Branding",
-        content: "Sample Content",
-        isOpen: false
-      }
-    ];
-
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  slideOptions = slideOpts;
+  constructor(private route: ActivatedRoute, private router: Router,private modalController:ModalController) { }
 
   ngOnInit() {
     const params = this.route.snapshot.params;
     this.data = JSON.parse(params.content);
-    console.log('content', this.data);
+     
   }
 
-  openContent(i) {
-    this.items[i].isOpen = !this.items[i].isOpen
-  }
+  // openContent(i) {
+  //   this.items[i].isOpen = !this.items[i].isOpen
+  // }
 
   viewDetails(detail) {
     const data = JSON.stringify(detail);
@@ -70,5 +51,22 @@ export class ContentPage implements OnInit {
     } if (type.toLowerCase() == 'branding') {
       return { source: 'assets/icon/poster.svg', color: '' }
     }
+  }
+
+  async openViewer(photo){
+    console.log('view photo')
+    const modal = await this.modalController.create({
+      component: ViewerModalComponent,
+      componentProps: {
+        src: photo.url,
+        title:photo.title,
+        scheme:'dark'
+      },
+      cssClass: 'ion-img-viewer',
+      keyboardClose: true,
+      showBackdrop: true
+    });
+ 
+    return await modal.present();
   }
 }

@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="sky">
-    <ion-title  >{{data.name}}</ion-title>
+    <ion-title>{{data.name}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
@@ -9,8 +9,22 @@
 </ion-header>
 
 <ion-content>
-
-
+  <ion-slides [options]="slideOptions">
+    <ion-slide style="height: 274px;" *ngFor="let photo of data.photos">
+      <!-- <div>
+        <ion-img-viewer scheme="dark" [src]="photo.url" [title]="photo.title" ></ion-img-viewer>
+        <div class="img-title">
+          {{ photo.title }}
+        </div>
+      </div> -->
+      <div >
+        <img  [src]="photo.url" (click)="openViewer(photo)" > 
+        <div class="img-title">
+          {{ photo.title }}
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
   <!-- <ion-list>
     <div *ngFor="let detail of data.details; let i=index"   >
       <ion-item lines="full" (click)="viewDetails(detail)">
@@ -58,13 +72,13 @@
     </ion-card>
   </ion-list> -->
 
-  <ion-card *ngFor="let detail of data.details; let i=index" size="6" (click)="viewDetails(detail)"  >
+  <ion-card *ngFor="let detail of data.details; let i=index" size="6" (click)="viewDetails(detail)">
     <ion-card-content>
       <div class="detail-container">
-        <ion-icon  style="font-size: 60px;" [src]="getIconName(detail.type).source" [color]="'olive'"></ion-icon>
-       <ion-text color="olive">
-        <h2 style="font-weight: 600;">{{detail.type}}</h2>
-       </ion-text>
+        <ion-icon style="font-size: 60px;" [src]="getIconName(detail.type).source" [color]="'olive'"></ion-icon>
+        <ion-text color="olive">
+          <h2 style="font-weight: 600;">{{detail.type}}</h2>
+        </ion-text>
       </div>
     </ion-card-content>
   </ion-card>

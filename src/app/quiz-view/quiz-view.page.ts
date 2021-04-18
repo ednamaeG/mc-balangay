@@ -17,11 +17,12 @@ export class QuizViewPage implements OnInit {
   @ViewChild('timer', { static: false }) private countdown: CountdownComponent;
   @ViewChild('slider') slider: IonSlides;
   slidesOptions = {
-    
+
     // freeMode: true,
     // loop: true,
     allowTouchMove: false
   };
+
   totalScore = 0;
   showResults = false;
   config: CountdownConfig;
@@ -54,7 +55,7 @@ export class QuizViewPage implements OnInit {
 
 
   async ngOnInit() {
-    
+
     const quiz: any = await this.getQuizzes()
     this.questions = quiz[0].questions;
     console.log(this.questions, quiz)
