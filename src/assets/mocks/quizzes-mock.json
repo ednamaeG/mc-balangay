@@ -1013,7 +1013,7 @@
                 "choices": [
                     {
                         "title": "Dela Rosa Family",
-                        "correct": true
+                        "correct": false
                     },
                     {
                         "title": "De Jesus Family",
@@ -1021,7 +1021,7 @@
                     },
                     {
                         "title": "Dela Cruz Family",
-                        "correct": false
+                        "correct": true
                     }
                 ]
             }
@@ -1029,7 +1029,7 @@
     },
     {
         "id": 23,
-        "title": "Barangay Santa Ines",
+        "title": "Barangay Santa Maria",
         "total_score": 0,
         "percentage": 0,
         "progress": 0,
@@ -1292,7 +1292,7 @@
                         "correct": false
                     },
                     {
-                        "title": "Ben Pangilinan",
+                        "title": "Ben Pangan",
                         "correct": true
                     },
                     {

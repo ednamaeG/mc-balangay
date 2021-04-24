@@ -19,6 +19,7 @@ export class ContentPage implements OnInit {
   ngOnInit() {
     const params = this.route.snapshot.params;
     this.data = JSON.parse(params.content);
+    this.slideOptions.autoHeight = true;
      
   }
 

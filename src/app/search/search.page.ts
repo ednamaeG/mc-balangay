@@ -71,14 +71,18 @@ export class SearchPage implements OnInit {
 
     if (content.foundInfo) {
       console.log(content.foundInfo)
-      const data = JSON.stringify(content.foundInfo)
-      // this.router.navigate(['/tabs/tab1/content',{content:data}])
-      this.router.navigate(['/barangay-content', { data: data, name: content.name }])
-
-    } else {
+      const found = JSON.stringify(content.foundInfo)
       const data = JSON.stringify(content)
-      this.router.navigate(['/tabs/tab1/content', { content: data }])
-    }
+      console.log('data',content)
+      // this.router.navigate(['/tabs/tab1/content',{content:data}])
+      // this.router.navigate(['/barangay-content', { data: data, name: content.name }])
+      this.router.navigate(['/barangay', { content: data }])
+
+     }
+      // else {
+    //   const data = JSON.stringify(content)
+    //   this.router.navigate(['/tabs/tab1/content', { content: data }])
+    // }
 
   }
 

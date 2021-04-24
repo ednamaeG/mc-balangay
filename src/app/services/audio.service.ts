@@ -8,9 +8,9 @@ export class AudioService {
 
   constructor(private nativeAudio:NativeAudio) { }
 
-  async initSounds(id){
+  async initSounds(id,url){
     // correct answer
-    await this.nativeAudio.preloadSimple(id, 'assets/sounds/correct_answer.mp3'); 
+    await this.nativeAudio.preloadSimple(id,url); 
 
   }
 

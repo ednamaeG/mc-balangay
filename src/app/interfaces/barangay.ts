@@ -8,13 +8,15 @@ export interface IBarangay {
     websiteLink: string;
     details: IBarangayDetail[];
     logo_url: string;
-    photos: IPhoto[]
+    photos: IPhoto[];
+    foundInfo?:IBarangayDetail;
 }
 
 export interface IBarangayDetail {
     type: string;
     content: string;
-    politicians?: IPolitician[]
+    politicians?: IPolitician[];
+    images?:IPhoto[]
 }
 
 export interface IPolitician {
@@ -24,5 +26,5 @@ export interface IPolitician {
 
 export interface IPhoto {
     url: string;
-    title: string;
+    title?: string;
 }

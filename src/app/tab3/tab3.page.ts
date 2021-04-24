@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
- 
+
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  selected= 'history'
   slidesOptions = {
     initialSlide: 0,
     // freeMode: true,
@@ -16,6 +17,10 @@ export class Tab3Page {
   txt = '';
   constructor() { }
 
+  selectTab(tab) {
+    console.log(tab)
+    this.selected =tab;
+  }
   // async speak() {
   //   await this.tts.speak(this.txt)
 

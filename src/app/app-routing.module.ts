@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'mabalacat-history',
     loadChildren: () => import('./mabalacat-history/mabalacat-history.module').then( m => m.MabalacatHistoryPageModule)
+  },
+  {
+    path: 'barangay',
+    loadChildren: () => import('./barangay/barangay.module').then( m => m.BarangayPageModule)
   }
 
 ];

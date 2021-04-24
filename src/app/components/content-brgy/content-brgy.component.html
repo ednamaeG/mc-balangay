@@ -1,0 +1,20 @@
+<ion-slides [options]="slidesOptions" *ngIf="content.images.length > 1">
+  <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
+    <div>
+      <img [src]="photo.url" style="
+    width: 100%;
+    object-fit: cover;" (click)="openViewer(photo)">
+      <div class="img-title" >
+        {{ photo.title }}
+      </div>
+    </div>
+  </ion-slide>
+</ion-slides>
+
+<div *ngIf="content.images.length == 1" class="img-container">
+  <img [src]="content.images[0]" class="brand-img">
+</div>
+
+<div class="ion-padding">
+  <div [innerHtml]="content.content" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+</div>

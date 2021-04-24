@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="sky">
+    <ion-title>{{barangayData.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="showControls($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white">
+    <!-- <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'History' ? 'active' :''"
+      (click)="selectTab('history')">
+      History
+    </ion-col>
+    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'Branding' ? 'active' :''"
+      (click)="selectTab('branding')">
+      Branding
+    </ion-col>
+    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
+      (click)="selectTab('politicians')">
+      Politicians
+    </ion-col> -->
+
+    <ion-col *ngFor="let contentType of barangayData.details" style="padding: 14px; border-right: 1px solid white"
+      [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)">
+      {{contentType.type}}
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let content of barangayData.details">
+    <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
+      <app-content-brgy [content]="content"></app-content-brgy>
+    </div>
+
+    <div *ngIf="content.type == 'Politicians' && content.type == selectedTab">
+      <!-- < [content]="content"></app-content-brgy> -->
+      <app-politicians-list [content]="content"></app-politicians-list>
+    </div>
+  </div>
+
+  
+</ion-content>

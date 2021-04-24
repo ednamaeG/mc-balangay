@@ -60,6 +60,6 @@ export class Tab1Page {
   openContent(content) {
     console.log('open')
     const data = JSON.stringify(content)
-    this.router.navigate(['/tabs/tab1/content', { content: data }])
+    this.router.navigate(['/barangay', { content: data }])
   }
 }

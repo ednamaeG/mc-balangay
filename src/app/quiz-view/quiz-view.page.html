@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" #content>
   <ion-toolbar color="sky">
     <ion-buttons slot="start" *ngIf="!showResults">
       <ion-button slot="icon-only" (click)="quitQuiz()">
@@ -118,7 +118,7 @@
       </ion-label>
     </ion-button>
   </div>
-</ion-content>
+</ion-content >
 <!-- <ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">

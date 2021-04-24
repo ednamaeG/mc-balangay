@@ -1,0 +1,1568 @@
+[
+    {
+        "id": "0",
+        "name": "Atlu-Bola",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/atlubola.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Barangay Atlu Bola was formerly named as Barangay San Isidro, It was named after our patron <strong>Saint San Isidro Labrador</strong>.This barrio was under the jurisdiction of Barrio Mamatitang. It was founded in 1852 by <strong>Virginia Gomez</strong> and <strong>Tiring Mercado.</strong></p><p>Tiring Mercado, the original founder of the place built a stone sugar mill with three stone rollers which had the shape of a ball. The place had no name of its own at that time, the laborers and the people living in it decided to call it &nbsp;<strong>ATLU-BOLA.</strong>The old citizens of our barangay decided to adopt its festival date which we annually celebrating every <strong>May 15.</strong></p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Fiesta",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Barangay Atlu Bola Mabalacat City Pampanga, is a progressive and well preserved Barangay, in providing better services and with our various projects to our COMMUNITY PEOPLE AND WITH THE RESPONSIVE GOVERNANCE AND TRANSPARENCY OF OUR BARANGAY OFFICIAL IN SERVING OUR CONSTITUTIENTS IN THE COMMUNITY.</p><h3><strong>Mission</strong></h3><p>Baranagay Atlu Bola, Mabalacat City, Pampanga, commits and strives to achieve service satisfaction and to improve our community with our organization and in structural system of governance. And to promoted transparency and strengthening law enforcement. Builds and promotes our barangay as partner of socio economic development community thru the partnership of the national government, local government, NGO&rsquo;s and other various sectors.</p>",
+                "images": [
+                    "assets/barangay-logos/atlubola.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "name": "Bical",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/bical.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>This barrio is divided into parts by a stream, a part of which runs near the middle of the barrio. Named after a specie of sugarcane, &ldquo;<strong>bical</strong>&rdquo;, a slender, climbing bamboo. The patron saint in the barrio is <strong>Saint Roque</strong>, commonly called <strong>Duqui</strong> or <strong>Apung Duqui</strong>. It is from this word Duqui where the word Duquit was derived.</p><p>This place was originally called <strong>Duquit</strong>. And now duquit is one of the sitios of&nbsp; bical. The other sitios are Dalan a Bayu and Suma&ntilde;gid Dalan. It is said that barrio Bical was founded in <strong>1840 </strong>by <strong>Luis Narciso</strong>, <strong>Mateo De Leon</strong> and <strong>Manalang</strong>.The first settlers was the <strong>Narciso, De Leon</strong>, <strong>Manalang</strong> and <strong>Anunciacion</strong>.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Mission</strong></h3><p>Towards ourvision, the government and the people of Barangay Bical shall strive progress and change thru the use of its limited resources without having to compromise our usefulness and productiveness for future generation.</p><h3><strong>Vision</strong></h3><p>We envision to live as economically empowered people led by a dynamic and proactive leadership, living in a democratic, peaceful and progressive barangay and environmentally sustainable community.</p>",
+                "images": [
+                    "assets/barangay-logos/bical.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Bundagul",
+        "width": 2500,
+        "height": 1667,
+        "logo_url": "assets/barangay-logos/bundagul.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Formerly, this was called &ldquo;<strong>Masulput</strong>&rdquo; meaning plenty of amorseco weeds. Named after <strong>Maria Dagul</strong>, one of the first female settlers. The early settlers were <strong>Miguel Buyson</strong>, <strong>Gregorio Buyson</strong>, <strong>Tomas Buyson</strong> and <strong>Maria Dagul</strong>. People in bundagul were mostly farmers and peace-loving.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Mission</strong></h3><p>Brgy.Bundagul will provide a progressive, clean and crime free community thru an effective and honest local government service.</p><h3><strong>Vision</strong></h3><p>We envision Barangay Bundagul, as a progressive, clean, crime free and environment friendly community with god loving people under honest and responsible public officials.</p>",
+                "images": [
+                    "assets/barangay-logos/bundagul.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "100",
+        "name": "Cacutud",
+        "width": 2500,
+        "height": 1656,
+        "logo_url": "assets/barangay-logos/cacutud.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/cacutud/entrance-min.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/cacutud/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/cacutud/chapel-school-min.jpg",
+                "title": "Chapel and Elementary School"
+            },
+            {
+                "url": "assets/barangay-photos/cacutud/childhood-development-center-min.jpg",
+                "title": "Childhood Development Center"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Formerly, this was a sitio of Mamatitang. The people of Cacutud were known for &ldquo;<strong>pagkukutud</strong>&rdquo; or they cut woods to be used as &ldquo;<strong>uling</strong>&rdquo; from this the name of the barrio was derived. Named after &ldquo;<strong>cutud</strong>&rdquo;, the act of cutting down trees or overgrown grass like bamboo, cogon or talahib.</p><p>The people of this barrio were mostly farmers. Every <strong>31<sup>st</sup> of May</strong>, the people celebrated the barrio feast and also they celebrate the birth of their patron, <strong>Patron Apu San Roque</strong> every <strong>16<sup>th</sup> of August.</strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/cacutud/entrance-min.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/cacutud/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/cacutud/chapel-school-min.jpg",
+                        "title": "Chapel and Elementary School"
+                    },
+                    {
+                        "url": "assets/barangay-photos/cacutud/childhood-development-center-min.jpg",
+                        "title": "Childhood Development Center"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Mission</strong></h3><p>The Barangay Cacutud at Mabalacat City together with partner agencies concerned with the active support of the residents shall mobilize its resources for the development and progress of the barangay.</p><h3><strong>Vision</strong></h3><p>We envision Barangay Cacutud with to be God loving people, will be more educated, well-informed, and healthy and empowered under transparent governance that live in a safe and progressive community.</p>",
+                "images": [
+                    "assets/barangay-logos/cacutud.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "1009",
+        "name": "Calumpang",
+        "width": 5626,
+        "height": 3635,
+        "logo_url": "assets/barangay-logos/calumpang.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Named after the calumpang tree <strong>(arbol de primer orden cuyo fruto es util en la tintoneria segun la Flora</strong><strong>)</strong>. It was early year of <strong>1950</strong>. During that time, there was a program of the government regarding certain requirement to a place to be considered as a community. The majority of the residents are <strong>AETA</strong>. To all obligation on the organization of a BARANGAY were convene, that started the Composition of BARANGAY CALUMPANG.</p><p>It was the aspiration of the people of BARANGAY CALUMPANG that relent an opportunity to build their own society to measure the competency on their gallantry.The boundary dispute not with standing, Barangay Calumpang remains within the territorial jurisdiction of the City of Mabalacat, although one establishment named Paradise Ranch, owned and operated by <strong>Eric Gomez</strong>, an American citizen reportedly manifests its allegiance to the town of Bamban where he pays the traditional taxes and permits.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>To consider the stand of the loyal and cooperative on the shoulders of the people in an orderly manner. Encourage each other to take mutual action for the promotion of a better future in order to have a peaceful and with a golden grain of hope, generous in tandem towards further development with dignity, trust and full-fledged management.&nbsp;</p><h3><strong>Mission</strong></h3><p>Keep an impact, have a heart of leadership, fear God, serve wholeheartedly to advance promote a different kind of standard of living through proper service, clear, clean and honest tenure in accordance with the law. Realize a peaceful community that is only love, tolerance and equal justice for all who exist and will prevail. Work together and participate in good relations, implementation of programs and projects for the betterment of our community. Preserve and cultivate the grace of God's gift.</p>",
+                "images": [
+                    "assets/barangay-logos/calumpang.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "1000",
+        "name": "Camachiles",
+        "width": 5626,
+        "height": 3635,
+        "logo_url": "assets/barangay-logos/camachiles.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/camachiles/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/camachiles/elementary.jpg",
+                "title": "Elementary School"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>During the <strong>1960&rsquo;s</strong>, Barangay Camachiles was just a territorial enclave (Sitio) that forms part of Barangay Mabiga, form the then Municipality of Mabalacat, Pampanga. <strong>Hon. Manuel M. Dizon</strong> became the <strong>first Tiniente Del Barrio</strong> in <strong>1960 </strong>until <strong>1965.</strong> He continued to hold the office until <strong>1967</strong>, now as Punong Barangay l; retaining the same functions and powers, but changing his official title by virtue of the Democratic Rule during the Presidency of Ferdinand E. Marcos. He was succeeded by <strong>Hon. Marcelino P. Tique (1967-1972)</strong> and <strong>Hon. Dionisio P. Magsino (1973-1982)</strong>.</p><p>It was during the time of <strong>Hon. Pacifico F. Gonzales (1983-1985)</strong>.It was said that Barangay Camachiles derived its name from <strong>Camachile Trees,&nbsp;Pithecellobium dulce</strong>&nbsp;because the place is once abundant with it.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/camachiles/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/camachiles/elementary.jpg",
+                        "title": "Elementary School"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<p><strong>6 HUMAN</strong> - Symbolized the 6 Purok of Camachiles.</p><p><strong>JUSTICE SALE LOGO</strong> -Symobolized the fair justice and treatment to all.</p><p><strong>UNITY CHAIN&nbsp;</strong>- Symbolized the <strong>UNITY,SOLIDARITY and TEAMWORK</strong>.</p><p><strong>CAMACHILE TREE</strong> - Symbolized the history of CAMACHILES.</p><p><strong>Vision</strong></p><p>We envision Barangay Camachiles as a peaceful community, where love, goodwill and fair justice consistently prevail. We seek to build a God-fearing and humane community where everyone is caring, disciplined and gearing towards progress.</p><p><strong>Mission</strong></p><p>To become an effective and conscientious administration. To appropriately and effectively serve and deliver proper services to the barangay and encourage every constituents to maintain orderliness and cleanliness of the community towards further progress.</p>",
+                "images": [
+                    "assets/barangay-logos/camachiles.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "<ul><li>Hon. Manuel M. Dizon &ndash; 1960 - 1967</li><li>Hon. Marcelino P. Tique &ndash; 1967 - 1972</li><li>Hon. Dionisio P. Magsino &ndash; 1973 - 1982</li><li>Hon. Pacifico F. Gonzales &ndash; 1983 - 1985</li><li>Hon. Labislao S. Miranda &ndash; 1985 - 1993</li><li>Hon. Abelarbo L. Magsino &ndash; 1994 - 2007</li><li>Hon. Jessie L. Duran &ndash; 2007 &ndash; up to present</li></ul>",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Manuel M. Dizon",
+                        "year": "1960 - 1967"
+                    },
+                    {
+                        "name": "Hon. Marcelino P. Tique",
+                        "year": "1967 - 1972"
+                    },
+                    {
+                        "name": "Hon. Dionisio P. Magsino",
+                        "year": "1973 - 1982"
+                    },
+                    {
+                        "name": "Hon. Pacifico F. Gonzales ",
+                        "year": "1983 - 1985"
+                    },
+                    {
+                        "name": "Hon. Labislao S. Miranda ",
+                        "year": "1985 - 1993"
+                    },
+                    {
+                        "name": "Hon. Abelarbo L. Magsino ",
+                        "year": "1994 - 2007"
+                    },
+                    {
+                        "name": "Hon. Jessie L. Duran ",
+                        "year": "2007 – up to present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1001",
+        "name": "Dapdap",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/dapdap.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>DAPDAP is a <strong>native tree</strong>. These trees were abundant and were all scattered within the vicinity thus the residents called the place Barangay Dapdap. The founding year of Dapdap is <strong>1838</strong> and&nbsp; also&nbsp; early name of&nbsp; this barrio is Sapang Dapdap. Early sitios include <strong>Mawaque </strong>and <strong>Caldera</strong>. The patron saint of Dapdap is <strong>Virgen Del Rosario. </strong>After the Mount Pinatubo eruption of 1991, a resettlement area was created from a part of the sugar plantation owned <strong>by John Santos</strong>.</p><p>Now known as <strong>Madapdap Resettlement Center</strong>. The early settlers were <strong>Miguel Tolentino</strong>, <strong>Alejandro Julian</strong>, <strong>Tomas Tolentino</strong>, <strong>Jose Tiamson</strong>, <strong>Vicente Policarpio</strong>, <strong>Pedro Policarpio</strong> and <strong>Jose Torres</strong>.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Barangay Dapdap is envisioned to be a place where in the citizenry should enjoy high quality of life and where economic development will be highlighted, uplifted and wealth will be equitably distributed, that will also set aside the perceived shortcomings and will be immediately added to the accomplishment and achievement of the barangay government to a liveable place.</p><h3><strong>Mission</strong></h3><p>Stakeholders and people empowerment shall become prime movers and advocate of social economic progress to deliver basic needs to the community so that all shall live peacefully and harmoniously.</p>",
+                "images": [
+                    "assets/barangay-logos/dapdap.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "1002",
+        "name": "Dau",
+        "width": 4312,
+        "height": 2868,
+        "logo_url": "assets/barangay-logos/dau.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/dau/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/dau/kumamoto-seinan-hall.jpg",
+                "title": "Kumamoto Seinan Hall"
+            },
+            {
+                "url": "assets/barangay-photos/dau/rotary.jpg",
+                "title": "Rotary Club"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Barangay Dau traces its origins in 1843 when&nbsp;<strong>TEODORO LISING&nbsp;</strong>founded a small and sleepy community in the rolling plains some distance from the foot of the Zambales Mountain range. This barangay named after a <strong>large hardwood tree</strong>, <strong>Dao</strong> or <strong>Dau</strong> (<strong>Dracontomelon Dao</strong>).Its early sitios included the densely-forested <strong>Bangkal</strong>, <strong>Camatsiles</strong>, <strong>Gasdam </strong>and <strong>Camias</strong>. The <strong>Sansons </strong>or <strong>Samsons</strong> were prominent residents and the pious Dona Cecilia Samson donated the Dau Village Chapel.</p><p>In the <strong>1960&rsquo;s</strong>,&nbsp;<strong>DIONISIO MENDOZA</strong>&nbsp;became the first Teniente Del Barrio of Dau. The country was under the grip of the Communist insurgency then and MENDOZA was abducted by armed men and disappeared, never to be seen alive again. In <strong>1989</strong>,&nbsp;<strong>BENJAMIN M. MANLAPAZ&nbsp;</strong>was elected as Barangay Captain (Punong Pambarangay) and reinvigorated Barangay Dau with his dynamic and hands-on leadership. It was during his term that Dau reached legendary status in terms of the Katarungang Pambarangay. In <strong>1990</strong>, (<strong>Republic Act 7160</strong>) The Local Government Code of <strong>1990</strong> laid down the foundations of local governments including that of the barangays.</p><p>The concept and system of the Lupon Tagapamayapa was introduced and it was in this arena that Dau gained nationwide fame. &nbsp;In <strong>2002</strong>, a young&nbsp;<strong>LOUIE P. CUNANAN&nbsp;</strong>took over as Barangay Captain. It was during his term that the present (2) storey Barangay Hall Building was constructed. He served a five (5) year term owing to an extension of term enacted by Congress. In <strong>2007</strong>, Punong Barangay was elected in&nbsp;<strong>MARINO &ldquo;ATLAS&rdquo; MORALES JR.,&nbsp;</strong>scion and namesake of the incumbent mayor, who has served the longest continuous tenure of any local government official. He was re-elected in 2010 and has the distinction of being the Barangay Captain of Dau when Mabalacat became a component city in 2012 by virtue of Republic Act 10164. He unfortunately lost in his third bid as Barangay Captain in 2003.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/dau/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dau/kumamoto-seinan-hall.jpg",
+                        "title": "Kumamoto Seinan Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dau/rotary.jpg",
+                        "title": "Rotary Club"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Establish Barangay Dau as a dynamic center of wellness and development of the City of Mabalacat and improve the quality of life of the people.</p><p><h3><strong>Mission</strong></h3></p><p>&nbsp;We shall strive for good governance that is characterized by honesty, efficiency, transparency and integrity in all aspects of public service that we provide to the people.We shall achieve this by: Developing the human resource of the entire community by providing all sectors the opportunities for education, employment, health and welfare and social services. Strengthening the democratic institution and mechanisms of the barangay government by developing a culture of transparency, public service and prudent use of resources. Developing the infrastructure facilities of the community to attract investments and generate employment. Instilling a participatory mode of governance that truly empowers the people in economic and social development.</p>",
+                "images": [
+                    "assets/barangay-logos/dau.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Lope R. Presco",
+                        "year": "1967- 1979"
+                    },
+                    {
+                        "name": "Hon. Francisco Salunga",
+                        "year": "1979 – 1989"
+                    },
+                    {
+                        "name": "Hon. Benjamin M. Manlapaz",
+                        "year": "1989 – 2002"
+                    },
+                    {
+                        "name": "Hon. Louie P. Cunanan",
+                        "year": "2002 – 2007"
+                    },
+                    {
+                        "name": "Hon. Marino G. Morales Jr.",
+                        "year": "2007 – 2013"
+                    },
+                    {
+                        "name": "Hon. Dr. Oscar P. Aurelio",
+                        "year": "2013 – 2019"
+                    },
+                    {
+                        "name": "Hon. Glenn Derrick A. Llanos Dee ",
+                        "year": "2019 up to present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1023",
+        "name": "Dolores",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/dolores.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/dolores/multipurpose-building-min.jpg",
+                "title": "Multipurpose Building"
+            },
+            {
+                "url": "assets/barangay-photos/dolores/mcc-min.jpg",
+                "title": "Mabalacat City College"
+            },
+            {
+                "url": "assets/barangay-photos/dolores/mcc1-min.jpg",
+                "title": "Mabalacat City College"
+            },
+            {
+                "url": "assets/barangay-photos/dolores/mchs-min.jpg",
+                "title": "Mabalacat Community High School"
+            },
+            {
+                "url": "assets/barangay-photos/dolores/court-min.jpg",
+                "title": "Basketball Court"
+            },
+            {
+                "url": "assets/barangay-photos/dolores/chapel.jpg",
+                "title": "Chapel"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>The Old Dolores was founded in <strong>1776</strong> and abandoned in <strong>July, 1948</strong> when Clark Air Base invaded on its territory boundaries. New Dolores founded <strong>1948</strong> by <strong>Jose Maria Henson</strong> of Angeles. This barrio was named after their patron <strong>saint Nuestra</strong> <strong>Senora de los Dolores</strong> (<strong>Our Lady of Sorrows</strong>).The New Dolores (the present barrio) was once part of <strong>Sitio Mamatitang</strong>. This new barrio was once a sugarcane plantation. In the Old Dolores the first Tiniente or Headman was the founder, Jose Maria Henson followed by the following: Victor Tanglao, Sr. ,Nicolas Henson , Pantaleon Maglalang ,Cifriano Sison , Nicasio Magtanong , Mariano Tanglao , Marcelo Mejia , Venecio Tanglao , Dalmacio Concepcion , Isabelo Munoz , Eulogio Medina , Doroteo Balagtas.</p><p>Every year, the people have a barrio fiesta. Colors by parade both civic and religious, beauty contest, athletic game and be a native zarzuela, the fiesta used to be a pompous one. In every home, everybody was welcomed.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/dolores/multipurpose-building-min.jpg",
+                        "title": "Multipurpose Building"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dolores/mcc-min.jpg",
+                        "title": "Mabalacat City College"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dolores/mcc1-min.jpg",
+                        "title": "Mabalacat City College"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dolores/mchs-min.jpg",
+                        "title": "Mabalacat Community High School"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dolores/court-min.jpg",
+                        "title": "Basketball Court"
+                    },
+                    {
+                        "url": "assets/barangay-photos/dolores/chapel.jpg",
+                        "title": "Chapel"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>We envision Barangay Dolores to be an ideal community to live on with a God-fearing and respectable, law-abiding citizen.</p><p><h3><strong>Mission</strong></h3></p><p>Truthful and honest governance with a higher determination to work diligently in order to attain our vision.</p>",
+                "images": [
+                    "assets/barangay-logos/dolores.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "105",
+        "name": "Duquit",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/duquit.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/duquit/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/duquit/child-dev-center.jpg",
+                "title": "Child Development Center"
+            },
+            {
+                "url": "assets/barangay-photos/duquit/programs-assistance.jpg",
+                "title": "Programs Assistance and Implementing Office"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Barangay Duquit is previously spelled as <strong>DUKIT</strong>. This barrio is an old sitio of &nbsp;Bical. It was named after their patron saint, <strong>San Roque</strong> or <strong>St. Roche of Montpellier</strong>, <strong>France.</strong> According to the elders, DUQUIT is a <strong>species of tall lean trees</strong> which made good as house, posts and sculpture is their form of livelihood. It was then headed by a chieftain today known as Barangay Captain.&nbsp;</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/duquit/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/duquit/child-dev-center.jpg",
+                        "title": "Child Development Center"
+                    },
+                    {
+                        "url": "assets/barangay-photos/duquit/programs-assistance.jpg",
+                        "title": "Programs Assistance and Implementing Office"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Duquit the agro-industrial capital of Mabalacat City, a barangay that is ecologically balance, peaceful, progressive and cooperative, a vibrant, productive, united and God-fearing citizen.</p><h3><strong>Mission</strong></h3><p>A vibrant, progressive, peaceful and united barangay, where its people love and protect its environment. A place where its citizenry are motivated to excel and empowered to be dynamic and competitive. A barangay with fresh, young and dynamic leaders that strive to provide the best socio-economic services to its constituent and finally, a leader, innovator and a model community where its residents proudly says &ldquo;Ganito kami sa Duquit. Sana sa inyo ganito din.&rdquo;</p>",
+                "images": [
+                    "assets/barangay-logos/duquit.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Eugenio Pare",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Juanito Annunciacion",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Eulogio Nuguid",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. AKA Cabyong",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Sotero Pare",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Daniel Bulaon",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Antonio P. Viray",
+                        "year": ""
+                    },
+                    {
+                        "name": "Hon. Marjorie Grace M. Sambo",
+                        "year": "Present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "106",
+        "name": "Lakandula",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/lakandula.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/lakandula/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/lakandula/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Named after <strong>Rajah Lakandula</strong>, the powerful king of Tondo, who made a pact of peace with Legazpi in <strong>1572,</strong> together with <strong>Rajah Matanda</strong> and <strong>Rajah Soliman</strong>. Carved out of the progressive barangay Dau in the Municipality of Mabalacat. Currently consisting of thirteen (13) numbered parallel streets (from 7th to 19th) traversed by various horizontal streetsBeing strategically located beside Clark Freeport&rsquo;s Main Gate, the barangay is a home to numerous <strong>apartments</strong> and <strong>dormitories</strong> of large capacities catering to the ever-growing workforce of the former airbase.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>We envision a livable and progressive community to enjoy a better life.</p><p><h3><strong>Mission</strong></h3></p><p>We firmly believe that cooperation and unity of the people are the keys to development and growth. We are particularly committed to: Establish an effective governance system to meet the needs of the community; Strengthen community organizations to become more functional; Establish a sustainable environmental resource and community level and; Strengthen family and social values for productivity and spiritual being.</p>",
+                "images": [
+                    "assets/barangay-logos/lakandula.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "107",
+        "name": "Mabiga",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/mabiga.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mabiga/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>The origin of its name had two versions. According to the other old folks it was named after &ldquo;biga shrub&rdquo; specie of the grass family growing abundantly during early days of this place. MABIGA means &ldquo;<strong>MANY BIGA</strong>&rdquo;.Another version of some old folks claimed that the topography of Barangay Mabiga is high flat land. And most of the time the sky was cloudy which means in Pampango dialect &ldquo;MA-BIGA&rdquo;, since then the place was called MABIGA.</p><p>The barrio was founded by <strong>Tomas Campos</strong>, and was placed under the patronage of <strong>Santo Tomas</strong>.When the American burned the image in <strong>1898</strong>, <strong>Mrs. Isabel Wyjangco vda</strong>. <strong>De Madlambayan</strong> donated her <strong>La Purisima Concepcion</strong>. <strong>Sta. Maria Magdalena</strong> and most recently, <strong>San Rafael</strong> are also the other patrons. The early settlers were <strong>Santiago anunciacion</strong> and <strong>sons</strong>, <strong>Bartolome </strong>, <strong>Anguelo</strong>, <strong>Juan </strong>and <strong>Agustin</strong>, <strong>Bernardo Tuazon</strong>, <strong>Valentin Bondoc</strong> and <strong>Tomas Campos</strong>.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/mabiga/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p><strong>&nbsp;</strong>Barangay Mabiga is a simple community, physically and spiritually with productive citizens who are peace loving and willing to undergo challenges and participate in all barangay projects and programs for sustaining growth and protection to attain self-reliance, independence and prosperity.&nbsp;&nbsp;</p><h3><strong>Mission</strong></h3><p>To safeguard the welfare of the people through implementation of sensible policies and programs that will enable each individual to be involved in Barangay Mabiga a progressive, peaceful, environment-friendly and god-fearing community.</p>",
+                "images": [
+                    "assets/barangay-logos/mabiga.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Isabelo Gozun",
+                        "year": "1967 – 1971"
+                    },
+                    {
+                        "name": "Hon. Tomas Garcia",
+                        "year": "1972 – 1986"
+                    },
+                    {
+                        "name": "Hon. Joselito L. Alegre",
+                        "year": "1986 – 1997"
+                    },
+                    {
+                        "name": "Hon. Jesus M. Rivera",
+                        "year": "1997-2005"
+                    },
+                    {
+                        "name": "Hon. Jesus M. Rivera",
+                        "year": "2007-2010"
+                    },
+                    {
+                        "name": "Hon. Emilio S. David, Jr.",
+                        "year": "2010-2013"
+                    },
+                    {
+                        "name": "Hon. Elmer R. Calaguas",
+                        "year": "2018 - Present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "108",
+        "name": "Macapagal Village",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/macapagal.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/macapagal-village/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/health-center.jpg",
+                "title": "Health Center"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/church.jpg",
+                "title": "Barangay Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/macapagal-village/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>On the year <strong>1957</strong>, Barangay Macapagal Village, Mabalacat, Pampanga was known <strong>Baluga Village (negrito village)</strong><strong>.</strong>Most of the residents are <strong>&ldquo;ITAS&rdquo;</strong><strong>.</strong>In the time of former <strong>President Diosdado Macapagal</strong>, the official of the said place made a resolution to make it a residential place and to them to work in the Military Reservation Land of the Americans, but the Mercy of God the resolution was approved.</p><p>In that time the people were able to have their Barrio Election. And they also built <strong>Barangay Hall</strong>, <strong>Chapel </strong>and <strong>School</strong>.The residence continue to live <strong>peaceful</strong> and <strong>quiet</strong>. Until the eruption of <strong>Mt. Pinatubo </strong>on <strong>June 12</strong>, <strong>1991</strong>, almost of the residence were affected as well as their work. Named after the former <strong>President Diosdado P. Macapagal.</strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/macapagal-village/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/macapagal-village/health-center.jpg",
+                        "title": "Health Center"
+                    },
+                    {
+                        "url": "assets/barangay-photos/macapagal-village/church.jpg",
+                        "title": "Barangay Chapel"
+                    },
+                    {
+                        "url": "assets/barangay-photos/macapagal-village/basketball-court.jpg",
+                        "title": "Basketball Court"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Barangay Macapagal Village is a God-fearing, Public Service Oriented, Peace and Environment Advocate and Economically Stable Local Community in the northwestern part Mabalacat City, Pampanga, Preserved through the prosperity and dedication to life and Progress, Law and Order, Service and Economy by its united and responsible people Under the meritorious leadership and transparent governance of its leader and officials.</p><h3><strong>Mission</strong></h3><p>Brgy. Macapagal Village is public service oriented barangay, committed to serve its constituents as an integrated partaker of the national Leadership through: Providing the highest service regard for excellent social living conditions in terms of social welfare, peace and order, health services, education, youth, employment ecological waste management and physical infrastructure development as well as civil and local government linkage. Sustaining its socio-political mandate as a recognized barangay in ways of developing opportunities for the people of Barangay Macapagal Village to excel in all walks of living and even in the Global Society.</p>",
+                "images": [
+                    "assets/barangay-logos/macapagal.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Marcos Y. Caligagan",
+                        "year": "1997 - 2010"
+                    },
+                    {
+                        "name": "Hon. Nicolas De Guzman, Jr",
+                        "year": "2010 -2013"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "109",
+        "name": "Mamatitang",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/mamatitang.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mamatitang/barangay-hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/mamatitang/chapel-min.jpg",
+                "title": "Chapel"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>By the year <strong>1903</strong>, when Mabalacat increased its population into 7,409, nineteen (19) barangays were already created and Mamatitang is one of them. It is said that the barrio was settled by a <strong>group of Aetas</strong> whose leader was called <strong>Titang</strong>. The people used to call him <strong>&ldquo;Mama&rdquo;</strong> an appellation usually addressed to the old. Mamatitang was once the <strong>sugarcane plantations</strong> of <strong>Don Marcelo Tiglao</strong> and <strong>Atty. Siopongco.</strong></p><p>Early sitios included were <strong>Cacutud</strong>, <strong>Cagen</strong> and <strong>Bana.</strong> In sitio Bana lies the <strong>Mascup River</strong> which generated power to the hydroelectric plant that supplied <strong>Mabalacat, Bamban </strong>and<strong> Clarkfield</strong>. The family who early resides at barangay Mamatitang are the <strong>Galang, Medina</strong>, <strong>Santos, Nalo</strong>, the <strong>Balilo</strong>, <strong>Siopongco</strong>, and the <strong>Garcia&rsquo;s</strong> and other settled during the <strong>Ventura Santos</strong> owned more than half of the land of the barangay and the Siopongco&rsquo;s owned almost one-fourth of the residential land.&nbsp; The early settlers were the <strong>Pamintuans</strong> <strong>(Marcelino, Silbino, Dominga Eulalia, Camilo, Jacinta)</strong> and <strong>Gertrudes Cunanan.</strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/mamatitang/barangay-hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mamatitang/chapel-min.jpg",
+                        "title": "Chapel"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>We envision that Barangay Mamatitang has a God-loving, generous and hospitable people, living in a drug free, peaceful and progressive community headed by respectable leaders with high morale and good governance.</p><h3><strong>Mission</strong></h3><p>We, the members of the Sangguniang Barangay of Mamatitang bow ourselves to serve our people to be clean, environment friendly, eradicate drug related problems, maintain peace and order, and ensure to uplift the living conditions of our constituents.</p>",
+                "images": [
+                    "assets/barangay-logos/mamatitang.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "110",
+        "name": "Mangalit",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/mangalit.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mangalit/entrance-min.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/mangalit/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/mangalit/chapel-min.jpg",
+                "title": "Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/mangalit/chapel1-min.jpg",
+                "title": "Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/mangalit/court-min.jpg",
+                "title": "Basketball Court"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "Named after the leafy “litlit” plants that once grew in profusion on both sides of the barrio’s main roads. The act of gathering the leaves of this plant was called “manlitlit”, which, over time, evolved into “Mangalit”. Prominent residents included the Tiglaos and Guecos. During the Spanish regime, the barrio people formed an organization affiliated to the Katipunan and fought against the Spaniards. The early settlers were Sixto Dizon and Benita Balilu.",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/mangalit/entrance-min.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mangalit/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mangalit/chapel-min.jpg",
+                        "title": "Chapel"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mangalit/chapel1-min.jpg",
+                        "title": "Chapel"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mangalit/court-min.jpg",
+                        "title": "Basketball Court"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>To be a community of discipline that is morally and socially progressive and standard of living, peace and order, cleanliness, self-sufficient.</p><h3><strong>Mission</strong></h3><p>To ensure of all Barangay Council together with the members of the community to attain the Vision</p>",
+                "images": [
+                    "assets/barangay-logos/mangalit.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "111",
+        "name": "Marcos Village",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/marcos.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Named after former President Marcos. Like the Macapagal Village, it was originally a cultural community for local Aetas who derived their living from nearby Clark as hunters. In the old days, the AETAs lived in the mountains of MARGOT and sapang bato. They lived by planting night crops, rice and sweet potatoes. And through their hunting they taste venison, snakes and grass hogs.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>To be exemplary on Barangay services as Barangay Officials, to be transparent on internal revenue allotment and other Barangay Income, to create and develop Socio-economic program and protect the eco-system especially Aeta&rsquo;s land, and also to create income generating project cooperatives necessary taxes on commercial and natural wealth. &nbsp;</p><h3><strong>Mission</strong></h3><p>Is to educate our citizens on self-reliance Cooperatives and Unity. As Barangay Officials we shall transform people from negative attitude to form a strong teamwork among citizens.</p>",
+                "images": [
+                    "assets/barangay-logos/marcos.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "112",
+        "name": "Mawaque",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/mawaque.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/mawaque/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/mawaque/basketball-court.jpg",
+                "title": "Basketball Court"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Mawaque founded year <strong>1824</strong>, Named after the vine-y <strong>&ldquo;waque&rdquo;</strong> trees that once forested the place. The patron saint of Barangay Mawaque is <strong>Sta. Teresita de Nino Jesus</strong>. Based from stories of the elders, <strong>Sta. Teresita</strong> was seen from a far and henceforth became their patron. Agriculture was the primary source of income in the barangay. The early settlers were <strong>Familia Tuazon</strong> (<strong>Vicente, Espiridion, Baldomero and Nicolas</strong>)</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/mawaque/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/mawaque/basketball-court.jpg",
+                        "title": "Basketball Court"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>To perform the duties, responsibilities as mandated and ensure transparency, honesty and efficiency. The functions as a strong support to the members of its community and serve with outmost integrity.</p><h3><strong>Mission</strong></h3><p>We envisioned Barangay Mawaque to by God-loving community. A model local government unit that is progressive and independent, clean and environment friendly which advocates transparency, honesty and discipline among its Barangay official and employees.</p>",
+                "images": [
+                    "assets/barangay-logos/mawaque.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Jose Noel A. Dimarucut",
+                        "year": "2010 - Present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "113",
+        "name": "Paralayunan",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/paralayunan.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>In the olden times, there was a pond in the area where people often were to trap mud fish. The fishing method was called &ldquo;<strong>mamaraluyun</strong>&rdquo;. Its old name was &ldquo;<strong>Guyung-Guyung</strong>&rdquo;, a kind of tree. The first owner of the place was <strong>Isidro Tolentino</strong>. The early settlers were <strong>Juan Tolentino</strong>, <strong>Eulalio Tolentino</strong> and <strong>Laureana Sugtu</strong>.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>We envision Barangay Paralayunan to have peacefully united, clean, progress, faith in god, good governance, and good leadership.</p><h3><strong>Mission</strong></h3><p>To enhance a political will under the governance of god and our people to promote economic and social services. To become peaceful and successful barangay.</p>",
+                "images": [
+                    "assets/barangay-logos/paralayunan.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "114",
+        "name": "Poblacion",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/poblacion.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/poblacion/brgy-hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/poblacion/church-min.jpg",
+                "title": "Our Lady of Grace Parish Church"
+            },
+            {
+                "url": "assets/barangay-photos/poblacion/childhood-care-office.jpg",
+                "title": "Early Childhood Care and Development Office"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>The barrio got its name from the fact that it became the <strong>center of the town</strong> (<strong>pueblo</strong>) around which public buildings like the <strong>municipal hall</strong>, <strong>school</strong>, <strong>convent</strong>, <strong>parish church</strong>, and <strong>market</strong> were built. Barangay Poblacion was established on the year <strong>1712</strong>, it is also one of the first five established barangay in Mabalacat.</p><p>Poblacion also known as <strong>small village</strong>. The early settlers was <strong>Caragan</strong>. The known <strong>Our Lady of Grace Parish Church</strong> can be found&nbsp; here which is one of the <strong>biggest churches in Pampanga</strong> , Also the <strong>first elementary school</strong> in Mabalacat, <strong>Mabalacat Elementary School</strong> which has been the occupying force of the Spaniards way back on <strong>World War II </strong>was situated here.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/poblacion/brgy-hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/poblacion/church-min.jpg",
+                        "title": "Our Lady of Grace Parish Church"
+                    },
+                    {
+                        "url": "assets/barangay-photos/poblacion/childhood-care-office.jpg",
+                        "title": "Early Childhood Care and Development Office"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>A clean barangay where peace and order reigns, commerce and employment opportunities thrive, and where care for the environment is second only to care for family, and service to humanity is the ultimate goal in the administration.</p><h3><strong>Mission</strong></h3><p>To establish a lean and mean security force that will promote peace in the community; a solid waste management team that will ensure cleanliness in the surroundings, a barangay administration that is responsive to the needs of the people.</p>",
+                "images": [
+                    "assets/barangay-logos/poblacion.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "116",
+        "name": "San Francisco",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/sanfrancisco.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/san-francisco/entrance-min.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/san-francisco/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/san-francisco/chapel-min.jpg",
+                "title": "Chapel"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>San Francisco was founded year <strong>1948</strong>. The barrio got its name from its <strong>patron saint, St. Francis of Assisi</strong>, an image donated by <strong>Fr. Cipriano Mallari</strong>. <strong>Quitangil </strong>, the older barangay, was collapsed into <strong>San Francisco</strong> in 1948 to form a new barrio.&nbsp; In the <strong>1950&rsquo;s</strong>, it included such sitios as <strong>Talimundoc, Cuayan </strong>and<strong> Bugtung</strong>. A <strong>&ldquo;bantayan&rdquo;</strong> school, where children were left by parents under the care of <strong>Apung Beltung Pile</strong>, was established during the <strong>Spanish times</strong>.</p><p>It is one of the developed barangay of the Municipality of Mabalacat. It serves as the transit for economics, trades and industrial transactions because it covers in its territory the public market and access road to Clark Special Economic Zone. Many residents of the barangay are divided into <strong>eight (8) puroks</strong>. It has <strong>six (6) schools</strong>, <strong>three (3) owned by group</strong> <strong>of individuals</strong> and the <strong>other three (3) by Barangay Day Care Center</strong> which is subsidized by the government, <strong>Saint Anthony Technological College</strong>, <strong>Children of Fatima</strong>, <strong>School of the Infant Jesus </strong>and<strong> Nehemiah</strong><strong>.</strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/san-francisco/entrance-min.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-francisco/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-francisco/chapel-min.jpg",
+                        "title": "Chapel"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>&ldquo;Our vision for Barangay San Francisco is to have a clean, healthy, progressive, orderly, safe, united, humane and god-fearing community.&rdquo;</p><p><strong>Mission</strong></p><p>&ldquo;We are the Stewart, partner, reporter, eye-opener organizer towards unity and proactive community.</p>",
+                "images": [
+                    "assets/barangay-logos/sanfrancisco.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "117",
+        "name": "San Joaquin",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/sanjoaquin.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/san-joaquin/entrance.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/san-joaquin/hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/san-joaquin/chapel.jpg",
+                "title": "Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/san-joaquin/day-care.jpg",
+                "title": "Day Care Center"
+            },
+            {
+                "url": "assets/barangay-photos/san-joaquin/tiglao.jpg",
+                "title": "Tiglao Medical Center"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>San Joaquin was founded year <strong>1841</strong>. The founder of the barrio, <strong>Anastasio Lising</strong>, named the place after his <strong>wife</strong>, <strong>Joaquina Dizon</strong>, who, in turn was named after the father of the <strong>Blessed Virgin</strong>.</p><p>The old site was occupied by the U.S. government which became part of its military reservation. The early settlers were <strong>Anastacio Lising</strong>, <strong>Joaquina Dizon</strong>, <strong>Mariano</strong>, <strong>Rosalia</strong>, <strong>Roberta</strong> (<strong>children of Anastacio Lising</strong>) and <strong>Anacleta Lising</strong>.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/san-joaquin/entrance.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-joaquin/hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-joaquin/chapel.jpg",
+                        "title": "Chapel"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-joaquin/day-care.jpg",
+                        "title": "Day Care Center"
+                    },
+                    {
+                        "url": "assets/barangay-photos/san-joaquin/tiglao.jpg",
+                        "title": "Tiglao Medical Center"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>A model community with self-reliant, productive and responsible citizenry who take active participation towards achieving a wholesome, safe and drug-free environment under a God-fearing, responsible, solid and unified leadership.</p><h3><strong>Mission</strong></h3><p>To work towards making the barangay a safe, peaceful and progressive community. To ensure the wellbeing of its citizenry thru easy access to health services, encourage micro entrepreneurship, participation in eco-waste management programs, and help in making the barangay a drug free community.</p>",
+                "images": [
+                    "assets/barangay-logos/sanjoaquin.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "118",
+        "name": "Santa Ines",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/staines.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/santa-ines/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/santa-ines/COURT-min.jpg",
+                "title": "Basketball Court"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Santa Ines was founded year <strong>1878</strong>.Since the foundation of Mabalacat, Barangay Sta. Ines was considered as one of the <strong>first barrios</strong> of Mabalacat. The <strong>original owner</strong> was <strong>Don Francisco Pamintuan</strong>, and the land was inherited by his son, <strong>Camilo</strong>. <strong>Mariano de la Cruz</strong> later bought the land and settled it.</p><p>One of the early setters of the barrio, <strong>Ines Basilio</strong>, gave the place <strong>its name</strong>. She, in turn, asked the place to be held under the titular patronage of the child-martyr, <strong>St. Agnes (Sta. Ines)</strong>. One of the very first families who settled in the barrio was <strong>Dela Cruz</strong> <strong>Family</strong>, a very well-known and wealthy clan, who owned 60% of the total land area of the barangay.</p><p>&nbsp;The <strong>early settlers</strong> were <strong>Valentin David</strong>, <strong>Bibiana Dalngin</strong>, <strong>Maria Pacat</strong>, <strong>Apolinario Bacani</strong>, <strong>Matias de la Cruz</strong> (<strong>husband of Ines Basilio</strong>) and <strong>Telesforo Sabala</strong>. Liberation came many resident of Sta.Ines found employment at Clark, Airbase. A few years later, in early <strong>1950&rsquo;s </strong>their <strong>primary school </strong>was established. The <strong>pioneer teachers</strong> were <strong>Mrs. Concha Dizon</strong>, <strong>Ms. Datu </strong>and <strong>Ms. Angeles Magat</strong>. It was during this period that the Sta.Ines residents enjoined some form of hope and economic resurgence.</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/santa-ines/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/santa-ines/COURT-min.jpg",
+                        "title": "Basketball Court"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Not to be an Ira (Government Fund) dependent, but a self-reliance governance and able to delivered a complete basic necessary of our constituents.</p><h3><strong>Mission</strong></h3><p>Is to among the business district of our municipality, cooperative, educated and productive citizen with self-reliance, govern by responsible, transparent, accountable and discipline.</p>",
+                "images": [
+                    "assets/barangay-logos/staines.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "119",
+        "name": "Santa Maria",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/stamaria.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>Santa Maria was founded year <strong>1863</strong>. <strong>Joaquina de Lacson</strong>, the <strong>barrio founder</strong>, named the place in honor of her grandmother who bore the name <strong>Maria Magdalena</strong>. In turn, the Barangay was named under its <strong>Patron Saint Maria Magdalena</strong>. The <strong>early settler</strong> were <strong>Jose Dizon</strong> and <strong>sons Remigio</strong>, <strong>Bernaldo </strong>and <strong>Francisco</strong>.</p><p>The land was inherited by her son, <strong>Julio</strong>, who was executed as a <strong>mason</strong> in <strong>Bacolor</strong> during the Spanish regime. The ownership of Sta. Maria changed hands several times: it was sold to <strong>Prig,</strong> a Spaniard and then to <strong>Gregorio Oligaria</strong> and <strong>Leandro Angeles</strong>. Means of livelihood that time was <strong>98% agriculture</strong> and <strong>2% laborer</strong>. But in today&rsquo;s generation, it is <strong>40% agriculture</strong> and <strong>60% laborer.</strong></p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Mission &amp; Vision</strong></h3><p>We envision being a God fearing, United and peaceful citizen with progressive, agriculture and environment friendly under good governance officials.</p>",
+                "images": [
+                    "assets/barangay-logos/stamaria.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "120",
+        "name": "Santo Rosario",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/storosario.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/santo-rosario/entrance-min.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/santo-rosario/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/santo-rosario/chapel-min.jpg",
+                "title": "Chapel"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>There was a certain religious person named&nbsp;<strong>MR. PEDRO DIZON</strong>&nbsp;who donated a Patron Saint name <strong>SANTO ROSARIO</strong> by the people of Mawaque were terrified by the war, the rationalization why they migrated in Barangay Santo Rosario. When Mr. Pedro Dizon passed away all his belongings were left to her daughter who lived in Barangay Santo Rosario name <strong>Mrs. Juanita Dizon</strong> who decided later on about the naming of the said barangay under the name of the&nbsp;<strong>PATRON SAINT SANTO ROSARIO</strong></p><p>Barangay Santo Rosario was <strong>once sited as one of the Sitio of Barangay San Francisco</strong>. One factor that has to be considered were the population of the said place, the majority of the inhabitants to become independent and the capability of a certain group of people to be able to extend responsible governance on the establishment of a community</p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/santo-rosario/entrance-min.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/santo-rosario/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/santo-rosario/chapel-min.jpg",
+                        "title": "Chapel"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Mission</strong></h3><p>Maintain an efficient, heartfelt leadership, fear of God, and serve wholeheartedly to encourage and promote a different kind of standard of living through proper service, simple, clean, and honest tenure in the rule of law, and the peaceful society that is only love, tolerance, and fair justice for all that exist and prevail. Collaborate and engage in good relationships together.</p><h3><strong>Vision</strong></h3><p>Consider the orderly stand of loyal and shoulder-to-shoulder citizens, encourage each other to work together for the promotion of a better future in order to achieve a peaceful and golden grain of hope., open pad parallel towards further development with dignity, trust, and full force management.</p>",
+                "images": [
+                    "assets/barangay-logos/storosario.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "121",
+        "name": "Sapang Balen",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/sapangbalen.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>A certain river runs through the heart of the town and flows through a barrio called <strong>&ldquo;Sapang Balen&rdquo;,</strong> (<strong>meaning river of the town</strong>). Ever since, this barrio has been named thus, because all the <strong>rice fields of the area were irrigated by this river</strong>. Most of the land were owned by the <strong>Gonzales of Apalit</strong> and <strong>Sandicoss of Angeles</strong>.</p><p>The early settlers were <strong>Carlos Cayanan,</strong> wife <strong>Marciana Lazatin</strong> and <strong>companions Alberto</strong> and <strong>Pedro Galang</strong>. The people lived on <strong>farming</strong>, <strong>poultry</strong> <strong>raising,</strong> and a <strong>little fishing</strong> for they had a good irrigation system in the form of a brook which irrigated all the land area of the barrio.</p>",
+                "images": []
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Being the smallest barangay in the City of Mabalacat, Province of Pampanga in cooperation with its constituency will utilize all available resources in order to promote health, education and economic stability to ensure of its people and secure peace and order in the community.</p><h3><strong>Mission</strong></h3><p>An empowered united economically self-reliant, environmental-friendly and culturally vibrant community; God-loving and responsive citizenry working together for a progressive and peaceful place to live in.</p>",
+                "images": [
+                    "assets/barangay-logos/sapangbalen.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    },
+    {
+        "id": "122",
+        "name": "Sapang Biabas",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/sapangbiabas.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/sapang-biabas/barangay-hall.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/chapel.jpg",
+                "title": "Barangay Chapel"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/hemodialysis-center.jpg",
+                "title": "Hemodialysis Center"
+            },
+            {
+                "url": "assets/barangay-photos/sapang-biabas/entrance.jpg",
+                "title": "Barangay Entrance"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p>The name is derived from two words, <strong>&ldquo;sapa&rdquo;</strong> and <strong>&ldquo;biabas&rdquo;</strong>, which mean literally <strong>brook </strong>and <strong>guavas</strong>. The first settlers found these <strong>many guava trees on both sides of the brook</strong>, so they called this barrio such, which means a place where many guava trees grow. <strong>The first settlers</strong> were the <strong>Davids</strong>, <strong>Tolentinos</strong> and <strong>Marcelos</strong>, who were the founders as well. Before the Japanese Forces occupied the Philippines in <strong>1941</strong>, there were almost <strong>200 houses/families</strong> according to old folks who still reside in this barangay.</p><p>Sapang Biabas is composed of <strong>three Sitios</strong> namely: <strong>Sitio Mauli</strong>, <strong>Barangay Proper</strong>, and <strong>Sitio Makabakle</strong>. A <strong>Barrio Lieutenant leads</strong> the barangay and is an <strong>elected official</strong>. The <strong>first Barrio Lieutenant</strong> elected was <strong>Eulogio Santos</strong>, who was succeeded by <strong>Feliciano Magsino</strong>, <strong>Simplicio David, Felipe Salta, Leonardo Cunanan</strong>, and <strong>Eusebio Liwanag. </strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/sapang-biabas/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/sapang-biabas/chapel.jpg",
+                        "title": "Barangay Chapel"
+                    },
+                    {
+                        "url": "assets/barangay-photos/sapang-biabas/hemodialysis-center.jpg",
+                        "title": "Hemodialysis Center"
+                    },
+                    {
+                        "url": "assets/barangay-photos/sapang-biabas/entrance.jpg",
+                        "title": "Barangay Entrance"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>We envision Barangay Sapang Biabas to be a God-centered, family-oriented, healthy, and empowered people with a progressive, environment-friendly, clean, peaceful and community led by a decent, honest, balance and responsible public servant.&nbsp;&nbsp;&nbsp;&nbsp;</p><h3><strong>Mission</strong></h3><p>To serve and provide the basic services needed by the people through effective, efficient and good local government that will improve the quality of life of its citizenry.</p>",
+                "images": [
+                    "assets/barangay-logos/sapangbiabas.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": [],
+                "politicians": [
+                    {
+                        "name": "Hon. Esteban C. Liwanag",
+                        "year": "1994 – 1997"
+                    },
+                    {
+                        "name": "Hon. Esteban C. Liwanag",
+                        "year": "2002 - 2005"
+                    },
+                    {
+                        "name": "Hon. Rizaldo S. Garcia",
+                        "year": "2007 - 2016"
+                    },
+                    {
+                        "name": "Hon. Soraida O. Cabuang",
+                        "year": "2018 – up to present"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "123",
+        "name": "Tabun",
+        "width": 5616,
+        "height": 3744,
+        "logo_url": "assets/barangay-logos/tabun.png",
+        "facebookLink": "",
+        "websiteLink": "",
+        "photos": [
+            {
+                "url": "assets/barangay-photos/tabun/hall-min.jpg",
+                "title": "Barangay Hall"
+            },
+            {
+                "url": "assets/barangay-photos/tabun/entrance-min.jpg",
+                "title": "Entrance"
+            },
+            {
+                "url": "assets/barangay-photos/tabun/center-min.jpg",
+                "title": "Health Center"
+            },
+            {
+                "url": "assets/barangay-photos/tabun/xevera-min.jpg",
+                "title": "Xevera Mabalacat"
+            },
+            {
+                "url": "assets/barangay-photos/tabun/fiesta-min.jpg",
+                "title": "Fiesta Communities Mabalacat"
+            }
+        ],
+        "details": [
+            {
+                "type": "History",
+                "content": "<p><strong>&ldquo;Tabun&rdquo;</strong> (<strong>presa de rio</strong>) means <strong>land filling</strong> or <strong>reclaimed land</strong>. Old timers also say that <strong>&ldquo;tabun&rdquo;</strong> is a <strong>bird&rsquo;s name</strong>. &nbsp;Part of the old barrio <strong>Iba</strong> was incorporated into Tabun. Long time ago, Barangay Tabun, was divided into <strong>four (4) sitios</strong>: <strong>Sitio Apitan</strong>, <strong>Sitio Iba</strong>, <strong>Sitio Irong</strong> (<strong>a.k.a Donya Africa</strong>), and <strong>Barangay Tabun</strong>. A <strong>hill </strong>where a <strong>vacation house owned</strong> by <strong>Honorio Santos</strong> and <strong>his wife</strong>, <strong>Do&ntilde;a Africa</strong>, was situated in the midst of the sitios.</p><p>The <strong>Santos family</strong> was once the owner of <strong>almost three hundred and twenty (320) hectares</strong> of land surrounded by <strong>rice paddies</strong> and <strong>sugarcanes</strong>.Barangay Tabun symbolizes the vast storage of water supply of all the farmers living in the area for most of the residents work in the agriculture field. In <strong>1960&rsquo;s Enrique Garbo</strong> Become the <strong>first Tinyente</strong> <strong>Del Baryo</strong> or &ldquo;<strong>Barangay Captain</strong>&rdquo; from <strong>Sitio Irong</strong>. He was succeeded by <strong>Ben Pangan</strong> who headed the very first &ldquo;<strong>Fiesta ng Baryo</strong>&rdquo; in a <strong>three-day celebration</strong>. During <strong>Pangan&rsquo;s leadership</strong>, He headed the <strong>establishments of a church</strong> named after <strong>Apu Lourdes</strong> from <strong>Sitio Iba</strong> and held a <strong>feast on February 14</strong>. at <strong>present day time</strong>, Barangay Tabun&rsquo;s&nbsp; <strong>fiesta is celebrated on May 15</strong> known as <strong>Feast of San Isidro Labrador.</strong></p>",
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/tabun/hall-min.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/tabun/entrance-min.jpg",
+                        "title": "Entrance"
+                    },
+                    {
+                        "url": "assets/barangay-photos/tabun/center-min.jpg",
+                        "title": "Health Center"
+                    },
+                    {
+                        "url": "assets/barangay-photos/tabun/xevera-min.jpg",
+                        "title": "Xevera Mabalacat"
+                    },
+                    {
+                        "url": "assets/barangay-photos/tabun/fiesta-min.jpg",
+                        "title": "Fiesta Communities Mabalacat"
+                    }
+                ]
+            },
+            {
+                "type": "Fiesta",
+                "content": "Sample Content",
+                "images": []
+            },
+            {
+                "type": "Branding",
+                "content": "<h3><strong>Vision</strong></h3><p>Barangay Tabun is a public service Oriented Barangay Government run under the care and leadership of its industrious and competent officials through the active participation of its loyal constituents and benevolent support of the City Government of Mabalacat and the Provincial Government of Pampanga.</p><h3><strong>Mission</strong></h3><p>Barangay Tabun is committed to uphold the highest regard for public and social services for its constituents, all for general welfare of the people under the rule of justice, order and transparency towards attaining a desirable barangay government.</p>",
+                "images": [
+                    "assets/barangay-logos/tabun.png"
+                ]
+            },
+            {
+                "type": "Politicians",
+                "content": "Sample Content",
+                "images": []
+            }
+        ]
+    }
+]

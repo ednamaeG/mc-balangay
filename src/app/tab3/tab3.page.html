@@ -4,10 +4,24 @@
       Tab 3
     </ion-title>
   </ion-toolbar>
+  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white">
+    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'history' ? 'active' :''"
+      (click)="selectTab('history')">
+      History
+    </ion-col>
+    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'branding' ? 'active' :''"
+      (click)="selectTab('branding')">
+      Branding
+    </ion-col>
+    <ion-col style="padding: 14px;" [ngClass]="selected == 'politicians' ? 'active' :''"
+      (click)="selectTab('politicians')">
+      Politicians
+    </ion-col>
+  </ion-row>
 </ion-header>
 
-<ion-content >
-  <!-- <ion-slides [options]="slidesOptions" pager="true">
+<ion-content>
+  <!-- <ion-slides [options]="slidesOptions">
     <ion-slide style="height: 274px;">
       <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
@@ -23,16 +37,15 @@
     width: 100%;
     object-fit: cover;">
     </ion-slide>
-  </ion-slides>
+  </ion-slides> -->
+  <app-content-brgy *ngIf="selected =='history'"></app-content-brgy>
 
-   -->
+
 
   <!-- <img src="assets/mock-imgs/header-1.jpg" style="height: 100%;
    width: auto;
    object-fit: cover;
 "> -->
-<!-- <ion-input [(ngModel)]="txt" placeholder="enter text"></ion-input>
+  <!-- <ion-input [(ngModel)]="txt" placeholder="enter text"></ion-input>
 <ion-button >Test TTS</ion-button> -->
 </ion-content>
-
- 
