@@ -1,3 +1,143 @@
 {
-    "history":  "<p>Mabalacat became a first class municipality in July 1996. One barangay, Marcos Village, is inhabited by Negritos who live in bungalow houses and speak broken English. Its land of 15,262 hectares is more than double that of Angeles City's. Two-thirds of the land area of Clark Air Base was taken from Mabalacat. Its people are peace-loving and God-fearing as well as hardworking and industrious. They speak the Kapampangan dialect, which is very rich in vocabulary and culture.</p><p><strong>Legend &amp; History</strong></p><p>Mabalacat became a town in 1712. It was named after the 'balacat' tree, a fourth class timber. 'Mabalacat' means full of 'balacat.' Then a settlement of a Negrito tribe headed by a chieftain name Caragan, the area was a virtual forest of 'balacat' trees.</p><p>Before 1712, Mabalacat was a barrio (barangay) of Bambang, now Bamban Tarlac. There is no official record on the foundation of this town, but according to stories handed down orally from generation to generation, the first settlers were purely Negritos led by Caragan.</p><p>Caragan married Laureana Tolentino and adopted her family name. Laureana Tolentino was the first 'cabeza de barangay' of Mabalacat, a title now equivalent to barangay captain. Eventually, the Negritos were finally driven back to the nearby mountains and hills by the lowlanders who frequented the place to hunt wild animals and fowls.</p>"
+    "history": "<p>Mabalacat became a first class municipality in July 1996. One barangay, Marcos Village, is inhabited by Negritos who live in bungalow houses and speak broken English. Its land of 15,262 hectares is more than double that of Angeles City's. Two-thirds of the land area of Clark Air Base was taken from Mabalacat. Its people are peace-loving and God-fearing as well as hardworking and industrious. They speak the Kapampangan dialect, which is very rich in vocabulary and culture.</p><p><strong>Legend &amp; History</strong></p><p>Mabalacat became a town in 1712. It was named after the 'balacat' tree, a fourth class timber. 'Mabalacat' means full of 'balacat.' Then a settlement of a Negrito tribe headed by a chieftain name Caragan, the area was a virtual forest of 'balacat' trees.</p><p>Before 1712, Mabalacat was a barrio (barangay) of Bambang, now Bamban Tarlac. There is no official record on the foundation of this town, but according to stories handed down orally from generation to generation, the first settlers were purely Negritos led by Caragan.</p><p>Caragan married Laureana Tolentino and adopted her family name. Laureana Tolentino was the first 'cabeza de barangay' of Mabalacat, a title now equivalent to barangay captain. Eventually, the Negritos were finally driven back to the nearby mountains and hills by the lowlanders who frequented the place to hunt wild animals and fowls.</p>",
+    "politicians": [
+        {
+            "type": "Presidentes Municipales",
+            "data": [
+                {
+                    "name": "Mariano de la Cruz",
+                    "year": "1900-1901"
+                },
+                {
+                    "name": "Ludovico A. Narciso",
+                    "year": "1902-1903"
+                },
+                {
+                    "name": "Jose de Castro",
+                    "year": "1904"
+                },
+                {
+                    "name": "Marcelo Tiglao",
+                    "year": "1905"
+                },
+                {
+                    "name": "Mariano Tiglao",
+                    "year": "1906-1909"
+                },
+                {
+                    "name": "Gregorio Lacsamana",
+                    "year": "1910"
+                },
+                {
+                    "name": "Emilio Domingues",
+                    "year": "1911"
+                },
+                {
+                    "name": "Joaquin Concepcion",
+                    "year": "1916-1919"
+                },
+                {
+                    "name": "Jose Siopongco",
+                    "year": "1920-1923"
+                },
+                {
+                    "name": "Alejandro Angeles",
+                    "year": "1924-1927"
+                },
+                {
+                    "name": "Jose Mendoza",
+                    "year": "1928-1931"
+                },
+                {
+                    "name": "Dr. Jose Garcia",
+                    "year": "1932-1935"
+                }
+            ]
+        },
+        {
+            "type": "Municipal Mayors",
+            "data": [
+                {
+                    "name": "Virgilio Ocampo",
+                    "year": "1936-1939"
+                },
+                {
+                    "name": "Jose Mendoza (appointed by the Japanese Imperial Army)",
+                    "year": "1940-1941"
+                },
+                {
+                    "name": "Vicente de la Cruz",
+                    "year": "1941-1947"
+                },
+                {
+                    "name": "Carlito F. Pineda (appointed by Gov. Jose B. Lingad) ",
+                    "year": "Oct.-Dec. 1947"
+                },
+                {
+                    "name": "Dr. Miguel P. Morales (1st to be elected after the Liberation)",
+                    "year": "1948-1951"
+                },
+                {
+                    "name": "Sisenando Madlambayan (appointed by Gov. Pablo Angeles David)",
+                    "year": "1951-Jul. 1952"
+                },
+                {
+                    "name": "Arturo T. Garcia",
+                    "year": "Jul. 1952-1955"
+                },
+                {
+                    "name": "Armando P. Quioc",
+                    "year": "1956-1959"
+                },
+                {
+                    "name": "Carlito F. Pineda (2 terms)",
+                    "year": "1960-1967"
+                },
+                {
+                    "name": "Emiliano Candelaria",
+                    "year": "1968-1971"
+                },
+                {
+                    "name": "Bienvenido M. Fernandez",
+                    "year": "Jan.-Apr. 15, 1972:"
+                },
+                {
+                    "name": "Wilfredo C. Halili",
+                    "year": "Apr. 1972-Feb 1986"
+                },
+                {
+                    "name": "Juan G. Santos",
+                    "year": "Feb. 1986-Nov. 1987"
+                },
+                {
+                    "name": "Hector P. Soto (OIC)",
+                    "year": "Nov. 1987-Jan. 1988"
+                },
+                {
+                    "name": "Wilfredo C. Halili",
+                    "year": "1988-1992"
+                },
+                {
+                    "name": "Marino P. Morales",
+                    "year": "Mar-Jun 1992"
+                },
+                {
+                    "name": "Dr. Catalino T. Domingo",
+                    "year": "Jun. 1992-Mar. 1995"
+                },
+                {
+                    "name": "Reynaldo T. Candelaria",
+                    "year": "Mar. 21-Jun.30, 1995"
+                },
+                {
+                    "name": "Marino P. Morales",
+                    "year": "Jun.1995- Jun. 26, 2017:"
+                },
+                {
+                    "name": "Crisostomo Garbo",
+                    "year": "Jun. 27, 2017 to present"
+                }
+            ]
+        }
+    ]
 }

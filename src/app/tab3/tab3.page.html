@@ -17,10 +17,31 @@
       (click)="selectTab('politicians')">
       Politicians
     </ion-col>
+    <ion-col style="padding: 14px;" [ngClass]="selected == 'politicians' ? 'active' :''"
+      (click)="selectTab('politicians')">
+      Politicians
+    </ion-col>
   </ion-row>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <ion-col  size-sm>
+      ion-col [] [size-sm]
+    </ion-col>
+    <ion-col  size-sm>
+      ion-col [] [size-sm]
+    </ion-col>
+    <ion-col  size-sm>
+      ion-col [] [size-sm]
+    </ion-col>
+    <ion-col  size-sm>
+      ion-col [] [size-sm]
+    </ion-col>
+    <ion-col  size-sm>
+      ion-col [] [size-sm]
+    </ion-col>
+  </ion-row>
   <!-- <ion-slides [options]="slidesOptions">
     <ion-slide style="height: 274px;">
       <img src="assets/mock-imgs/header-1.jpg" style="

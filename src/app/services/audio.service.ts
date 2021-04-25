@@ -10,11 +10,18 @@ export class AudioService {
 
   async initSounds(id,url){
     // correct answer
-    await this.nativeAudio.preloadSimple(id,url); 
+    // await this.nativeAudio.preloadSimple(id,url); 
+    await this.nativeAudio.preloadComplex(id,url,1,1,0); 
 
   }
 
   async playSound(id){
     const play = await this.nativeAudio.play(id);
+    console.log('play')
+  }
+
+  async stopSound(id){
+    const stop = await this.nativeAudio.stop(id);
+    console.log('stop')
   }
 }

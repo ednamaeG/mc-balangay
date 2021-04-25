@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MabalacatHistoryPage implements OnInit {
   content:any;
+  selectedTab="History";
   constructor(private httpClient:HttpClient) { }
 
   async ngOnInit() {
@@ -17,5 +18,9 @@ export class MabalacatHistoryPage implements OnInit {
 
   async getData(): Promise<any> {
     return await this.httpClient.get<any>('./assets/mocks/mabalacat-details.json').toPromise();
+  }
+
+  selectTab(tab){
+    this.selectedTab = tab;
   }
 }

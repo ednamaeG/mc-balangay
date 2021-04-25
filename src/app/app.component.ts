@@ -36,7 +36,7 @@ export class AppComponent {
         this.router.navigate([this.rootPage], { replaceUrl: true })
       } else {
         console.log('pop')
-        this.navCtrl.pop()
+        // this.navCtrl.pop()
       }
     }, false)
   }

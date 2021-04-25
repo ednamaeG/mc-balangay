@@ -14,7 +14,8 @@ export class ContentBrgyComponent implements OnInit {
     initialSlide: 0,
     // freeMode: true,
     // loop: true,
-    autoplay: true
+    autoplay: true,
+    autoHeight:true
   };
   @Input() content: IBarangayDetail;
   fontSize:any;

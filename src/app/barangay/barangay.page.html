@@ -11,7 +11,7 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white">
+  <ion-row style="text-align: center; background: var(--ion-color-olive); color: white" >
     <!-- <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'History' ? 'active' :''"
       (click)="selectTab('history')">
       History
@@ -20,14 +20,13 @@
       (click)="selectTab('branding')">
       Branding
     </ion-col>
-    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
-      (click)="selectTab('politicians')">
+    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"      (click)="selectTab('politicians')">
       Politicians
     </ion-col> -->
 
-    <ion-col *ngFor="let contentType of barangayData.details" style="padding: 14px; border-right: 1px solid white"
-      [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)">
-      {{contentType.type}}
+    <ion-col  *ngFor="let contentType of barangayData.details" style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
+      [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)" size-sm>
+     <ion-text> <ion-icon [src]="getIconName(contentType.type)" style="font-size: 20px;"></ion-icon> <br/> {{contentType.type}}</ion-text>
     </ion-col>
   </ion-row>
 </ion-header>

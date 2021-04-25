@@ -27,14 +27,14 @@ export class QuizViewPage implements OnInit {
 
   totalScore = 0;
   showResults = false;
-  config: CountdownConfig;
+  config: CountdownConfig = { leftTime: 15, format: 'mm:ss', notify: [10] };;
   totalCorrectAnswers = 0;
   questions: IQuestion[] = [];
   currentPage = 0;
   lastPage = 0;
   quizContent: IQuiz;
   currentQuestion: any;
-  time = 10;
+  time: number = 30;
   totalPoints = 0;
   letters = [
     'A',
@@ -45,18 +45,22 @@ export class QuizViewPage implements OnInit {
   ]
   CORRECT_ANSWER_SOUND_ID = 'correct_answer';
   INCORRECT_ANSWER_SOUND_ID = 'incorrect_answer';
-  correctSoundUrl= 'assets/sounds/correct_answer.mp3';
-  incorrectSoundUrl= 'assets/sounds/wrong-answer.mp3';
+  TIMER_SOUND_ID = 'timer_sound';
+  correctSoundUrl = 'assets/sounds/correct_answer.mp3';
+  incorrectSoundUrl = 'assets/sounds/wrong-answer.mp3';
+  timerSoundUrl = 'assets/sounds/timer.mp3';
+
   totalAnswered = 0;
   constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService, private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController) {
     this.quizContent = JSON.parse(this.route.snapshot.params.data);
     this.lastPage = this.quizContent.questions.length;
     this.shuffleQuestions();
     this.currentQuestion = this.quizContent.questions[0];
-    this.config = { leftTime: this.time, format: 'mm:ss' };
-    
+    // this.config = { leftTime: this.time, format: 'mm:ss' };
+    // this.start_timer()
     this.quizContent.questions.forEach(question => this.totalPoints += question.points)
     console.log('total points', this.totalPoints, this.quizContent)
+    
   }
 
 
@@ -68,17 +72,20 @@ export class QuizViewPage implements OnInit {
   }
 
   async ngAfterViewInit() {
-    this.audioSvc.initSounds(this.CORRECT_ANSWER_SOUND_ID,this.correctSoundUrl)
-    this.audioSvc.initSounds(this.INCORRECT_ANSWER_SOUND_ID,this.incorrectSoundUrl)
+    this.audioSvc.initSounds(this.CORRECT_ANSWER_SOUND_ID, this.correctSoundUrl)
+    this.audioSvc.initSounds(this.INCORRECT_ANSWER_SOUND_ID, this.incorrectSoundUrl)
+    this.audioSvc.initSounds(this.TIMER_SOUND_ID, this.timerSoundUrl)
+
   }
 
   setCurrentData() {
     const idx = this.currentPage;
     this.currentQuestion = this.quizContent.questions[idx];
-    this.resetTimer()
+    // this.resetTimer()
   }
 
   nextPage() {
+    this.audioSvc.stopSound(this.TIMER_SOUND_ID)
     this.currentPage++;
     this.slider.slideTo(this.currentPage)
     this.content.scrollToTop()
@@ -92,6 +99,7 @@ export class QuizViewPage implements OnInit {
     } else {
       this.setCurrentData()
     }
+    this.resetTimer()
   }
 
   previousPage() {
@@ -120,6 +128,8 @@ export class QuizViewPage implements OnInit {
 
   select(i) {
     console.log('currentQuestion', this.quizContent.questions[this.currentPage])
+    this.audioSvc.stopSound(this.TIMER_SOUND_ID)
+
     if (!this.quizContent.questions[this.currentPage].hasAnswer) {
       this.currentQuestion.choices[i].selected = true;
       const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
@@ -134,13 +144,15 @@ export class QuizViewPage implements OnInit {
         console.log(this.totalCorrectAnswers)
         setTimeout(() => {
           this.nextPage();
+          // this.resetTimer()
+
         }, 300)
 
 
       } else {
         this.audioSvc.playSound(this.INCORRECT_ANSWER_SOUND_ID)
         console.log('correct answer::', correctAnswer)
-        this.showCorrectAnswer(correctAnswer.title)
+        this.showCorrectAnswer(correctAnswer.title, "answer")
       }
 
 
@@ -149,29 +161,34 @@ export class QuizViewPage implements OnInit {
   }
 
   handleTimer(e: CountdownEvent) {
-    
+
     if (e.action == "notify") {
-      console.log("Start",e.left)
+      this.audioSvc.playSound(this.TIMER_SOUND_ID);
     }
 
     if (e.action == "done") {
       console.log("Done!");
-      console.log('page', this.currentPage)
-      this.nextPage()
+      console.log('page', this.currentPage);
+      // alert("Times up!")
+      // this.nextPage()
+      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
+      this.showCorrectAnswer(correctAnswer.title, "timer")
       this.start_timer();
     }
 
   }
 
   start_timer() {
-    this.config = { leftTime: this.time, format: 'mm:ss', notify:[5]};
+    // this.config = { leftTime: this.time, format: 'mm:ss', notify:[5]};
     this.countdown.begin();
   }
 
   resetTimer() {
     console.log('reset timer')
-    // this.countdown.restart()
-    this.start_timer()
+    // this.config = { leftTime: this.time, format: 'mm:ss', notify:[5]};
+
+    this.countdown.restart()
+    // this.start_timer()
   }
 
   async getQuizzes() {
@@ -257,14 +274,13 @@ export class QuizViewPage implements OnInit {
     await alert.present();
   }
 
-  async showCorrectAnswer(correctAnswer) {
-    const self = this;
+  async showCorrectAnswer(correctAnswer, type) {
     const alert = await this.alertCtrl.create({
-      header: 'INCORRECT!',
+      header: type == "timer" ? "TIMES UP!" : "INCORRECT!",
       message: ' ' + correctAnswer,
       subHeader: 'The Correct Answer is:',
       mode: 'ios',
-      cssClass: 'incorrect-alert',
+      cssClass: type == "timer" ?  'quiz-alert timer-alert'  : 'quiz-alert incorrect-alert',
 
       buttons: [
         {
@@ -290,6 +306,8 @@ export class QuizViewPage implements OnInit {
     await alert.present();
     alert.onDidDismiss().then((res) => {
       this.nextPage();
+
+
     })
 
     // setTimeout(async () => {
@@ -297,6 +315,16 @@ export class QuizViewPage implements OnInit {
     //   this.nextPage();
     // }, 500)
   }
+
+  ngOnDestroy()  {
+    console.log('ondestroy');
+    this.audioSvc.stopSound(this.TIMER_SOUND_ID)
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    
+  }
+
+  
 }
 
 
