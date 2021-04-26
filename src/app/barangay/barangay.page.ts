@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PopoverController } from '@ionic/angular';
+import { IonContent, PopoverController } from '@ionic/angular';
 import { ControlsPopOverPage } from '../controls-pop-over/controls-pop-over.page';
 import { IBarangay } from '../interfaces/barangay';
 
@@ -12,6 +12,7 @@ import { IBarangay } from '../interfaces/barangay';
 export class BarangayPage implements OnInit {
   barangayData: IBarangay;
   selectedTab = 'History'
+  @ViewChild('content') content :IonContent;
   constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController) {
     const params = this.route.snapshot.params;
     this.barangayData = JSON.parse(params.content);
@@ -25,7 +26,9 @@ export class BarangayPage implements OnInit {
   }
 
   selectTab(tab) {
+    
     this.selectedTab = tab;
+    this.content.scrollToTop()
   }
 
   async showControls(ev) {

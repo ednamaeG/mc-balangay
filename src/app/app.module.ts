@@ -15,11 +15,12 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 // import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+import { TriviaPage } from './trivia/trivia.page';
  
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,TriviaPage],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
     NgCircleProgressModule.forRoot({

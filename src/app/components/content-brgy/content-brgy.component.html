@@ -1,4 +1,4 @@
-<ion-slides [options]="slidesOptions" *ngIf="content.images.length > 1">
+<ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding'">
   <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
     <div>
       <img [src]="photo.url" style="
@@ -11,7 +11,7 @@
   </ion-slide>
 </ion-slides>
 
-<div *ngIf="content.images.length == 1" class="img-container">
+<div *ngIf="content.type == 'Branding'" class="img-container">
   <img [src]="content.images[0]" class="brand-img">
 </div>
 

@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'barangay',
     loadChildren: () => import('./barangay/barangay.module').then( m => m.BarangayPageModule)
+  },
+  {
+    path: 'trivia',
+    loadChildren: () => import('./trivia/trivia.module').then( m => m.TriviaPageModule)
   }
 
 ];

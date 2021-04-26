@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "isAnswered":false,
         "triviaQuestion": "Can you guess where the named Atlu Bola originated?",
         "choices": [
             {
@@ -12,11 +13,17 @@
                 "correct": true
             }
         ],
-        "info": "It was named with the stone roller that built by Tiring Mercado. Ordinary rollers would have two “bolas” but the one she built had three. ---- insert picture of 3 stone rollers",
-        "images": []
+        "info": "It was named with the stone roller that built by Tiring Mercado. Ordinary rollers would have two “bolas” but the one she built had three. ",
+        "images": [
+            {
+                "title":"Stone Rollers",
+                "url":"assets/trivia-photos/stoneroller.jpg"
+            }
+        ]
     },
     {
         "id": 2,
+        "isAnswered":false,
         "triviaQuestion": "Can you guess where the Bical named?",
         "choices": [
             {
@@ -28,11 +35,17 @@
                 "correct": false
             }
         ],
-        "info": "The barangay Bical was named after the “bical” grass. It is a slender, climbing bamboo that once grew abundantly in the area. ----- insert picture of bical grass",
-        "images": []
+        "info": "The barangay Bical was named after the “bical” grass. It is a slender, climbing bamboo that once grew abundantly in the area.",
+        "images": [
+            {
+                "title":"Bical Grass",
+                "url":"assets/trivia-photos/bical.jpg"
+            }
+        ]
     },
     {
         "id": 3,
+        "isAnswered":false,
         "triviaQuestion": "Did you know the old name of Brgy. Bundagul?",
         "choices": [
             {
@@ -45,6 +58,11 @@
             }
         ],
         "info": "Brgy. Bundagul old name was masulput, as its open fields were full of “sulpot” which is a local term for amorseco plants with thistles that clung to clothes.",
-        "images": []
+        "images": [
+            {
+                "title":"Amorseo Plants",
+                "url":"assets/trivia-photos/amorseo.jpg"
+            }
+        ]
     }
 ]

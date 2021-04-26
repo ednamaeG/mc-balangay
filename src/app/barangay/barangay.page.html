@@ -31,7 +31,7 @@
   </ion-row>
 </ion-header>
 
-<ion-content>
+<ion-content #content>
   <div *ngFor="let content of barangayData.details">
     <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
       <app-content-brgy [content]="content"></app-content-brgy>

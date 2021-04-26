@@ -1,0 +1,34 @@
+ 
+<ion-content  [fullscreen]="true">
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="ion-padding">
+    <div class="question" *ngIf="!showInfo">
+      <p>{{trivia.triviaQuestion}}</p>
+      <ion-row>
+        <ion-col *ngFor="let choice of trivia.choices; let i = index" size="6" >
+          <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'primary'" expand="block" fill="outline">
+            <ion-icon slot="end" style="font-size: 14px;"></ion-icon>
+            {{choice.title}}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+       
+    </div>
+  
+    <div class="triviaAnswer" *ngIf="showInfo">
+      <div class="imgs" *ngFor="let photo of trivia.images">
+        <img [src]="photo.url">
+      </div>
+      <p>{{trivia.info}}</p>
+    </div>
+  </div>
+   
+
+</ion-content>
