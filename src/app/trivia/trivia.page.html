@@ -1,7 +1,7 @@
- 
-<ion-content  [fullscreen]="true">
-  <ion-toolbar>
-    <ion-title>{{title}}</ion-title>
+<ion-content [fullscreen]="true">
+  <!-- <img src="assets/imgs/trivia1.png"> -->
+  <ion-toolbar color="sky">
+    <!-- <ion-title ><ion-text color="dark">{{title}}</ion-text></ion-title> -->
     <ion-buttons slot="end">
       <ion-button slot="icon-only" (click)="dismissModal()">
         <ion-icon name="close"></ion-icon>
@@ -10,25 +10,74 @@
   </ion-toolbar>
   <div class="ion-padding">
     <div class="question" *ngIf="!showInfo">
-      <p>{{trivia.triviaQuestion}}</p>
-      <ion-row>
-        <ion-col *ngFor="let choice of trivia.choices; let i = index" size="6" >
-          <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'primary'" expand="block" fill="outline">
+      <ion-card>
+        <ion-card-header>
+          <ion-text style="font-size: 20px;" color="olive"> {{title}}</ion-text>
+        </ion-card-header>
+        <ion-card-content>
+          <p *ngIf="!answerStats">{{trivia.triviaQuestion}}</p>
+          <ion-text [color]="answerStats == 'CORRECT!' ? 'success' : 'danger'">
+            <h2 *ngIf="answerStats" style="text-align: center; font-weight: bold; font-size: 35px;">{{answerStats}}</h2>
+          </ion-text>
+        </ion-card-content>
+
+      </ion-card>
+      <div *ngFor="let choice of trivia.choices; let i = index" style="padding:6px">
+        <div (click)="selectAnswer(i)" style="border: 2px solid var(--ion-color-cream);
+     
+        BORDER-RADIUS: 25PX; padding: 12px; background-color: #ffffff;">
+          <ion-label>
+            <ion-text color="olive">
+              {{choice_letters[i]}} . {{choice.title}}
+            </ion-text>
+            <ion-icon *ngIf="choice.selected" [name]="choice.correct ?  'checkmark' : 'close-circle'"
+              [color]="choice.correct ?  'success' : 'danger'" style="float: right; font-size: 24px"></ion-icon>
+          </ion-label>
+
+        </div>
+      </div>
+      <!-- <ion-row>
+        <ion-col *ngFor="let choice of trivia.choices; let i = index" size="12">
+          <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'primary'" expand="block"
+            fill="outline" shape="round">
             <ion-icon slot="end" style="font-size: 14px;"></ion-icon>
             {{choice.title}}
           </ion-button>
         </ion-col>
-      </ion-row>
-       
+      </ion-row> -->
+      <!-- <div *ngFor="let choice of trivia.choices; let i = index">
+        <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'medium'" expand="block"
+          fill="outline" shape="round">
+          <ion-icon slot="end" style="font-size: 14px;"></ion-icon>
+          {{choice.title}}
+        </ion-button>
+      </div> -->
+
+
     </div>
-  
-    <div class="triviaAnswer" *ngIf="showInfo">
-      <div class="imgs" *ngFor="let photo of trivia.images">
-        <img [src]="photo.url">
-      </div>
-      <p>{{trivia.info}}</p>
+
+    <div *ngIf="showInfo">
+      <!-- <div class="imgs" *ngFor="let photo of trivia.images" >
+        <img [src]="photo.url" style="height: 100%; width: 100%;">
+      </div> -->
+      <ion-card>
+        <div class="imgs" *ngFor="let photo of trivia.images">
+          <!-- <div class="info">
+            <h2>{{ correctAnswer }}</h2>
+          </div> -->
+          <img [src]="photo.url" style="height: 100%; width: 100%;">
+
+        </div>
+        <ion-card-header>
+          <ion-text style="font-size: 20px; font-weight: bold;"> {{title}} </ion-text>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{trivia.info}}</p>
+        </ion-card-content>
+      </ion-card>
     </div>
+
   </div>
-   
+
 
 </ion-content>

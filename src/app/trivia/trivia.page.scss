@@ -3,6 +3,7 @@ ion-toolbar{
     --ion-color-base:transparent  !important
 }
 
-
 ion-content{
-    --background: none;}
+    --background: none;
+     background-image:  url('../../assets/imgs/test.jpg');
+}

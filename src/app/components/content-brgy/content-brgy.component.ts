@@ -36,8 +36,8 @@ export class ContentBrgyComponent implements OnInit {
     const modal = await this.modalController.create({
       component: ViewerModalComponent,
       componentProps: {
-        src: photo.url,
-        title:photo.title,
+        src: photo.url ? photo.url : photo,
+        title:photo.title ? photo.title : '',
         scheme:'dark'
       },
       cssClass: 'ion-img-viewer',

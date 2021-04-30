@@ -40,6 +40,9 @@ export class AppComponent {
     trivias = trivias.sort(() =>{
       return 0.8 - Math.random()
     })
+    // debugmode
+    // trivias = await this.getTrivias();
+
     const trivia = trivias.find(trivia => trivia.isAnswered == false)
      
     if(trivia){

@@ -150,7 +150,9 @@ export class QuizViewPage implements OnInit {
 
 
       } else {
+        this.countdown.stop()
         this.audioSvc.playSound(this.INCORRECT_ANSWER_SOUND_ID)
+
         console.log('correct answer::', correctAnswer)
         this.showCorrectAnswer(correctAnswer.title, "answer")
       }

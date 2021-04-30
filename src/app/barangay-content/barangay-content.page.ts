@@ -56,4 +56,5 @@ export class BarangayContentPage implements OnInit {
 
   }
 
+  
 }

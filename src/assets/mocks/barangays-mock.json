@@ -18,7 +18,7 @@
                 "type": "Branding",
                 "content": "<h3><strong>Vision</strong></h3><p>Barangay Atlu Bola Mabalacat City Pampanga, is a progressive and well preserved Barangay, in providing better services and with our various projects to our COMMUNITY PEOPLE AND WITH THE RESPONSIVE GOVERNANCE AND TRANSPARENCY OF OUR BARANGAY OFFICIAL IN SERVING OUR CONSTITUTIENTS IN THE COMMUNITY.</p><h3><strong>Mission</strong></h3><p>Baranagay Atlu Bola, Mabalacat City, Pampanga, commits and strives to achieve service satisfaction and to improve our community with our organization and in structural system of governance. And to promoted transparency and strengthening law enforcement. Builds and promotes our barangay as partner of socio economic development community thru the partnership of the national government, local government, NGO&rsquo;s and other various sectors.</p>",
                 "images": [
-                    "assets/barangay-logos/atlubola.png"
+                   
                 ]
             },
             {
@@ -28,7 +28,10 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    
+                    "assets/feast-photos/ATLU-BOLA.jpg"
+                ]
             }
         ]
     },
@@ -61,7 +64,7 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [   "assets/feast-photos/BICAL.jpg"]
             }
         ]
     },
@@ -94,7 +97,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/BUNDAGUL.jpg"
+                ]
             }
         ]
     },
@@ -122,10 +127,6 @@
             {
                 "url": "assets/barangay-photos/cacutud/childhood-development-center-min.jpg",
                 "title": "Childhood Development Center"
-            }, {
-                "type": "Fiesta",
-                "content": "Sample Content",
-                "images": []
             }
         ],
         "details": [
@@ -166,7 +167,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/CACUTUD.jpg"
+                ]
             }
         ]
     },
@@ -199,7 +202,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/CALUMPANG.jpg"
+                ]
             }
         ]
     },
@@ -285,7 +290,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/CAMACHILES.jpg"
+                ]
             }
         ]
     },
@@ -318,7 +325,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/DAPDAP.jpg"
+                ]
             }
         ]
     },
@@ -408,7 +417,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/DAU.jpg"
+                ]
             }
         ]
     },
@@ -492,7 +503,9 @@
             }, {
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/DOLORES.jpg"
+                ]
             }
         ]
     },
@@ -586,7 +599,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/DUQUIT.jpg"
+                ]
             }
         ]
     },
@@ -612,7 +627,16 @@
             {
                 "type": "History",
                 "content": "<p>Named after <strong>Rajah Lakandula</strong>, the powerful king of Tondo, who made a pact of peace with Legazpi in <strong>1572,</strong> together with <strong>Rajah Matanda</strong> and <strong>Rajah Soliman</strong>. Carved out of the progressive barangay Dau in the Municipality of Mabalacat. Currently consisting of thirteen (13) numbered parallel streets (from 7th to 19th) traversed by various horizontal streetsBeing strategically located beside Clark Freeport&rsquo;s Main Gate, the barangay is a home to numerous <strong>apartments</strong> and <strong>dormitories</strong> of large capacities catering to the ever-growing workforce of the former airbase.</p>",
-                "images": []
+                "images": [
+                    {
+                        "url": "assets/barangay-photos/lakandula/barangay-hall.jpg",
+                        "title": "Barangay Hall"
+                    },
+                    {
+                        "url": "assets/barangay-photos/lakandula/basketball-court.jpg",
+                        "title": "Basketball Court"
+                    }
+                ]
             },
            
             {
@@ -629,7 +653,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/LAKANDULA.jpg"
+                ]
             }
         ]
     },
@@ -703,7 +729,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MABIGA.jpg"
+                ]
             }
         ]
     },
@@ -781,7 +809,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MACAPAGAL-VILLAGE.jpg"
+                ]
             }
         ]
     },
@@ -833,7 +863,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MAMATITANG.jpg"
+                ]
             }
         ]
     },
@@ -909,7 +941,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MANGALIT.jpg"
+                ]
             }
         ]
     },
@@ -942,7 +976,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MARCOS-VILLAGE.jpg"
+                ]
             }
         ]
     },
@@ -1000,7 +1036,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/MAWAQUE.jpg"
+                ]
             }
         ]
     },
@@ -1033,7 +1071,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/PARALAYUNAN.jpg"
+                ]
             }
         ]
     },
@@ -1093,7 +1133,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/POBLACION.jpg"
+                ]
             }
         ]
     },
@@ -1153,7 +1195,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SAN-FRANCISCO.jpg"
+                ]
             }
         ]
     },
@@ -1229,7 +1273,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SAN-JOAQUIN.jpg"
+                ]
             }
         ]
     },
@@ -1281,7 +1327,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SANTA-INES.jpg"
+                ]
             }
         ]
     },
@@ -1314,7 +1362,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SANTA-MARIA.jpg"
+                ]
             }
         ]
     },
@@ -1374,7 +1424,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SANTO-ROSARIO.jpg"
+                ]
             }
         ]
     },
@@ -1407,7 +1459,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SAPANG-BALEN.jpg"
+                ]
             }
         ]
     },
@@ -1493,7 +1547,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/SAPANG-BIABAS.jpg"
+                ]
             }
         ]
     },
@@ -1569,7 +1625,9 @@
             },{
                 "type": "Fiesta",
                 "content": "Sample Content",
-                "images": []
+                "images": [
+                    "assets/feast-photos/TABUN.jpg"
+                ]
             }
         ]
     }
