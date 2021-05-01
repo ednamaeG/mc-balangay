@@ -16,6 +16,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 // import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 import { TriviaPage } from './trivia/trivia.page';
+// import { ScrollHideDirective } from './directives/scroll-hide.directive';
  
 
 

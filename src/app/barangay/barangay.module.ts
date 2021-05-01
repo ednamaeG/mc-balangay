@@ -8,6 +8,7 @@ import { BarangayPageRoutingModule } from './barangay-routing.module';
 
 import { BarangayPage } from './barangay.page';
 import { ComponentsModule } from '../components/components.module';
+import { ScrollHideDirective } from '../directives/scroll-hide.directive';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ComponentsModule } from '../components/components.module';
     IonicModule,
     BarangayPageRoutingModule, ComponentsModule
   ],
-  declarations: [BarangayPage]
+  declarations: [BarangayPage, ScrollHideDirective
+  ]
 })
 export class BarangayPageModule { }

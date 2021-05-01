@@ -4,6 +4,8 @@ import { IonContent, PopoverController } from '@ionic/angular';
 import { ControlsPopOverPage } from '../controls-pop-over/controls-pop-over.page';
 import { IBarangay } from '../interfaces/barangay';
 
+import { ScrollHideConfig} from '../directives/scroll-hide.directive' 
+
 @Component({
   selector: 'app-barangay',
   templateUrl: './barangay.page.html',
@@ -12,6 +14,8 @@ import { IBarangay } from '../interfaces/barangay';
 export class BarangayPage implements OnInit {
   barangayData: IBarangay;
   selectedTab = 'History'
+  headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
+
   @ViewChild('content') content :IonContent;
   constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController) {
     const params = this.route.snapshot.params;

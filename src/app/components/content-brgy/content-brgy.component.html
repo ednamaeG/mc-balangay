@@ -4,7 +4,7 @@
       <img [src]="photo.url" style="
     width: 100%;
     object-fit: cover;" (click)="openViewer(photo)">
-      <div class="img-title" >
+      <div class="img-title">
         {{ photo.title }}
       </div>
     </div>
@@ -14,9 +14,12 @@
 <div *ngIf="content.type == 'Branding'" class="img-container">
   <img [src]="content.images[0]" class="brand-img">
 </div>
- 
-<div *ngIf="content.type == 'Fiesta'" class="img-container">
-  <img [src]="content.images[0]" class="fiesta-img" (click)="openViewer(content.images[0])">
+
+<div *ngIf="content.type == 'Fiesta'" style="position: relative;">
+  <img [src]="content.images[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
+  <div class="info">
+    {{content.images[0].title}}
+  </div>
 </div>
 
 <div class="ion-padding">

@@ -1,4 +1,5 @@
-<ion-header>
+<ion-header [scrollHide]="headerScrollConfig" [scrollContent]="content">
+ 
   <ion-toolbar color="sky">
     <ion-title>{{barangayData.name}}</ion-title>
     <ion-buttons slot="start">
@@ -11,27 +12,44 @@
     </ion-buttons>
   </ion-toolbar>
 
-  <ion-row style="text-align: center; background: var(--ion-color-olive); color: white" >
-    <!-- <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'History' ? 'active' :''"
-      (click)="selectTab('history')">
-      History
-    </ion-col>
-    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'Branding' ? 'active' :''"
-      (click)="selectTab('branding')">
-      Branding
-    </ion-col>
-    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"      (click)="selectTab('politicians')">
-      Politicians
-    </ion-col> -->
-
-    <ion-col  *ngFor="let contentType of barangayData.details" style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
+ 
+  <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
+    <ion-col *ngFor="let contentType of barangayData.details"
+      style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
       [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)" size-sm>
-     <ion-text> <ion-icon [src]="getIconName(contentType.type)" style="font-size: 20px;"></ion-icon> <br/> {{contentType.type}}</ion-text>
+      <ion-text>
+        <ion-icon [src]="getIconName(contentType.type)" style="font-size: 20px;"></ion-icon> <br /> {{contentType.type}}
+      </ion-text>
     </ion-col>
   </ion-row>
 </ion-header>
 
-<ion-content #content>
+<!-- <ion-content #content [fullscreen]="true">
+  <ion-toolbar color="sky">
+    <ion-title>{{barangayData.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="showControls($event)">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+     
+  </ion-toolbar> -->
+
+  <ion-content #content [fullscreen]="true">
+    
+<!-- 
+  <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
+    <ion-col *ngFor="let contentType of barangayData.details"
+      style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
+      [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)" size-sm>
+      <ion-text>
+        <ion-icon [src]="getIconName(contentType.type)" style="font-size: 20px;"></ion-icon> <br /> {{contentType.type}}
+      </ion-text>
+    </ion-col>
+  </ion-row> -->
   <div *ngFor="let content of barangayData.details">
     <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
       <app-content-brgy [content]="content"></app-content-brgy>
@@ -43,5 +61,5 @@
     </div>
   </div>
 
-  
+
 </ion-content>
