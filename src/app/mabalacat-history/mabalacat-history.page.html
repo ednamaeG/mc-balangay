@@ -5,16 +5,16 @@
       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-   
+
   <!-- <ion-toolbar>
     <ion-title class="ion-text-center" color="olive">History</ion-title>
   </ion-toolbar> -->
-  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white" >
-    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selectedTab == 'History' ? 'active' :''"
+  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white">
+    <ion-col style="padding: 14px; border-right: 1px solid white" [ngClass]="selectedTab == 'History' ? 'active' :''"
       (click)="selectTab('History')" size-sm>
       History
     </ion-col>
-     <!-- <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'branding' ? 'active' :''"
+    <!-- <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'branding' ? 'active' :''"
       (click)="selectTab('branding')">
       Branding
     </ion-col>
@@ -22,10 +22,14 @@
       (click)="selectTab('politicians')">
       Politicians
     </ion-col> -->
-    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
+    <ion-col style="padding: 14px; border-right: 1px solid white" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
       (click)="selectTab('Politicians')">
       Politicians
-    </ion-col> 
+    </ion-col>
+
+    <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Fiesta' ? 'active' :''" (click)="selectTab('Fiesta')">
+      Fiesta
+    </ion-col>
   </ion-row>
 </ion-header>
 
@@ -34,22 +38,28 @@
     <p [innerHTML]="content.history"></p>
   </div>
 
+  <div *ngIf="content && selectedTab == 'Fiesta'" class="ion-padding">
+    <p [innerHTML]="content.fiesta"></p>
+  </div>
+
   <div *ngIf="content && selectedTab == 'Politicians'">
     <ion-list>
-       <div *ngFor="let item of content.politicians">
+      <div *ngFor="let item of content.politicians">
         <ion-list-header color="cream">
-         <ion-text color="dark"> <h4>{{item.type}}</h4></ion-text>
+          <ion-text color="dark">
+            <h4>{{item.type}}</h4>
+          </ion-text>
         </ion-list-header>
-        <ion-item *ngFor="let politician of item.data" lines="full"> 
+        <ion-item *ngFor="let politician of item.data" lines="full">
           <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
-          <ion-label  class="ion-text-wrap">
+          <ion-label class="ion-text-wrap">
             <ion-text color="dark">
               <h4>{{ politician.name }}</h4>
             </ion-text>
             <ion-text color="olive"> <small> <i>{{politician.year}}</i></small></ion-text>
           </ion-label>
         </ion-item>
-       </div>
+      </div>
     </ion-list>
   </div>
 </ion-content>
