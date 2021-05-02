@@ -63,25 +63,7 @@
                     }
                 ]
             },
-            {
-                "id": 4,
-                "points": 20,
-                "question": "What is the term of the President of the Philippines?",
-                "choices": [
-                    {
-                        "title": "1852",
-                        "correct": true
-                    },
-                    {
-                        "title": "1853",
-                        "correct": false
-                    },
-                    {
-                        "title": "1854",
-                        "correct": true
-                    }
-                ]
-            },
+             
             {
                 "id": 5,
                 "points": 20,

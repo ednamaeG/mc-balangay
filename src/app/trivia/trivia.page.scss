@@ -7,3 +7,10 @@ ion-content{
     --background: none;
      background-image:  url('../../assets/imgs/test.jpg');
 }
+
+.trivia-photo{
+    height: 400px;
+          width: 100%;
+          object-fit: cover;
+          object-position: bottom;
+}

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController, NavController, Platform } from '@ionic/angular';
 import { ITrivia } from './interfaces/trivia';
+import { SettingsService } from './services/settings.service';
 import { TriviaService } from './services/trivia.service';
 import { TriviaPage } from './trivia/trivia.page';
 
@@ -14,42 +15,61 @@ import { TriviaPage } from './trivia/trivia.page';
 export class AppComponent {
   rootPage = "/tabs/tab1";
   otherTabs = ["/tabs/tab1", "/tabs/tab2", "/tabs/tab1/content"];
-  constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private alertController: AlertController, private navCtrl: NavController, private httpClient: HttpClient, private modalCtrl: ModalController) {
+  settings:any;
+  constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private settingSvc: SettingsService, private alertController: AlertController, private navCtrl: NavController, private httpClient: HttpClient, private modalCtrl: ModalController) {
 
     console.log(plt.width(), plt.height())
 
     this.captureBackButton()
   }
 
-  setTheme(ev?: any) {
+  async setTheme(ev?: any) {
     // let sDark = window.matchMedia("(prefers-color-scheme: dark)")
+    let theme = "";
     if (ev.detail.checked) {
       document.body.setAttribute('color-theme', 'dark')
+      theme = "dark"
+
     } else {
       document.body.setAttribute('color-theme', 'light')
+      theme = "light"
     }
+    const setting = {
+      theme: theme
+    }
+    this.settingSvc.storeSettings(setting)
 
   }
   async ngOnInit() {
-    let trivias = await this.triviaSvc.getTrivias();
-    if (!trivias) {
-      trivias = await this.getTrivias();
-      await this.triviaSvc.storeTrivias(trivias);
-    }
-    
-    trivias = trivias.sort(() =>{
-      return 0.8 - Math.random()
-    })
-    // debugmode
-    // trivias = await this.getTrivias();
+    this.plt.ready().then(async () => {
+      // get settings 
+    this.settings  =await this.settingSvc.getSettings()
+      console.log('setting',this.settings);
+      if(this.settings){
+        document.body.setAttribute('color-theme',this.settings.theme)
+      }
 
-    const trivia = trivias.find(trivia => trivia.isAnswered == false)
-     
-    if(trivia){
-      this.presentTriviaModal(trivia)
-    }
-  
-     
+      let trivias = await this.triviaSvc.getTrivias();
+      console.log('trivias::', trivias)
+      if (!trivias) {
+        trivias = await this.getTrivias();
+        await this.triviaSvc.storeTrivias(trivias);
+      }
+
+      trivias = trivias.sort(() => {
+        return 0.8 - Math.random()
+      })
+      // debugmode
+      // trivias = await this.getTrivias();
+
+      const trivia = trivias.find(trivia => trivia.isAnswered == false)
+
+      if (trivia) {
+        this.presentTriviaModal(trivia)
+      }
+
+    })
+
   }
 
   captureBackButton() {

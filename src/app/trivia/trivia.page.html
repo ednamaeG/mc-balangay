@@ -36,36 +36,15 @@
 
         </div>
       </div>
-      <!-- <ion-row>
-        <ion-col *ngFor="let choice of trivia.choices; let i = index" size="12">
-          <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'primary'" expand="block"
-            fill="outline" shape="round">
-            <ion-icon slot="end" style="font-size: 14px;"></ion-icon>
-            {{choice.title}}
-          </ion-button>
-        </ion-col>
-      </ion-row> -->
-      <!-- <div *ngFor="let choice of trivia.choices; let i = index">
-        <ion-button (click)="selectAnswer(i)" [color]="choice.selected ? 'success' : 'medium'" expand="block"
-          fill="outline" shape="round">
-          <ion-icon slot="end" style="font-size: 14px;"></ion-icon>
-          {{choice.title}}
-        </ion-button>
-      </div> -->
-
+     
 
     </div>
 
     <div *ngIf="showInfo">
-      <!-- <div class="imgs" *ngFor="let photo of trivia.images" >
-        <img [src]="photo.url" style="height: 100%; width: 100%;">
-      </div> -->
+
       <ion-card>
         <div class="imgs" *ngFor="let photo of trivia.images">
-          <!-- <div class="info">
-            <h2>{{ correctAnswer }}</h2>
-          </div> -->
-          <img [src]="photo.url" style="height: 100%; width: 100%;">
+          <img [src]="photo.url" class="trivia-photo">
 
         </div>
         <ion-card-header>

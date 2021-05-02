@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar color="teal">
     <ion-title>
       Tab 3
@@ -42,7 +42,7 @@
       ion-col [] [size-sm]
     </ion-col>
   </ion-row>
-  <!-- <ion-slides [options]="slidesOptions">
+  <ion-slides [options]="slidesOptions">
     <ion-slide style="height: 274px;">
       <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
@@ -58,15 +58,71 @@
     width: 100%;
     object-fit: cover;">
     </ion-slide>
-  </ion-slides> -->
+  </ion-slides>
   <app-content-brgy *ngIf="selected =='history'"></app-content-brgy>
 
+ 
+</ion-content> -->
+
+<ion-header class="ion-no-border">
 
 
-  <!-- <img src="assets/mock-imgs/header-1.jpg" style="height: 100%;
-   width: auto;
-   object-fit: cover;
-"> -->
-  <!-- <ion-input [(ngModel)]="txt" placeholder="enter text"></ion-input>
-<ion-button >Test TTS</ion-button> -->
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-row style="text-align: center; background: var(--ion-color-olive); height: 50px; color: white"
+    *ngIf="showToolbar">
+    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'history' ? 'active' :''"
+      (click)="selectTab('history')">
+      History
+    </ion-col>
+    <ion-col style="padding: 14px; border-right: 1px solid wheat" [ngClass]="selected == 'branding' ? 'active' :''"
+      (click)="selectTab('branding')">
+      Branding
+    </ion-col>
+    <ion-col style="padding: 14px;" [ngClass]="selected == 'politicians' ? 'active' :''"
+      (click)="selectTab('politicians')">
+      Politicians
+    </ion-col>
+
+  </ion-row>
+</ion-header>
+
+<ion-content fullscreen (ionScroll)="onScroll($event)" [scrollEvents]="true" #content>
+  <!-- <img src="assets/mock-imgs/header-1.jpg"> -->
+  <ion-slides [options]="slidesOptions">
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-1.jpg" style="
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-2.jpg" style="
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+    <ion-slide style="height: 274px;">
+      <img src="assets/mock-imgs/header-3.jpg" style=" 
+    width: 100%;
+    object-fit: cover;">
+    </ion-slide>
+  </ion-slides>
+  <div class="r">
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+    Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
+  </div>
 </ion-content>

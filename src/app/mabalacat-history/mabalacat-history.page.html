@@ -38,7 +38,7 @@
     <ion-list>
        <div *ngFor="let item of content.politicians">
         <ion-list-header color="cream">
-          <h4>{{item.type}}</h4>
+         <ion-text color="dark"> <h4>{{item.type}}</h4></ion-text>
         </ion-list-header>
         <ion-item *ngFor="let politician of item.data" lines="full"> 
           <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>

@@ -49,6 +49,7 @@ export class QuizViewPage implements OnInit {
   correctSoundUrl = 'assets/sounds/correct_answer.mp3';
   incorrectSoundUrl = 'assets/sounds/wrong-answer.mp3';
   timerSoundUrl = 'assets/sounds/timer.mp3';
+  progress = 0;
 
   totalAnswered = 0;
   constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService, private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController) {
@@ -157,6 +158,7 @@ export class QuizViewPage implements OnInit {
         this.showCorrectAnswer(correctAnswer.title, "answer")
       }
 
+      this.progress = this.totalAnswered / this.lastPage;
 
 
     }
@@ -202,6 +204,7 @@ export class QuizViewPage implements OnInit {
     this.totalCorrectAnswers = 0;
     this.totalScore = 0;
     this.currentPage = 0;
+    this.progress = 0;
     this.currentQuestion = this.quizContent.questions[0];
     this.lastPage = this.quizContent.questions.length;
     this.showResults = false;
@@ -236,8 +239,8 @@ export class QuizViewPage implements OnInit {
     console.log(quiz.total_score)
     const percentage = this.totalScore / this.totalPoints;
     quiz.percentage = Number(percentage.toFixed(2));
-    const progress = this.totalAnswered / this.lastPage;
-    quiz.progress = quiz.progress == 1 ? quiz.progress : Number(progress.toFixed(2))
+    // const progress = this.totalAnswered / this.lastPage;
+    quiz.progress = quiz.progress == 1 ? quiz.progress : Number(this.progress.toFixed(2))
     console.log('percentage', quiz.percentage, quiz.progress)
     this.quizSvc.storeQuizzes(quizzes);
   }

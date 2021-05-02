@@ -17,11 +17,12 @@ import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 import { TriviaPage } from './trivia/trivia.page';
 // import { ScrollHideDirective } from './directives/scroll-hide.directive';
- 
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+
 
 
 @NgModule({
-  declarations: [AppComponent,TriviaPage],
+  declarations: [AppComponent, TriviaPage],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
     NgCircleProgressModule.forRoot({
@@ -34,7 +35,7 @@ import { TriviaPage } from './trivia/trivia.page';
       animationDuration: 300,
 
     })],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HTTP, NativeAudio, PhotoViewer],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HTTP, NativeAudio, PhotoViewer, NativeStorage],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

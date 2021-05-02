@@ -19,5 +19,9 @@
     <param name="android-package" value="com.rjfun.cordova.plugin.nativeaudio.NativeAudio"/>
   </feature>
 
+  <feature name="NativeStorage">
+    <param name="android-package" value="NativeStorage"/>
+  </feature>
+
   
 </widget>

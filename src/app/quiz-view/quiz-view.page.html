@@ -13,6 +13,8 @@
       Quiz Results
     </ion-title>
   </ion-toolbar>
+      
+
   <div *ngIf="quizContent.questions.length <= 0" style="text-align: center;">
     <ion-text>
       <ion-icon name="warning" style="font-size: 160px;" color="warning"></ion-icon>
@@ -20,6 +22,7 @@
     </ion-text>
   </div>
   <ion-row *ngIf="!showResults">
+    <ion-progress-bar color="cream" [value]="progress"></ion-progress-bar>
     <ion-col size="4" style="text-align:center; font-weight: bold;">
       <ion-text color="light">
         <h3> {{currentPage + 1}} / {{lastPage}} </h3>
