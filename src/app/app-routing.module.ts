@@ -44,6 +44,10 @@ const routes: Routes = [
   {
     path: 'trivia',
     loadChildren: () => import('./trivia/trivia.module').then( m => m.TriviaPageModule)
+  },
+  {
+    path: 'filter',
+    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
   }
 
 ];

@@ -48,13 +48,14 @@ export class Tab1Page {
   }
 
   async openModal() {
-    const modal = await this.modalCtrl.create({
-      component: SearchPage,
-      componentProps: {
-        data: this.barangayList,
-      },
-    });
-    return await modal.present();
+    // const modal = await this.modalCtrl.create({
+    //   component: SearchPage,
+    //   componentProps: {
+    //     data: this.barangayList,
+    //   },
+    // });
+    // return await modal.present();
+     this.router.navigate(['/search']);
   }
 
   openContent(content) {

@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Filter</ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      Sort By
+    </ion-list-header>
+    <ion-radio-group>
+      <ion-item>
+        <ion-radio slot="start">
+
+        </ion-radio>
+        <ion-label>Barangay Name</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-radio slot="start">
+        </ion-radio>
+        <ion-label>Founding Year</ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      By Category
+    </ion-list-header>
+    <ion-item *ngFor="let category of categories">
+      <ion-label>{{category.name}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="category.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-list>
+    <ion-list-header>
+      By Founding Year
+    </ion-list-header>
+    <ion-item *ngFor="let category of categories">
+      <ion-label>{{category.name}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="category.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="block" (click)="applyFilter()">Apply</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block">Reset</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

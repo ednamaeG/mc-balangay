@@ -10,6 +10,7 @@ export interface IBarangay {
     logo_url: string;
     photos: IPhoto[];
     foundInfo?:IBarangayDetail;
+    foundingYear?:number;
 }
 
 export interface IBarangayDetail {

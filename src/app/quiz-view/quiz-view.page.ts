@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
-import { IQuestion, IQuiz } from '../interfaces/quiz';
+import { IChoice, IQuestion, IQuiz } from '../interfaces/quiz';
 import { QuizService } from '../services/quiz.service';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { AudioService } from '../services/audio.service';
@@ -18,6 +18,7 @@ export class QuizViewPage implements OnInit {
   @ViewChild('slider') slider: IonSlides;
   @ViewChild('content') content: IonContent;
 
+  // QUESTION STATUS 0 - Incorrect / 1 -Correct / 2 - Times Up / 3 - Skipped
   slidesOptions = {
 
     // freeMode: true,
@@ -61,7 +62,7 @@ export class QuizViewPage implements OnInit {
     // this.start_timer()
     this.quizContent.questions.forEach(question => this.totalPoints += question.points)
     console.log('total points', this.totalPoints, this.quizContent)
-    
+
   }
 
 
@@ -84,12 +85,17 @@ export class QuizViewPage implements OnInit {
     this.currentQuestion = this.quizContent.questions[idx];
     // this.resetTimer()
   }
+  skipQuiz() {
+    this.quizContent.questions[this.currentPage].status = 3;
+    this.nextPage();
+  }
 
   nextPage() {
     this.audioSvc.stopSound(this.TIMER_SOUND_ID)
     this.currentPage++;
     this.slider.slideTo(this.currentPage)
     this.content.scrollToTop()
+
     // this.resetTimer()
     if (this.currentPage >= this.lastPage) {
       console.log(this.currentPage, this.lastPage)
@@ -109,10 +115,12 @@ export class QuizViewPage implements OnInit {
   }
 
   _select(i) {
-    console.log('currentQuestion', this.quizContent.questions[this.currentPage])
+    console.log('currentQuestion', this.quizContent.questions)
     if (!this.quizContent.questions[this.currentPage].hasAnswer) {
       this.currentQuestion.choices[i].selected = true;
       this.quizContent.questions[this.currentPage].hasAnswer = true;
+
+
       this.totalAnswered++;
       if (this.currentQuestion.choices[i].correct) {
         this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
@@ -128,7 +136,7 @@ export class QuizViewPage implements OnInit {
 
 
   select(i) {
-    console.log('currentQuestion', this.quizContent.questions[this.currentPage])
+    console.log('currentQuestion', this.quizContent.questions)
     this.audioSvc.stopSound(this.TIMER_SOUND_ID)
 
     if (!this.quizContent.questions[this.currentPage].hasAnswer) {
@@ -139,24 +147,26 @@ export class QuizViewPage implements OnInit {
       this.quizContent.questions[this.currentPage].hasAnswer = true;
       this.totalAnswered++;
       if (this.currentQuestion.choices[i].correct) {
+        this.quizContent.questions[this.currentPage].status = 1;
         this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
         this.totalScore += this.currentQuestion.points;
         this.totalCorrectAnswers += 1;
         console.log(this.totalCorrectAnswers)
-        setTimeout(() => {
-          this.nextPage();
-          // this.resetTimer()
-
-        }, 300)
 
 
       } else {
         this.countdown.stop()
         this.audioSvc.playSound(this.INCORRECT_ANSWER_SOUND_ID)
-
+        this.quizContent.questions[this.currentPage].status = 0;
         console.log('correct answer::', correctAnswer)
-        this.showCorrectAnswer(correctAnswer.title, "answer")
+        // this.showCorrectAnswer(correctAnswer.title, "answer")
       }
+      setTimeout(() => {
+        this.nextPage();
+        // this.resetTimer()
+
+      }, 300)
+
 
       this.progress = this.totalAnswered / this.lastPage;
 
@@ -173,10 +183,11 @@ export class QuizViewPage implements OnInit {
     if (e.action == "done") {
       console.log("Done!");
       console.log('page', this.currentPage);
+      this.quizContent.questions[this.currentPage].status = 2;
       // alert("Times up!")
       // this.nextPage()
-      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
-      this.showCorrectAnswer(correctAnswer.title, "timer")
+      // const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
+      this.showCorrectAnswer( "timer")
       this.start_timer();
     }
 
@@ -279,13 +290,13 @@ export class QuizViewPage implements OnInit {
     await alert.present();
   }
 
-  async showCorrectAnswer(correctAnswer, type) {
+  async showCorrectAnswer( type) {
     const alert = await this.alertCtrl.create({
       header: type == "timer" ? "TIMES UP!" : "INCORRECT!",
-      message: ' ' + correctAnswer,
-      subHeader: 'The Correct Answer is:',
+      // message: ' ' + correctAnswer,
+      // subHeader: 'The Correct Answer is:',
       mode: 'ios',
-      cssClass: type == "timer" ?  'quiz-alert timer-alert'  : 'quiz-alert incorrect-alert',
+      cssClass: type == "timer" ? 'quiz-alert timer-alert' : 'quiz-alert incorrect-alert',
 
       buttons: [
         {
@@ -309,27 +320,46 @@ export class QuizViewPage implements OnInit {
 
 
     await alert.present();
-    alert.onDidDismiss().then((res) => {
+ 
+    setTimeout(async () => {
+      await alert.dismiss();
       this.nextPage();
-
-
-    })
-
-    // setTimeout(async () => {
-    //   await alert.dismiss();
-    //   this.nextPage();
-    // }, 500)
+    }, 500)
   }
 
-  ngOnDestroy()  {
+  ngOnDestroy() {
     console.log('ondestroy');
     this.audioSvc.stopSound(this.TIMER_SOUND_ID)
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    
+   
+
   }
 
-  
+
+  getQuizStats(status) {
+    let statusTitle = ""
+    switch (status) {
+      case 0:
+        statusTitle = "Incorrect";
+        break;
+      case 1:
+        statusTitle = "Correct";
+        break;
+      case 2:
+        statusTitle = "Time Ran Out";
+        break;
+      case 3:
+        statusTitle = "Skipped";
+        break;
+      default:
+        break;
+    }
+    return statusTitle;
+  }
+
+  getCorrectAnswer(choices:IChoice[]){
+    const correctAnswer = choices.find(choice => choice.correct);
+    return correctAnswer.title;
+  }
 }
 
 

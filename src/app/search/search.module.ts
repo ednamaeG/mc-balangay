@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
+import { FilterPage } from '../filter/filter.page';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { SearchPage } from './search.page';
     SearchPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage,FilterPage]
 })
 export class SearchPageModule {}

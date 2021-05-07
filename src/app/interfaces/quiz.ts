@@ -15,6 +15,7 @@ export interface IQuestion {
     points: number;
     choices: IChoice[];
     hasAnswer?:boolean;
+    status?:number;
 }
 
 export interface IChoice {

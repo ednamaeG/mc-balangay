@@ -1,6 +1,9 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSearchbar, ModalController, NavController, NavParams } from '@ionic/angular'
+import { IBarangay } from '../interfaces/barangay';
+import { HttpClient } from '@angular/common/http';
+import { FilterPage } from '../filter/filter.page';
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
@@ -12,21 +15,26 @@ export class SearchPage implements OnInit {
   data = [];
   results = []
   warningMsg = 'Enter words to search'
-  constructor(private modal: ModalController, private navParams: NavParams, private router: Router) {
+  constructor(private modal: ModalController, private router: Router, private route: ActivatedRoute, private navCtrl: NavController, private httpClient: HttpClient) {
 
   }
 
-  ngOnInit() {
-    this.data = this.navParams.get('data');
+  async ngOnInit() {
+    // this.data = this.route.snapshot.params.data;
+    this.data = await this.getData();
+    console.log('DATA', this.data)
     setTimeout(() => {
       this.searchInput.setFocus();
     }, 500)
   }
 
   closeModal() {
-    this.modal.dismiss()
+    this.navCtrl.pop()
   }
 
+  async getData(): Promise<IBarangay[]> {
+    return await this.httpClient.get<IBarangay[]>('./assets/mocks/barangays-mock.json').toPromise();
+  }
   search(ev) {
     console.log('test')
     let query = ev.detail.value;
@@ -73,13 +81,13 @@ export class SearchPage implements OnInit {
       console.log(content.foundInfo)
       const found = JSON.stringify(content.foundInfo)
       const data = JSON.stringify(content)
-      console.log('data',content)
+      console.log('data', content)
       // this.router.navigate(['/tabs/tab1/content',{content:data}])
       // this.router.navigate(['/barangay-content', { data: data, name: content.name }])
       this.router.navigate(['/barangay', { content: data }])
 
-     }
-      // else {
+    }
+    // else {
     //   const data = JSON.stringify(content)
     //   this.router.navigate(['/tabs/tab1/content', { content: data }])
     // }
@@ -90,4 +98,17 @@ export class SearchPage implements OnInit {
     console.log('reset')
     this.results = [];
   }
+  async showFilterModal() {
+    const modal = await this.modal.create({
+      component: FilterPage,
+    
+    });
+
+    await modal.present();
+
+    modal.onDidDismiss().then((data) =>{
+      console.log('data:::',data)
+    })
+  }
+
 }
