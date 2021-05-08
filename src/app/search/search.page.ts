@@ -15,6 +15,9 @@ export class SearchPage implements OnInit {
   data = [];
   results = []
   warningMsg = 'Enter words to search'
+  filteredResults = [];
+  tempResults = [];
+  queryFilter: any;
   constructor(private modal: ModalController, private router: Router, private route: ActivatedRoute, private navCtrl: NavController, private httpClient: HttpClient) {
 
   }
@@ -51,7 +54,7 @@ export class SearchPage implements OnInit {
       this.results = this.data.filter(
         (data) => {
           const detail = data.details.find(f => {
-            return f.content.toLowerCase().includes(query)
+            return f.content.toLowerCase().includes(query.toLowerCase())
           })
           data.foundInfo = detail;
           return data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 || detail
@@ -59,6 +62,7 @@ export class SearchPage implements OnInit {
         }
       );
 
+      this.tempResults = this.results;
 
 
       console.log('res1', this.results)
@@ -67,6 +71,9 @@ export class SearchPage implements OnInit {
       // console.log('filtered',res)
 
       // console.log('res',detail)
+      if (this.queryFilter) {
+        this.filterResults()
+      }
       this.warningMsg = this.results.length == 0 ? "No Results Found." : "";
       console.log('results', this.results);
     }
@@ -101,14 +108,134 @@ export class SearchPage implements OnInit {
   async showFilterModal() {
     const modal = await this.modal.create({
       component: FilterPage,
-    
+      componentProps: { data: this.queryFilter }
     });
 
-    await modal.present();
+    modal.present();
 
-    modal.onDidDismiss().then((data) =>{
-      console.log('data:::',data)
+    modal.onDidDismiss().then((props) => {
+      if (props.data) {
+        console.log('props',props)
+        this.queryFilter = props.data;
+         
+        this.filterResults()
+        //   let filtered = []
+        // filtered = this.results.filter(item => {
+        //     console.log('data:::', this.queryFilter);
+        //     return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from
+        //   });
+
+        //   if (this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) {
+        //     filtered.forEach((data) =>{
+        //       data.foundInfo = "Founding Year:" + data.foundingYear
+        //     })
+        //   }
+        //   console.log("Filtered", filtered);
+        //   let sorted = []
+        //   if (this.queryFilter.sort == "foundingYear-Asc") {
+        //     sorted = filtered.sort((a, b) => {
+        //       return a.foundingYear - b.foundingYear;
+        //     });
+        //   } else if (this.queryFilter.sort == "foundingYear-Desc") {
+        //     sorted = filtered.sort((a, b) => {
+        //       return b.foundingYear - a.foundingYear;
+        //     });
+        //   } else if (this.queryFilter.sort == "name") {
+        //     sorted = filtered.sort((a, b) => {
+        //       return a.name - b.name;
+        //     });
+        //   }
+        //   this.results = sorted;
+        //   console.log('sorted', sorted)
+      }
     })
+  }
+
+  filterResults() {
+    let filtered = []
+    if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) && !this.queryFilter.population) {
+      filtered = this.results.filter(item => {
+        console.log('data:::', this.queryFilter);
+        return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from
+      });
+    } else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) && this.queryFilter.population) {
+      filtered = this.results.filter(item => {
+        console.log('data::: f', this.queryFilter);
+        const queryPopulation = this.queryFilter.population == 5000 ? item.population < 5000 : item.population > 10000;
+        return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from || queryPopulation;
+      });
+    } else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) || this.queryFilter.population) {
+      filtered = this.results.filter(item => {
+        console.log('data::: either', this.queryFilter);
+        const queryPopulation = this.queryFilter.population == 5000 ? item.population < 5000 : item.population > 10000;
+        return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from || queryPopulation;
+      });
+    }
+    // 
+    // else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from)  && this.queryFilter.population) {
+    //   filtered.forEach((data) => {
+    //     const content = this.queryFilter.population ? "Population" + data.population : "Founding Year:" + data.foundingYear
+    //     data.foundInfo = {
+    //       type: "History",
+    //       content: content
+    //     }
+    //   })
+    // }
+    if (this.queryFilter.sort == "foundingYear-Asc" || this.queryFilter.sort == "foundingYear-Desc") {
+      filtered.forEach((data) => {
+        data.foundInfo = {
+          type: "History",
+          content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''  
+        }
+      })
+    }
+    // // founding
+    else if (this.queryFilter.sort == "population-Asc" || this.queryFilter.sort == "population-Desc") {
+      filtered.forEach((data) => {
+        data.foundInfo = {
+          type: "History",
+          content: data.population ? "Population " + data.population :''
+        }
+      })
+    }
+    // // population
+    // else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) && !this.queryFilter.population) {
+    //   filtered.forEach((data) => {
+    //     data.foundInfo = {
+    //       type: "History",
+    //       content: "Founding Year: " + data.foundingYear
+    //     }
+    //   })
+    // }
+    
+    if(filtered.length == 0){
+      filtered  = this.results;
+    }
+    let sorted = []
+    if (this.queryFilter.sort == "foundingYear-Asc") {
+      sorted = filtered.sort((a, b) => {
+        // return a.foundingYear - b.foundingYear;
+        return (a.foundingYear && b.foundingYear ) ? a.foundingYear - b.foundingYear : 0;
+      });
+    } else if (this.queryFilter.sort == "foundingYear-Desc") {
+      sorted = filtered.sort((a, b) => {
+        return b.foundingYear - a.foundingYear;
+      });
+    } else if (this.queryFilter.sort == "population-Desc") {
+      sorted = filtered.sort((a, b) => {
+        return b.population - a.population;
+      });
+    } else if (this.queryFilter.sort == "population-Asc") {
+      sorted = filtered.sort((a, b) => {
+        return a.population - b.population;
+      });
+    } else{
+      sorted = filtered.sort((a, b) => {
+        return a.name - b.name;
+      });
+    }
+    this.results = sorted;
+    console.log('sorted', sorted)
   }
 
 }

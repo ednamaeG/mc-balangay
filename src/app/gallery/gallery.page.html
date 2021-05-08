@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="sky">
+    <ion-title>Gallery</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="4" *ngFor="let photo of photos">
+      <div (click)="openViewer(photo)"> <img [src]="photo" class="img"> </div>
+
+    </ion-col>
+  </ion-row>
+</ion-content>

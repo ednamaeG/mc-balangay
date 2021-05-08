@@ -22,9 +22,9 @@
       (click)="selectTab('politicians')">
       Politicians
     </ion-col> -->
-    <ion-col style="padding: 14px; border-right: 1px solid white" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
-      (click)="selectTab('Politicians')">
-      Politicians
+    <ion-col style="padding: 14px; border-right: 1px solid white"
+      [ngClass]="selectedTab == 'Politicians' ? 'active' :''" (click)="selectTab('Politicians')">
+      Mayors
     </ion-col>
 
     <ion-col style="padding: 14px;" [ngClass]="selectedTab == 'Fiesta' ? 'active' :''" (click)="selectTab('Fiesta')">
@@ -34,12 +34,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="content && selectedTab == 'History'" class="ion-padding">
-    <p [innerHTML]="content.history"></p>
+  <div *ngIf="content && selectedTab == 'History'" >
+    <ion-slides  >
+      <ion-slide style="height: 274px;" *ngFor="let photo of content.history.gallery">
+        <div>
+          <img [src]="photo" style="
+        width: 100%;
+        object-fit: cover;" (click)="openViewer(photo)">
+         
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <p style="margin:10px" [innerHTML]="content.history.content"></p>
   </div>
 
   <div *ngIf="content && selectedTab == 'Fiesta'" class="ion-padding">
-    <p [innerHTML]="content.fiesta"></p>
+    <!-- <h4>Gallery</h4>
+    <ion-row>
+      <ion-col size="4">
+       
+          <img src="assets/mock-imgs/header-1.jpg">
+     
+      </ion-col>
+    </ion-row> -->
+    <ion-button expand="block" (click)="openGallery()">
+      <ion-icon name="image"></ion-icon>
+      <ion-label>View Gallery</ion-label>
+    </ion-button>
+
+    <p [innerHTML]="content.fiesta.content"></p>
   </div>
 
   <div *ngIf="content && selectedTab == 'Politicians'">

@@ -11,8 +11,22 @@ export interface IBarangay {
     photos: IPhoto[];
     foundInfo?:IBarangayDetail;
     foundingYear?:number;
+    population?:number;
+    malePopulation?:number;
+    femalePopulation?:number;
+    statistics?:IStats;
 }
 
+export interface IStats{
+    data: IStatData[];
+    currentYear:string;
+    total?:number;
+}
+
+export interface IStatData{
+    label:string;
+    value:number
+}
 export interface IBarangayDetail {
     type: string;
     content: string;

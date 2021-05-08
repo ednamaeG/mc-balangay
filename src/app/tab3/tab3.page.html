@@ -98,7 +98,7 @@
 
 <ion-content fullscreen (ionScroll)="onScroll($event)" [scrollEvents]="true" #content>
   <!-- <img src="assets/mock-imgs/header-1.jpg"> -->
-  <ion-slides [options]="slidesOptions">
+  <!-- <ion-slides [options]="slidesOptions">
     <ion-slide style="height: 274px;">
       <img src="assets/mock-imgs/header-1.jpg" style="
     width: 100%;
@@ -124,5 +124,16 @@
     Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
     Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
     Lorem Ipsumn Dolor Lorem Ipsumn Dolor Lorem Ipsumn Dolor
-  </div>
+  </div> -->
+  <div id="container" style="display: block;"	></div>
+  <canvas #lineCanvas></canvas>
+  <!-- <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Number of Viewers per season for</ion-card-subtitle>
+      <ion-card-title>Game of Thrones</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card> -->
 </ion-content>

@@ -4,7 +4,7 @@
     <ion-searchbar inputmode="search" animated enterkeyhint="search" showCancelButton #searchBar
       (ionCancel)="closeModal()" (ionChange)="search($event)" (ionClear)="resetResults()">
     </ion-searchbar>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" *ngIf="results.length > 0">
       <ion-button slot="icon-only" (click)="showFilterModal()">
         <ion-icon name="funnel-outline"></ion-icon>
       </ion-button>
@@ -22,7 +22,7 @@
           <img [src]="result.logo_url">
         </ion-thumbnail>
         <ion-label class="ion-text-wrap">
-          <h3><strong>{{result.name}}</strong></h3>
+          <h3><strong>{{result.name}} </strong></h3>
           <!-- <div [innerHTML]="result.foundInfo.content" *ngIf="result.foundInfo" class="initial-content"> </div> -->
           <div *ngIf="result.foundInfo">
             <p [innerHTML]="result.foundInfo.content" class="initial-content"> </p>

@@ -21,10 +21,12 @@ export class BarangayPage implements OnInit {
   constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController) {
     const params = this.route.snapshot.params;
     this.barangayData = JSON.parse(params.content);
-    console.log(this.barangayData)
+    console.log(this.barangayData ,"BARANGAY DATA")
 
     if (this.barangayData.foundInfo) {
       this.selectedTab = this.barangayData.foundInfo.type;
+    }else{
+      this.selectedTab = "History"
     }
   }
 

@@ -1,59 +1,11 @@
 {
-    "history": "<p>Mabalacat became a first class municipality in July 1996. One barangay, Marcos Village, is inhabited by Negritos who live in bungalow houses and speak broken English. Its land of 15,262 hectares is more than double that of Angeles City's. Two-thirds of the land area of Clark Air Base was taken from Mabalacat. Its people are peace-loving and God-fearing as well as hardworking and industrious. They speak the Kapampangan dialect, which is very rich in vocabulary and culture.</p><p><strong>Legend &amp; History</strong></p><p>Mabalacat became a town in 1712. It was named after the 'balacat' tree, a fourth class timber. 'Mabalacat' means full of 'balacat.' Then a settlement of a Negrito tribe headed by a chieftain name Caragan, the area was a virtual forest of 'balacat' trees.</p><p>Before 1712, Mabalacat was a barrio (barangay) of Bambang, now Bamban Tarlac. There is no official record on the foundation of this town, but according to stories handed down orally from generation to generation, the first settlers were purely Negritos led by Caragan.</p><p>Caragan married Laureana Tolentino and adopted her family name. Laureana Tolentino was the first 'cabeza de barangay' of Mabalacat, a title now equivalent to barangay captain. Eventually, the Negritos were finally driven back to the nearby mountains and hills by the lowlanders who frequented the place to hunt wild animals and fowls.</p>",
+    "history": {
+        "content": "<p>Mabalacat became a first class municipality in July 1996. One barangay, Marcos Village, is inhabited by Negritos who live in bungalow houses and speak broken English. Its land of 15,262 hectares is more than double that of Angeles City's. Two-thirds of the land area of Clark Air Base was taken from Mabalacat. Its people are peace-loving and God-fearing as well as hardworking and industrious. They speak the Kapampangan dialect, which is very rich in vocabulary and culture.</p><p><strong>Legend &amp; History</strong></p><p>Mabalacat became a town in 1712. It was named after the 'balacat' tree, a fourth class timber. 'Mabalacat' means full of 'balacat.' Then a settlement of a Negrito tribe headed by a chieftain name Caragan, the area was a virtual forest of 'balacat' trees.</p><p>Before 1712, Mabalacat was a barrio (barangay) of Bambang, now Bamban Tarlac. There is no official record on the foundation of this town, but according to stories handed down orally from generation to generation, the first settlers were purely Negritos led by Caragan.</p><p>Caragan married Laureana Tolentino and adopted her family name. Laureana Tolentino was the first 'cabeza de barangay' of Mabalacat, a title now equivalent to barangay captain. Eventually, the Negritos were finally driven back to the nearby mountains and hills by the lowlanders who frequented the place to hunt wild animals and fowls.</p>",
+        "gallery": [
+            "assets/mabalacat/Mabalacat-Welcome-Arc.jpg"
+        ]
+    },
     "politicians": [
-        {
-            "type": "Presidentes Municipales",
-            "data": [
-                {
-                    "name": "Mariano de la Cruz",
-                    "year": "1900-1901"
-                },
-                {
-                    "name": "Ludovico A. Narciso",
-                    "year": "1902-1903"
-                },
-                {
-                    "name": "Jose de Castro",
-                    "year": "1904"
-                },
-                {
-                    "name": "Marcelo Tiglao",
-                    "year": "1905"
-                },
-                {
-                    "name": "Mariano Tiglao",
-                    "year": "1906-1909"
-                },
-                {
-                    "name": "Gregorio Lacsamana",
-                    "year": "1910"
-                },
-                {
-                    "name": "Emilio Domingues",
-                    "year": "1911"
-                },
-                {
-                    "name": "Joaquin Concepcion",
-                    "year": "1916-1919"
-                },
-                {
-                    "name": "Jose Siopongco",
-                    "year": "1920-1923"
-                },
-                {
-                    "name": "Alejandro Angeles",
-                    "year": "1924-1927"
-                },
-                {
-                    "name": "Jose Mendoza",
-                    "year": "1928-1931"
-                },
-                {
-                    "name": "Dr. Jose Garcia",
-                    "year": "1932-1935"
-                }
-            ]
-        },
         {
             "type": "Municipal Mayors",
             "data": [
@@ -138,7 +90,75 @@
                     "year": "Jun. 27, 2017 to present"
                 }
             ]
+        },
+        {
+            "type": "Presidentes Municipales",
+            "data": [
+                {
+                    "name": "Mariano de la Cruz",
+                    "year": "1900-1901"
+                },
+                {
+                    "name": "Ludovico A. Narciso",
+                    "year": "1902-1903"
+                },
+                {
+                    "name": "Jose de Castro",
+                    "year": "1904"
+                },
+                {
+                    "name": "Marcelo Tiglao",
+                    "year": "1905"
+                },
+                {
+                    "name": "Mariano Tiglao",
+                    "year": "1906-1909"
+                },
+                {
+                    "name": "Gregorio Lacsamana",
+                    "year": "1910"
+                },
+                {
+                    "name": "Emilio Domingues",
+                    "year": "1911"
+                },
+                {
+                    "name": "Joaquin Concepcion",
+                    "year": "1916-1919"
+                },
+                {
+                    "name": "Jose Siopongco",
+                    "year": "1920-1923"
+                },
+                {
+                    "name": "Alejandro Angeles",
+                    "year": "1924-1927"
+                },
+                {
+                    "name": "Jose Mendoza",
+                    "year": "1928-1931"
+                },
+                {
+                    "name": "Dr. Jose Garcia",
+                    "year": "1932-1935"
+                }
+            ]
         }
     ],
-    "fiesta" : "<p><strong>OUR LADY OF GRACE&mdash;PATRONESS OF MABALACAT</strong></p><p>The<strong> feast day (fiestang patron)</strong> - June 9, on the Roman Catholic calendar.</p><p>&nbsp;The church was dedicated to Virgen de Gracia, a popular Recollect devotion, and one of the bells dated 1846 in the belltower is inscribed with the Mary&rsquo;s name under that title. In the 1930s, her feast was marked with a &ldquo;Triduo o novena, visperas cantada, misa cantada solemne con sermon, o misa dalmatica con minstros y sermon, procession en el atrio de la Iglesia y en las calles procesionales del pueblo&rdquo; (Triduum or novena, sung vespers , solemn mass sung with sermon, or misa dalmatica &ndash;special sacred music mass-- with ministers and sermon, procession in the churchyard and in the processional streets of the town&quot;. It is said that attending the festivities of the June 9 feast of our Lady of Grace proved to be problematic with Mabalacat people, as it was the onset of the rainy season, which inconvenienced their trips to the church. The feast was moved to Feb. 2, when the weather was more favorable. The date also coincided with the feast of Virgen de la Candelaria, the patroness of Recollect missions. February 2 eventually became the feast of the town&rsquo;s foundation (fiestang balen), celebrated with food, fairs, street parades, music and merrymaking.</p>"
+    "fiesta": {
+        "content": "<p><strong>OUR LADY OF GRACE&mdash;PATRONESS OF MABALACAT</strong></p><p>The<strong> feast day (fiestang patron)</strong> - June 9, on the Roman Catholic calendar.</p><p>&nbsp;The church was dedicated to Virgen de Gracia, a popular Recollect devotion, and one of the bells dated 1846 in the belltower is inscribed with the Mary&rsquo;s name under that title. In the 1930s, her feast was marked with a &ldquo;Triduo o novena, visperas cantada, misa cantada solemne con sermon, o misa dalmatica con minstros y sermon, procession en el atrio de la Iglesia y en las calles procesionales del pueblo&rdquo; (Triduum or novena, sung vespers , solemn mass sung with sermon, or misa dalmatica &ndash;special sacred music mass-- with ministers and sermon, procession in the churchyard and in the processional streets of the town&quot;. It is said that attending the festivities of the June 9 feast of our Lady of Grace proved to be problematic with Mabalacat people, as it was the onset of the rainy season, which inconvenienced their trips to the church. The feast was moved to Feb. 2, when the weather was more favorable. The date also coincided with the feast of Virgen de la Candelaria, the patroness of Recollect missions. February 2 eventually became the feast of the town&rsquo;s foundation (fiestang balen), celebrated with food, fairs, street parades, music and merrymaking.</p>",
+        "gallery": [
+            "assets/caragan/1.jpg",
+            "assets/caragan/2.jpg",
+            "assets/caragan/3.jpg",
+            "assets/caragan/4.jpg",
+            "assets/caragan/5.jpg",
+            "assets/caragan/6.jpg",
+            "assets/caragan/7.jpg",
+            "assets/caragan/8.jpg",
+            "assets/caragan/9.jpg",
+            "assets/caragan/10.jpg",
+            "assets/caragan/11.jpg"
+        ]
+    }
 }

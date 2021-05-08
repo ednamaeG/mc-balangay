@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MabalacatHistoryPageRoutingModule } from './mabalacat-history-routing.module';
 
 import { MabalacatHistoryPage } from './mabalacat-history.page';
+import { GalleryPage } from '../gallery/gallery.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { MabalacatHistoryPage } from './mabalacat-history.page';
     IonicModule,
     MabalacatHistoryPageRoutingModule
   ],
-  declarations: [MabalacatHistoryPage]
+  declarations: [MabalacatHistoryPage,GalleryPage]
 })
 export class MabalacatHistoryPageModule {}

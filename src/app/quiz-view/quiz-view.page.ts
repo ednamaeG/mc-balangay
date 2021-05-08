@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountdownComponent, CountdownConfig, CountdownEvent } from 'ngx-countdown';
 import { IChoice, IQuestion, IQuiz } from '../interfaces/quiz';
@@ -7,6 +7,8 @@ import { QuizService } from '../services/quiz.service';
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { AudioService } from '../services/audio.service';
 import { AlertController, IonContent, IonSlides, NavController } from '@ionic/angular';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-quiz-view',
@@ -17,7 +19,8 @@ export class QuizViewPage implements OnInit {
   @ViewChild('timer', { static: false }) private countdown: CountdownComponent;
   @ViewChild('slider') slider: IonSlides;
   @ViewChild('content') content: IonContent;
-
+  @ViewChild('lineCanvas', { static: true }) lineCanvas: ElementRef;
+  chartDonut: any;
   // QUESTION STATUS 0 - Incorrect / 1 -Correct / 2 - Times Up / 3 - Skipped
   slidesOptions = {
 
@@ -53,6 +56,7 @@ export class QuizViewPage implements OnInit {
   progress = 0;
 
   totalAnswered = 0;
+  showQuizResults = false;
   constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService, private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController) {
     this.quizContent = JSON.parse(this.route.snapshot.params.data);
     this.lastPage = this.quizContent.questions.length;
@@ -92,7 +96,9 @@ export class QuizViewPage implements OnInit {
 
   nextPage() {
     this.audioSvc.stopSound(this.TIMER_SOUND_ID)
+
     this.currentPage++;
+    this.progress = this.currentPage / this.lastPage;
     this.slider.slideTo(this.currentPage)
     this.content.scrollToTop()
 
@@ -101,7 +107,8 @@ export class QuizViewPage implements OnInit {
       console.log(this.currentPage, this.lastPage)
 
       this.currentQuestion = ''
-      this.showResults = true
+      this.showResults = true;
+      this.getStatsChart()
       this.saveScore()
     } else {
       this.setCurrentData()
@@ -168,7 +175,7 @@ export class QuizViewPage implements OnInit {
       }, 300)
 
 
-      this.progress = this.totalAnswered / this.lastPage;
+
 
 
     }
@@ -187,7 +194,7 @@ export class QuizViewPage implements OnInit {
       // alert("Times up!")
       // this.nextPage()
       // const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
-      this.showCorrectAnswer( "timer")
+      this.showCorrectAnswer("timer")
       this.start_timer();
     }
 
@@ -211,6 +218,7 @@ export class QuizViewPage implements OnInit {
   }
 
   resetQuiz() {
+    this.chartDonut.destroy()
     this.totalAnswered = 0;
     this.totalCorrectAnswers = 0;
     this.totalScore = 0;
@@ -290,7 +298,7 @@ export class QuizViewPage implements OnInit {
     await alert.present();
   }
 
-  async showCorrectAnswer( type) {
+  async showCorrectAnswer(type) {
     const alert = await this.alertCtrl.create({
       header: type == "timer" ? "TIMES UP!" : "INCORRECT!",
       // message: ' ' + correctAnswer,
@@ -298,15 +306,15 @@ export class QuizViewPage implements OnInit {
       mode: 'ios',
       cssClass: type == "timer" ? 'quiz-alert timer-alert' : 'quiz-alert incorrect-alert',
 
-      buttons: [
-        {
-          text: 'Continue',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
+      // buttons: [
+      //   {
+      //     text: 'Continue',
+      //     role: 'cancel',
+      //     cssClass: 'secondary',
+      //     handler: (blah) => {
 
-          }
-        }]
+      //     }
+      //   }]
       //   }, {
       //     text: 'Continue',
       //     handler: () => {
@@ -320,7 +328,7 @@ export class QuizViewPage implements OnInit {
 
 
     await alert.present();
- 
+
     setTimeout(async () => {
       await alert.dismiss();
       this.nextPage();
@@ -330,7 +338,7 @@ export class QuizViewPage implements OnInit {
   ngOnDestroy() {
     console.log('ondestroy');
     this.audioSvc.stopSound(this.TIMER_SOUND_ID)
-   
+
 
   }
 
@@ -356,9 +364,102 @@ export class QuizViewPage implements OnInit {
     return statusTitle;
   }
 
-  getCorrectAnswer(choices:IChoice[]){
+  getCorrectAnswer(choices: IChoice[]) {
     const correctAnswer = choices.find(choice => choice.correct);
     return correctAnswer.title;
+  }
+
+  getStatsChart() {
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let skippedCount = 0;
+    let timeUpCount = 0;
+    this.quizContent.questions.forEach(question => {
+      if (question.status == 0) {
+        incorrectCount++;
+      } else if (question.status == 1) {
+        correctCount++;
+      } else if (question.status == 2) {
+        timeUpCount++;
+      } else if (question.status == 3) {
+        skippedCount++;
+      }
+    });
+
+    let dataSet = [
+      {
+        "label": "Correct",
+        "value": correctCount
+      }, {
+        "label": "Incorrect",
+        "value": incorrectCount
+      }, {
+        "label": "Skipped",
+        "value": skippedCount
+      }, {
+        "label": "Time ran out",
+        "value": timeUpCount
+      }
+    ]
+
+    console.log(dataSet)
+    this.createChart(dataSet)
+  }
+
+  createChart(dataSet) {
+
+    // const stats = dataSet.filter((s) => {
+    //   return s.value !== 0
+    // })
+    const labels = dataSet.map(d => d.label)
+    const data = dataSet.map(d => d.value)
+
+    console.log(data, labels)
+
+    const chartOptions: any = {
+      responsive: true,
+      maintainAspectRatio: false
+      ,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        // title: {
+        //   display: true,
+        //   text: 'Total Population'
+        // }
+      }, elements: {
+        center: {
+          text: 'Red is 2/3 of the total numbers',
+          color: '#FF6384', // Default is #000000
+          fontStyle: 'Arial', // Default is Arial
+          sidePadding: 20, // Default is 20 (as a percentage)
+          minFontSize: 25, // Default is 20 (in px), set to false and text will not wrap.
+          lineHeight: 25 // Default is 25 (in px), used for when text wraps
+        }
+      }
+    }
+    this.chartDonut = new Chart(this.lineCanvas.nativeElement, {
+      type: "doughnut",
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Population As of TEST',
+          data: data,
+          backgroundColor: [
+            '#2dd36f',
+            '#eb445a',
+            '#ffc409',
+            '#92949c'
+          ],
+          hoverOffset: 4
+        }]
+      }, options: chartOptions
+
+
+
+    });
+
   }
 }
 

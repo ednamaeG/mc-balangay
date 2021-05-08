@@ -8,6 +8,21 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1852,
+        "population": 10745,
+        "statistics": {
+            "data": [
+                {
+                    "label": "Male",
+                    "value": 5712
+                },
+                {
+                    "label": "Female",
+                    "value": 5033
+                }
+            ],
+            "currentYear": "2020",
+            "total": 10745
+        },
         "details": [
             {
                 "type": "History",
@@ -81,6 +96,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1843,
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -119,6 +135,8 @@
         "logo_url": "assets/barangay-logos/bundagul.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -157,6 +175,8 @@
         "logo_url": "assets/barangay-logos/cacutud.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/cacutud/entrance-min.jpg",
@@ -260,6 +280,8 @@
         "logo_url": "assets/barangay-logos/calumpang.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -298,6 +320,18 @@
         "logo_url": "assets/barangay-logos/camachiles.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": 14000,
+        "foundingYear": "",
+        "statistics": {
+            "data": [
+                {
+                    "label": "Total Population",
+                    "value": 14000
+                }
+            ],
+            "currentYear": "2015",
+            "total": 14000
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/camachiles/barangay-hall.jpg",
@@ -391,6 +425,7 @@
         "logo_url": "assets/barangay-logos/dapdap.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -430,6 +465,21 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1843,
+        "population": 55665,
+        "statistics": {
+            "data": [
+                {
+                    "label": "Male",
+                    "value": 28781
+                },
+                {
+                    "label": "Female",
+                    "value": 26844
+                }
+            ],
+            "currentYear": "2020",
+            "total": 55655
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/dau/barangay-hall.jpg",
@@ -526,6 +576,17 @@
         "logo_url": "assets/barangay-logos/dolores.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": 2841,
+        "statistics": {
+            "data": [
+                {
+                    "label": "Total Population",
+                    "value": 2841
+                }
+            ],
+            "currentYear": "2016",
+            "total": 2841
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/dolores/multipurpose-building-min.jpg",
@@ -637,6 +698,8 @@
         "logo_url": "assets/barangay-logos/duquit.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/duquit/barangay-hall.jpg",
@@ -736,6 +799,22 @@
         "logo_url": "assets/barangay-logos/lakandula.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": 7809,
+        "foundingYear": "",
+        "statistics": {
+            "data": [
+                {
+                    "label": "Male",
+                    "value": 3808
+                },
+                {
+                    "label": "Female",
+                    "value": 4001
+                }
+            ],
+            "currentYear": "2015",
+            "total": 7809
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/lakandula/barangay-hall.jpg",
@@ -793,6 +872,8 @@
         "logo_url": "assets/barangay-logos/mabiga.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/mabiga/barangay-hall.jpg",
@@ -872,6 +953,18 @@
         "logo_url": "assets/barangay-logos/macapagal.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": 3266,
+        "foundingYear": "",
+        "statistics": {
+            "data": [
+                {
+                    "label": "Total Population",
+                    "value": 3266
+                }
+            ],
+            "currentYear": "2016",
+            "total": 3266
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/macapagal-village/barangay-hall.jpg",
@@ -955,6 +1048,8 @@
         "logo_url": "assets/barangay-logos/mamatitang.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/mamatitang/barangay-hall-min.jpg",
@@ -1027,6 +1122,17 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1863,
+        "population": 1024,
+        "statistics": {
+            "data": [
+                {
+                    "label": "Total Population",
+                    "value": 1024
+                }
+            ],
+            "currentYear": "2017",
+            "total": 1024
+        },
         "photos": [
             {
                 "url": "assets/barangay-photos/mangalit/entrance-min.jpg",
@@ -1118,6 +1224,22 @@
         "logo_url": "assets/barangay-logos/marcos.png",
         "facebookLink": "",
         "websiteLink": "",
+        "population": 2576,
+        "foundingYear": "",
+        "statistics": {
+            "data": [
+                {
+                    "label": "Male",
+                    "value": 1311
+                },
+                {
+                    "label": "Female",
+                    "value": 1265
+                }
+            ],
+            "currentYear": "2016",
+            "total": 2576
+        },
         "details": [
             {
                 "type": "History",
@@ -1157,6 +1279,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1824,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/mawaque/barangay-hall.jpg",
@@ -1221,6 +1344,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1846,
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -1260,6 +1384,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1768,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/poblacion/brgy-hall-min.jpg",
@@ -1360,6 +1485,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1948,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/san-francisco/entrance-min.jpg",
@@ -1436,6 +1562,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1863,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/san-joaquin/entrance.jpg",
@@ -1518,6 +1645,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1878,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/santa-ines/hall-min.jpg",
@@ -1582,6 +1710,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1863,
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -1620,6 +1749,8 @@
         "logo_url": "assets/barangay-logos/storosario.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/santo-rosario/entrance-min.jpg",
@@ -1712,6 +1843,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1862,
+        "population": "",
         "details": [
             {
                 "type": "History",
@@ -1751,6 +1883,7 @@
         "facebookLink": "",
         "websiteLink": "",
         "foundingYear": 1824,
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/sapang-biabas/barangay-hall.jpg",
@@ -1842,6 +1975,8 @@
         "logo_url": "assets/barangay-logos/tabun.png",
         "facebookLink": "",
         "websiteLink": "",
+        "foundingYear": "",
+        "population": "",
         "photos": [
             {
                 "url": "assets/barangay-photos/tabun/hall-min.jpg",

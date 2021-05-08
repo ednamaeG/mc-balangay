@@ -1,5 +1,5 @@
 <ion-content [fullscreen]="true" #content>
-  <ion-toolbar color="sky">
+  <ion-toolbar color="sky" *ngIf="!showResults">
     <ion-buttons slot="start" *ngIf="!showResults">
       <ion-button slot="icon-only" (click)="quitQuiz()">
         <ion-icon name="arrow-back-outline"></ion-icon>
@@ -9,9 +9,23 @@
     <ion-buttons slot="end" *ngIf="currentPage < lastPage">
       <ion-button (click)="skipQuiz()" class="ion-text-capitalize">Skip</ion-button>
     </ion-buttons>
-    <ion-title class="ion-text-center" *ngIf="showResults">
+
+  </ion-toolbar>
+  <ion-toolbar *ngIf="showResults" color="sky">
+    <ion-title class="ion-text-center">
       Quiz Results
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="ion-text-capitalize" (click)="exitQuiz()">
+        Finish
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="ion-text-capitalize" color="danger" (click)="resetQuiz()">
+        <ion-icon slot="start" name="refresh"></ion-icon>
+        Try Again
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 
 
@@ -22,7 +36,7 @@
     </ion-text>
   </div>
   <ion-row *ngIf="!showResults">
-    <ion-progress-bar color="cream" [value]="progress"></ion-progress-bar>
+    <!-- <ion-progress-bar color="cream" [value]="progress"></ion-progress-bar> -->
     <ion-col size="4" style="text-align:center; font-weight: bold;">
       <ion-text color="light">
         <h3> {{currentPage + 1}} / {{lastPage}} </h3>
@@ -82,34 +96,25 @@
     </ion-slide>
   </ion-slides>
 
+  <div style="height: 200px;">
+    <canvas #lineCanvas ></canvas>
+    
+  </div>
+
   <div *ngIf="showResults">
     <ion-text color="light" class="ion-padding ion-text-center">
+      <h1>Your Final Score: {{totalScore}}</h1>
       <h3> Number of Correct Anwers: <br /> {{totalCorrectAnswers}} out of {{ lastPage }} Questions</h3>
     </ion-text>
-    <div class="spacer"></div>
-    <div *ngFor="let question of quizContent.questions;let i=index">
-      <ion-card>
-        <ion-card-header [color]="question.status == 1 ?'cream': 'danger'">
-          <span>Question # {{ i+1 }} - {{getQuizStats(question.status)}}</span>
-          <p> {{question.question}}</p>
-        </ion-card-header>
-        <ion-card-content >
-          <div *ngFor="let choice of question.choices">
-            <div *ngIf="choice.selected">
-              <p>Your Answer: {{choice.title}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
-              </p>
-            </div>
-          </div>
-          <p *ngIf="question.status !== 1">Correct Answer:
-            {{ getCorrectAnswer(question.choices)}}</p>
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <!-- <ion-card color="misty">
+
+    <!-- <canvas #lineCanvas></canvas> -->
+
+
+    <!-- <ion-card color="misty" class="ion-text-center">
       <ion-card-content>
         <ion-card-header>
           <ion-text color="taupe">
-            <h1>Your Final Score: </h1>
+            <h1>Your Final Score:  {{totalScore}}</h1>
           </ion-text>
         </ion-card-header>
         <ion-card-content class="score-details">
@@ -125,6 +130,25 @@
 
       </ion-card-content>
     </ion-card> -->
+    <div *ngFor="let question of quizContent.questions;let i=index">
+      <ion-card>
+        <ion-card-header [color]="question.status == 1 ?'cream': 'danger'">
+          <span>Question # {{ i+1 }} - {{getQuizStats(question.status)}}</span>
+          <p> {{question.question}}</p>
+        </ion-card-header>
+        <ion-card-content>
+          <div *ngFor="let choice of question.choices">
+            <div *ngIf="choice.selected">
+              <p>Your Answer: {{choice.title}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
+              </p>
+            </div>
+          </div>
+          <p *ngIf="question.status !== 1">Correct Answer:
+            {{ getCorrectAnswer(question.choices)}}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
 
 
   </div>
@@ -133,24 +157,25 @@
     
   </div>
   -->
-
 </ion-content>
-<ion-footer *ngIf="showResults">
-  <div class="ion-padding">
-    <ion-button (click)="resetQuiz()" expand="block" color="danger">
-      <ion-icon name="reload" color="light"></ion-icon>
-      <ion-label>
-        <ion-text slot="end" color="light"> Try Again</ion-text>
-      </ion-label>
-    </ion-button>
-    <ion-button expand="block" color="olive" (click)="exitQuiz()">
-      <ion-label>
-        <ion-text slot="end"> Finish </ion-text>
-      </ion-label>
-    </ion-button>
-  </div>
+<!-- <ion-footer>
+  <ion-toolbar color="sky">
+    <div class="ion-padding" *ngIf="showResults">
+      <ion-button (click)="resetQuiz()" expand="block" color="danger">
+        <ion-icon name="reload" color="light"></ion-icon>
+        <ion-label>
+          <ion-text slot="end" color="light"> Try Again</ion-text>
+        </ion-label>
+      </ion-button>
+      <ion-button expand="block" color="olive" (click)="exitQuiz()">
+        <ion-label>
+          <ion-text slot="end"> Finish </ion-text>
+        </ion-label>
+      </ion-button>
+    </div>
 
-</ion-footer>
+  </ion-toolbar>
+</ion-footer> -->
 <!-- <ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">
