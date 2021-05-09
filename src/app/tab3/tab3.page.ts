@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { IonContent } from '@ionic/angular';
 
 import { ScrollDetail } from '@ionic/core';
@@ -23,8 +24,9 @@ export class Tab3Page {
   @ViewChild('content') content: IonContent;
   @ViewChild('lineCanvas', { static: true }) lineCanvas;
   pieChart: any;
-
-  constructor() {
+  vidUrl;
+  videoTest = "<iframe  src=https://www.youtube.com/embed/4AtmpOG_yN0 width=100% height='280' frameborder='0' allowfullscreen='allowfullscreen'></iframe>"
+  constructor(private sanitizer: DomSanitizer) {
 
   }
 
@@ -32,7 +34,7 @@ export class Tab3Page {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     //  this.content.scrollToTop()
-
+    this.vidUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/4AtmpOG_yN0')
   }
 
   ionViewDidEnter() {

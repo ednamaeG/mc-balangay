@@ -1,16 +1,32 @@
-<ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
-  <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
-    <div>
-      <img [src]="photo.url" style="
-    width: 100%;
-    object-fit: cover;" (click)="openViewer(photo)">
-      <div class="img-title">
-        {{ photo.title }}
+<div *ngIf="!content.videoUrl">
+  <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
+    <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
+      <div>
+        <img [src]="photo.url" style="
+      width: 100%;
+      object-fit: cover;" (click)="openViewer(photo)">
+        <div class="img-title">
+          {{ photo.title }}
+        </div>
       </div>
-    </div>
-  </ion-slide>
-</ion-slides>
+    </ion-slide>
 
+  </ion-slides>
+</div>
+
+<div *ngIf="content.videoUrl && networkStatus">
+  <div *ngIf="networkStatus.connected">
+    <iframe width="100%" height="280" allowscriptaccess="always" [src]="sanitizedUrl(content.videoUrl)"
+      title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div style="text-align: center;"  *ngIf="!networkStatus.connected">
+    <ion-text  >
+      <ion-icon name="warning" style="font-size: 160px; " color="warning"></ion-icon>
+      
+    </ion-text>
+    <p> Unable to Load Video. Please check your network connection.</p>
+  </div>
+</div>
 <div *ngIf="content.type == 'Branding'" class="img-container">
   <img [src]="content.images[0]" class="brand-img">
 </div>

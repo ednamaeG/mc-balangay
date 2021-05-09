@@ -6,7 +6,7 @@
     </ion-searchbar>
     <ion-buttons slot="end" *ngIf="results.length > 0">
       <ion-button slot="icon-only" (click)="showFilterModal()">
-        <ion-icon name="funnel-outline"></ion-icon>
+        <ion-icon name="funnel-outline" [color]="queryFilter ? 'danger' :'' "></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -14,7 +14,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ng-template [ngIf]="results.length > 0">
+  <div *ngIf="results.length > 0">
     <div *ngFor="let result of results">
       <!-- <app-item [item]="result" (click)="openContent(result)"></app-item> -->
       <ion-item (click)="openContent(result)">
@@ -30,8 +30,8 @@
         </ion-label>
       </ion-item>
     </div>
-  </ng-template>
-  <ng-template [ngIf]="results.length <= 0">
+  </div>
+  <div *ngIf="results.length <= 0 || !results">
     <p class="ion-text-center"> {{warningMsg}} </p>
-  </ng-template>
+  </div>
 </ion-content>

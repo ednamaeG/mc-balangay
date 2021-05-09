@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
-
+import { AlertController, ModalController, NavParams } from '@ionic/angular';
+import {
+	FormBuilder,
+	FormGroup,
+  	Validators
+} from '@angular/forms';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.page.html',
   styleUrls: ['./filter.page.scss'],
 })
 export class FilterPage implements OnInit {
+  public form :FormGroup;
   categories = [
     {
       name: "history",
@@ -38,7 +43,7 @@ export class FilterPage implements OnInit {
     },
     population: ''
   }
-  constructor(private modalCtrl: ModalController,private navParams:NavParams) { }
+  constructor(private modalCtrl: ModalController,private navParams:NavParams,private alertController:AlertController) { }
 
   ngOnInit() {
     const data = this.navParams.get("data")
@@ -57,7 +62,12 @@ export class FilterPage implements OnInit {
     // }
     console.log("filter", this.filter)
     if(this.filter.foundingYear.to || this.filter.foundingYear.from || this.filter.sort || this.filter.population){
-      this.modalCtrl.dismiss(this.filter);
+      if(this.filter.foundingYear.from > this.filter.foundingYear.to){
+        this.presentAlert()
+      }else{
+        this.modalCtrl.dismiss(this.filter);
+      }
+     
     }else{
       this.modalCtrl.dismiss('')
     }
@@ -75,5 +85,20 @@ export class FilterPage implements OnInit {
       population: ''
     }
     console.log('filter',this.filter)
+  }
+
+  closeModal(){
+    this.modalCtrl.dismiss()
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'MCC 101 E-Learning',
+      // subHeader: 'Subtitle',
+      message: 'Invalid Founding Year Filter Range',
+      buttons: ['OK']
+    });
+  
+    await alert.present();
   }
 }

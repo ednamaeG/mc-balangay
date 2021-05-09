@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ModalController } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
 import { IBarangayDetail } from 'src/app/interfaces/barangay';
 import { ControlsService } from 'src/app/services/controls.service';
+import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
+const { Network } = Plugins;
 
 @Component({
   selector: 'app-content-brgy',
@@ -19,16 +22,25 @@ export class ContentBrgyComponent implements OnInit {
   };
   @Input() content: IBarangayDetail;
   fontSize:any;
-  constructor(private controlSvc:ControlsService,private modalController:ModalController) { 
+  networkListener: PluginListenerHandle;
+  networkStatus: any;
+
+  constructor(private controlSvc:ControlsService,private modalController:ModalController,private sanitizer:DomSanitizer) { 
  
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     console.log('content',this.content)
     this.controlSvc.fontSize$.subscribe((font) =>{
       this.fontSize= font;
       console.log('size',this.fontSize)
     })
+
+    this.networkStatus = await Network.getStatus();
+    this.networkListener = Network.addListener('networkStatusChange', (status) => {
+      this.networkStatus = status;
+      console.log('Network status changed', status);
+    });
   }
 
   async openViewer(photo){
@@ -46,6 +58,10 @@ export class ContentBrgyComponent implements OnInit {
     });
  
     return await modal.present();
+  }
+
+  sanitizedUrl(url){
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

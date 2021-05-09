@@ -147,6 +147,8 @@ export class SearchPage implements OnInit {
         //   }
         //   this.results = sorted;
         //   console.log('sorted', sorted)
+      }else{
+        this.queryFilter = null;
       }
     })
   }
@@ -208,9 +210,9 @@ export class SearchPage implements OnInit {
     //   })
     // }
     
-    if(filtered.length == 0){
-      filtered  = this.results;
-    }
+    // if(filtered.length == 0){
+    //   filtered  = this.results;
+    // }
     let sorted = []
     if (this.queryFilter.sort == "foundingYear-Asc") {
       sorted = filtered.sort((a, b) => {
@@ -235,7 +237,8 @@ export class SearchPage implements OnInit {
       });
     }
     this.results = sorted;
-    console.log('sorted', sorted)
+    this.warningMsg = this.results.length == 0 ? "No Results Found." : "";
+    console.log('sorted', this.results)
   }
 
 }
