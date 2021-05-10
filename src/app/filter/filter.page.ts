@@ -41,7 +41,8 @@ export class FilterPage implements OnInit {
       from: '',
       to: ''
     },
-    population: ''
+    population: '',
+  
   }
   constructor(private modalCtrl: ModalController,private navParams:NavParams,private alertController:AlertController) { }
 
@@ -50,7 +51,7 @@ export class FilterPage implements OnInit {
     if(data){
       this.filter = data;
     }
-    console.log('TEST',this.filter,data)
+    console.log('TEST::',this.filter,data)
   }
 
   applyFilter() {
@@ -65,6 +66,7 @@ export class FilterPage implements OnInit {
       if(this.filter.foundingYear.from > this.filter.foundingYear.to){
         this.presentAlert()
       }else{
+         console.log('dismissed')
         this.modalCtrl.dismiss(this.filter);
       }
      
@@ -75,15 +77,23 @@ export class FilterPage implements OnInit {
   }
 
   resetFilter(){
-    this.filter = {
-      sort: '',
-      // categories: this.categories,
-      foundingYear: {
-        from: '',
-        to: ''
-      },
-      population: ''
-    }
+    // this.filter = {
+    //   sort: null,
+    //   // categories: this.categories,
+    //   foundingYear: {
+    //     from: null,
+    //     to: null
+    //   },
+    //   population: null,
+     
+    // }
+
+    // this.filter.population = '';
+    // this.filter.sort = '';
+    // this.filter.foundingYear.from='';
+    // this.filter.population = '';
+    // this.filter.foundingYear.to;
+    this.modalCtrl.dismiss('')
     console.log('filter',this.filter)
   }
 

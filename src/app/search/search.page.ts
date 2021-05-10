@@ -25,6 +25,7 @@ export class SearchPage implements OnInit {
   async ngOnInit() {
     // this.data = this.route.snapshot.params.data;
     this.data = await this.getData();
+    this.results = this.data;
     console.log('DATA', this.data)
     setTimeout(() => {
       this.searchInput.setFocus();
@@ -84,16 +85,25 @@ export class SearchPage implements OnInit {
   openContent(content) {
     this.closeModal()
 
-    if (content.foundInfo) {
-      console.log(content.foundInfo)
-      const found = JSON.stringify(content.foundInfo)
-      const data = JSON.stringify(content)
+    const data = JSON.stringify(content)
       console.log('data', content)
       // this.router.navigate(['/tabs/tab1/content',{content:data}])
       // this.router.navigate(['/barangay-content', { data: data, name: content.name }])
       this.router.navigate(['/barangay', { content: data }])
 
-    }
+
+    // if (content.foundInfo) {
+    //   console.log(content.foundInfo)
+    //   const found = JSON.stringify(content.foundInfo)
+    //   const data = JSON.stringify(content)
+    //   console.log('data', content)
+    //   // this.router.navigate(['/tabs/tab1/content',{content:data}])
+    //   // this.router.navigate(['/barangay-content', { data: data, name: content.name }])
+    //   this.router.navigate(['/barangay', { content: data }])
+
+    // }else{
+
+    // }
     // else {
     //   const data = JSON.stringify(content)
     //   this.router.navigate(['/tabs/tab1/content', { content: data }])
@@ -103,7 +113,8 @@ export class SearchPage implements OnInit {
 
   resetResults() {
     console.log('reset')
-    this.results = [];
+    this.results = []
+    this.results = this.data;
   }
   async showFilterModal() {
     const modal = await this.modal.create({
@@ -114,11 +125,20 @@ export class SearchPage implements OnInit {
     modal.present();
 
     modal.onDidDismiss().then((props) => {
+      console.log('propss',props)
       if (props.data) {
-        console.log('props',props)
         this.queryFilter = props.data;
-         
-        this.filterResults()
+        if(this.queryFilter.foundingYear.to || this.queryFilter.foundingYear.from || this.queryFilter.sort || this.queryFilter.population){
+          console.log('props',props)
+          this.results = this.data;
+          this.queryFilter = props.data;
+           
+          this.filterResults()
+        }else{
+          this.queryFilter = null;
+          this.results = this.data;
+        }
+       
         //   let filtered = []
         // filtered = this.results.filter(item => {
         //     console.log('data:::', this.queryFilter);
@@ -148,6 +168,8 @@ export class SearchPage implements OnInit {
         //   this.results = sorted;
         //   console.log('sorted', sorted)
       }else{
+        this.results = []
+        this.results = this.data;
         this.queryFilter = null;
       }
     })
@@ -158,7 +180,7 @@ export class SearchPage implements OnInit {
     if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) && !this.queryFilter.population) {
       filtered = this.results.filter(item => {
         console.log('data:::', this.queryFilter);
-        return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from
+        return (item.foundingYear && item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from)
       });
     } else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from) && this.queryFilter.population) {
       filtered = this.results.filter(item => {
@@ -210,9 +232,33 @@ export class SearchPage implements OnInit {
     //   })
     // }
     
-    // if(filtered.length == 0){
-    //   filtered  = this.results;
-    // }
+    if(filtered.length == 0 && !this.queryFilter.foundingYear.to && !this.queryFilter.foundingYear.from ){
+      filtered  = this.results;
+      if(this.queryFilter.sort ==  "foundingYear-Desc" || this.queryFilter.sort ==  "foundingYear-Asc"){
+        filtered = filtered.filter(i =>{
+          return i.foundingYear != '' && i.foundingYear;
+        })
+        console.log('FILTERED',filtered)
+        filtered.forEach((data) => {
+          data.foundInfo = {
+            type: "History",
+            content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''  
+          }
+        })
+      }else if(this.queryFilter.sort == "population-Desc" || this.queryFilter.sort == "population-Asc"){
+        filtered = filtered.filter(i =>{
+          return i.population != '' && i.population;
+        })
+        console.log('FILTERED POP',filtered)
+        filtered.forEach((data) => {
+          data.foundInfo = {
+            type: "History",
+            content: data.population ? "Population " + data.population :'' 
+          }
+        })
+      }
+
+    }
     let sorted = []
     if (this.queryFilter.sort == "foundingYear-Asc") {
       sorted = filtered.sort((a, b) => {
@@ -224,6 +270,7 @@ export class SearchPage implements OnInit {
         return b.foundingYear - a.foundingYear;
       });
     } else if (this.queryFilter.sort == "population-Desc") {
+      
       sorted = filtered.sort((a, b) => {
         return b.population - a.population;
       });
