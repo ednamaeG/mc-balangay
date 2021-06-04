@@ -5,7 +5,8 @@ import { MenuController, ModalController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IBarangayDetail,IBarangay } from '../interfaces/barangay';
-
+import {apiUrl} from '../../environments/environment';
+import { BarangayService } from '../services/barangay.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -22,13 +23,15 @@ export class Tab1Page {
     private menu: MenuController,
     private modalCtrl: ModalController,
     private router: Router,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private barangaySvc:BarangayService
   ) { }
 
   ngOnInit() {
     this.plt.ready().then(async () => {
       this.barangayList = await this.getData();
-
+      const testApi = await this.barangaySvc.getBarangays();
+      console.log("BARANGAY from api",testApi);
       console.log('data:::', this.barangayList);
     });
   }
@@ -38,6 +41,20 @@ export class Tab1Page {
   async getData(): Promise<IBarangay[]> {
     return await this.httpClient.get<IBarangay[]>('./assets/mocks/barangays-mock.json').toPromise();
   }
+
+
+  async getDataFromApi(){
+    const address = `http://192.168.100.11:8000/api/barangays`;
+    console.log('address',address)
+    try{
+      const res = await this.http.get(address,{},{});
+      console.log("res",res);
+    }catch(err){
+      console.log('err',err)
+    }
+  
+  }
+
   getResults(ev) {
     console.log(ev.detail.value);
     const query = ev.detail.value;

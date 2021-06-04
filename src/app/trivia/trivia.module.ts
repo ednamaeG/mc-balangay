@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { TriviaPageRoutingModule } from './trivia-routing.module';
-
-import { TriviaPage } from './trivia.page';
+ 
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -16,6 +15,6 @@ import { BrowserModule } from '@angular/platform-browser';
     IonicModule,
     TriviaPageRoutingModule,BrowserModule
   ],
-  declarations: [TriviaPage]
+  declarations: []
 })
 export class TriviaPageModule {}

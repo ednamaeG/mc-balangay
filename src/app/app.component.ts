@@ -6,7 +6,7 @@ import { ITrivia } from './interfaces/trivia';
 import { SettingsService } from './services/settings.service';
 import { TriviaService } from './services/trivia.service';
 import { TriviaPage } from './trivia/trivia.page';
-
+import {environment,apiUrl} from '../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -17,7 +17,7 @@ export class AppComponent {
   otherTabs = ["/tabs/tab1", "/tabs/tab2", "/tabs/tab1/content"];
   settings:any;
   constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private settingSvc: SettingsService, private alertController: AlertController, private navCtrl: NavController, private httpClient: HttpClient, private modalCtrl: ModalController) {
-
+    this.getEnv()
     console.log(plt.width(), plt.height())
 
     this.captureBackButton()
@@ -127,6 +127,10 @@ export class AppComponent {
   async initTrivias() {
     const trivias = await this.getTrivias();
     await this.triviaSvc.storeTrivias(trivias);
+  }
+
+  getEnv(){
+    console.log(apiUrl)
   }
 
 }
