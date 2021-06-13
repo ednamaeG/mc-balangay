@@ -45,7 +45,8 @@ export class Tab2Page {
     // const storeQuiz = await this.quizSvc.storeQuizzes(quizzes);
     // this.quizzes = quizzes;
     // this.quizSvc.quizzes$.next(quizzes);
-
+    const quizzesFromApi = await this.quizSvc.getQuizList();
+    console.log('Quizzes from api',quizzesFromApi)
 
     console.log('Data', data)
     console.log(this.quizzes)

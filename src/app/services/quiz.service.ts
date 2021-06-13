@@ -3,12 +3,14 @@ import { Plugins } from '@capacitor/core';
 import { BehaviorSubject } from 'rxjs';
 import { IQuestion, IQuiz } from '../interfaces/quiz';
 const { Storage } = Plugins;
+import { apiUrl } from 'src/environments/environment';
+import { HTTP } from '@ionic-native/http/ngx';
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
   quizzes$ : BehaviorSubject<IQuiz[]> = new BehaviorSubject([]);
-  constructor() { }
+  constructor(private http:HTTP) { }
 
   async getQuizzes()  {
     try {
@@ -27,9 +29,21 @@ export class QuizService {
         value: JSON.stringify(data)
       });
       console.log(quizzes,'stored')
-      
+
     } catch (err) {
       console.log(err)
     }
+  }
+
+  async getQuizList(){
+    const address = `${apiUrl}/quizzes`;
+    console.log('address',address)
+    try{
+      const res = await this.http.get(address,{},{});
+      return JSON.parse(res.data);
+    }catch(err){
+      console.log('err',err)
+    }
+
   }
 }
