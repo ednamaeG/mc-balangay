@@ -7,21 +7,21 @@ export interface IBarangay {
     facebookLink: string;
     websiteLink: string;
     details: IBarangayDetail[];
-    logo_url: string;
+    logoUrl: string;
     photos: IPhoto[];
     foundInfo?:IBarangayDetail;
     foundingYear?:number;
     population?:number;
     malePopulation?:number;
     femalePopulation?:number;
-    statistics?:IStats;
+    statistics?:IStatData[];
 }
 
-export interface IStats{
-    data: IStatData[];
-    currentYear:string;
-    total?:number;
-}
+// export interface IStats{
+//     data: IStatData[];
+//     currentYear:string;
+//     total?:number;
+// }
 
 export interface IStatData{
     label:string;
@@ -33,6 +33,7 @@ export interface IBarangayDetail {
     politicians?: IPolitician[];
     images?:IPhoto[];
     videoUrl?:string;
+    photos?:IPhoto[]
 }
 
 export interface IPolitician {

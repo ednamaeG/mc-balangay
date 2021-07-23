@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { IBarangay, IStats } from 'src/app/interfaces/barangay';
+import { IBarangay } from 'src/app/interfaces/barangay';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
- 
+
 Chart.register(...registerables);
- 
+
 @Component({
   selector: 'statistics-chart',
   templateUrl: './chart.component.html',
@@ -17,25 +17,25 @@ export class ChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('stats', this.barangayData)
+    console.log('stats', this.barangayData.statistics)
     this.createChart()
   }
 
   createChart() {
-    const data = this.barangayData.statistics.data.map(data => {
+    const data = this.barangayData.statistics.map(data => {
       return data.value
     })
 
-    const labels = this.barangayData.statistics.data.map(data => {
+    const labels = this.barangayData.statistics.map(data => {
       return data.label
     })
 
     console.log("DATA", data)
     const chartOptions: any = {
       responsive: true,
-     
+
       plugins: {
-       
+
         legend: {
           position: 'bottom',
 
@@ -44,8 +44,8 @@ export class ChartComponent implements OnInit {
         labels:{
           render:'label'
         },
-         
-        
+
+
         title: {
           display: true,
           text: `${this.barangayData.name.toUpperCase()} POPULATION`,

@@ -5,6 +5,7 @@ import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
 import { IBarangayDetail } from 'src/app/interfaces/barangay';
 import { ControlsService } from 'src/app/services/controls.service';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
+import { BASE_URL } from 'src/environments/environment';
 const { Network } = Plugins;
 
 @Component({
@@ -24,9 +25,9 @@ export class ContentBrgyComponent implements OnInit {
   fontSize:any;
   networkListener: PluginListenerHandle;
   networkStatus: any;
+  photoBaseURL = `${BASE_URL}`
+  constructor(private controlSvc:ControlsService,private modalController:ModalController,private sanitizer:DomSanitizer) {
 
-  constructor(private controlSvc:ControlsService,private modalController:ModalController,private sanitizer:DomSanitizer) { 
- 
   }
 
   async ngOnInit() {
@@ -56,7 +57,7 @@ export class ContentBrgyComponent implements OnInit {
       keyboardClose: true,
       showBackdrop: true
     });
- 
+
     return await modal.present();
   }
 

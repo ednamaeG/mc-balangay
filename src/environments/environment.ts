@@ -8,7 +8,8 @@ export const environment = {
 
 
 export const apiUrl = environment.production ? "" : "http://192.168.100.11:8000/api"
- 
+export const BASE_URL = environment.production ? "" : "http://192.168.100.11:8000"
+
 
 /*
  * For easier debugging in development mode, you can import the following file

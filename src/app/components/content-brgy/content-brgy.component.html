@@ -2,7 +2,7 @@
   <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
     <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
       <div>
-        <img [src]="photo.url" style="
+        <img [src]="photoBaseURL+photo.url" style="
       width: 100%;
       object-fit: cover;" (click)="openViewer(photo)">
         <div class="img-title">
@@ -22,17 +22,17 @@
   <div style="text-align: center;"  *ngIf="!networkStatus.connected">
     <ion-text  >
       <ion-icon name="warning" style="font-size: 160px; " color="warning"></ion-icon>
-      
+
     </ion-text>
     <p> Unable to Load Video. Please check your network connection.</p>
   </div>
 </div>
 <div *ngIf="content.type == 'Branding'" class="img-container">
-  <img [src]="content.images[0]" class="brand-img">
+  <img [src]="photoBaseURL+content.photos[0].url" class="brand-img">
 </div>
 
 <div *ngIf="content.type == 'Fiesta'" style="position: relative;">
-  <img [src]="content.images[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
+  <img [src]="photoBaseURL+content.photos[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
   <div class="info">
     {{content.images[0].title}}
   </div>
