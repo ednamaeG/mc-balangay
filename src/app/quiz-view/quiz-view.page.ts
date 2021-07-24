@@ -69,6 +69,10 @@ export class QuizViewPage implements OnInit {
 
   }
 
+  // initChoices(questions){
+
+  // }
+
 
   async ngOnInit() {
 
@@ -148,7 +152,7 @@ export class QuizViewPage implements OnInit {
 
     if (!this.quizContent.questions[this.currentPage].hasAnswer) {
       this.currentQuestion.choices[i].selected = true;
-      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
+      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == 1);
 
       console.log('choices', this.currentQuestion.choices)
       this.quizContent.questions[this.currentPage].hasAnswer = true;
@@ -234,6 +238,8 @@ export class QuizViewPage implements OnInit {
         choice.selected = false;
       })
     })
+
+    console.log(this.quizContent,'new')
   }
 
   shuffleQuestions() {
@@ -366,7 +372,7 @@ export class QuizViewPage implements OnInit {
 
   getCorrectAnswer(choices: IChoice[]) {
     const correctAnswer = choices.find(choice => choice.correct);
-    return correctAnswer.title;
+    return correctAnswer.choice;
   }
 
   getStatsChart() {

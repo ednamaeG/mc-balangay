@@ -13,13 +13,13 @@
   </ion-toolbar>
 
   <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
-    <ion-col *ngFor="let contentType of barangayData.details" style="height: 48px;
+    <ion-col *ngFor="let contentType of mainDetails" style="height: 48px;
       border-right: 1px solid white;
       font-size: 14px;
-      padding: 8px;" [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)"
+      padding: 8px;" [ngClass]="selectedTab ==  contentType ? 'active' :''" (click)="selectTab(contentType)"
       size-sm>
       <ion-text>
-        <ion-icon [src]="getIconName(contentType.type)" style="font-size: 28px;"></ion-icon> <br />
+        <ion-icon [src]="getIconName(contentType)" style="font-size: 28px;"></ion-icon> <br />
       </ion-text>
 
     </ion-col>
@@ -30,6 +30,17 @@
       (click)="selectTab('Statistics')" size-sm>
       <ion-text>
         <ion-icon name="stats-chart-outline" style="font-size: 28px;"></ion-icon> <br />
+      </ion-text>
+
+    </ion-col>
+
+    <ion-col style="height: 48px;
+    border-right: 1px solid white;
+    font-size: 14px;
+    padding: 8px;" *ngIf="barangayData.politicians" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
+      (click)="selectTab('Politicians')" size-sm>
+      <ion-text>
+        <ion-icon src="assets/icon/speak-speech.svg" style="font-size: 28px;"></ion-icon> <br />
       </ion-text>
 
     </ion-col>
@@ -47,7 +58,7 @@
         <ion-icon name="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
-     
+
   </ion-toolbar> -->
 
 <ion-content #content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
@@ -55,7 +66,7 @@
     <ion-text color="olive"> {{selectedTab
       == 'Politicians' ? 'Barangay Captains' : selectedTab}}</ion-text>
   </div>
-  <!-- 
+  <!--
   <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
     <ion-col *ngFor="let contentType of barangayData.details"
       style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
@@ -66,17 +77,18 @@
     </ion-col>
   </ion-row> -->
   <div *ngFor="let content of barangayData.details">
-    <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
+    <div *ngIf=" content.type == selectedTab">
       <app-content-brgy [content]="content"></app-content-brgy>
     </div>
-
-    <div *ngIf="content.type == 'Politicians' && content.type == selectedTab">
-      <!-- < [content]="content"></app-content-brgy> -->
-      <app-politicians-list [content]="content"></app-politicians-list>
-    </div>
-
-
   </div>
+
+
+  <div *ngIf="selectedTab == 'Politicians'">
+    <!-- < [content]="content"></app-content-brgy> -->
+    testt
+    <app-politicians-list [content]="barangayData.politicians"></app-politicians-list>
+  </div>
+
 
   <div *ngIf="selectedTab == 'Statistics'">
     <!-- < [content]="content"></app-content-brgy> -->

@@ -73,7 +73,7 @@
             <div *ngFor="let choice  of item.choices; let i= index">
               <!-- <ion-button expand="block" size="large" fill="outline" [disabled]="currentData.isOpen && !choice.selected"
               [color]="choice.selected ? 'primary' :'dark'" (click)="select(i)">  <ion-text class="ion-text-wrap">
-                
+
               </ion-text></ion-button> -->
               <ion-card [color]="choice.selected ? (choice.correct? 'success' : 'danger' ) : 'light'"
                 (click)="select(i)" class="ion-text-left">
@@ -81,7 +81,7 @@
                   <ion-badge color="turquoise" class="choice-letter">
                     <ion-text color="light"> {{letters[i]}}</ion-text>
                   </ion-badge>
-                  <ion-text color="taupe"><span> {{choice.title}}</span></ion-text>
+                  <ion-text color="taupe"><span> {{choice.choice}}</span></ion-text>
                   <div class="answer-details">
                     <ion-icon [name]="choice.correct? 'checkmark-circle' : 'close'" style="font-size: 24px;"
                       color="light" *ngIf="choice.selected"></ion-icon>
@@ -98,7 +98,7 @@
 
   <div style="height: 200px;">
     <canvas #lineCanvas ></canvas>
-    
+
   </div>
 
   <div *ngIf="showResults">
@@ -139,7 +139,7 @@
         <ion-card-content>
           <div *ngFor="let choice of question.choices">
             <div *ngIf="choice.selected">
-              <p>Your Answer: {{choice.title}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
+              <p>Your Answer: {{choice.choice}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@
   </div>
 
   <!-- <div *ngIf="showResults">
-    
+
   </div>
   -->
 </ion-content>

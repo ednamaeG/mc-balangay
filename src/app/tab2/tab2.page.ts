@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
 import { CountdownEvent, CountdownComponent, CountdownConfig } from 'ngx-countdown';
 import { IQuestion, IQuiz } from '../interfaces/quiz';
 import { QuizService } from '../services/quiz.service';
@@ -21,10 +22,10 @@ export class Tab2Page {
 
   currentPage = 0;
   lastPage = 0;
-  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService) {
+  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService,private plt: Platform) {
   }
 
-  async ngOnInit() {
+  async _ngOnInit() {
     // add comparison for updated/newly inserted quizzes /
     const data = await this.quizSvc.getQuizzes();
     if (!data) {
@@ -50,6 +51,17 @@ export class Tab2Page {
 
     console.log('Data', data)
     console.log(this.quizzes)
+  }
+
+  async ngOnInit()  {
+    this.plt.ready().then(async () =>{
+      const quizzesFromApi = await this.quizSvc.getQuizList();
+      console.log('Quizzes from api',quizzesFromApi)
+
+      this.quizSvc.quizzes$.next(quizzesFromApi);
+      this.quizzes = this.quizSvc.quizzes$.getValue()
+    })
+
   }
 
   // nextPage() {

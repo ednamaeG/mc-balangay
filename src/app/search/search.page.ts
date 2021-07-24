@@ -40,7 +40,7 @@ export class SearchPage implements OnInit {
     return await this.httpClient.get<IBarangay[]>('./assets/mocks/barangays-mock.json').toPromise();
   }
   search(ev) {
-    console.log('test')
+
     let query = ev.detail.value;
     if (query) {
       // this.results = this.data.filter(
@@ -48,7 +48,7 @@ export class SearchPage implements OnInit {
       // );
       // this.results = this.data.filter(
       //   (data) => {
-      //     return data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 
+      //     return data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
       //   }
       // );
 
@@ -132,13 +132,13 @@ export class SearchPage implements OnInit {
           console.log('props',props)
           this.results = this.data;
           this.queryFilter = props.data;
-           
+
           this.filterResults()
         }else{
           this.queryFilter = null;
           this.results = this.data;
         }
-       
+
         //   let filtered = []
         // filtered = this.results.filter(item => {
         //     console.log('data:::', this.queryFilter);
@@ -195,7 +195,7 @@ export class SearchPage implements OnInit {
         return item.foundingYear <= this.queryFilter.foundingYear.to && item.foundingYear >= this.queryFilter.foundingYear.from || queryPopulation;
       });
     }
-    // 
+    //
     // else if ((this.queryFilter.foundingYear.to && this.queryFilter.foundingYear.from)  && this.queryFilter.population) {
     //   filtered.forEach((data) => {
     //     const content = this.queryFilter.population ? "Population" + data.population : "Founding Year:" + data.foundingYear
@@ -209,7 +209,7 @@ export class SearchPage implements OnInit {
       filtered.forEach((data) => {
         data.foundInfo = {
           type: "History",
-          content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''  
+          content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''
         }
       })
     }
@@ -231,7 +231,7 @@ export class SearchPage implements OnInit {
     //     }
     //   })
     // }
-    
+
     if(filtered.length == 0 && !this.queryFilter.foundingYear.to && !this.queryFilter.foundingYear.from ){
       filtered  = this.results;
       if(this.queryFilter.sort ==  "foundingYear-Desc" || this.queryFilter.sort ==  "foundingYear-Asc"){
@@ -242,7 +242,7 @@ export class SearchPage implements OnInit {
         filtered.forEach((data) => {
           data.foundInfo = {
             type: "History",
-            content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''  
+            content: data.foundingYear ? ("Founding Year: " + data.foundingYear) : ''
           }
         })
       }else if(this.queryFilter.sort == "population-Desc" || this.queryFilter.sort == "population-Asc"){
@@ -253,7 +253,7 @@ export class SearchPage implements OnInit {
         filtered.forEach((data) => {
           data.foundInfo = {
             type: "History",
-            content: data.population ? "Population " + data.population :'' 
+            content: data.population ? "Population " + data.population :''
           }
         })
       }
@@ -270,7 +270,7 @@ export class SearchPage implements OnInit {
         return b.foundingYear - a.foundingYear;
       });
     } else if (this.queryFilter.sort == "population-Desc") {
-      
+
       sorted = filtered.sort((a, b) => {
         return b.population - a.population;
       });

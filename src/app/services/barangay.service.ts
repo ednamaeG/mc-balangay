@@ -12,12 +12,24 @@ export class BarangayService {
   async getBarangays(){
     const address = `${apiUrl}/barangays`;
     console.log('address',address)
+
     try{
       const res = await this.http.get(address,{},{});
-      // const data = res.data.forEach((item) =>{
-      //   item.logoUrl = B+barangay.logoUrl
-      // })
-      return JSON.parse(res.data);
+
+      var data = JSON.parse(res.data)
+      return data.map((item) =>{
+        // item.logoUrl = BASE_URL+item.logoUrl
+        item.details.forEach(detail =>{
+          if(detail.photos.length >= 1){
+            detail.photos.map(photo =>{
+              photo.url = `${BASE_URL}${photo.url}`
+            })
+          }
+        })
+        return item;
+      })
+
+
     }catch(err){
       console.log('err',err)
     }

@@ -19,7 +19,8 @@ export interface IQuestion {
 }
 
 export interface IChoice {
-    title: string,
+  choice: string;
+    title?: string,
     correct: boolean;
-    selected?: boolean;
+    selected?: any;
 }

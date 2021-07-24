@@ -42,7 +42,7 @@ export class AppComponent {
   }
   async ngOnInit() {
     this.plt.ready().then(async () => {
-      // get settings 
+      // get settings
     this.settings  =await this.settingSvc.getSettings()
       console.log('setting',this.settings);
       if(this.settings){

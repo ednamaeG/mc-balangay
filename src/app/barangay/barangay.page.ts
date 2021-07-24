@@ -16,7 +16,7 @@ export class BarangayPage implements OnInit {
   selectedTab = 'History'
   hidden: boolean = false;
   headerScrollConfig: ScrollHideConfig = { cssProperty: 'margin-top', maxValue: 44 };
-
+  mainDetails = ["History","Fiesta","Branding",]
   @ViewChild('content') content: IonContent;
   constructor(private route: ActivatedRoute, private popOverCtrl: PopoverController) {
     const params = this.route.snapshot.params;
@@ -31,17 +31,18 @@ export class BarangayPage implements OnInit {
   }
 
   ngOnInit() {
-    const idx = this.barangayData.details.findIndex(detail => detail.type == 'Politicians');
-    console.log('index', idx)
-    if(!this.barangayData.details[idx].politicians){
-      this.barangayData.details.splice(idx,1)
-    }
+    // const idx = this.barangayData.details.findIndex(detail => detail.type == 'Politicians');
+    // console.log('index', idx)
+    // if(!this.barangayData.details[idx].politicians){
+    //   this.barangayData.details.splice(idx,1)
+    // }
   }
 
 
   selectTab(tab) {
 
     this.selectedTab = tab;
+    console.log("tab",tab)
     this.content.scrollToTop()
   }
 

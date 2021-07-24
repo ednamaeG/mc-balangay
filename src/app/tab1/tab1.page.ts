@@ -36,6 +36,7 @@ export class Tab1Page {
       const testApi = await this.barangaySvc.getBarangays();
      this.barangayList = testApi;
 
+
       console.log("BARANGAY from api",testApi);
       console.log('data:::', this.barangayList);
     });

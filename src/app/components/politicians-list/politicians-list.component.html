@@ -1,13 +1,13 @@
-<div *ngIf="!content.politicians" style="text-align: center;">
+<div *ngIf="!content" style="text-align: center;">
   <ion-text >
     <ion-icon name="warning" style="font-size: 160px; " color="warning"></ion-icon>
     <h3> No Data Available Yet</h3>
   </ion-text>
 </div>
 
-<div *ngIf="content.politicians.length > 0">
+<div *ngIf="content.length > 0">
   <ion-list>
-    <ion-item *ngFor="let politician of content.politicians">
+    <ion-item *ngFor="let politician of content">
       <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
       <ion-label>
         <ion-text>

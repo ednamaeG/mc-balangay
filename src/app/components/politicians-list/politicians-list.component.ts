@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IBarangayDetail } from 'src/app/interfaces/barangay';
+import { IBarangayDetail, IPolitician } from 'src/app/interfaces/barangay';
 
 @Component({
   selector: 'app-politicians-list',
@@ -7,9 +7,11 @@ import { IBarangayDetail } from 'src/app/interfaces/barangay';
   styleUrls: ['./politicians-list.component.scss'],
 })
 export class PoliticiansListComponent implements OnInit {
-  @Input() content: IBarangayDetail;
+  @Input() content: IPolitician[];
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.content)
+  }
 
 }
