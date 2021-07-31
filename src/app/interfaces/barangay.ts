@@ -1,48 +1,47 @@
+
 export interface IBarangay {
-    id: string;
-    name: string;
-    width?: number;
-    height?: number;
-    download_url?: string;
-    facebookLink: string;
-    websiteLink: string;
-    details: IBarangayDetail[];
-    logoUrl: string;
-    photos: IPhoto[];
-    foundInfo?:IBarangayDetail;
-    foundingYear?:number;
-    population?:number;
-    malePopulation?:number;
-    femalePopulation?:number;
-    statistics?:IStatData[];
-    politicians?:IPolitician[];
+  id: string;
+  name: string;
+  width?: number;
+  height?: number;
+  download_url?: string;
+  facebookLink: string;
+  websiteLink: string;
+  details: IBarangayDetail[];
+  logo_url: string;
+  photos: IPhoto[];
+  foundInfo?:IBarangayDetail;
+  foundingYear?:number;
+  population?:number;
+  malePopulation?:number;
+  femalePopulation?:number;
+  statistics?:IStats;
 }
 
-// export interface IStats{
-//     data: IStatData[];
-//     currentYear:string;
-//     total?:number;
-// }
+export interface IStats{
+  data: IStatData[];
+  currentYear:string;
+  total?:number;
+}
 
 export interface IStatData{
-    label:string;
-    value:number
+  label:string;
+  value:number
 }
 export interface IBarangayDetail {
-    type: string;
-    content: string;
-    politicians?: IPolitician[];
-    images?:IPhoto[];
-    videoUrl?:string;
-    photos?:IPhoto[]
+  type: string;
+  content: string;
+  politicians?: IPolitician[];
+  images?:IPhoto[];
+  videoUrl?:string;
 }
 
 export interface IPolitician {
-    name: string;
-    year: string;
+  name: string;
+  year: string;
 }
 
 export interface IPhoto {
-    url: string;
-    title?: string;
+  url: string;
+  title?: string;
 }

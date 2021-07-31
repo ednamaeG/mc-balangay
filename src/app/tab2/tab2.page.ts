@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { CountdownEvent, CountdownComponent, CountdownConfig } from 'ngx-countdown';
@@ -22,7 +23,7 @@ export class Tab2Page {
 
   currentPage = 0;
   lastPage = 0;
-  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService,private plt: Platform) {
+  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService,private plt: Platform,private afd: AngularFireDatabase) {
   }
 
   async _ngOnInit() {
@@ -55,11 +56,15 @@ export class Tab2Page {
 
   async ngOnInit()  {
     this.plt.ready().then(async () =>{
-      const quizzesFromApi = await this.quizSvc.getQuizList();
-      console.log('Quizzes from api',quizzesFromApi)
+      // const quizzesFromApi = await this.quizSvc.getQuizList();
+      // console.log('Quizzes from api',quizzesFromApi)
 
-      this.quizSvc.quizzes$.next(quizzesFromApi);
-      this.quizzes = this.quizSvc.quizzes$.getValue()
+      // this.quizSvc.quizzes$.next(quizzesFromApi);
+      // this.quizzes = this.quizSvc.quizzes$.getValue()
+      this.afd.list('barangays/quizzes').valueChanges().forEach(async (val: IQuiz[]) => {
+        console.log("QUIZZES", val)
+        this.quizzes = val;
+      })
     })
 
   }

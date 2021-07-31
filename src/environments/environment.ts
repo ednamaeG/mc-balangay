@@ -4,6 +4,16 @@
 
 export const environment = {
   production: false,
+    firebaseConfig : {
+    apiKey: "AIzaSyBZgc_-e-SAXe3qAuwI_xLrtdbSlRmdGqw",
+    authDomain: "e-learning-ab57e.firebaseapp.com",
+    databaseURL: "https://e-learning-ab57e-default-rtdb.firebaseio.com",
+    projectId: "e-learning-ab57e",
+    storageBucket: "e-learning-ab57e.appspot.com",
+    messagingSenderId: "326558500876",
+    appId: "1:326558500876:web:4095efa18255682cd7c629",
+    measurementId: "G-1PJ0MWM4EN"
+  }
 };
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { IBarangay } from 'src/app/interfaces/barangay';
+import { IBarangay, IStats } from 'src/app/interfaces/barangay';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 Chart.register(...registerables);
@@ -17,16 +17,16 @@ export class ChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('stats', this.barangayData.statistics)
+    console.log('stats', this.barangayData)
     this.createChart()
   }
 
   createChart() {
-    const data = this.barangayData.statistics.map(data => {
+    const data = this.barangayData.statistics.data.map(data => {
       return data.value
     })
 
-    const labels = this.barangayData.statistics.map(data => {
+    const labels = this.barangayData.statistics.data.map(data => {
       return data.label
     })
 

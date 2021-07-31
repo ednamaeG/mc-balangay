@@ -37,6 +37,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" style="text-align: center;">
+
+  <!-- <ion-list>
+    <ion-item *ngFor="let i of testData">
+      {{i.title}}
+    </ion-item>
+  </ion-list> -->
   <div style="padding:4px"></div>
   <ion-row>
     <!-- <ion-col *ngFor="let barangay of barangayList; let i=index;" size="4">
@@ -59,7 +65,7 @@
       <div (click)="openContent(barangay)">
 
         <div class="logo">
-          <img [src]="barangay.logoUrl" style=" height: 80px;
+          <img [src]="barangay.logo_url" style=" height: 80px;
           width: 80px;
           object-fit: contain;" />
         </div>

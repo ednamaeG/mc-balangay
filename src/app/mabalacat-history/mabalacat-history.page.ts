@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { ModalController, Platform } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
 import { GalleryPage } from '../gallery/gallery.page';
 
@@ -10,28 +11,51 @@ import { GalleryPage } from '../gallery/gallery.page';
   styleUrls: ['./mabalacat-history.page.scss'],
 })
 export class MabalacatHistoryPage implements OnInit {
-  content: any;
+  content :any;
   selectedTab = "History";
-  constructor(private httpClient: HttpClient, private modalController: ModalController) { }
+  mabalacat_details:any;
+  politicians: any;
+  constructor(private httpClient: HttpClient, private modalController: ModalController,private afd:AngularFireDatabase,private plt: Platform) { }
 
-  async ngOnInit() {
-    this.content = await this.getData()
-    console.log('content', this.content)
+  async ngOnInit()  {
+    this.plt.ready().then(async () =>{
+      // const quizzesFromApi = await this.quizSvc.getQuizList();
+      // console.log('Quizzes from api',quizzesFromApi)
+
+      // this.quizSvc.quizzes$.next(quizzesFromApi);
+      // this.quizzes = this.quizSvc.quizzes$.getValue()
+      var content = []
+      this.afd.list('barangays/mabalacat-details').valueChanges().forEach(async (val: any[]) => {
+
+        this.mabalacat_details = val
+        console.log(this.mabalacat_details)
+      })
+
+      this.afd.list('barangays/mabalacat-details/politicians').valueChanges().forEach(async (val: any[]) => {
+
+        this.politicians = val
+        console.log(this.politicians)
+      })
+
+      console.log( content)
+    })
+
   }
 
-  async getData(): Promise<any> {
-    return await this.httpClient.get<any>('./assets/mocks/mabalacat-details.json').toPromise();
+    getData(){
+    // return await this.httpClient.get<any>('./assets/mocks/mabalacat-details.json').toPromise();
+
   }
 
   selectTab(tab) {
     this.selectedTab = tab;
   }
 
-  async openGallery() {
-    console.log('content', this.content.fiesta.gallery)
+  async openGallery(item) {
+    console.log('content', item)
     const modal = await this.modalController.create({
       component: GalleryPage,
-      componentProps: { photos: this.content.fiesta.gallery }
+      componentProps: { photos: item.gallery }
     });
 
     await modal.present();
@@ -52,7 +76,7 @@ export class MabalacatHistoryPage implements OnInit {
       keyboardClose: true,
       showBackdrop: true
     });
- 
+
     return await modal.present();
   }
 }

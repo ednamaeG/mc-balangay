@@ -69,10 +69,6 @@ export class QuizViewPage implements OnInit {
 
   }
 
-  // initChoices(questions){
-
-  // }
-
 
   async ngOnInit() {
 
@@ -152,7 +148,7 @@ export class QuizViewPage implements OnInit {
 
     if (!this.quizContent.questions[this.currentPage].hasAnswer) {
       this.currentQuestion.choices[i].selected = true;
-      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == 1);
+      const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
 
       console.log('choices', this.currentQuestion.choices)
       this.quizContent.questions[this.currentPage].hasAnswer = true;
@@ -177,10 +173,6 @@ export class QuizViewPage implements OnInit {
         // this.resetTimer()
 
       }, 300)
-
-
-
-
 
     }
   }
@@ -238,8 +230,6 @@ export class QuizViewPage implements OnInit {
         choice.selected = false;
       })
     })
-
-    console.log(this.quizContent,'new')
   }
 
   shuffleQuestions() {
@@ -260,13 +250,14 @@ export class QuizViewPage implements OnInit {
     const quizzes = this.quizSvc.quizzes$.getValue();
     console.log(quizzes, this.quizContent)
     const quiz = quizzes.find(quiz => quiz.id === this.quizContent.id)
-    quiz.total_score = this.totalScore > quiz.total_score ? this.totalScore : quiz.total_score;
-    console.log(quiz.total_score)
-    const percentage = this.totalScore / this.totalPoints;
-    quiz.percentage = Number(percentage.toFixed(2));
+    // TEMP DISABLED (WILL GO BACK )
+    // quiz.total_score = this.totalScore > quiz.total_score ? this.totalScore : quiz.total_score;
+    // console.log(quiz.total_score)
+    // const percentage = this.totalScore / this.totalPoints;
+    // quiz.percentage = Number(percentage.toFixed(2));
     // const progress = this.totalAnswered / this.lastPage;
-    quiz.progress = quiz.progress == 1 ? quiz.progress : Number(this.progress.toFixed(2))
-    console.log('percentage', quiz.percentage, quiz.progress)
+    // quiz.progress = quiz.progress == 1 ? quiz.progress : Number(this.progress.toFixed(2))
+    // console.log('percentage', quiz.percentage, quiz.progress)
     this.quizSvc.storeQuizzes(quizzes);
   }
 
@@ -372,7 +363,7 @@ export class QuizViewPage implements OnInit {
 
   getCorrectAnswer(choices: IChoice[]) {
     const correctAnswer = choices.find(choice => choice.correct);
-    return correctAnswer.choice;
+    return correctAnswer.title;
   }
 
   getStatsChart() {
@@ -468,5 +459,3 @@ export class QuizViewPage implements OnInit {
 
   }
 }
-
-

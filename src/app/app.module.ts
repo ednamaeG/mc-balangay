@@ -18,13 +18,20 @@ import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
 import { TriviaPage } from './trivia/trivia.page';
 // import { ScrollHideDirective } from './directives/scroll-hide.directive';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+
+import { environment } from 'src/environments/environment';
 
 
 
 @NgModule({
   declarations: [AppComponent, TriviaPage],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
+  imports: [BrowserModule, IonicModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
@@ -34,7 +41,10 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
 
-    })],
+    }),
+
+
+  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HTTP, NativeAudio, PhotoViewer, NativeStorage],
   bootstrap: [AppComponent],
 })

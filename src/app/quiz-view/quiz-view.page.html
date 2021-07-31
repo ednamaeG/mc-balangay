@@ -81,7 +81,7 @@
                   <ion-badge color="turquoise" class="choice-letter">
                     <ion-text color="light"> {{letters[i]}}</ion-text>
                   </ion-badge>
-                  <ion-text color="taupe"><span> {{choice.choice}}</span></ion-text>
+                  <ion-text color="taupe"><span> {{choice.title}}</span></ion-text>
                   <div class="answer-details">
                     <ion-icon [name]="choice.correct? 'checkmark-circle' : 'close'" style="font-size: 24px;"
                       color="light" *ngIf="choice.selected"></ion-icon>
@@ -120,14 +120,11 @@
         <ion-card-content class="score-details">
           <ion-card
             style=" background-image: linear-gradient(to top, #2ccafa, #5d8f9e); width: 10em; height: 10em; border-radius: 5em;">
-
             <ion-card-content style=" top: 14%; justify-content: center;">
               <h1 style=" font-size: 60px; color: white; ">{{totalScore}}</h1>
             </ion-card-content>
-
           </ion-card>
         </ion-card-content>
-
       </ion-card-content>
     </ion-card> -->
     <div *ngFor="let question of quizContent.questions;let i=index">
@@ -139,7 +136,7 @@
         <ion-card-content>
           <div *ngFor="let choice of question.choices">
             <div *ngIf="choice.selected">
-              <p>Your Answer: {{choice.choice}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
+              <p>Your Answer: {{choice.title}} <ion-icon [name]=" choice.correct?'checkmark':'close'"></ion-icon>
               </p>
             </div>
           </div>
@@ -173,7 +170,6 @@
         </ion-label>
       </ion-button>
     </div>
-
   </ion-toolbar>
 </ion-footer> -->
 <!-- <ion-footer>
@@ -183,7 +179,6 @@
         Previous
       </ion-button>
     </ion-buttons>
-
     <ion-buttons slot="end">
       <ion-button slot="icon-only" (click)="nextPage()" [disabled]="currentPage >= lastPage">
         Next

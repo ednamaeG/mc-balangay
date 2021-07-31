@@ -49,28 +49,13 @@ export class AppComponent {
         document.body.setAttribute('color-theme',this.settings.theme)
       }
 
-      let trivias = await this.triviaSvc.getTrivias();
-      console.log('trivias::', trivias)
-      if (!trivias) {
-        trivias = await this.getTrivias();
-        await this.triviaSvc.storeTrivias(trivias);
-      }
-
-      trivias = trivias.sort(() => {
-        return 0.8 - Math.random()
-      })
-      // debugmode
-      // trivias = await this.getTrivias();
-
-      const trivia = trivias.find(trivia => trivia.isAnswered == false)
-
-      if (trivia) {
-        this.presentTriviaModal(trivia)
-      }
+    //  this.setAppTrivias()
 
     })
 
   }
+
+
 
   captureBackButton() {
     document.addEventListener("backbutton", () => {
@@ -127,6 +112,27 @@ export class AppComponent {
   async initTrivias() {
     const trivias = await this.getTrivias();
     await this.triviaSvc.storeTrivias(trivias);
+  }
+
+  async setAppTrivias(){
+    let trivias = await this.triviaSvc.getTrivias();
+    console.log('trivias::', trivias)
+    if (!trivias) {
+      trivias = await this.getTrivias();
+      await this.triviaSvc.storeTrivias(trivias);
+    }
+
+    trivias = trivias.sort(() => {
+      return 0.8 - Math.random()
+    })
+    // debugmode
+    // trivias = await this.getTrivias();
+
+    const trivia = trivias.find(trivia => trivia.isAnswered == false)
+
+    if (trivia) {
+      this.presentTriviaModal(trivia)
+    }
   }
 
   getEnv(){

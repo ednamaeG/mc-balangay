@@ -1,6 +1,6 @@
 <div *ngIf="!content.videoUrl">
   <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
-    <ion-slide style="height: 274px;" *ngFor="let photo of content.photos">
+    <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
       <div>
         <img [src]="photo.url" style="
       width: 100%;
@@ -28,13 +28,13 @@
   </div>
 </div>
 <div *ngIf="content.type == 'Branding'" class="img-container">
-  <img [src]="content.photos[0].url" class="brand-img">
+  <img [src]="content.images[0]" class="brand-img">
 </div>
 
 <div *ngIf="content.type == 'Fiesta'" style="position: relative;">
-  <img [src]="content.photos[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
+  <img [src]="content.images[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
   <div class="info">
-    {{content.photos[0].title}}
+    {{content.images[0].title}}
   </div>
 </div>
 
