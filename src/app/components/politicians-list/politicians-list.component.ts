@@ -7,11 +7,12 @@ import { IBarangayDetail, IPolitician } from 'src/app/interfaces/barangay';
   styleUrls: ['./politicians-list.component.scss'],
 })
 export class PoliticiansListComponent implements OnInit {
-  @Input() content: IBarangayDetail;
+  // @Input() content: IBarangayDetail;
+  @Input() politicians: IPolitician[];
   constructor() { }
 
   ngOnInit() {
-    console.log(this.content)
+    console.log(this.politicians)
   }
 
 }

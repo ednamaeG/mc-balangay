@@ -1,7 +1,7 @@
-import { SearchPage } from './../search/search.page';
+
 import { HTTP } from '@ionic-native/http/ngx';
 import { Component } from '@angular/core';
-import { MenuController, ModalController, Platform } from '@ionic/angular';
+import { LoadingController, MenuController, ModalController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { IBarangayDetail, IBarangay } from '../interfaces/barangay';
@@ -29,33 +29,29 @@ export class Tab1Page {
     private router: Router,
     private httpClient: HttpClient,
     private barangaySvc: BarangayService,
-    private afd: AngularFireDatabase
+    private afd: AngularFireDatabase,
+    private loadingCtrl: LoadingController
   ) { }
 
   ngOnInit() {
     this.plt.ready().then(async () => {
       // this.barangayList = await this.getData();
+      const loading = await this.loadingCtrl.create({
+        cssClass: 'my-custom-class',
+        message: 'Please wait...',
+        duration: 2000
+      });
+      await loading.present();
 
       this.afd.list('barangays/barangay_data').valueChanges().forEach(async (val: IBarangay[]) => {
         console.log("BRGY", val)
         this.barangayList = val;
+        await loading.dismiss()
       })
     });
   }
 
 
-  async testApis() {
-    // https://jsonplaceholder.typicode.com/todos
-    const address = "https://jsonplaceholder.typicode.com/todos";
-    console.log(address)
-    try {
-      const res = await this.http.get(address, {}, {});
-      this.testData = JSON.parse(res.data)
-      console.log(this.testData, 'testdata')
-    } catch (err) {
-      console.log(err)
-    }
-  }
 
   async getData(): Promise<IBarangay[]> {
     return await this.httpClient.get<IBarangay[]>('./assets/mocks/barangays-mock.json').toPromise();
@@ -84,13 +80,6 @@ export class Tab1Page {
   }
 
   async openModal() {
-    // const modal = await this.modalCtrl.create({
-    //   component: SearchPage,
-    //   componentProps: {
-    //     data: this.barangayList,
-    //   },
-    // });
-    // return await modal.present();
     this.router.navigate(['/search']);
   }
 
@@ -99,4 +88,6 @@ export class Tab1Page {
     const data = JSON.stringify(content)
     this.router.navigate(['/barangay', { content: data }])
   }
+
+
 }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
-import { Platform } from '@ionic/angular';
+import { LoadingController, Platform } from '@ionic/angular';
 import { CountdownEvent, CountdownComponent, CountdownConfig } from 'ngx-countdown';
 import { IQuestion, IQuiz } from '../interfaces/quiz';
 import { QuizService } from '../services/quiz.service';
@@ -23,7 +23,7 @@ export class Tab2Page {
 
   currentPage = 0;
   lastPage = 0;
-  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService,private plt: Platform,private afd: AngularFireDatabase) {
+  constructor(private httpClient: HttpClient, private router: Router, private quizSvc: QuizService, private plt: Platform, private afd: AngularFireDatabase, private loadingCtrl: LoadingController) {
   }
 
   async _ngOnInit() {
@@ -48,22 +48,30 @@ export class Tab2Page {
     // this.quizzes = quizzes;
     // this.quizSvc.quizzes$.next(quizzes);
     const quizzesFromApi = await this.quizSvc.getQuizList();
-    console.log('Quizzes from api',quizzesFromApi)
+    console.log('Quizzes from api', quizzesFromApi)
 
     console.log('Data', data)
     console.log(this.quizzes)
   }
 
-  async ngOnInit()  {
-    this.plt.ready().then(async () =>{
+  async ngOnInit() {
+    this.plt.ready().then(async () => {
       // const quizzesFromApi = await this.quizSvc.getQuizList();
       // console.log('Quizzes from api',quizzesFromApi)
 
       // this.quizSvc.quizzes$.next(quizzesFromApi);
       // this.quizzes = this.quizSvc.quizzes$.getValue()
+      const loading = await this.loadingCtrl.create({
+        cssClass: 'my-custom-class',
+        message: 'Please wait...',
+        duration: 2000
+      });
+      await loading.present();
       this.afd.list('barangays/quizzes').valueChanges().forEach(async (val: IQuiz[]) => {
         console.log("QUIZZES", val)
         this.quizzes = val;
+        await loading.dismiss()
+
       })
     })
 

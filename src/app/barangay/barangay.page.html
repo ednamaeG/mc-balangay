@@ -33,50 +33,40 @@
       </ion-text>
 
     </ion-col>
+
+    <ion-col style="height: 48px;
+    border-right: 1px solid white;
+    font-size: 14px;
+    padding: 8px;" *ngIf="barangayData.politicians" [ngClass]="selectedTab == 'Politicians' ? 'active' :''"
+      (click)="selectTab('Politicians')" size-sm>
+      <ion-text>
+        <ion-icon src="assets/icon/speak-speech.svg" style="font-size: 28px;"></ion-icon> <br />
+      </ion-text>
+
+    </ion-col>
   </ion-row>
 </ion-header>
-
-<!-- <ion-content #content [fullscreen]="true">
-  <ion-toolbar color="sky">
-    <ion-title>{{barangayData.name}}</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button slot="icon-only" (click)="showControls($event)">
-        <ion-icon name="ellipsis-vertical"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-  </ion-toolbar> -->
 
 <ion-content #content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <div class="ion-text-center tabTitle">
     <ion-text color="olive"> {{selectedTab
       == 'Politicians' ? 'Barangay Captains' : selectedTab}}</ion-text>
   </div>
-  <!--
-  <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
-    <ion-col *ngFor="let contentType of barangayData.details"
-      style="height: 54px; border-right: 1px solid white ;font-size: 14px;"
-      [ngClass]="selectedTab ==  contentType.type ? 'active' :''" (click)="selectTab(contentType.type)" size-sm>
-      <ion-text>
-        <ion-icon [src]="getIconName(contentType.type)" style="font-size: 20px;"></ion-icon> <br /> {{contentType.type}}
-      </ion-text>
-    </ion-col>
-  </ion-row> -->
+
   <div *ngFor="let content of barangayData.details">
     <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
       <app-content-brgy [content]="content"></app-content-brgy>
     </div>
 
-    <div *ngIf="content.type == 'Politicians' && content.type == selectedTab">
-      <!-- < [content]="content"></app-content-brgy> -->
-      <app-politicians-list [content]="content"></app-politicians-list>
-    </div>
-
 
   </div>
+
+  <div *ngIf="selectedTab== 'Politicians'   ">
+
+    <app-politicians-list [politicians]="barangayData.politicians"></app-politicians-list>
+  </div>
+
+
 
   <div *ngIf="selectedTab == 'Statistics'">
     <!-- < [content]="content"></app-content-brgy> -->
