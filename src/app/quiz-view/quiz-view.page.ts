@@ -274,7 +274,7 @@ export class QuizViewPage implements OnInit {
   async confirmQuitAlert() {
     const self = this;
     const alert = await this.alertCtrl.create({
-      header: 'MCC 101 E-Learning',
+      header: 'MC Balangay',
       message: 'Are you sure you want to leave this quiz?',
       buttons: [
         {

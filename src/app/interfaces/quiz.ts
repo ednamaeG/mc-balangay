@@ -7,6 +7,7 @@ export interface IQuiz {
     points: string;
     answer_count: number;
     progress:number;
+    status?:number;
 }
 
 export interface IQuestion {

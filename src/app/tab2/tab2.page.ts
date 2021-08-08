@@ -69,7 +69,9 @@ export class Tab2Page {
       await loading.present();
       this.afd.list('barangays/quizzes').valueChanges().forEach(async (val: IQuiz[]) => {
         console.log("QUIZZES", val)
-        this.quizzes = val;
+
+        const list = val;
+        this.quizzes = list.filter((l) => Number(l.status) == 1);
         await loading.dismiss()
 
       })

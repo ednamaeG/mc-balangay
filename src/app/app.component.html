@@ -2,11 +2,11 @@
   <ion-menu contentId="main-content" side="start" type="overlay">
     <ion-header>
       <ion-toolbar color="sky">
-        <ion-title >MCC 101 E-Learning</ion-title>
+        <ion-title >MC Balangay</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content [fullscreen]="true" color="sky">
-     
+
         <ion-menu-toggle>
           <ion-item [routerLink]="['/about']" color="sky" lines="none">
             <ion-icon slot="start" name="information-circle-outline"></ion-icon>
@@ -23,7 +23,7 @@
           </ion-label>
           <ion-toggle id="themeToggle" slot="end" [checked]="settings && settings.theme == 'dark'" (ionChange)="setTheme($event)"></ion-toggle>
         </ion-item>
-    
+
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main-content"></ion-router-outlet>

@@ -17,6 +17,7 @@ export interface IBarangay {
   femalePopulation?:number;
   statistics?:IStats;
   politicians?:IPolitician[];
+  status?: number;
 }
 
 export interface IStats{

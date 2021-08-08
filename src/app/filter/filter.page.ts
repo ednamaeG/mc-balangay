@@ -42,7 +42,7 @@ export class FilterPage implements OnInit {
       to: ''
     },
     population: '',
-  
+
   }
   constructor(private modalCtrl: ModalController,private navParams:NavParams,private alertController:AlertController) { }
 
@@ -69,11 +69,11 @@ export class FilterPage implements OnInit {
          console.log('dismissed')
         this.modalCtrl.dismiss(this.filter);
       }
-     
+
     }else{
       this.modalCtrl.dismiss('')
     }
-    
+
   }
 
   resetFilter(){
@@ -85,7 +85,7 @@ export class FilterPage implements OnInit {
     //     to: null
     //   },
     //   population: null,
-     
+
     // }
 
     // this.filter.population = '';
@@ -103,12 +103,12 @@ export class FilterPage implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'MCC 101 E-Learning',
+      header: 'MC Balangay',
       // subHeader: 'Subtitle',
       message: 'Invalid Founding Year Filter Range',
       buttons: ['OK']
     });
-  
+
     await alert.present();
   }
 }

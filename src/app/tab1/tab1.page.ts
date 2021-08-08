@@ -45,7 +45,8 @@ export class Tab1Page {
 
       this.afd.list('barangays/barangay_data').valueChanges().forEach(async (val: IBarangay[]) => {
         console.log("BRGY", val)
-        this.barangayList = val;
+        const list = val;
+        this.barangayList = list.filter((l) => Number(l.status) == 1);
         await loading.dismiss()
       })
     });
