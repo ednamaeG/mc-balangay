@@ -32,7 +32,7 @@ export class ContentBrgyComponent implements OnInit {
   }
 
   async ngOnInit() {
-    console.log('content',this.content)
+    console.log('content',this.content,this.barangayData.logo_url)
     this.controlSvc.fontSize$.subscribe((font) =>{
       this.fontSize= font;
       console.log('size',this.fontSize)

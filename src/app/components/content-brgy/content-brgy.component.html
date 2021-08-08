@@ -15,9 +15,6 @@
 
     </ion-slides>
 
-    <div *ngIf="content.type == 'Branding'" class="img-container">
-      <img [src]="barangayData.logo_url" class="brand-img">
-    </div>
 
     <div *ngIf="content.type == 'Fiesta'" style="position: relative;">
       <img [src]="content.photos[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
@@ -27,6 +24,10 @@
     </div>
   </div>
 
+
+  <div *ngIf="content.type == 'Branding'" class="img-container">
+    <img [src]="barangayData.logo_url" class="brand-img">
+  </div>
 </div>
 
 <div *ngIf="content.videoUrl && networkStatus">
