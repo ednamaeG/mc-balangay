@@ -13,6 +13,7 @@ Chart.register(...registerables);
 export class ChartComponent implements OnInit {
   @ViewChild('pieCanvas', { static: true }) pieCanvas;
   pieChart: any;
+  totalPopulation = 0;
   @Input() barangayData: IBarangay;
   constructor() { }
 
@@ -23,6 +24,8 @@ export class ChartComponent implements OnInit {
 
   createChart() {
     const data = this.barangayData.statistics.data.map(data => {
+      this.totalPopulation += Number(data.value);
+
       return data.value
     })
 

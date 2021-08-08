@@ -35,6 +35,7 @@ export interface IBarangayDetail {
   politicians?: IPolitician[];
   images?:IPhoto[];
   videoUrl?:string;
+  photos?:IPhoto[];
 }
 
 export interface IPolitician {

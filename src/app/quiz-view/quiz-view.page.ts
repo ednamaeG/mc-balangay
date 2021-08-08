@@ -59,22 +59,24 @@ export class QuizViewPage implements OnInit {
   showQuizResults = false;
   constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService, private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController) {
     this.quizContent = JSON.parse(this.route.snapshot.params.data);
-    this.lastPage = this.quizContent.questions.length;
-    this.shuffleQuestions();
-    this.currentQuestion = this.quizContent.questions[0];
-    // this.config = { leftTime: this.time, format: 'mm:ss' };
-    // this.start_timer()
-    this.quizContent.questions.forEach(question => this.totalPoints += question.points)
-    console.log('total points', this.totalPoints, this.quizContent)
+    if (this.quizContent.questions && this.quizContent.questions.length > 0) {
+      this.lastPage = this.quizContent.questions.length;
+      this.shuffleQuestions();
+      this.currentQuestion = this.quizContent.questions[0];
+
+      this.quizContent.questions.forEach(question => this.totalPoints += Number(question.points))
+      console.log('total points', this.totalPoints, this.quizContent, this.quizContent.questions)
+    }
+
 
   }
 
 
   async ngOnInit() {
 
-    const quiz: any = await this.getQuizzes()
-    this.questions = quiz[0].questions;
-    console.log(this.questions, quiz)
+    // const quiz: any = await this.getQuizzes()
+    // this.questions = quiz[0].questions;
+    // console.log(this.questions, quiz)
   }
 
   async ngAfterViewInit() {
@@ -156,7 +158,7 @@ export class QuizViewPage implements OnInit {
       if (this.currentQuestion.choices[i].correct) {
         this.quizContent.questions[this.currentPage].status = 1;
         this.audioSvc.playSound(this.CORRECT_ANSWER_SOUND_ID);
-        this.totalScore += this.currentQuestion.points;
+        this.totalScore += Number(this.currentQuestion.points);
         this.totalCorrectAnswers += 1;
         console.log(this.totalCorrectAnswers)
 

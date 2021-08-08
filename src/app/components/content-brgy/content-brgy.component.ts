@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalController } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
-import { IBarangayDetail } from 'src/app/interfaces/barangay';
+import { IBarangay, IBarangayDetail } from 'src/app/interfaces/barangay';
 import { ControlsService } from 'src/app/services/controls.service';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
 import { BASE_URL } from 'src/environments/environment';
@@ -22,6 +22,7 @@ export class ContentBrgyComponent implements OnInit {
     autoHeight:true
   };
   @Input() content: IBarangayDetail;
+  @Input() barangayData: IBarangay;
   fontSize:any;
   networkListener: PluginListenerHandle;
   networkStatus: any;

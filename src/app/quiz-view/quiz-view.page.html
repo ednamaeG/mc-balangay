@@ -29,13 +29,13 @@
   </ion-toolbar>
 
 
-  <div *ngIf="quizContent.questions.length <= 0" style="text-align: center;">
+  <div *ngIf="!quizContent.questions" style="text-align: center;">
     <ion-text>
       <ion-icon name="warning" style="font-size: 160px;" color="warning"></ion-icon>
       <h3> No Questions Available Yet</h3>
     </ion-text>
   </div>
-  <ion-row *ngIf="!showResults">
+  <ion-row *ngIf="!showResults && quizContent.questions">
     <!-- <ion-progress-bar color="cream" [value]="progress"></ion-progress-bar> -->
     <ion-col size="4" style="text-align:center; font-weight: bold;">
       <ion-text color="light">

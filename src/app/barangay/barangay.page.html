@@ -55,13 +55,13 @@
 
   <div *ngFor="let content of barangayData.details">
     <div *ngIf="content.type !== 'Politicians' && content.type == selectedTab">
-      <app-content-brgy [content]="content"></app-content-brgy>
+      <app-content-brgy [content]="content" [barangayData]="barangayData"></app-content-brgy>
     </div>
 
 
   </div>
 
-  <div *ngIf="selectedTab== 'Politicians'   ">
+  <div *ngIf="selectedTab== 'Politicians'">
 
     <app-politicians-list [politicians]="barangayData.politicians"></app-politicians-list>
   </div>

@@ -1,17 +1,32 @@
-<div *ngIf="!content.videoUrl">
-  <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
-    <ion-slide style="height: 274px;" *ngFor="let photo of content.images">
-      <div>
-        <img [src]="photo.url" style="
-      width: 100%;
-      object-fit: cover;" (click)="openViewer(photo)">
-        <div class="img-title">
-          {{ photo.title }}
+<!-- LOAD PHOTOS AND VIDEOS -->
+<div>
+  <div *ngIf="!content.videoUrl && content.photos">
+    <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
+      <ion-slide style="height: 274px;" *ngFor="let photo of content.photos">
+        <div>
+          <img [src]="photo.url" style="
+        width: 100%;
+        object-fit: cover;" (click)="openViewer(photo)">
+          <div class="img-title">
+            {{ photo.title }}
+          </div>
         </div>
-      </div>
-    </ion-slide>
+      </ion-slide>
 
-  </ion-slides>
+    </ion-slides>
+
+    <div *ngIf="content.type == 'Branding'" class="img-container">
+      <img [src]="barangayData.logo_url" class="brand-img">
+    </div>
+
+    <div *ngIf="content.type == 'Fiesta'" style="position: relative;">
+      <img [src]="content.photos[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
+      <div class="info">
+        {{content.photos[0].title}}
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div *ngIf="content.videoUrl && networkStatus">
@@ -19,24 +34,16 @@
     <iframe width="100%" height="280" allowscriptaccess="always" [src]="sanitizedUrl(content.videoUrl)"
       title="YouTube video player" frameborder="0" allowfullscreen></iframe>
   </div>
-  <div style="text-align: center;"  *ngIf="!networkStatus.connected">
-    <ion-text  >
+  <div style="text-align: center;" *ngIf="!networkStatus.connected">
+    <ion-text>
       <ion-icon name="warning" style="font-size: 160px; " color="warning"></ion-icon>
 
     </ion-text>
     <p> Unable to Load Video. Please check your network connection.</p>
   </div>
 </div>
-<div *ngIf="content.type == 'Branding'" class="img-container">
-  <img [src]="content.images[0]" class="brand-img">
-</div>
 
-<div *ngIf="content.type == 'Fiesta'" style="position: relative;">
-  <img [src]="content.images[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
-  <div class="info">
-    {{content.images[0].title}}
-  </div>
-</div>
+
 
 <div class="ion-padding">
   <div [innerHtml]="content.content" [ngStyle]="{'font-size': fontSize+'px'}"></div>
