@@ -17,6 +17,8 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
   userInfo = null;
+  email: string = "admintest@gmail.com";
+  password: string = "test1234";
   constructor(private fireAuth: AngularFireAuth, private afd: AngularFireDatabase,
     private firebaseSvc: FirebaseAuthService,
     private router: Router,
@@ -34,17 +36,27 @@ export class LoginPage implements OnInit {
     const { idToken, accessToken } = googleUser.authentication;
     this.firebaseSvc.onGoogleLoginSuccess(idToken, accessToken)
 
-    this.firebaseSvc.isAuthenticated$.subscribe((isAuth) => {
-      if (isAuth) {
-        this.navCtrl.pop()
-        this.router.navigate(['/tabs'], { replaceUrl: true })
-      }
-    })
+    this.subscribeAuth()
 
   }
 
 
+  loginEmail() {
 
+    this.firebaseSvc.loginWithEmail(this.email, this.password)
+    this.subscribeAuth()
+  }
+
+  subscribeAuth() {
+    this.firebaseSvc.isAuthenticated$.subscribe((isAuth) => {
+      if (isAuth) {
+        this.navCtrl.pop()
+        this.router.navigate(['/tabs'], { replaceUrl: true })
+      }else{
+        alert("INVALID")
+      }
+    })
+  }
 
 
 }

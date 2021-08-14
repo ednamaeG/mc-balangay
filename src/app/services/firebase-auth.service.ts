@@ -48,6 +48,19 @@ export class FirebaseAuthService {
 
   }
 
+  async loginWithEmail(email, password) {
+    console.log(email, password)
+    const self = this;
+    this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
+      self.userInfo = success.user;
+      self.isAuthenticated$.next(true);
+      this.checkUserDetails(this.userInfo.uid)
+
+    }).catch((err) => {
+      console.log("ERR", err)
+    })
+  }
+
   async registerUser() {
     const { displayName, phoneNumber, email, photoURL, uid } = this.userInfo;
     const user = {
@@ -73,7 +86,7 @@ export class FirebaseAuthService {
     const ref = this.afd.database.ref("users/").child(uid);
     var user;
     const self = this;
-    console.log("UID",uid)
+    console.log("UID", uid)
     ref.once("value", function (snapshot) {
       // this.userDetails$.next(snapshot.val())
       if (snapshot.val()) {

@@ -18,24 +18,20 @@
   <h1 class="ion-text-center">MC BALANGAY</h1>
   <ion-list>
     <ion-item>
-      <ion-input placeholder="Email" clearInput position="stacked"></ion-input>
+      <ion-input placeholder="Email" clearInput position="stacked" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="Password" type="password" clearInput position="stacked"></ion-input>
+      <ion-input placeholder="Password" type="password" clearInput position="stacked" [(ngModel)]="password"></ion-input>
     </ion-item>
-
-
-
   </ion-list>
 
 
-
   <div style="float: right">
-    <ion-button fill="clear" color="secondary">Sign Up</ion-button>
+    <ion-button fill="clear" color="secondary" disabled>Sign Up</ion-button>
   </div>
 
 
-  <ion-button expand="block">Login</ion-button>
+  <ion-button expand="block" (click)="loginEmail()">Login</ion-button>
 
   <div class="spacer"></div>
 
@@ -49,7 +45,7 @@
     Login With Google
   </ion-button>
 
-  <ion-button expand="block" class="fb-btn">
+  <ion-button expand="block" class="fb-btn" disabled>
     <ion-icon slot="start" name="logo-facebook" expand="block"></ion-icon>
     Login With Facebook
   </ion-button>
