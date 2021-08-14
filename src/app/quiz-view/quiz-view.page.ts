@@ -8,6 +8,8 @@ import { NativeAudio } from '@ionic-native/native-audio/ngx';
 import { AudioService } from '../services/audio.service';
 import { AlertController, IonContent, IonSlides, NavController } from '@ionic/angular';
 import { Chart, registerables } from 'chart.js';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 Chart.register(...registerables);
 
 @Component({
@@ -57,7 +59,15 @@ export class QuizViewPage implements OnInit {
 
   totalAnswered = 0;
   showQuizResults = false;
-  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService, private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController) {
+  correctCount = 0;
+  incorrectCount = 0;
+  skippedCount = 0;
+  timeUpCount = 0;
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute, private quizSvc: QuizService,
+    private audioSvc: AudioService, private navCtrl: NavController, private alertCtrl: AlertController,
+    private firebaseAuthSvc: FirebaseAuthService,
+    private afd: AngularFireDatabase
+  ) {
     this.quizContent = JSON.parse(this.route.snapshot.params.data);
     if (this.quizContent.questions && this.quizContent.questions.length > 0) {
       this.lastPage = this.quizContent.questions.length;
@@ -261,6 +271,7 @@ export class QuizViewPage implements OnInit {
     // quiz.progress = quiz.progress == 1 ? quiz.progress : Number(this.progress.toFixed(2))
     // console.log('percentage', quiz.percentage, quiz.progress)
     this.quizSvc.storeQuizzes(quizzes);
+    this.saveUserQuiz()
   }
 
   exitQuiz() {
@@ -369,35 +380,35 @@ export class QuizViewPage implements OnInit {
   }
 
   getStatsChart() {
-    let correctCount = 0;
-    let incorrectCount = 0;
-    let skippedCount = 0;
-    let timeUpCount = 0;
+    // let correctCount = 0;
+    // let incorrectCount = 0;
+    // let skippedCount = 0;
+    // let timeUpCount = 0;
     this.quizContent.questions.forEach(question => {
       if (question.status == 0) {
-        incorrectCount++;
+        this.incorrectCount++;
       } else if (question.status == 1) {
-        correctCount++;
+        this.correctCount++;
       } else if (question.status == 2) {
-        timeUpCount++;
+        this.timeUpCount++;
       } else if (question.status == 3) {
-        skippedCount++;
+        this.skippedCount++;
       }
     });
 
     let dataSet = [
       {
         "label": "Correct",
-        "value": correctCount
+        "value": this.correctCount
       }, {
         "label": "Incorrect",
-        "value": incorrectCount
+        "value": this.incorrectCount
       }, {
         "label": "Skipped",
-        "value": skippedCount
+        "value": this.skippedCount
       }, {
         "label": "Time ran out",
-        "value": timeUpCount
+        "value": this.timeUpCount
       }
     ]
 
@@ -458,6 +469,27 @@ export class QuizViewPage implements OnInit {
 
 
     });
+
+  }
+
+  saveUserQuiz() {
+    const userInfo = this.firebaseAuthSvc.userDetails$.getValue()
+    const percentage = this.totalScore / this.totalPoints;
+
+    const progress = this.totalAnswered / this.lastPage;
+    const ref = this.afd.database.ref(`users/${userInfo.id}/quizzes/${this.quizContent.id}`)
+    const quizDetails = {
+      quiz_id: this.quizContent.id,
+      score: this.totalScore,
+      correctCount: this.correctCount,
+      incorrectCount: this.incorrectCount,
+      skippedCount: this.skippedCount,
+      timeUpCount: this.timeUpCount,
+      percentage: percentage,
+      progress: progress
+    }
+
+    ref.set(quizDetails)
 
   }
 }

@@ -1,16 +1,56 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>login</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-  <ion-content>
+<ion-content class="ion-padding">
+  <!-- <ion-content>
     <ion-button (click)="googleSignup()">Sign in</ion-button>
     <ion-card>
       <ion-card-content>
         {{ userInfo | json}}
       </ion-card-content>
     </ion-card>
-  </ion-content>
+  </ion-content> -->
+  <div class="spacer"></div>
+
+  <h1 class="ion-text-center">MC BALANGAY</h1>
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Email" clearInput position="stacked"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Password" type="password" clearInput position="stacked"></ion-input>
+    </ion-item>
+
+
+
+  </ion-list>
+
+
+
+  <div style="float: right">
+    <ion-button fill="clear" color="secondary">Sign Up</ion-button>
+  </div>
+
+
+  <ion-button expand="block">Login</ion-button>
+
+  <div class="spacer"></div>
+
+  <h5 class="ion-text-center"> OR </h5>
+
+  <div class="spacer-2"></div>
+
+
+  <ion-button expand="block" class="google-btn" (click)="googleSignIn()">
+    <ion-icon slot="start" name="logo-google"   expand="block"></ion-icon>
+    Login With Google
+  </ion-button>
+
+  <ion-button expand="block" class="fb-btn">
+    <ion-icon slot="start" name="logo-facebook" expand="block"></ion-icon>
+    Login With Facebook
+  </ion-button>
 </ion-content>

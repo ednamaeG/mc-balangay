@@ -6,6 +6,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import "@cyril-colin/capacitor-google-auth";
 import { AngularFireDatabase } from '@angular/fire/database';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
+import { Route } from '@angular/compiler/src/core';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -14,6 +18,9 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class LoginPage implements OnInit {
   userInfo = null;
   constructor(private fireAuth: AngularFireAuth, private afd: AngularFireDatabase,
+    private firebaseSvc: FirebaseAuthService,
+    private router: Router,
+    private navCtrl: NavController
 
   ) { }
 
@@ -21,42 +28,23 @@ export class LoginPage implements OnInit {
 
   }
 
-  async googleSignup() {
+  async googleSignIn() {
     let googleUser = await Plugins.GoogleAuth.signIn();
     console.log('my user: ', googleUser);
     const { idToken, accessToken } = googleUser.authentication;
-    this.onLoginSuccess(idToken, accessToken)
-  }
+    this.firebaseSvc.onGoogleLoginSuccess(idToken, accessToken)
 
-  async onLoginSuccess(accessToken, accessSecret) {
-    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
-      .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
-        .credential(accessToken);
-    this.fireAuth.signInWithCredential(credential)
-      .then((success) => {
-        alert('successfully');
-        // this.isGoogleLogin = true;
-        this.userInfo = success.user;
-        console.log(this.userInfo)
-        // this.loading.dismiss();
-        this.registerUser()
-      });
+    this.firebaseSvc.isAuthenticated$.subscribe((isAuth) => {
+      if (isAuth) {
+        this.navCtrl.pop()
+        this.router.navigate(['/tabs'], { replaceUrl: true })
+      }
+    })
 
   }
 
-  async registerUser() {
-    const { displayName, phoneNumber, email, photoURL, uid } = this.userInfo;
-    const user = {
-      name: displayName,
-      phoneNumber: phoneNumber,
-      email: email,
-      id: uid,
-      photoURL: photoURL
-
-    }
 
 
-    const ref = this.afd.database.ref("users/").child(uid).set(user)
-  }
+
 
 }

@@ -6,7 +6,8 @@ import { ITrivia } from './interfaces/trivia';
 import { SettingsService } from './services/settings.service';
 import { TriviaService } from './services/trivia.service';
 import { TriviaPage } from './trivia/trivia.page';
-import {environment,apiUrl} from '../environments/environment';
+import { environment, apiUrl } from '../environments/environment';
+import { FirebaseAuthService } from './services/firebase-auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -15,8 +16,14 @@ import {environment,apiUrl} from '../environments/environment';
 export class AppComponent {
   rootPage = "/tabs/tab1";
   otherTabs = ["/tabs/tab1", "/tabs/tab2", "/tabs/tab1/content"];
-  settings:any;
-  constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private settingSvc: SettingsService, private alertController: AlertController, private navCtrl: NavController, private httpClient: HttpClient, private modalCtrl: ModalController) {
+  settings: any;
+  userInfo;
+  isLoggedIn = false;
+  constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private settingSvc: SettingsService, private alertController: AlertController,
+    private navCtrl: NavController,
+    private httpClient: HttpClient, private modalCtrl: ModalController,
+    private firebaseAuthSvc: FirebaseAuthService
+  ) {
     this.getEnv()
     console.log(plt.width(), plt.height())
 
@@ -43,13 +50,21 @@ export class AppComponent {
   async ngOnInit() {
     this.plt.ready().then(async () => {
       // get settings
-    this.settings  =await this.settingSvc.getSettings()
-      console.log('setting',this.settings);
-      if(this.settings){
-        document.body.setAttribute('color-theme',this.settings.theme)
+      this.settings = await this.settingSvc.getSettings()
+      console.log('setting', this.settings);
+      if (this.settings) {
+        document.body.setAttribute('color-theme', this.settings.theme)
       }
 
-    //  this.setAppTrivias()
+      //  this.setAppTrivias()
+
+      this.firebaseAuthSvc.userDetails$.subscribe((details) => {
+        this.userInfo = details;
+      })
+
+      this.firebaseAuthSvc.isAuthenticated$.subscribe((isAuth) => {
+        this.isLoggedIn = isAuth;
+      })
 
     })
 
@@ -114,7 +129,7 @@ export class AppComponent {
     await this.triviaSvc.storeTrivias(trivias);
   }
 
-  async setAppTrivias(){
+  async setAppTrivias() {
     let trivias = await this.triviaSvc.getTrivias();
     console.log('trivias::', trivias)
     if (!trivias) {
@@ -135,8 +150,15 @@ export class AppComponent {
     }
   }
 
-  getEnv(){
+  getEnv() {
     console.log(apiUrl)
   }
 
+
+  logout() {
+    // google or fb sign out
+    this.firebaseAuthSvc.isAuthenticated$.next(false)
+
+    this.router.navigateByUrl("/")
+  }
 }
