@@ -9,7 +9,7 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
-
+    implementation project(':cyril-colin-capacitor-google-auth')
 
 }
 apply from: "../../node_modules/com-sarriaroman-photoviewer/src/android/photoviewer.gradle"

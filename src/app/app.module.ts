@@ -23,6 +23,7 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 
 import { environment } from 'src/environments/environment';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { environment } from 'src/environments/environment';
   imports: [BrowserModule, IonicModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
     NgCircleProgressModule.forRoot({
       // set defaults here

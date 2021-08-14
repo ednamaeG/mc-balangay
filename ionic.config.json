@@ -1,7 +1,8 @@
 {
   "name": "MC Balangay",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

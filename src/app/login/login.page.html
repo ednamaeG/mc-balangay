@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-button (click)="googleSignup()">Sign in</ion-button>
+    <ion-card>
+      <ion-card-content>
+        {{ userInfo | json}}
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
