@@ -6,9 +6,20 @@
       </ion-toolbar>
     </ion-header>
     <ion-content [fullscreen]="true" color="sky">
-      <ion-item>
-        <!-- {{userInfo.name}} -->
-      </ion-item>
+      <!-- <ion-item color="sky" lines="none">
+
+        <ion-avatar slot="start">
+          <img src="../assets/barangay-logos/atlubola.png">
+        </ion-avatar>
+        <ion-label>
+
+        </ion-label>
+      </ion-item> -->
+
+      <div class="img-container" *ngIf="userInfo">
+        <img [src]="userInfo.photoURL" class="img-profile">
+         <h4>{{userInfo.name}}</h4>
+      </div>
       <ion-menu-toggle>
         <ion-item [routerLink]="['/about']" color="sky" lines="none">
           <ion-icon slot="start" name="information-circle-outline"></ion-icon>

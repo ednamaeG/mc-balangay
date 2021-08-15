@@ -1,3 +1,4 @@
+import { resolve } from '@angular-devkit/core';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -27,7 +28,7 @@ export class FirebaseAuthService {
         .credential(accessToken);
     this.fireAuth.signInWithCredential(credential)
       .then((success) => {
-        alert('successfully');
+
         // this.isGoogleLogin = true;
         this.userInfo = success.user;
 
@@ -38,17 +39,13 @@ export class FirebaseAuthService {
 
         // this.loading.dismiss();
         this.checkUserDetails(this.userInfo.uid)
-
-
-
-
       });
 
 
 
   }
 
-  async loginWithEmail(email, password) {
+  async _loginWithEmail(email, password) {
     console.log(email, password)
     const self = this;
     this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
@@ -58,8 +55,28 @@ export class FirebaseAuthService {
 
     }).catch((err) => {
       console.log("ERR", err)
+      self.isAuthenticated$.next(false);
+
     })
   }
+
+  async loginWithEmail(email, password) {
+    return new Promise((resolve, reject) => {
+      const self = this;
+      this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
+        self.userInfo = success.user;
+        self.isAuthenticated$.next(true);
+        this.checkUserDetails(this.userInfo.uid)
+        resolve(true)
+
+      }).catch((err) => {
+        console.log("ERR", err)
+        reject(false)
+      })
+    })
+
+  }
+
 
   async registerUser() {
     const { displayName, phoneNumber, email, photoURL, uid } = this.userInfo;

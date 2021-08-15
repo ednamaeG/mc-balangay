@@ -9,7 +9,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { FirebaseAuthService } from '../services/firebase-auth.service';
 import { Route } from '@angular/compiler/src/core';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -22,7 +22,8 @@ export class LoginPage implements OnInit {
   constructor(private fireAuth: AngularFireAuth, private afd: AngularFireDatabase,
     private firebaseSvc: FirebaseAuthService,
     private router: Router,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private alertCtrl: AlertController
 
   ) { }
 
@@ -32,31 +33,46 @@ export class LoginPage implements OnInit {
 
   async googleSignIn() {
     let googleUser = await Plugins.GoogleAuth.signIn();
-    console.log('my user: ', googleUser);
+
     const { idToken, accessToken } = googleUser.authentication;
     this.firebaseSvc.onGoogleLoginSuccess(idToken, accessToken)
 
-    this.subscribeAuth()
-
-  }
-
-
-  loginEmail() {
-
-    this.firebaseSvc.loginWithEmail(this.email, this.password)
-    this.subscribeAuth()
-  }
-
-  subscribeAuth() {
-    this.firebaseSvc.isAuthenticated$.subscribe((isAuth) => {
-      if (isAuth) {
-        this.navCtrl.pop()
+    this.firebaseSvc.isAuthenticated$.subscribe((auth) =>{
+      if(auth){
         this.router.navigate(['/tabs'], { replaceUrl: true })
-      }else{
-        alert("INVALID")
       }
     })
+
   }
 
 
+  async loginEmail() {
+    try{
+      const auth = await this.firebaseSvc.loginWithEmail(this.email, this.password);
+      console.log(auth,"Auth")
+      this.router.navigate(['/tabs'], { replaceUrl: true })
+    }catch(err){
+      this.presentAlert()
+    }
+  }
+
+  async subscribeAuth() {
+    if(this.firebaseSvc.getAuth()){
+      this.router.navigate(['/tabs'], { replaceUrl: true })
+    }else{
+      this.presentAlert()
+    }
+
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'MC Balangay',
+      subHeader: 'Unable to Login',
+      message: 'Invalid Email or Password',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }

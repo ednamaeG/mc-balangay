@@ -10,11 +10,10 @@ export class AuthGuard implements CanActivate {
   constructor(private firebaseAuthSvc: FirebaseAuthService, private router: Router) { }
 
   canActivate(): boolean {
+
     if (!this.firebaseAuthSvc.getAuth()) {
       // console.log("dont enter")
       this.router.navigateByUrl("/login");
-    } else {
-      console.log("SHould login")
     }
 
     return this.firebaseAuthSvc.getAuth();

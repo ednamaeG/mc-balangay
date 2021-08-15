@@ -22,3 +22,29 @@ ion-button.fb-btn{
 
 }
 
+
+ion-toolbar{
+  --background-color:transparent;
+  --ion-color-base:transparent  !important
+}
+
+// ion-content{
+//   --background: var(--ion-color-sky);
+//   //  background-image: linear-gradient(
+//   //     180deg
+//   //     , #64bbfb, #1ac8db8f);
+// }
+
+// ion-item{
+//   --background: none;
+// }
+
+// .list-md{
+//    background: none !important;
+// }
+
+ion-input{
+ --background: none;
+
+}
+
