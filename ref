@@ -1,7 +1,9 @@
-generate splash 
+generate splash
 https://stackoverflow.com/questions/60549868/ionic-5-how-to-replace-default-icon-and-splash-screen-image-and-generate-resou
 foreground
 background icon 432x432
 icon - 1024x1024
 splash 2732x2732
 cordova-res android --skip-config --copy
+
+keytool -export -alias myAlias -keystore D:\emg-dev\testionic5\testIonic5.jks | C:\openssl-0.9.8k_WIN32\bin\openssl sha1 -binary | C:\openssl-0.9.8k_WIN32\bin\openssl enc -a -e
