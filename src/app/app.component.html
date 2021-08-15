@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu contentId="main-content" side="start" type="overlay" *ngIf="isLoggedIn">
+  <ion-menu contentId="main-content" side="start" type="overlay" [disabled]="!isLoggedIn">
     <ion-header>
       <ion-toolbar color="sky">
         <ion-title>MC Balangay</ion-title>
@@ -17,7 +17,7 @@
       </ion-item> -->
 
       <div class="img-container" *ngIf="userInfo">
-        <img [src]="userInfo.photoURL" class="img-profile">
+        <img [src]="userInfo.photoURL" class="img-profile" *ngIf="userInfo.photoURL">
          <h4>{{userInfo.name}}</h4>
       </div>
       <ion-menu-toggle>
@@ -39,7 +39,7 @@
       </ion-item>
       <ion-menu-toggle>
         <ion-item lines="none" color="sky" (click)="logout()">
-          <ion-icon slot="start" name="moon"></ion-icon>
+          <ion-icon slot="start" name="log-out"></ion-icon>
           <ion-label>
             Logout
           </ion-label>

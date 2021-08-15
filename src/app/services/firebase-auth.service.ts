@@ -125,4 +125,41 @@ export class FirebaseAuthService {
     return isLoggedIn;
   }
 
+  signUp(details){
+    const {email,password,name} = details;
+    return new Promise((resolve, reject) => {
+      const self = this;
+      this.fireAuth.createUserWithEmailAndPassword(email,password).then((success) => {
+          const user = {
+            displayName: name,
+            email: success.user.email,
+            uid: success.user.uid,
+            phoneNumber: success.user.phoneNumber,
+            photoURL: success.user.photoURL
+          }
+          self.userInfo = user;
+          // self.userInfo.displayName = name;
+          console.log("success",self.userInfo)
+          self.isAuthenticated$.next(true);
+          this.checkUserDetails(this.userInfo.uid)
+          resolve(true)
+
+        }).catch((err) => {
+          console.log("ERR", err)
+          reject(false)
+        })
+      // this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
+      //   self.userInfo = success.user;
+      //   self.isAuthenticated$.next(true);
+      //   this.checkUserDetails(this.userInfo.uid)
+      //   resolve(true)
+
+      // }).catch((err) => {
+      //   console.log("ERR", err)
+      //   reject(false)
+      // })
+    })
+
+  }
+
 }

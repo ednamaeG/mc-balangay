@@ -79,17 +79,17 @@ export class Tab2Page {
         this.quizzes = list.filter((l) => Number(l.status) == 1);
 
         const userInfo = this.firebaseAuthSvc.userDetails$.getValue();
-        const records = userInfo.quizzes;
-        records.forEach(rec => {
-          const quizIdx = this.quizzes.findIndex((q) => q.id == rec.quiz_id)
-          if (quizIdx >= 0) {
-            console.log(quizIdx)
-            this.quizzes[quizIdx].percentage = rec.percentage
-            this.quizzes[quizIdx].total_score = rec.score
-            this.quizzes[quizIdx].progress = rec.progress
+        // const records = userInfo.quizzes;
+        // records.forEach(rec => {
+        //   const quizIdx = this.quizzes.findIndex((q) => q.id == rec.quiz_id)
 
-          }
-        });
+        //   if (quizIdx >= 0) {
+        //     this.quizzes[quizIdx].percentage = rec.percentage
+        //     this.quizzes[quizIdx].total_score = rec.score
+        //     this.quizzes[quizIdx].progress = rec.progress
+        //     console.log(rec.progress)
+        //   }
+        // });
 
 
         console.log("q", this.quizzes)
@@ -171,6 +171,7 @@ export class Tab2Page {
           console.log(quizIdx)
           self.quizzes[quizIdx].percentage = rec.percentage
           self.quizzes[quizIdx].total_score = rec.score
+          self.quizzes[quizIdx].progress = rec.progress
         }
 
         console.log("Quizzes", self.quizzes)

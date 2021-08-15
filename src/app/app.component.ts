@@ -159,6 +159,6 @@ export class AppComponent {
     // google or fb sign out
     this.firebaseAuthSvc.isAuthenticated$.next(false)
 
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("/login")
   }
 }

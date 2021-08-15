@@ -17,8 +17,8 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
   userInfo = null;
-  email: string = "admintest@gmail.com";
-  password: string = "test1234";
+  email: string = "";
+  password: string = "";
   constructor(private fireAuth: AngularFireAuth, private afd: AngularFireDatabase,
     private firebaseSvc: FirebaseAuthService,
     private router: Router,
@@ -39,7 +39,9 @@ export class LoginPage implements OnInit {
 
     this.firebaseSvc.isAuthenticated$.subscribe((auth) =>{
       if(auth){
-        this.router.navigate(['/tabs'], { replaceUrl: true })
+        this.navCtrl.pop()
+        this.router.navigateByUrl("/tabs",{ replaceUrl: true })
+
       }
     })
 
@@ -50,20 +52,21 @@ export class LoginPage implements OnInit {
     try{
       const auth = await this.firebaseSvc.loginWithEmail(this.email, this.password);
       console.log(auth,"Auth")
+      this.navCtrl.pop()
       this.router.navigate(['/tabs'], { replaceUrl: true })
     }catch(err){
       this.presentAlert()
     }
   }
 
-  async subscribeAuth() {
-    if(this.firebaseSvc.getAuth()){
-      this.router.navigate(['/tabs'], { replaceUrl: true })
-    }else{
-      this.presentAlert()
-    }
+  // async subscribeAuth() {
+  //   if(this.firebaseSvc.getAuth()){
+  //     this.router.navigate(['/tabs'], { replaceUrl: true })
+  //   }else{
+  //     this.presentAlert()
+  //   }
 
-  }
+  // }
 
   async presentAlert() {
     const alert = await this.alertCtrl.create({

@@ -476,11 +476,12 @@ export class QuizViewPage implements OnInit {
     const userInfo = this.firebaseAuthSvc.userDetails$.getValue()
     const percentage = this.totalScore / this.totalPoints;
 
-    const progress = this.totalAnswered / this.lastPage;
+    const progress = this.quizContent.progress == 1 ? this.quizContent.progress : this.totalAnswered / this.lastPage;
+    const score = this.quizContent.total_score > this.totalScore ? this.quizContent.total_score : this.totalScore
     const ref = this.afd.database.ref(`users/${userInfo.id}/quizzes/${this.quizContent.id}`)
     const quizDetails = {
       quiz_id: this.quizContent.id,
-      score: this.totalScore,
+      score: score,
       correctCount: this.correctCount,
       incorrectCount: this.incorrectCount,
       skippedCount: this.skippedCount,
