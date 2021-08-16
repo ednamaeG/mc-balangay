@@ -487,7 +487,8 @@ export class QuizViewPage implements OnInit {
       skippedCount: this.skippedCount,
       timeUpCount: this.timeUpCount,
       percentage: percentage,
-      progress: progress
+      progress: progress,
+      name: this.quizContent.title
     }
 
     ref.set(quizDetails)
