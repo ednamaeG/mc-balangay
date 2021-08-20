@@ -31,6 +31,7 @@ export class FirebaseAuthService {
 
         // this.isGoogleLogin = true;
         this.userInfo = success.user;
+        // this.userInfo.authentication_method= "Google"
 
         _self.isAuthenticated$.next(true);
 
@@ -40,9 +41,21 @@ export class FirebaseAuthService {
         // this.loading.dismiss();
         this.checkUserDetails(this.userInfo.uid)
       });
+  }
 
+  onFbLoginSuccess(userDetails){
+    console.log("user:::",userDetails)
+    this.userInfo ={
+      uid: userDetails.id,
+      displayName: userDetails.name,
+      email:userDetails.email,
+      photoURL: userDetails.picture.data.url,
+      // authentication_method: 'Facebook',
+      phoneNumber: null
+    };
 
-
+    this.checkUserDetails(userDetails.id);
+    this.isAuthenticated$.next(true);
   }
 
   async _loginWithEmail(email, password) {
@@ -65,6 +78,7 @@ export class FirebaseAuthService {
       const self = this;
       this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
         self.userInfo = success.user;
+        // self.userInfo.authentication_method = "email"
         self.isAuthenticated$.next(true);
         this.checkUserDetails(this.userInfo.uid)
         resolve(true)
@@ -79,14 +93,14 @@ export class FirebaseAuthService {
 
 
   async registerUser() {
-    const { displayName, phoneNumber, email, photoURL, uid } = this.userInfo;
+    const { displayName, phoneNumber, email, photoURL, uid  } = this.userInfo;
     const user = {
       name: displayName,
       phoneNumber: phoneNumber,
       email: email,
       id: uid,
-      photoURL: photoURL
-
+      photoURL: photoURL,
+      // authentication_method:authentication_method
     }
 
 
@@ -101,7 +115,7 @@ export class FirebaseAuthService {
 
   checkUserDetails(uid) {
     const ref = this.afd.database.ref("users/").child(uid);
-    var user;
+
     const self = this;
     console.log("UID", uid)
     ref.once("value", function (snapshot) {
