@@ -77,9 +77,11 @@ export class AppComponent {
     // login info
     try {
       const loginInfo = await this.firebaseAuthSvc.getLoginInfo();
+      // loginInfo.displayName = loginInfo.name
       console.log("login info",loginInfo)
       this.firebaseAuthSvc.isAuthenticated$.next(loginInfo.isAuthenticated);
       this.firebaseAuthSvc.userDetails$.next(loginInfo.user);
+      // this.firebaseAuthSvc.checkUserDetails(loginInfo.user.id)
       this.router.navigateByUrl("/tabs",{replaceUrl:true})
     } catch (err) {
       console.log("err", err)

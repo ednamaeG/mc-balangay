@@ -83,6 +83,7 @@ export class FirebaseAuthService {
       const self = this;
       this.fireAuth.signInWithEmailAndPassword(email, password).then((success) => {
         self.userInfo = success.user;
+        console.log("user", success)
         self.userInfo.authentication_method = "email"
         self.isAuthenticated$.next(true);
         this.checkUserDetails(this.userInfo.uid)
@@ -119,25 +120,28 @@ export class FirebaseAuthService {
   }
 
   checkUserDetails(id) {
+
     const ref = this.afd.database.ref("users/").child(id);
     const self = this;
     const { displayName, phoneNumber, email, photoURL, uid, authentication_method } = this.userInfo;
     const user = {
-      name: displayName,
       phoneNumber: phoneNumber,
       email: email,
       id: uid,
       photoURL: photoURL,
-      authentication_method: authentication_method
+      authentication_method: authentication_method,
+      name: displayName
     }
+
 
 
     ref.once("value", function (snapshot) {
       // this.userDetails$.next(snapshot.val())
       if (snapshot.val()) {
-        ref.set(user)
+        // user.name = (user.name && snapshot.val().name == user.name) ? snapshot.val().name : user.name;
         self.userDetails$.next(snapshot.val())
-        self.saveLoginInfo()
+        ref.child("authentication_method").set(self.userInfo.authentication_method)
+        self.saveLoginInfo(self.userDetails$.getValue())
       } else {
         self.registerUser(user)
       }
@@ -159,6 +163,7 @@ export class FirebaseAuthService {
     return new Promise((resolve, reject) => {
       const self = this;
       this.fireAuth.createUserWithEmailAndPassword(email, password).then((success) => {
+        //  firebase.auth().currentUser.displayName = name;
         const user = {
           displayName: name,
           email: success.user.email,
@@ -212,9 +217,9 @@ export class FirebaseAuthService {
     }
   }
 
-  async saveLoginInfo() {
+  async saveLoginInfo(user) {
     const loginInfo = {
-      user: this.userInfo,
+      user: user,
       isAuthenticated: true
     }
     try {
@@ -231,8 +236,8 @@ export class FirebaseAuthService {
 
   async removeLoginInfo() {
     try {
-       const res = await Storage.remove({ key: 'login_info' })
-       console.log("removed",res)
+      const res = await Storage.remove({ key: 'login_info' })
+      console.log("removed", res)
     } catch (err) {
       console.log(err)
     }
