@@ -66,11 +66,26 @@ export class AppComponent {
         this.isLoggedIn = isAuth;
       })
 
+
+      this.getLoginInfo()
+
     })
 
   }
 
+  async getLoginInfo() {
+    // login info
+    try {
+      const loginInfo = await this.firebaseAuthSvc.getLoginInfo();
+      console.log("login info",loginInfo)
+      this.firebaseAuthSvc.isAuthenticated$.next(loginInfo.isAuthenticated);
+      this.firebaseAuthSvc.userDetails$.next(loginInfo.user);
+      this.router.navigateByUrl("/tabs",{replaceUrl:true})
+    } catch (err) {
+      console.log("err", err)
+    }
 
+  }
 
   captureBackButton() {
     document.addEventListener("backbutton", () => {
@@ -155,10 +170,16 @@ export class AppComponent {
   }
 
 
-  logout() {
+  async logout() {
     // google or fb sign out
-    this.firebaseAuthSvc.isAuthenticated$.next(false)
+    try {
+      await this.firebaseAuthSvc.logout()
+      this.firebaseAuthSvc.isAuthenticated$.next(false)
 
-    this.router.navigateByUrl("/login")
+      this.router.navigateByUrl("/login")
+    } catch (err) {
+
+    }
+
   }
 }

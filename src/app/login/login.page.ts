@@ -1,18 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-// import "@codetrix-studio/capacitor-google-auth";
 import { Plugins, registerWebPlugin } from '@capacitor/core';
-import firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import "@cyril-colin/capacitor-google-auth";
 import { AngularFireDatabase } from '@angular/fire/database';
 import { FirebaseAuthService } from '../services/firebase-auth.service';
-import { Route } from '@angular/compiler/src/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
-
-// import { FacebookLogin } from '@rdlabo/capacitor-facebook-login';
-// import { registerWebPlugin } from '@capacitor/core';
 import { FacebookLoginPlugin } from '@capacitor-community/facebook-login';
 
 import { FacebookLogin } from '@capacitor-community/facebook-login';
@@ -61,25 +55,34 @@ export class LoginPage implements OnInit {
   }
 
   async fbSiginIn() {
-    const FACEBOOK_PERMISSIONS = ['email', 'user_birthday'];
-    const result = await Plugins.FacebookLogin.login({ permissions: FACEBOOK_PERMISSIONS })
-    if (result.accessToken) {
-      this.getCurrentToken()
+
+    const FACEBOOK_PERMISSIONS = ['email', 'public_profile'];
+    try {
+      const result = await Plugins.FacebookLogin.login({ permissions: FACEBOOK_PERMISSIONS })
+
+
+      if (result.accessToken) {
+        this.getCurrentToken()
+      }
+
+    } catch (err) {
+      await this.presentAlert("Can't login via Facebook.Error Encountered")
     }
+
+
+
+
+
+    // this.getCurrentToken()
 
   }
 
   async getCurrentToken() {
     const result = await Plugins.FacebookLogin.getCurrentAccessToken();
-    console.log("result", result)
     if (result.accessToken) {
       this.token = result.accessToken;
       this.loadUserData();
 
-
-
-    } else {
-      // Not logged in.
     }
   }
 
@@ -95,7 +98,7 @@ export class LoginPage implements OnInit {
         }
       };
       // this.router.navigate(["/home"], navigationExtras);
-      alert(JSON.stringify(user))
+
       this.router.navigateByUrl("/tabs", { replaceUrl: true })
     } else {
       alert(result)
@@ -107,7 +110,7 @@ export class LoginPage implements OnInit {
     this.http.get(url).subscribe(res => {
 
       this.userInfo = res
-      this.firebaseSvc.onFbLoginSuccess(this.userInfo)
+      this.firebaseSvc.onFbLoginSuccess(res)
 
       this.router.navigateByUrl("/tabs", { replaceUrl: true })
 
@@ -122,24 +125,16 @@ export class LoginPage implements OnInit {
       this.navCtrl.pop()
       this.router.navigate(['/tabs'], { replaceUrl: true })
     } catch (err) {
-      this.presentAlert()
+      this.presentAlert("Invalid Email or Password")
     }
   }
 
-  // async subscribeAuth() {
-  //   if(this.firebaseSvc.getAuth()){
-  //     this.router.navigate(['/tabs'], { replaceUrl: true })
-  //   }else{
-  //     this.presentAlert()
-  //   }
 
-  // }
-
-  async presentAlert() {
+  async presentAlert(message) {
     const alert = await this.alertCtrl.create({
       header: 'MC Balangay',
       subHeader: 'Unable to Login',
-      message: 'Invalid Email or Password',
+      message: message,
       buttons: ['OK']
     });
 

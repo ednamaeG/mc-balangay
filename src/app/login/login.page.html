@@ -14,6 +14,9 @@
     </ion-card>
   </ion-content> -->
 
+  <div *ngIf="userInfo">
+    {{userInfo.name}}
+  </div>
 
   <div class="spacer"></div>
 
@@ -23,7 +26,8 @@
       <ion-input placeholder="Email" clearInput position="stacked" [(ngModel)]="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="Password" type="password" clearInput position="stacked" [(ngModel)]="password"></ion-input>
+      <ion-input placeholder="Password" type="password" clearInput position="stacked" [(ngModel)]="password">
+      </ion-input>
     </ion-item>
   </ion-list>
 
@@ -42,12 +46,12 @@
   <div class="spacer-2"></div>
 
 
-  <ion-button expand="block" class="google-btn" (click)="googleSignIn()">
-    <ion-icon slot="start" name="logo-google"   expand="block"></ion-icon>
+  <ion-button expand="block"  class="google-btn ion-text-capitalize"  (click)="googleSignIn()">
+    <ion-icon slot="start" name="logo-google" ></ion-icon>
     Login With Google
   </ion-button>
-
-   <ion-button expand="block" class="fb-btn" (click)="fbSiginIn()" >
+  <div class="spacer-3"></div>
+  <ion-button expand="block" class="fb-btn ion-text-capitalize" (click)="fbSiginIn()">
     <ion-icon slot="start" name="logo-facebook" expand="block"></ion-icon>
     Login With Facebook
   </ion-button>
