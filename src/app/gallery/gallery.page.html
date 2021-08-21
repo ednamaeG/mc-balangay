@@ -13,7 +13,7 @@
 <ion-content>
   <ion-row>
     <ion-col size="4" *ngFor="let photo of photos">
-      <div (click)="openViewer(photo)"> <img [src]="photo" class="img"> </div>
+      <div (click)="openViewer(photo.url)"> <img [src]="photo.url" class="img"> </div>
 
     </ion-col>
   </ion-row>

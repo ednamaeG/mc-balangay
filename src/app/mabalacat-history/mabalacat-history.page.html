@@ -33,9 +33,9 @@
       <ion-slides>
         <ion-slide style="height: 274px;" *ngFor="let photo of item.gallery">
           <div>
-            <img [src]="photo" style="
+            <img [src]="photo.url" style="
           width: 100%;
-          object-fit: cover;" (click)="openViewer(photo)">
+          object-fit: cover;" (click)="openViewer(photo.url)">
 
           </div>
         </ion-slide>
