@@ -1,5 +1,6 @@
 .spacer{
-  height: 60px;
+  // height: 60px;
+  height: 25px;
 }
 
 .spacer-2{
@@ -32,23 +33,22 @@ ion-toolbar{
   --ion-color-base:transparent  !important
 }
 
-// ion-content{
-//   --background: var(--ion-color-sky);
-//   //  background-image: linear-gradient(
-//   //     180deg
-//   //     , #64bbfb, #1ac8db8f);
-// }
-
-// ion-item{
-//   --background: none;
-// }
-
-// .list-md{
-//    background: none !important;
-// }
 
 ion-input{
  --background: none;
 
 }
 
+
+.img-container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+
+}
+
+.img-container img{
+  border-radius: 50%;
+}

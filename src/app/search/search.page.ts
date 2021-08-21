@@ -4,6 +4,7 @@ import { IonSearchbar, ModalController, NavController, NavParams } from '@ionic/
 import { IBarangay } from '../interfaces/barangay';
 import { HttpClient } from '@angular/common/http';
 import { FilterPage } from '../filter/filter.page';
+import { AngularFireDatabase } from '@angular/fire/database';
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
@@ -18,14 +19,20 @@ export class SearchPage implements OnInit {
   filteredResults = [];
   tempResults = [];
   queryFilter: any;
-  constructor(private modal: ModalController, private router: Router, private route: ActivatedRoute, private navCtrl: NavController, private httpClient: HttpClient) {
+  constructor(private modal: ModalController, private router: Router, private route: ActivatedRoute, private navCtrl: NavController, private httpClient: HttpClient,private afd:AngularFireDatabase) {
 
   }
 
   async ngOnInit() {
     // this.data = this.route.snapshot.params.data;
-    this.data = await this.getData();
-    this.results = this.data;
+    // this.data = await this.getData();
+    this.afd.list('barangays/barangay_data').valueChanges().forEach(async (val: IBarangay[]) => {
+      console.log("BRGY::", val)
+      const list = val;
+      this.data = list.filter((l) => Number(l.status) == 1);
+      this.results = this.data;
+
+    })
     console.log('DATA', this.data)
     setTimeout(() => {
       this.searchInput.setFocus();
@@ -33,7 +40,8 @@ export class SearchPage implements OnInit {
   }
 
   closeModal() {
-    this.navCtrl.pop()
+    // this.navCtrl.pop()
+    this.router.navigateByUrl("/tabs",{replaceUrl: true})
   }
 
   async getData(): Promise<IBarangay[]> {
@@ -43,14 +51,6 @@ export class SearchPage implements OnInit {
 
     let query = ev.detail.value;
     if (query) {
-      // this.results = this.data.filter(
-      //   (data) => data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
-      // );
-      // this.results = this.data.filter(
-      //   (data) => {
-      //     return data.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
-      //   }
-      // );
 
       this.results = this.data.filter(
         (data) => {
@@ -69,9 +69,6 @@ export class SearchPage implements OnInit {
       console.log('res1', this.results)
 
 
-      // console.log('filtered',res)
-
-      // console.log('res',detail)
       if (this.queryFilter) {
         this.filterResults()
       }

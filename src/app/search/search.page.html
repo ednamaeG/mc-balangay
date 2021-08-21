@@ -5,7 +5,7 @@
       (ionCancel)="closeModal()" (ionChange)="search($event)" (ionClear)="resetResults()">
     </ion-searchbar>
     <ion-buttons slot="end" >
-      <ion-button slot="icon-only" (click)="showFilterModal()">
+      <ion-button slot="icon-only" (click)="showFilterModal()" defaultHref="/tabs">
         <ion-icon name="funnel-outline" [color]="queryFilter ? 'danger' :'' "></ion-icon>
       </ion-button>
     </ion-buttons>
