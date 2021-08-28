@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { ITrivia } from '../interfaces/trivia';
 import { TriviaService } from '../services/trivia.service';
-
+import firebase from 'firebase';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
 @Component({
   selector: 'app-trivia',
   templateUrl: './trivia.page.html',
@@ -15,8 +17,8 @@ export class TriviaPage implements OnInit {
   correctAnswer = '';
   choice_letters = ["A", "B", "C"];
   answerStats = '';
-  
-  constructor(private navParams: NavParams, private modalCtrl: ModalController, private triviaSvc: TriviaService) { }
+
+  constructor(private navParams: NavParams, private modalCtrl: ModalController, private triviaSvc: TriviaService,private afd: AngularFireDatabase,private firebaseAuthSvc:FirebaseAuthService) { }
 
   ngOnInit() {
     this.trivia = this.navParams.get('value');
@@ -43,7 +45,18 @@ export class TriviaPage implements OnInit {
     this.modalCtrl.dismiss()
   }
 
+  saveAnsweredTrivia(id){
+
+  }
+
   async updateTrivia(id) {
+    // const userInfo  = this.firebaseAuthSvc.userDetails$.getValue();
+    // const ref = this.afd.database.ref(`users/${userInfo.id}/trivias`);
+    // const triviaData = {
+    //   trivia_id: id
+    // }
+    // console.log(userInfo)
+    // ref.push(triviaData)
     let trivias = await this.triviaSvc.getTrivias();
     const trivia = trivias.find(t => t.id == id)
     trivia.isAnswered = true;

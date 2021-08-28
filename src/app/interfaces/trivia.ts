@@ -5,6 +5,7 @@ export interface ITrivia {
     choices:ITriviaChoice[];
     images:ITriviaImage[];
     isAnswered:boolean;
+    image: string;
 }
 
 export interface ITriviaChoice {

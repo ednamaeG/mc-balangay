@@ -10,6 +10,7 @@ import { AlertController, IonContent, IonSlides, NavController } from '@ionic/an
 import { Chart, registerables } from 'chart.js';
 import { FirebaseAuthService } from '../services/firebase-auth.service';
 import { AngularFireDatabase } from '@angular/fire/database';
+import * as moment from 'moment'
 Chart.register(...registerables);
 
 @Component({
@@ -23,11 +24,8 @@ export class QuizViewPage implements OnInit {
   @ViewChild('content') content: IonContent;
   @ViewChild('lineCanvas', { static: true }) lineCanvas: ElementRef;
   chartDonut: any;
-  // QUESTION STATUS 0 - Incorrect / 1 -Correct / 2 - Times Up / 3 - Skipped
-  slidesOptions = {
+   slidesOptions = {
 
-    // freeMode: true,
-    // loop: true,
     allowTouchMove: false
   };
 
@@ -75,8 +73,7 @@ export class QuizViewPage implements OnInit {
       this.currentQuestion = this.quizContent.questions[0];
 
       this.quizContent.questions.forEach(question => this.totalPoints += Number(question.points))
-      console.log('total points', this.totalPoints, this.quizContent, this.quizContent.questions)
-    }
+     }
 
 
   }
@@ -84,9 +81,7 @@ export class QuizViewPage implements OnInit {
 
   async ngOnInit() {
 
-    // const quiz: any = await this.getQuizzes()
-    // this.questions = quiz[0].questions;
-    // console.log(this.questions, quiz)
+
   }
 
   async ngAfterViewInit() {
@@ -99,8 +94,7 @@ export class QuizViewPage implements OnInit {
   setCurrentData() {
     const idx = this.currentPage;
     this.currentQuestion = this.quizContent.questions[idx];
-    // this.resetTimer()
-  }
+   }
   skipQuiz() {
     this.quizContent.questions[this.currentPage].status = 3;
     this.nextPage();
@@ -114,8 +108,7 @@ export class QuizViewPage implements OnInit {
     this.slider.slideTo(this.currentPage)
     this.content.scrollToTop()
 
-    // this.resetTimer()
-    if (this.currentPage >= this.lastPage) {
+     if (this.currentPage >= this.lastPage) {
       console.log(this.currentPage, this.lastPage)
 
       this.currentQuestion = ''
@@ -162,8 +155,7 @@ export class QuizViewPage implements OnInit {
       this.currentQuestion.choices[i].selected = true;
       const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
 
-      console.log('choices', this.currentQuestion.choices)
-      this.quizContent.questions[this.currentPage].hasAnswer = true;
+       this.quizContent.questions[this.currentPage].hasAnswer = true;
       this.totalAnswered++;
       if (this.currentQuestion.choices[i].correct) {
         this.quizContent.questions[this.currentPage].status = 1;
@@ -177,12 +169,11 @@ export class QuizViewPage implements OnInit {
         this.countdown.stop()
         this.audioSvc.playSound(this.INCORRECT_ANSWER_SOUND_ID)
         this.quizContent.questions[this.currentPage].status = 0;
-        console.log('correct answer::', correctAnswer)
-        // this.showCorrectAnswer(correctAnswer.title, "answer")
+
       }
       setTimeout(() => {
         this.nextPage();
-        // this.resetTimer()
+
 
       }, 300)
 
@@ -199,9 +190,7 @@ export class QuizViewPage implements OnInit {
       console.log("Done!");
       console.log('page', this.currentPage);
       this.quizContent.questions[this.currentPage].status = 2;
-      // alert("Times up!")
-      // this.nextPage()
-      // const correctAnswer = this.currentQuestion.choices.find(choice => choice.correct == true);
+
       this.showCorrectAnswer("timer")
       this.start_timer();
     }
@@ -209,17 +198,14 @@ export class QuizViewPage implements OnInit {
   }
 
   start_timer() {
-    // this.config = { leftTime: this.time, format: 'mm:ss', notify:[5]};
-    this.countdown.begin();
+     this.countdown.begin();
   }
 
   resetTimer() {
     console.log('reset timer')
-    // this.config = { leftTime: this.time, format: 'mm:ss', notify:[5]};
 
     this.countdown.restart()
-    // this.start_timer()
-  }
+   }
 
   async getQuizzes() {
     return await this.httpClient.get('./assets/mocks/quizzes-mock.json').toPromise();
@@ -311,28 +297,8 @@ export class QuizViewPage implements OnInit {
   async showCorrectAnswer(type) {
     const alert = await this.alertCtrl.create({
       header: type == "timer" ? "TIMES UP!" : "INCORRECT!",
-      // message: ' ' + correctAnswer,
-      // subHeader: 'The Correct Answer is:',
       mode: 'ios',
       cssClass: type == "timer" ? 'quiz-alert timer-alert' : 'quiz-alert incorrect-alert',
-
-      // buttons: [
-      //   {
-      //     text: 'Continue',
-      //     role: 'cancel',
-      //     cssClass: 'secondary',
-      //     handler: (blah) => {
-
-      //     }
-      //   }]
-      //   }, {
-      //     text: 'Continue',
-      //     handler: () => {
-      //       this.saveScore()
-      //       self.navCtrl.pop()
-      //     }
-      //   }
-      // ]
     });
 
 
@@ -488,7 +454,8 @@ export class QuizViewPage implements OnInit {
       timeUpCount: this.timeUpCount,
       percentage: percentage,
       progress: progress,
-      name: this.quizContent.title
+      name: this.quizContent.title,
+      date_taken: moment(new Date()).format('MMMM Do YYYY, hh:mm a')
     }
 
     ref.set(quizDetails)

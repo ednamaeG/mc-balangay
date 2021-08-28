@@ -8,6 +8,7 @@ import { TriviaService } from './services/trivia.service';
 import { TriviaPage } from './trivia/trivia.page';
 import { environment, apiUrl } from '../environments/environment';
 import { FirebaseAuthService } from './services/firebase-auth.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -17,12 +18,13 @@ export class AppComponent {
   rootPage = "/tabs/tab1";
   otherTabs = ["/tabs/tab1", "/tabs/tab2", "/tabs/tab1/content"];
   settings: any;
-  userInfo;
+  userInfo: any;
   isLoggedIn = false;
   constructor(private plt: Platform, private triviaSvc: TriviaService, private router: Router, private settingSvc: SettingsService, private alertController: AlertController,
     private navCtrl: NavController,
     private httpClient: HttpClient, private modalCtrl: ModalController,
-    private firebaseAuthSvc: FirebaseAuthService
+    private firebaseAuthSvc: FirebaseAuthService,
+    private afd: AngularFireDatabase
   ) {
     this.getEnv()
     console.log(plt.width(), plt.height())
@@ -31,7 +33,6 @@ export class AppComponent {
   }
 
   async setTheme(ev?: any) {
-    // let sDark = window.matchMedia("(prefers-color-scheme: dark)")
     let theme = "";
     if (ev.detail.checked) {
       document.body.setAttribute('color-theme', 'dark')
@@ -56,7 +57,7 @@ export class AppComponent {
         document.body.setAttribute('color-theme', this.settings.theme)
       }
 
-      //  this.setAppTrivias()
+      this.setAppTrivias()
 
       this.firebaseAuthSvc.userDetails$.subscribe((details) => {
         this.userInfo = details;
@@ -77,12 +78,10 @@ export class AppComponent {
     // login info
     try {
       const loginInfo = await this.firebaseAuthSvc.getLoginInfo();
-      // loginInfo.displayName = loginInfo.name
-      console.log("login info",loginInfo)
+      console.log("login info", loginInfo)
       this.firebaseAuthSvc.isAuthenticated$.next(loginInfo.isAuthenticated);
       this.firebaseAuthSvc.userDetails$.next(loginInfo.user);
-      // this.firebaseAuthSvc.checkUserDetails(loginInfo.user.id)
-      this.router.navigateByUrl("/tabs",{replaceUrl:true})
+      this.router.navigateByUrl("/tabs", { replaceUrl: true })
     } catch (err) {
       console.log("err", err)
     }
@@ -105,7 +104,7 @@ export class AppComponent {
 
   async presentExitDialog() {
     const alert = await this.alertController.create({
-      header: 'MCC 101 E-Learning',
+      header: 'MC Balangay',
       message: 'Are you sure you want to exit the app?',
       buttons: [
         {
@@ -131,6 +130,7 @@ export class AppComponent {
     return await this.httpClient.get<ITrivia[]>('./assets/mocks/trivias.json').toPromise();
   }
 
+
   async presentTriviaModal(trivia) {
     const modal = await this.modalCtrl.create({
       component: TriviaPage,
@@ -142,13 +142,73 @@ export class AppComponent {
   }
 
   async initTrivias() {
-    const trivias = await this.getTrivias();
-    await this.triviaSvc.storeTrivias(trivias);
+
+    this.afd.list('barangays/barangay_data').valueChanges().forEach(async (val: ITrivia[]) => {
+      const list = val;
+
+    })
   }
 
   async setAppTrivias() {
+
+    const self = this;
+    const userID = self.userInfo ? self.userInfo.id : '';
     let trivias = await this.triviaSvc.getTrivias();
-    console.log('trivias::', trivias)
+    console.log("trivias from storage: ", trivias)
+    this.afd.list('barangays/trivias').valueChanges().forEach(async (val: ITrivia[]) => {
+
+
+      if (!trivias) {
+        await this.triviaSvc.storeTrivias(val);
+        // trivias = val
+      }
+
+      else{
+        val.forEach(async (trivia) => {
+          const checkExists: ITrivia = trivias.find((t) => t.id == trivia.id);
+
+          if (!checkExists) {
+            // push trivia to storage
+
+            trivia.isAnswered = false;
+            trivias.push(trivia);
+            await this.triviaSvc.storeTrivias(trivias);
+          }
+          // else {
+          //   // update trivia if there's any
+          //   const idx = trivias.findIndex((t) => t.id == trivia.id);
+          //   trivia.isAnswered = true;
+          //   trivias[idx] = trivia;
+
+          // }
+
+
+
+        })
+
+      }
+
+
+      trivias = trivias.sort(() => {
+        return 0.8 - Math.random()
+      })
+      console.log("id", this.userInfo.id)
+
+      const trivia = trivias.find(trivia => trivia.isAnswered == false || !trivia.isAnswered)
+      console.log("T:::", trivia)
+      if (trivia) {
+        this.presentTriviaModal(trivia)
+      }
+
+    })
+
+
+  }
+
+
+  async _setAppTrivias() {
+    let trivias = await this.triviaSvc.getTrivias();
+
     if (!trivias) {
       trivias = await this.getTrivias();
       await this.triviaSvc.storeTrivias(trivias);

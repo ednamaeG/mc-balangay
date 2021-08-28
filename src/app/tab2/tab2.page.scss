@@ -1,6 +1,13 @@
 .quiz-details{
-    float: right;
-    text-align: center;
-    
+    // float: right;
+    // text-align: center;
+    position: absolute;
+    right: 0;
+    top: 15px;
 
+}
+
+
+.title{
+  font-weight: bold;
 }

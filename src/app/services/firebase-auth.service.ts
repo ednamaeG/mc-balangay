@@ -136,9 +136,7 @@ export class FirebaseAuthService {
 
 
     ref.once("value", function (snapshot) {
-      // this.userDetails$.next(snapshot.val())
-      if (snapshot.val()) {
-        // user.name = (user.name && snapshot.val().name == user.name) ? snapshot.val().name : user.name;
+       if (snapshot.val()) {
         self.userDetails$.next(snapshot.val())
         ref.child("authentication_method").set(self.userInfo.authentication_method)
         self.saveLoginInfo(self.userDetails$.getValue())
@@ -163,8 +161,7 @@ export class FirebaseAuthService {
     return new Promise((resolve, reject) => {
       const self = this;
       this.fireAuth.createUserWithEmailAndPassword(email, password).then((success) => {
-        //  firebase.auth().currentUser.displayName = name;
-        const user = {
+         const user = {
           displayName: name,
           email: success.user.email,
           uid: success.user.uid,

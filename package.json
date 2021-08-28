@@ -43,6 +43,7 @@
     "cordova-plugin-nativestorage": "^2.3.2",
     "firebase": "^8.8.1",
     "jetifier": "^1.6.6",
+    "moment": "^2.29.1",
     "ng-circle-progress": "^1.6.0",
     "ngx-countdown": "^11.0.3",
     "ngx-ionic-image-viewer": "^0.7.4",

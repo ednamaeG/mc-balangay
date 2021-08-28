@@ -24,7 +24,7 @@
       </ion-card>
       <div *ngFor="let choice of trivia.choices; let i = index" style="padding:6px">
         <div (click)="selectAnswer(i)" style="border: 2px solid var(--ion-color-cream);
-     
+
         BORDER-RADIUS: 25PX; padding: 12px; background-color: #ffffff;">
           <ion-label>
             <ion-text color="olive">
@@ -36,15 +36,14 @@
 
         </div>
       </div>
-     
 
-    </div>
+     </div>
 
     <div *ngIf="showInfo">
 
       <ion-card>
-        <div class="imgs" *ngFor="let photo of trivia.images">
-          <img [src]="photo.url" class="trivia-photo">
+        <div class="imgs" *ngIf="trivia.image" >
+          <img [src]="trivia.image" class="trivia-photo">
 
         </div>
         <ion-card-header>
