@@ -57,7 +57,7 @@ export class AppComponent {
         document.body.setAttribute('color-theme', this.settings.theme)
       }
 
-      this.setAppTrivias()
+      // this.setAppTrivias()
 
       this.firebaseAuthSvc.userDetails$.subscribe((details) => {
         this.userInfo = details;

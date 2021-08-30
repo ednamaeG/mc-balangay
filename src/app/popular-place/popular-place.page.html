@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="sky">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-toolbar color="olive">
+    <ion-title class="ion-text-center" >
+      {{details.title}}
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slidesOptions" *ngIf="details.photos">
+    <ion-slide  *ngFor="let photo of details.photos">
+      <!-- <div>
+        <ion-img-viewer scheme="dark" [src]="photo.url" [title]="photo.title" ></ion-img-viewer>
+        <div class="img-title">
+          {{ photo.title }}
+        </div>
+      </div> -->
+      <div >
+        <img  [src]="photo.url" (click)="openViewer(photo)" >
+        <div class="img-title">
+          {{ photo.title }}
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+
+
+
+  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+</ion-content>

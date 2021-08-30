@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Router } from '@angular/router';
 import { ModalController, Platform } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
 import { GalleryPage } from '../gallery/gallery.page';
@@ -11,14 +12,15 @@ import { GalleryPage } from '../gallery/gallery.page';
   styleUrls: ['./mabalacat-history.page.scss'],
 })
 export class MabalacatHistoryPage implements OnInit {
-  content :any;
+  content: any;
   selectedTab = "History";
-  mabalacat_details:any;
+  mabalacat_details: any;
   politicians: any;
-  constructor(private httpClient: HttpClient, private modalController: ModalController,private afd:AngularFireDatabase,private plt: Platform) { }
+  places: any;
+  constructor(private httpClient: HttpClient, private modalController: ModalController, private afd: AngularFireDatabase, private plt: Platform, private router: Router) { }
 
-  async ngOnInit()  {
-    this.plt.ready().then(async () =>{
+  async ngOnInit() {
+    this.plt.ready().then(async () => {
       // const quizzesFromApi = await this.quizSvc.getQuizList();
       // console.log('Quizzes from api',quizzesFromApi)
 
@@ -37,12 +39,17 @@ export class MabalacatHistoryPage implements OnInit {
         console.log(this.politicians)
       })
 
-      console.log( content)
+      this.afd.list('barangays/mabalacat-details/places').valueChanges().forEach(async (val: any[]) => {
+
+        this.places = val
+        console.log(this.places)
+      })
+      console.log(content)
     })
 
   }
 
-    getData(){
+  getData() {
     // return await this.httpClient.get<any>('./assets/mocks/mabalacat-details.json').toPromise();
 
   }
@@ -63,14 +70,14 @@ export class MabalacatHistoryPage implements OnInit {
 
   }
 
-  async openViewer(photo){
+  async openViewer(photo) {
     console.log('view photo')
     const modal = await this.modalController.create({
       component: ViewerModalComponent,
       componentProps: {
         src: photo.url ? photo.url : photo,
-        title:photo.title ? photo.title : '',
-        scheme:'dark'
+        title: photo.title ? photo.title : '',
+        scheme: 'dark'
       },
       cssClass: 'ion-img-viewer',
       keyboardClose: true,
@@ -79,4 +86,12 @@ export class MabalacatHistoryPage implements OnInit {
 
     return await modal.present();
   }
+
+
+  openPlaceContent(content) {
+
+    const data = JSON.stringify(content)
+    this.router.navigate(['/popular-place', { data: data }])
+  }
+
 }

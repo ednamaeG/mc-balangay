@@ -3,3 +3,25 @@
     font-weight: bold;
     color: var(--ion-color-olive);
 }
+
+.tabTitle{
+  height: 34px;
+  padding: 5px;
+  font-weight: bold;
+  background-color: var(--ion-color-cream);
+
+}
+
+.place-content{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail{
+  height: 260px;
+  object-fit: cover;
+  width: 100%;
+}
