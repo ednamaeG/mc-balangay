@@ -17,6 +17,7 @@ export class MabalacatHistoryPage implements OnInit {
   mabalacat_details: any;
   politicians: any;
   places: any;
+  personalities: any;
   constructor(private httpClient: HttpClient, private modalController: ModalController, private afd: AngularFireDatabase, private plt: Platform, private router: Router) { }
 
   async ngOnInit() {
@@ -30,7 +31,7 @@ export class MabalacatHistoryPage implements OnInit {
       this.afd.list('barangays/mabalacat-details').valueChanges().forEach(async (val: any[]) => {
 
         this.mabalacat_details = val
-        console.log(this.mabalacat_details)
+        console.log("MABALACAT DETAILS",this.mabalacat_details)
       })
 
       this.afd.list('barangays/mabalacat-details/politicians').valueChanges().forEach(async (val: any[]) => {
@@ -44,6 +45,12 @@ export class MabalacatHistoryPage implements OnInit {
         this.places = val
         console.log(this.places)
       })
+
+      this.afd.list('barangays/mabalacat-details/personalities').valueChanges().forEach(async (val: any[]) => {
+        this.personalities = val
+
+      })
+
       console.log(content)
     })
 
@@ -92,6 +99,13 @@ export class MabalacatHistoryPage implements OnInit {
 
     const data = JSON.stringify(content)
     this.router.navigate(['/popular-place', { data: data }])
+  }
+
+
+  openPersonalityContent(content) {
+
+    const data = JSON.stringify(content)
+    this.router.navigate(['/personalities', { data: data }])
   }
 
 }

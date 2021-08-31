@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="sky">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-toolbar color="olive">
+    <ion-title class="ion-text-center">
+      {{details.name}}
+      <small>({{details.title}})</small>
+    </ion-title>
+  </ion-toolbar>
+  <div>
+    <img [src]="details.photo" (click)="openViewer(details.photo)">
+  </div>
+</ion-header>
+
+<ion-content >
+
+
+  <h1>{{details.title}}</h1>
+  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+</ion-content>

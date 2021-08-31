@@ -79,6 +79,10 @@ const routes: Routes = [
     path: 'popular-place',
     loadChildren: () => import('./popular-place/popular-place.module').then( m => m.PopularPlacePageModule)
   },
+  {
+    path: 'personalities',
+    loadChildren: () => import('./personalities/personalities.module').then( m => m.PersonalitiesPageModule)
+  },
 
 ];
 @NgModule({
