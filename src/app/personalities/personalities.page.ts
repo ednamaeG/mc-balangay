@@ -44,12 +44,11 @@ export class PersonalitiesPage implements OnInit {
   }
 
   async openViewer(photo) {
-    console.log('view photo')
+
     const modal = await this.modalController.create({
       component: ViewerModalComponent,
       componentProps: {
-        src: photo.url,
-        title: photo.title,
+        src: photo,
         scheme: 'dark'
       },
       cssClass: 'ion-img-viewer',

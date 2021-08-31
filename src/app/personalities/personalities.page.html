@@ -9,17 +9,18 @@
   <ion-toolbar color="olive">
     <ion-title class="ion-text-center">
       {{details.name}}
-      <small>({{details.title}})</small>
+      <div class="ion-text-center title">({{details.title}})</div>
     </ion-title>
   </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
   <div>
     <img [src]="details.photo" (click)="openViewer(details.photo)">
   </div>
-</ion-header>
+  <div>
 
-<ion-content >
-
-
-  <h1>{{details.title}}</h1>
-  <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+    <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+  </div>
 </ion-content>
