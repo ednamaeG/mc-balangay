@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
+import { GalleryViewerPageModule } from '../gallery-viewer/gallery-viewer.module';
+import { GalleryViewerPage } from '../gallery-viewer/gallery-viewer.page';
 
 @Component({
   selector: 'app-gallery',
@@ -20,13 +22,28 @@ export class GalleryPage implements OnInit {
     this.modalController.dismiss()
   }
 
-  async openViewer(photoUrl) {
+  async openViewer(photos,i) {
+    console.log('view photo')
+    // const modal = await this.modalController.create({
+    //   component: ViewerModalComponent,
+    //   componentProps: {
+    //     src: photoUrl,
+    //     scheme: 'dark'
+    //   },
+    //   cssClass: 'ion-img-viewer',
+    //   keyboardClose: true,
+    //   showBackdrop: true
+    // });
+
+    // await modal.present()
+
     console.log('view photo')
     const modal = await this.modalController.create({
-      component: ViewerModalComponent,
+      component: GalleryViewerPage,
       componentProps: {
-        src: photoUrl,
-        scheme: 'dark'
+        src: photos,
+        scheme: 'dark',
+        index: i
       },
       cssClass: 'ion-img-viewer',
       keyboardClose: true,

@@ -47,6 +47,7 @@
     "ng-circle-progress": "^1.6.0",
     "ngx-countdown": "^11.0.3",
     "ngx-ionic-image-viewer": "^0.7.4",
+    "ngx-pinch-zoom": "^2.6.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

@@ -5,24 +5,7 @@
       <ion-back-button defaultHref="/" color="light"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-  <!-- getIconName(type) {
-    if (type.toLowerCase() == 'history') {
-      return 'assets/icon/pillar.svg'
 
-    } else if (type.toLowerCase() == 'fiesta') {
-      return 'assets/icon/fiesta-icon.svg'
-
-    } if (type.toLowerCase() == 'politicians') {
-      return 'assets/icon/speak-speech.svg'
-    } if (type.toLowerCase() == 'first family residence') {
-      return 'assets/icon/home-house.svg'
-    } if (type.toLowerCase() == 'branding') {
-      return 'assets/icon/poster.svg'
-    }
-  } -->
-  <!-- <ion-toolbar>
-    <ion-title class="ion-text-center" color="olive">History</ion-title>
-  </ion-toolbar> -->
   <ion-row style="text-align: center; background: var(--ion-color-olive); color: white">
 
     <ion-col style="height: 48px;
@@ -60,8 +43,8 @@
     <ion-col style="height: 48px;
     border-right: 1px solid white;
     font-size: 14px;
-    padding: 8px;" [ngClass]="selectedTab == 'Popular Personalities' ? 'active' :''" (click)="selectTab('Popular Personalities')"
-      size-sm>
+    padding: 8px;" [ngClass]="selectedTab == 'Popular Personalities' ? 'active' :''"
+      (click)="selectTab('Popular Personalities')" size-sm>
       <ion-text>
         <ion-icon name="people-circle" style="font-size: 28px;"></ion-icon> <br />
       </ion-text>
@@ -104,14 +87,26 @@
       <p style="margin:10px" [innerHTML]="item.content"></p>
     </div>
 
-    <div *ngIf="item.type == 'Fiesta' && selectedTab == 'Fiesta'" class="ion-padding">
+    <div *ngIf="item.type == 'Fiesta' && selectedTab == 'Fiesta'">
+      <div style="position: relative;">
+        <ion-slides>
+          <ion-slide>
+            <div>
+              <img [src]="item.gallery[0].url" style="
+            width: 100%;
+            object-fit: cover;">
 
-      <ion-button expand="block" (click)="openGallery(item)">
-        <ion-icon name="image"></ion-icon>
-        <ion-label>View Gallery</ion-label>
-      </ion-button>
-
-      <p [innerHTML]="item.content"></p>
+            </div>
+          </ion-slide>
+        </ion-slides>
+        <ion-button color="misty" class="gallery-btn" (click)="openGallery(item)" shape="round">
+          <ion-label>
+            <ion-text class="ion-text-capitalize"> View Gallery  &nbsp;</ion-text>
+          </ion-label>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <p [innerHTML]="item.content" style="margin:10px"></p>
     </div>
   </div>
 

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="closeViewer()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slidesOptions" pager zoom #slider>
+    <ion-slide *ngFor="let photo of photos">
+      <img [src]="photo.url" imageViewer>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

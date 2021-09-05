@@ -83,6 +83,10 @@ const routes: Routes = [
     path: 'personalities',
     loadChildren: () => import('./personalities/personalities.module').then( m => m.PersonalitiesPageModule)
   },
+  {
+    path: 'gallery-viewer',
+    loadChildren: () => import('./gallery-viewer/gallery-viewer.module').then( m => m.GalleryViewerPageModule)
+  },
 
 ];
 @NgModule({
