@@ -6,20 +6,21 @@ import { ControlsComponent } from './controls/controls.component';
 import { ContentBrgyComponent } from './content-brgy/content-brgy.component';
 import { PoliticiansListComponent } from './politicians-list/politicians-list.component';
 import { ChartComponent } from './chart/chart.component';
+import { CachedImageComponent } from './cached-image/cached-image.component';
 
 @NgModule({
   declarations: [
     ItemComponent,
     ControlsComponent,
     ContentBrgyComponent,
-    PoliticiansListComponent, ChartComponent
+    PoliticiansListComponent, ChartComponent, CachedImageComponent
   ],
   imports: [
     CommonModule,
     IonicModule
   ], exports: [
     ItemComponent,
-    ControlsComponent, ContentBrgyComponent, PoliticiansListComponent, ChartComponent
+    ControlsComponent, ContentBrgyComponent, PoliticiansListComponent, ChartComponent, CachedImageComponent
   ]
 })
 export class ComponentsModule { }

@@ -21,6 +21,11 @@ export class Tab1Page {
   photoBaseURL = `${BASE_URL}/images/`;
   testData = []
   barangayList: IBarangay[] = [];
+  logoStyle = {
+    'height': '80px',
+    'width': '80px',
+    'object-fit': 'contain'
+  }
   constructor(
     private http: HTTP,
     private plt: Platform,
@@ -44,7 +49,7 @@ export class Tab1Page {
       await loading.present();
 
       this.afd.list('barangays/barangay_data').valueChanges().forEach(async (val: IBarangay[]) => {
-         const list = val;
+        const list = val;
         this.barangayList = list.filter((l) => Number(l.status) == 1);
         await loading.dismiss()
       })

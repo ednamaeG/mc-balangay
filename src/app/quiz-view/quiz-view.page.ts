@@ -284,7 +284,7 @@ export class QuizViewPage implements OnInit {
         }, {
           text: 'Yes',
           handler: () => {
-            this.saveScore()
+            // this.saveScore()
             self.navCtrl.pop()
           }
         }
