@@ -1,36 +1,81 @@
 <!-- LOAD PHOTOS AND VIDEOS -->
 <div>
-  <div *ngIf="!content.videoUrl && content.photos">
-    <ion-slides [options]="slidesOptions" *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'">
-      <ion-slide style="height: 274px;" *ngFor="let photo of content.photos">
-        <div>
-          <img [src]="photo.url" style="
-        width: 100%;
-        object-fit: cover;" (click)="openViewer(photo)">
+  <!-- start slider -->
+
+  <div style="position: relative;" >
+    <ion-slides
+      [options]="slidesOptions"
+      *ngIf="content.type !== 'Branding' && content.type !== 'Fiesta'"
+      [pager]="totalSlides > 1"
+      #sliderMain
+    >
+      <ion-slide style="height: 274px" *ngFor="let photo of content.photos" >
+        <div >
+          <img
+            [src]="photo.url"
+            style="width: 100%; object-fit: cover"
+            (click)="openViewer(photo)"
+          />
           <div class="img-title">
             {{ photo.title }}
           </div>
         </div>
       </ion-slide>
-
+      <ion-slide *ngIf="content.videoUrl && networkStatus">
+      
+        <div style="width: 100%" class="viewer"  >
+          <iframe
+            height="280"
+            width="100%"
+            allowscriptaccess="always"
+            [src]="sanitizedUrl(content.videoUrl)"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        
+        </div>
+        <div style="text-align: center" *ngIf="!networkStatus.connected">
+          <ion-text>
+            <ion-icon
+              name="warning"
+              style="font-size: 160px"
+              color="warning"
+            ></ion-icon>
+          </ion-text>
+          <p>Unable to Load Video. Please check your network connection.</p>
+        </div>
+      </ion-slide>
     </ion-slides>
 
+    <div class="arrow-btns" *ngIf="totalSlides > 1">
+      <div class="arrow-back" (click)="slidePrev()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </div>
 
-    <div *ngIf="content.type == 'Fiesta'" style="position: relative;">
-      <img [src]="content.photos[0].url" class="fiesta-img" (click)="openViewer(content.images[0])">
-      <div class="info">
-        {{content.photos[0].title}}
+      <div class="arrow-forward" (click)="slideNext()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
     </div>
   </div>
+  <div>
+    <div *ngIf="content.type == 'Fiesta'" style="position: relative">
+      <img
+        [src]="content.photos[0].url"
+        class="fiesta-img"
+        (click)="openViewer(content.images[0])"
+      />
+      <div class="info">
+        {{ content.photos[0].title }}
+      </div>
+    </div>
 
-
-  <div *ngIf="content.type == 'Branding'" class="img-container">
-    <img [src]="barangayData.logo_url" class="brand-img">
+    <div *ngIf="content.type == 'Branding'" class="img-container">
+      <img [src]="barangayData.logo_url" class="brand-img" />
+    </div>
   </div>
-</div>
 
-<div *ngIf="content.videoUrl && networkStatus">
+  <!-- <div *ngIf="content.videoUrl && networkStatus">
   <div *ngIf="networkStatus.connected">
     <iframe width="100%" height="280" allowscriptaccess="always" [src]="sanitizedUrl(content.videoUrl)"
       title="YouTube video player" frameborder="0" allowfullscreen></iframe>
@@ -43,9 +88,12 @@
     <p> Unable to Load Video. Please check your network connection.</p>
   </div>
 </div>
+ -->
 
-
-
-<div class="ion-padding">
-  <div [innerHtml]="content.content" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+  <div class="ion-padding">
+    <div
+      [innerHtml]="content.content"
+      [ngStyle]="{ 'font-size': fontSize + 'px' }"
+    ></div>
+  </div>
 </div>

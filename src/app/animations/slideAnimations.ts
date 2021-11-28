@@ -1,6 +1,6 @@
 export var slideOpts = {
     initialSlide: 0,
-    autoplay: true,
+    autoplay: false,
     loop: true,
     autoHeight: true,
     on: {

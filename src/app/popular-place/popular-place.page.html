@@ -15,25 +15,54 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides [options]="slidesOptions" *ngIf="details.photos">
-    <ion-slide  *ngFor="let photo of details.photos">
-      <!-- <div>
-        <ion-img-viewer scheme="dark" [src]="photo.url" [title]="photo.title" ></ion-img-viewer>
-        <div class="img-title">
-          {{ photo.title }}
+  <div style="position: relative;">
+    <ion-slides [options]="slidesOptions" #silderPlaces [pager]="totalSlides > 1">
+      <ion-slide  *ngFor="let photo of details.photos">
+        <!-- <div>
+          <ion-img-viewer scheme="dark" [src]="photo.url" [title]="photo.title" ></ion-img-viewer>
+          <div class="img-title">
+            {{ photo.title }}
+          </div>
+        </div> -->
+        <div style="width: 100%;">
+          <img  [src]="photo.url" (click)="openViewer(photo)" class="img-place">
+          <div class="img-title">
+            {{ photo.title }}
+          </div>
         </div>
-      </div> -->
-      <div >
-        <img  [src]="photo.url" (click)="openViewer(photo)" >
-        <div class="img-title">
-          {{ photo.title }}
+      </ion-slide>
+  
+      <ion-slide *ngIf="details.videoUrl">
+        <div style="width: 100%" class="viewer"  >
+          <iframe
+            height="280"
+            width="100%"
+            allowscriptaccess="always"
+            [src]="sanitizedUrl(details.videoUrl)"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        
         </div>
+      
+      </ion-slide>
+    </ion-slides>
+  
+    <div class="arrow-btns"  *ngIf="totalSlides > 1">
+      <div class="arrow-back" (click)="slidePrev()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
       </div>
-    </ion-slide>
-  </ion-slides>
+  
+      <div class="arrow-forward" (click)="slideNext()">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  
+  </div>
 
 
-
-
+   
   <div [innerHTML]="details.content" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+ 
 </ion-content>

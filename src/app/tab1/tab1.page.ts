@@ -95,4 +95,8 @@ export class Tab1Page {
   }
 
 
+  testSwipe(ev){
+    alert('TEST')
+  }
+
 }

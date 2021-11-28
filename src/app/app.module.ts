@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HTTP } from '@ionic-native/http/ngx';
 
@@ -24,15 +24,17 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from 'src/environments/environment';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { SwipeDirective } from './directives/swipe.directive';
 
 
 @NgModule({
-  declarations: [AppComponent, TriviaPage],
+  declarations: [AppComponent, TriviaPage, SwipeDirective],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HammerModule,
     AppRoutingModule, HttpClientModule, NgxIonicImageViewerModule,
     NgCircleProgressModule.forRoot({
       // set defaults here

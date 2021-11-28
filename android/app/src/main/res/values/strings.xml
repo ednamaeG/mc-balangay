@@ -5,6 +5,6 @@
     <string name="package_name">com.app.mcbalangay</string>
     <string name="custom_url_scheme">com.app.mcbalangay</string>
   <string name="server_client_id">326558500876-vmfdssie9e87cd86ci7rco0i0car60kh.apps.googleusercontent.com</string>
-  <string name="facebook_app_id">1255774614872985</string>
-  <string name="fb_login_protocol_scheme">fb1255774614872985</string>
+  <string name="facebook_app_id">190933413173950</string>
+  <string name="fb_login_protocol_scheme">fb190933413173950</string>
 </resources>

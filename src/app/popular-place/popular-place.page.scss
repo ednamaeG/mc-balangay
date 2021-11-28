@@ -17,8 +17,36 @@
   font-weight: 600;
 }
 
-img{
+.img-place{
   height: 260px;
   object-fit: cover;
   width: 100%;
 }
+
+.arrow-btns {
+  font-size: 48px;
+  position: absolute;
+  width: 100%;
+  bottom: -53px;
+  z-index: 1;
+  color: #f7f7f7;
+  opacity: 0.8;
+}
+
+.arrow-back {
+//   display: inline-block;
+width: auto;
+position: absolute;
+top: -237px;
+left: 0px;
+}
+
+.arrow-forward {
+//   display: inline-block;
+//   float: right;
+width: auto;
+position: absolute;
+top: -237px;
+right: 0px;
+}
+
