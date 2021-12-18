@@ -18,6 +18,7 @@ export interface IBarangay {
   statistics?:IStats;
   politicians?:IPolitician[];
   status?: number;
+  type?:number;
 }
 
 export interface IStats{

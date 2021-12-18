@@ -17,7 +17,9 @@
   <div *ngIf="results.length > 0">
     <div *ngFor="let result of results">
       <!-- <app-item [item]="result" (click)="openContent(result)"></app-item> -->
-      <ion-item (click)="openContent(result)">
+
+      <!-- for barangay content -->
+      <ion-item (click)="openContent(result)"  *ngIf="result.type && result.type == RESULT_TYPES.BARANGAY_CONTENT ">
         <ion-thumbnail slot="start">
           <img [src]="result.logo_url">
         </ion-thumbnail>
@@ -27,6 +29,18 @@
           <div *ngIf="result.foundInfo">
             <p [innerHTML]="result.foundInfo.content" class="initial-content"> </p>
           </div>
+        </ion-label>
+      </ion-item>
+      <!-- for barangay captain -->
+      <ion-item (click)="openContent(result)" *ngIf="result.type && result.type == RESULT_TYPES.BARANGAY_CAPTAIN && result.foundInfo">
+        <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+        <ion-label class="ion-text-wrap">
+          <ion-label>
+            <ion-text>
+              <h4>{{ result.foundInfo.name }}</h4>
+            </ion-text>
+            <ion-text color="olive"> <small> <i>{{result.foundInfo.year}}</i></small></ion-text>
+          </ion-label>
         </ion-label>
       </ion-item>
     </div>

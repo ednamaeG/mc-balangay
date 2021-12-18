@@ -24,7 +24,12 @@ export class BarangayPage implements OnInit {
     console.log(this.barangayData ,"BARANGAY DATA")
 
     if (this.barangayData.foundInfo) {
+      if(this.barangayData.type == 2){
+        this.selectedTab = "Politicians"
+      }else{
       this.selectedTab = this.barangayData.foundInfo.type;
+      }
+
     }else{
       this.selectedTab = "History"
     }
