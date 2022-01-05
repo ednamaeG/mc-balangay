@@ -1,0 +1,24 @@
+{
+  "appId": "com.app.mcbalangay",
+  "appName": "MC Balangay",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1000
+    },
+    "GoogleAuth": {
+      "scopes": [
+        "profile",
+        "email"
+      ],
+      "serverClientId": "326558500876-vmfdssie9e87cd86ci7rco0i0car60kh.apps.googleusercontent.com",
+      "forceCodeForRefreshToken": true
+    }
+  },
+  "cordova": {},
+  "server": {
+    "cleartext": true
+  }
+}

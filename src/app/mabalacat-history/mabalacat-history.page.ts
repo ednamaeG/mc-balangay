@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController, Platform } from '@ionic/angular';
 import { ViewerModalComponent } from 'ngx-ionic-image-viewer';
 import { GalleryPage } from '../gallery/gallery.page';
@@ -18,20 +18,25 @@ export class MabalacatHistoryPage implements OnInit {
   politicians: any;
   places: any;
   personalities: any;
-  constructor(private httpClient: HttpClient, private modalController: ModalController, private afd: AngularFireDatabase, private plt: Platform, private router: Router) { }
+  constructor(private httpClient: HttpClient, private modalController: ModalController, private afd: AngularFireDatabase, private plt: Platform, private router: Router,private route: ActivatedRoute) { }
 
   async ngOnInit() {
-    this.plt.ready().then(async () => {
-      // const quizzesFromApi = await this.quizSvc.getQuizList();
-      // console.log('Quizzes from api',quizzesFromApi)
+    const params = this.route.snapshot.params.tab;
+    // const data = JSON.parse(params.content);
 
-      // this.quizSvc.quizzes$.next(quizzesFromApi);
-      // this.quizzes = this.quizSvc.quizzes$.getValue()
+  
+    this.selectedTab = params  ? params: this.selectedTab;
+
+    console.log("Data passed::",this.selectedTab)
+
+    this.plt.ready().then(async () => {
+      
+     
       var content = []
       this.afd.list('barangays/mabalacat-details').valueChanges().forEach(async (val: any[]) => {
 
         this.mabalacat_details = val
-        console.log("MABALACAT DETAILS",this.mabalacat_details)
+        console.log("MABALACAT DETAILS ALL",this.mabalacat_details)
       })
 
       this.afd.list('barangays/mabalacat-details/politicians').valueChanges().forEach(async (val: any[]) => {
@@ -103,9 +108,14 @@ export class MabalacatHistoryPage implements OnInit {
 
 
   openPersonalityContent(content) {
-
     const data = JSON.stringify(content)
     this.router.navigate(['/personalities', { data: data }])
+  }
+
+  openDetails(politician){
+    console.log('DETAIL',politician);
+    const data = JSON.stringify(politician)
+    this.router.navigate(['/municipal-mayor', { data: data }])
   }
 
 }

@@ -87,6 +87,14 @@ const routes: Routes = [
     path: 'gallery-viewer',
     loadChildren: () => import('./gallery-viewer/gallery-viewer.module').then( m => m.GalleryViewerPageModule)
   },
+  {
+    path: 'barangay-captain',
+    loadChildren: () => import('./barangay-captain/barangay-captain.module').then( m => m.BarangayCaptainPageModule)
+  },
+  {
+    path: 'municipal-mayor',
+    loadChildren: () => import('./municipal-mayor/municipal-mayor.module').then( m => m.MunicipalMayorPageModule)
+  },
 
 ];
 @NgModule({

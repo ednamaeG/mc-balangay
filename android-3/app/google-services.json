@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "326558500876",
+    "firebase_url": "https://e-learning-ab57e-default-rtdb.firebaseio.com",
+    "project_id": "e-learning-ab57e",
+    "storage_bucket": "e-learning-ab57e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326558500876:android:96b1ab69fe34608ad7c629",
+        "android_client_info": {
+          "package_name": "com.app.mcbalangay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326558500876-22p2kb22g4bc3f7qmc7gr1i9gstndf8m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.mcbalangay",
+            "certificate_hash": "33e26ad556242683cadc5cd8d22ce34cca86b391"
+          }
+        },
+        {
+          "client_id": "326558500876-vmfdssie9e87cd86ci7rco0i0car60kh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUXFdT15B-TTT1Aw3chYVrEJQFXjkaJow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326558500876-vmfdssie9e87cd86ci7rco0i0car60kh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

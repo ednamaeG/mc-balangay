@@ -1,0 +1,26 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="sky">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+  <ion-toolbar color="olive">
+    <ion-title class="ion-text-center">
+      {{details.name}}
+      <div class="ion-text-center title" *ngIf="details.year">({{details.year}})</div>
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div>
+    <img [src]="details.photo" (click)="openViewer(details.photo)">
+  </div>
+  <div>
+
+    <div [innerHTML]="details.description" class="details ion-padding" [ngStyle]="{'font-size': fontSize+'px'}"></div>
+  </div>
+</ion-content>

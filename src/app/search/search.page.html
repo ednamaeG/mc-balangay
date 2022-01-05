@@ -31,18 +31,91 @@
           </div>
         </ion-label>
       </ion-item>
+
       <!-- for barangay captain -->
-      <ion-item (click)="openContent(result)" *ngIf="result.type && result.type == RESULT_TYPES.BARANGAY_CAPTAIN && result.foundInfo">
-        <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+      <ion-item (click)="openDetails(result.foundInfo,0)" *ngIf="result.type && result.type == RESULT_TYPES.BARANGAY_CAPTAIN  && result.foundInfo">
+        <!-- <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon> -->
+        <ion-icon *ngIf="!result.foundInfo.photo" src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+        <ion-thumbnail  *ngIf="result.foundInfo.photo" slot="start">
+           <img [src]="result.foundInfo.photo">
+         </ion-thumbnail>
         <ion-label class="ion-text-wrap">
           <ion-label>
             <ion-text>
               <h4>{{ result.foundInfo.name }}</h4>
             </ion-text>
-            <ion-text color="olive"> <small> <i>{{result.foundInfo.year}}</i></small></ion-text>
+            <ion-text color="olive"> <small> <i>Barangay {{result.name}} Captain {{result.foundInfo.year}} </i></small></ion-text>
           </ion-label>
         </ion-label>
       </ion-item>
+
+      <!-- for popular places -->
+      <ion-item (click)="openContentMabalacat(result)"  *ngIf="result.type && result.type == RESULT_TYPES.POPULAR_PLACE">
+        <ion-thumbnail slot="start">
+          <img [src]="result.photos[0].url">
+        </ion-thumbnail>
+        
+        <ion-label class="ion-text-wrap">
+          <h3><strong>{{result.title}} </strong></h3>
+           
+        </ion-label>
+
+      </ion-item>
+
+
+      <!-- for popular personalities -->
+      <ion-item (click)="openContentMabalacat(result)"  *ngIf="result.type && result.type == RESULT_TYPES.POPULAR_PERSONALITY">
+        <ion-thumbnail slot="start">
+          <img [src]="result.photo">
+        </ion-thumbnail>
+        
+        <ion-label class="ion-text-wrap">
+          <h3><strong>{{result.name}} </strong></h3>
+          <p><strong>{{result.title}} </strong></p>
+           
+        </ion-label>
+
+      </ion-item>
+
+         <!-- for mabalacat details  -->
+         <ion-item (click)="openContentMabalacat(result)" *ngIf="result.type && result.type == RESULT_TYPES.MABALACAT_DETAIL">
+          <ion-thumbnail slot="start">
+            <img [src]="result.gallery[0].url">
+          </ion-thumbnail>
+          
+          <ion-label class="ion-text-wrap">
+            <h3><strong> {{result.title}} </strong></h3>
+           
+            <div class="initial-content">
+              <p [innerHTML]="result.content" > </p>
+            </div>      
+          </ion-label>
+  
+        </ion-item>
+
+
+
+        <!-- for mabalacat mayors -->
+      <ion-item (click)="openDetails(result,1)"  *ngIf="result.type && result.type == RESULT_TYPES.MABALACAT_MAYOR">
+        <ion-icon *ngIf="!result.photo" src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+        <ion-thumbnail  *ngIf="result.photo" slot="start">
+           <img [src]="result.photo">
+         </ion-thumbnail>
+        <ion-label class="ion-text-wrap">
+          <ion-label>
+            <ion-text>
+              <h4>{{ result.name }}</h4>
+             
+            </ion-text>
+            <ion-text color="olive"> <small> <i>{{result.category}} ( {{result.year}} )</i></small></ion-text>
+          </ion-label>
+        </ion-label>
+      </ion-item>
+
+       
+
+
+
     </div>
   </div>
   <div *ngIf="results.length <= 0 || !results">

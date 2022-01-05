@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MC Balangay</string>
+    <string name="title_activity_main">MC Balangay</string>
+    <string name="package_name">com.app.mcbalangay</string>
+    <string name="custom_url_scheme">com.app.mcbalangay</string>
+  <string name="server_client_id">326558500876-vmfdssie9e87cd86ci7rco0i0car60kh.apps.googleusercontent.com</string>
+  <string name="facebook_app_id">190933413173950</string>
+  <string name="fb_login_protocol_scheme">fb190933413173950</string>
+</resources>

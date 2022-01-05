@@ -119,8 +119,13 @@
             <h4>{{item.type}}</h4>
           </ion-text>
         </ion-list-header>
-        <ion-item *ngFor="let politician of item.data" lines="full">
-          <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+        <div *ngFor="let politician of item.data">
+        <ion-item  lines="full" (click)="openDetails(politician)">
+          <ion-icon *ngIf="!politician.photo" src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon>
+          <ion-thumbnail  *ngIf="politician.photo" slot="start">
+             <img [src]="politician.photo">
+           </ion-thumbnail>
+          <!-- <ion-icon src="assets/icon/speak-speech.svg" slot="start" style="font-size: 40px;"></ion-icon> -->
           <ion-label class="ion-text-wrap">
             <ion-text color="dark">
               <h4>{{ politician.name }}</h4>
@@ -128,6 +133,7 @@
             <ion-text color="olive"> <small> <i>{{politician.year}}</i></small></ion-text>
           </ion-label>
         </ion-item>
+      </div>
       </div>
     </ion-list>
   </div>
